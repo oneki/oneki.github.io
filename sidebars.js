@@ -7,7 +7,12 @@
 
 module.exports = {
   someSidebar: {
-    Docusaurus: ['doc1', 'doc2', 'doc3'],
-    Features: ['mdx'],
-  },
+    "Getting Started": [
+      "getting-started/installation",
+      "getting-started/first-app",
+      "getting-started/configuration"
+    ],
+    Hooks: ["hooks/use-get", "hooks/use-post", "hooks/use-put", "hooks/use-delete"],
+    Advanced: ["advanced/file-structure"]
+  }
 };
