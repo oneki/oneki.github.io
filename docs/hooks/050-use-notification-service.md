@@ -26,6 +26,8 @@ There is no input.
 notificationService: {
 
   send: function(notification), // the main method to send a notification
+  add: function(notification), // method to update the Redux state (for internal usage normally)
+  remove: function(id), // method to remove a notification for the Redux state
   error: function(notification), // alias of method 'send' with hardcoded topic=error
   success: function(notification), // alias of method 'send' with hardcoded topic=success
   warning: function(notification), // alias of method 'send' with hardcoded topic=warning

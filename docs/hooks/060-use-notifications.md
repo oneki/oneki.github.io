@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 const notifications = useNotifications(topic)
 ```
 The goal of ***useNotifications*** is to listen on a topic that contains notifications.<br/>
-The notifications returned by the hook are added to the local state of the component. Therefore, as soon as the topic is updated, the component does a re-render. 
+As soon as the topic is updated, the component does a re-render.
 
 > Oneki.js provides a default service to send notifications, but not a default widget to handle them. You have to provide it
 
