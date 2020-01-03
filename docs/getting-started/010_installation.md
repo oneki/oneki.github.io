@@ -7,6 +7,7 @@ sidebar_label: Installation
 * React
 * React Router
 * Redux
+* Redux-saga
 * Immer
 
 The goal of **Oneki.js** is to propose a framework on top of these librairies that hides most of the complexity.
