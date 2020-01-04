@@ -4,6 +4,8 @@ title: useLocalService
 sidebar_label: useLocalService
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ```javascript
 const [state, service] = useLocalService(serviceDefinition, initialState);
@@ -89,70 +91,28 @@ state: object // the local state handled by the service
 ### Minimal example
 This example shows how to send a ajax POST request to a back end server to create a user. Actually, ***[usePost](use-post)*** is based on this approach.<br/>
 A Saga method is defined to handle correctly the "loading ..." indicator and the asynchronous AJAX request
-```jsx
-import { asyncPost, latest, useLocalService } from "onekijs";
-import React from "react";
-import { call } from "redux-saga/effects";
 
-// Define the reducer and saga methods
-// The serviceDefinition could be imported from another file for more clarity
-const serviceDefinition = {
-  reducers: {
-    setUser: function(state, payload) {
-      state.user = payload;
-      state.loading = false;
-    },
-    setLoading: function(state, payload) {
-      state.loading = payload;
-    }
-  },
-  sagas: {
-    // createUser is a flow with several steps:
-    // - A first step to update the loading state, so the LoadingButton can display a "Loading ..." label
-    // - A second step that creates a user remotely
-    // - A third step that updates the state to set the result of the AJAX request
-    // Between each step, a re-render can occurs
-    createUser: latest(function*(user, { settings }) {
-      
-      // Call a reducer method to update the state
-      yield call(this.setLoading, true);
-
-      // send a request to the backend to create the user
-      const savedUser = yield call(asyncPost, `${settings.server.baseUrl}/users`, user);
-
-      // Call a reducer method to update the state
-      yield call(this.setUser, savedUser);
-      
-    })
-  }
-};
-
-export default () => {
-  const [state, service] = useLocalService(serviceDefinition, {
-    loading: false
-  });
-  const user = state.user;
-  console.log(state);
-  return (
-    <div>
-      <LoadingButton
-        label="create user"
-        loading={state.loading}
-        onClick={() => service.createUser({ name: "Foo", firstname: "Bar" })}
-      />
-      {user && (
-        <ul>
-          <li>{user.name}</li>
-          <li>{user.firstname}</li>
-        </ul>
-      )}
-    </div>
-  );
-};
-
-// A simple "loading" button
-const LoadingButton = ({ loading, label, onClick }) => {
-  const buttonLabel = loading ? "Loading ..." : label;
-  return <button onClick={onClick}>{buttonLabel}</button>;
-};
-```
+<Tabs
+  defaultValue="code"
+  values={[
+    { label: 'Code', value: 'code', },
+    { label: 'Preview', value: 'preview', },
+  ]
+}>
+<TabItem value="code">
+  <iframe
+    src="https://codesandbox.io/embed/use-local-service-pjljv?fontsize=14&hidenavigation=1&module=%2Fsrc%2FLocalService.js&theme=dark&view=editor"
+    style={{width:'100%', height:'1600px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+<TabItem value="preview">
+  <iframe
+    src="https://codesandbox.io/embed/use-local-service-pjljv?fontsize=14&hidenavigation=1&module=%2Fsrc%2FLocalService.js&theme=dark&view=preview"
+    style={{width:'100%', height:'1600px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+</Tabs>

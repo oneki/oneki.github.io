@@ -3,6 +3,9 @@ id: use-get
 title: useGet
 sidebar_label: useGet
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ```javascript
 const [data, loading] = useGet(url, options);
 const [data, loading] = useSecureGet(url, options);
@@ -54,110 +57,59 @@ loading: boolean
 ```
 ## Examples
 ### Minimal example
-```jsx
-import { useGet, useSetting, isNull } from "onekijs";
-import React from "react";
-import { Link } from "react-router-dom";
+The minimal example shows how to retrieve data from a backend server.<br/>
+A loading indicator (Loading ...) is displayed while the AJAX request is pending.
 
-export default () => {
-  // baseUrl is defined in settings.js
-  const baseUrl = useSetting("server.baseUrl"); 
-
-  // call useGet to retrieve the list of users
-  const [users, loading] = useGet(`${baseUrl}/users`);
-
-  // Loading is activated only after 100ms (configurable via settings.js)
-  // Before the 100ms, useGet returns loading=false and users=null
-  // After 100ms and if the ajax request is still pending, useGet returns loading=true and users=null
-  // Once the ajax request returns a response, useGet returns loading=false and users=[...]
-  if (loading) return <div>Loading ...</div>;
-
-  return (
-  <>
-    {users && (
-    <ul>
-      {users.map(user => (
-      <li key={`key-${user.id}`}>
-        {user.firstname} {user.name}
-      </li>
-      ))}
-    </ul>
-    )}
-  </>
-  );
-};
-```
-### onError example
-```jsx
-import { useGet } from "onekijs";
-import React, { useCallback, useState } from "react";
-
-export default () => {
-  const [errorMsg, setErrorMsg] = useState(null);
-
-  // onError must be encapsulated in a useCallback
-  const onError = useCallback((error, context) => {
-    setErrorMsg(error.message);
-  }, [setErrorMsg]
-  );
-
-  // call useGet to retrieve the list of users
-  const [users, loading] = useGet('WRONG_URL', { onError });
-
-  if (loading) return <div>Loading ...</div>;
-  
-  return (
-  <>
-    {errorMsg && <span style={{color:'red'}}>Error: {errorMsg}</span>}
-    {users && (
-    <ul>
-      {users.map(user => (
-      <li key={`key-${user.id}`}>
-        {user.firstname} {user.name}
-      </li>
-      ))}
-    </ul>
-    )}
-  </>
-  );
-};
-```
+<Tabs
+  defaultValue="code"
+  values={[
+    { label: 'Code', value: 'code', },
+    { label: 'Preview', value: 'preview', },
+  ]
+}>
+<TabItem value="code">
+  <iframe
+    src="https://codesandbox.io/embed/onekijs-use-get-yhj30?fontsize=14&hidenavigation=1&initialpath=%2Fusers&module=%2Fsrc%2Froutes%2Fusers%2Flist%2FUserList.js&theme=dark&view=editor"
+    style={{width:'100%', height:'700px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+<TabItem value="preview">
+  <iframe
+    src="https://codesandbox.io/embed/onekijs-use-get-yhj30?fontsize=14&hidenavigation=1&initialpath=%2Fusers&module=%2Fsrc%2Froutes%2Fusers%2Flist%2FUserList.js&theme=dark&view=preview"
+    style={{width:'100%', height:'700px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+</Tabs>
 
 ### onError with notification example
 This is an example showing how to handle onError using the notification service<br/>
 Actually this is exactly what it's done if no "onError" is specified in useGet
-```jsx
-import { useGet, useNotificationService } from "onekijs";
-import React, { useCallback } from "react";
-export default () => {
-  const notificationService = useNotificationService();
-  const onError = useCallback(e => {
-    notificationService.error(e);
-    // the lifetime of the error is taken from settings.notification.lifetime.error
-    // if you want a custom lifetime for this error, you have to use the send method 
-    // notificationService.send({
-    //   topic: 'error',
-    //   lifeTime: 1000,
-    //   payload: e
-    // })
-  }, [notificationService]);
 
-  // call useGet to retrieve the list of users
-  const [users, loading] = useGet('WRONG_URL', { onError });
-  if (loading) return <div>Loading ...</div>;
-  
-  return (
-  <>
-    {users && (
-    <ul>
-      {users.map(user => (
-      <li key={`key-${user.id}`}>
-        {user.firstname} {user.name}
-      </li>
-      ))}
-    </ul>
-    )}
-  </>
-  );
-};
-```
+<Tabs
+  defaultValue="code"
+  values={[
+    { label: 'Code', value: 'code', },
+    { label: 'Preview', value: 'preview', },
+  ]
+}>
+<TabItem value="code">
+  <iframe
+    src="https://codesandbox.io/embed/onekijs-use-get-notification-kqtmm?fontsize=14&hidenavigation=1&module=%2Fsrc%2Froutes%2Fusers%2Flist%2FUserList.js&theme=dark&view=editor"
+    style={{width:'100%', height:'1050px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+<TabItem value="preview">
+  <iframe
+    src="https://codesandbox.io/embed/onekijs-use-get-notification-kqtmm?fontsize=14&hidenavigation=1&module=%2Fsrc%2Froutes%2Fusers%2Flist%2FUserList.js&theme=dark&view=preview"
+    style={{width:'100%', height:'1050px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+</Tabs>

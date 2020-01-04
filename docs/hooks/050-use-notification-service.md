@@ -4,6 +4,8 @@ title: useNotificationService
 sidebar_label: useNotificationService
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ```javascript
 const notificationService = useNotificationService();
@@ -53,62 +55,28 @@ A topic can be configured via settings.js. The configuration is detailled on thi
 
 ## Examples
 ### Minimal example
-```jsx
-import { useNotifications, useNotificationService } from "onekijs";
-import React, { useCallback } from "react";
+<Tabs
+  defaultValue="code"
+  values={[
+    { label: 'Code', value: 'code', },
+    { label: 'Preview', value: 'preview', },
+  ]
+}>
 
-export default () => {
-  // inject the central notificationService
-  const notificationService = useNotificationService();
-
-  // Function to send a notification on the topic referenced by the attribute "type"
-  const sendNotification = useCallback(
-    (type, msg) => {
-      notificationService.send({
-        topic: type,
-        payload: {
-          message: msg
-        }
-      });
-    },
-    [notificationService]
-  );
-
-  return (
-    <div>
-      <button onClick={() => sendNotification("error", "This is an error message")}>
-        Send an error notification
-      </button>
-      |
-      <button onClick={() => sendNotification("success", "This is a sucess message")}>
-        Send a success notification
-      </button>
-      <SimpleNotificationWidget />
-    </div>
-  );
-};
-
-// Very simple Notification Widget
-// Normally, this widget is central to the application (i.e: directly under <App/>)
-const SimpleNotificationWidget = () => {
-  const errors = useNotifications("error");
-  const successes = useNotifications("success");
-
-  return (
-    <>
-      <div>
-        {errors.map((notification, index) => (
-          <div style={{ backgroundColor: "red" }}>
-            {notification.payload.message}
-          </div>
-        ))}
-        {successes.map((notification, index) => (
-          <div style={{ backgroundColor: "green" }}>
-            {notification.payload.message}
-          </div>
-        ))}
-      </div>
-    </>
-  );
-};
-```
+<TabItem value="code">
+  <iframe
+    src="https://codesandbox.io/embed/use-notification-service-tswy1?fontsize=14&hidenavigation=1&module=%2Fsrc%2FNotification.js&theme=dark&view=editor"
+    style={{width:'100%', height:'1500px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+<TabItem value="preview">
+  <iframe
+    src="https://codesandbox.io/embed/use-notification-service-tswy1?fontsize=14&hidenavigation=1&module=%2Fsrc%2FNotification.js&theme=dark&view=preview"
+    style={{width:'100%', height:'1500px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+</Tabs>

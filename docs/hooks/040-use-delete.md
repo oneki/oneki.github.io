@@ -3,6 +3,9 @@ id: use-delete
 title: useDelete
 sidebar_label: useDelete
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ```javascript
 const [del, loading] = useDelete(url, options);
 const [del, loading] = useSecureDelete(url, options);
@@ -62,30 +65,32 @@ Then, the component displays the form with fields pre-filled in with the data re
 Finally, a click on the button *Submit* send the data to the server via an ajax PUT request
 * If the call is successful, one is redirected to ***/users***
 * If the call fails, the error is sent to the ***notificationService***
-```jsx
-import { useDelete, useSetting } from "onekijs";
-import React from "react";
-import { useParams } from "react-router-dom";
 
-export default () => {
-  // userId is present in the URL: /users/:userId
-  // useParams is a hook coming from react-router-dom
-  const { userId } = useParams();
+<Tabs
+  defaultValue="code"
+  values={[
+    { label: 'Code', value: 'code', },
+    { label: 'Preview', value: 'preview', },
+  ]
+}>
+<TabItem value="code">
+  <iframe
+    src="https://codesandbox.io/embed/onekijs-use-delete-jlnsk?fontsize=14&hidenavigation=1&module=%2Fsrc%2Froutes%2Fusers%2Fdisplay%2FUserDisplay.js&theme=dark&view=editor"
+    style={{width:'100%', height:'1000px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+<TabItem value="preview">
+  <iframe
+    src="https://codesandbox.io/embed/onekijs-use-delete-jlnsk?fontsize=14&hidenavigation=1&module=%2Fsrc%2Froutes%2Fusers%2Fdisplay%2FUserDisplay.js&theme=dark&view=preview"
+    style={{width:'100%', height:'1000px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+</Tabs>
 
-  // baseUrl is defined in settings.js
-  const baseUrl = useSetting("server.baseUrl");
-
-  const [del, loading] = useDelete(`${baseUrl}/users/${userId}`, { 
-    onSuccess: '/users'
-  });
-
-  return (
-    <button onClick={() => del()}>
-      [{loading ? "loading ..." : "delete"}]
-    </button>
-  );
-};
-```
 ### onSuccess example
 The logic is the same as for ***usePost***. Please refer to [the documentation of usePost](use-post) for an example
 

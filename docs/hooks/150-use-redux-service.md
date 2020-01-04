@@ -4,6 +4,8 @@ title: useReduxService
 sidebar_label: useReduxService
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ```javascript
 const service = useReduxService(serviceDefinition);
@@ -87,66 +89,56 @@ A redux service is not created inside a component as it's a singleton available 
 This example contains two files:
 * One file to define the service
 * A second file to show how a component can use this service
+
 ##### Definition of the service
-```jsx
-import { latest } from "onekijs";
-import { call, delay } from "redux-saga/effects";
+<Tabs
+  defaultValue="code"
+  values={[
+    { label: 'Code', value: 'code', },
+    { label: 'Preview', value: 'preview', },
+  ]
+}>
+<TabItem value="code">
+  <iframe
+    src="https://codesandbox.io/embed/use-redux-service-jtotk?fontsize=14&hidenavigation=1&module=%2Fsrc%2FNotificationService.js&theme=dark&view=editor"
+    style={{width:'100%', height:'700px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+<TabItem value="preview">
+  <iframe
+    src="https://codesandbox.io/embed/use-redux-service-jtotk?fontsize=14&hidenavigation=1&module=%2Fsrc%2FNotificationService.js&theme=dark&view=preview"
+    style={{width:'100%', height:'700px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+</Tabs>
 
-// NotificationService is a very simple Redux service
-// It updates the entry "notification" in the redux state and removes based on the TTL of the notification
-export const notificationService = {
-  name: "simpleNotification",
-  reducers: {
-    add: function(state, notification) {
-        state.simpleNotification = notification
-    },
-    remove: function(state) {
-      state.simpleNotification = null;
-    }
-  },
-  sagas: {
-    send: latest(function* (notification) {
-        // set the notification in the Redux state
-        console.log("ici", notification);
-        yield call(this.add, notification);
-        
-        // wait the number of ms indicated in TTL
-        yield delay(notification.ttl);
+##### Component that uses the service
 
-        // remove the notification from the Redux state
-        yield this.remove(notification.id);
-    })
-  }
-};
-```
-##### Component that uses this service
-```jsx
-import { useReduxService, useStoreProp } from "onekijs";
-import React from "react";
-import { notificationService } from "./NotificationService";
-
-let uid = 0;
-export default () => {
-  // inject the notificationService.
-  const service = useReduxService(notificationService);
-
-  // useStoreProp is a hook that selects a single entry in the Redux state
-  const notification = useStoreProp("simpleNotification");
-
-  return (
-    <div>
-      <button
-        onClick={() => service.send({ 
-          id: `notif-${++uid})`,
-          message: `This is a notification ! with id ${uid}`,
-          ttl: 3000
-        })}
-      >create notification</button>
-
-      {notification && (
-        <div>Notification: {notification.message} - TTL: {notification.ttl} ms</div>
-      )}
-    </div>
-  );
-};
-```
+<Tabs
+  defaultValue="code"
+  values={[
+    { label: 'Code', value: 'code', },
+    { label: 'Preview', value: 'preview', },
+  ]
+}>
+<TabItem value="code">
+  <iframe
+    src="https://codesandbox.io/embed/use-redux-service-jtotk?fontsize=14&hidenavigation=1&module=%2Fsrc%2FExample.js&theme=dark&view=editor"
+    style={{width:'100%', height:'800px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+<TabItem value="preview">
+  <iframe
+    src="https://codesandbox.io/embed/use-redux-service-jtotk?fontsize=14&hidenavigation=1&module=%2Fsrc%2FExample.js&theme=dark&view=preview"
+    style={{width:'100%', height:'800px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+</Tabs>

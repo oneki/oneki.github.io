@@ -9,8 +9,11 @@ module.exports = {
   someSidebar: {
     "Getting Started": [
       "getting-started/installation",
-      "getting-started/first-app",
-      "getting-started/configuration"
+      "getting-started/basic-app",
+      "getting-started/crud-app"
+    ],
+    Components: [
+      "components/app"
     ],
     Hooks: [
       "hooks/use-get",

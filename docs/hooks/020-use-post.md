@@ -3,6 +3,9 @@ id: use-post
 title: usePost
 sidebar_label: usePost
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ```javascript
 const [post, loading] = usePost(url, options);
 const [post, loading] = useSecurePost(url, options);
@@ -61,132 +64,85 @@ loading: boolean
 This example shows how to display a form with two input fields: **name** and **firstname** and submit the data to a server via a ajax POST request.
 * If the call is successful, one is redirected to ***/users***
 * If the call fails, the error is sent to the ***notificationService***
-```jsx
-import { usePost, useSetting } from "onekijs";
-import React from "react";
-import { useForm } from "react-hook-form";
 
-export default () => {
-  // baseUrl is defined in settings.js
-  const baseUrl = useSetting("server.baseUrl");
+<Tabs
+  defaultValue="code"
+  values={[
+    { label: 'Code', value: 'code', },
+    { label: 'Preview', value: 'preview', },
+  ]
+}>
+<TabItem value="code">
+  <iframe
+    src="https://codesandbox.io/embed/onekijs-use-get-notification-t7sfi?fontsize=14&hidenavigation=1&module=%2Fsrc%2Froutes%2Fusers%2Fcreate%2FUserCreate.js&theme=dark&view=editor"
+    style={{width:'100%', height:'1000px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+<TabItem value="preview">
+  <iframe
+    src="https://codesandbox.io/embed/onekijs-use-get-notification-t7sfi?fontsize=14&initialpath=%2Fusers%2Fcreate&hidenavigation=1&module=%2Fsrc%2Froutes%2Fusers%2Fcreate%2FUserCreate.js&theme=dark&view=preview"
+    style={{width:'100%', height:'1000px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+</Tabs>
 
-  // use react-hook-from to build the form
-  const { register, handleSubmit } = useForm(); 
-  
-  const [post, loading] = usePost(`${baseUrl}/users`, {
-    onSuccess: "/users" // if the post request is successful, redirect to the /users page
-  });
-
-  return (
-    <div>
-      <form>
-        {/* register your input into the hook by invoking the "register" function */}
-        <div><b>Name: </b><input name="name" ref={register}/></div>
-        <div><b>Firstname: </b><input name="firstname" ref={register} /></div>
-        <LoadingButton label="Submit" loading={loading} onClick={handleSubmit(post)} />
-      </form>
-    </div>
-  );
-};
-
-// A simple "loading" button
-const LoadingButton = ({ loading, label, onClick }) => {
-  const buttonLabel = loading ? 'Loading ...' : label;
-  return (
-    <button onClick={onClick}>{buttonLabel}</button>
-  )
-};
-```
 ### onSuccess example
 This example show how to display a success message on top of the form if the POST call is successful.
-```jsx
-import { usePost, useSetting } from "onekijs";
-import React, { useCallback, useState } from "react";
-import { useForm } from "react-hook-form";
 
-export default () => {
-  // baseUrl is defined in settings.js
-  const baseUrl = useSetting("server.baseUrl");
-
-  const [successMsg, setSuccessMsg] = useState(null);
-
-  // use react-hook-from to build the form
-  const { register, handleSubmit } = useForm();
-
-  // onError must be encapsulated in a useCallback
-  const onSuccess = useCallback((data, context) => {
-    setSuccessMsg(`User ${data.firstname} ${data.name} created successfully`);
-  }, [setSuccessMsg]);
-  
-  const [post, loading] = usePost(`${baseUrl}/users`, { onSuccess });
-
-  return (
-    <div>
-      {successMsg && <span style={{color: 'green'}}>{successMsg}</span>}
-      <form>
-        {/* register your input into the hook by invoking the "register" function */}
-        <div><b>Name: </b><input name="name" ref={register}/></div>
-        <div><b>Firstname: </b><input name="firstname" ref={register} /></div>
-        <LoadingButton label="Submit" loading={loading} onClick={handleSubmit(post)} />
-      </form>
-    </div>
-  );
-};
-
-// A simple "loading" button
-const LoadingButton = ({ loading, label, onClick }) => {
-  const buttonLabel = loading ? 'Loading ...' : label;
-  return (
-    <button onClick={onClick}>{buttonLabel}</button>
-  )
-};
-```
+<Tabs
+  defaultValue="code"
+  values={[
+    { label: 'Code', value: 'code', },
+    { label: 'Preview', value: 'preview', },
+  ]
+}>
+<TabItem value="code">
+  <iframe
+    src="https://codesandbox.io/embed/onekijs-use-post-8z56k?fontsize=14&hidenavigation=1&module=%2Fsrc%2Froutes%2Fusers%2Fcreate%2FUserCreate.js&theme=dark&view=editor"
+    style={{width:'100%', height:'1200px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+<TabItem value="preview">
+  <iframe
+    src="https://codesandbox.io/embed/onekijs-use-post-8z56k?fontsize=14&hidenavigation=1&initialpath=%2Fusers%2Fcreate&module=%2Fsrc%2Froutes%2Fusers%2Fcreate%2FUserCreate.js&theme=dark&view=preview"
+    style={{width:'100%', height:'1200px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+</Tabs>
 
 ### onError with notification example
 This is an example showing how to handle onError using the notification service<br/>
 Actually this is exactly what it's done if no "onError" is specified in useGet
-```jsx
-import { usePost, useNotificationService } from "onekijs";
-import React, { useCallback } from "react";
-import { useForm } from "react-hook-form";
 
-export default () => {
-  // use react-hook-from to build the form
-  const { register, handleSubmit } = useForm();
-  
-  const notificationService = useNotificationService();
-
-  // onError must be encapsulated in a useCallback
-  const onError = useCallback(e => {
-    notificationService.error(e);
-    // the lifetime of the error is taken from settings.notification.lifetime.error
-    // if you want a custom lifetime for this error, you have to use the send method 
-    // notificationService.send({
-    //   topic: 'error',
-    //   lifeTime: 1000,
-    //   payload: e
-    // })
-  }, [notificationService]);
-  
-  const [post, loading] = usePost("WRONG_URL", { onError });
-
-  return (
-    <div>
-      <form>
-        {/* register your input into the hook by invoking the "register" function */}
-        <div><b>Name: </b><input name="name" ref={register}/></div>
-        <div><b>Firstname: </b><input name="firstname" ref={register} /></div>
-        <LoadingButton label="Submit" loading={loading} onClick={handleSubmit(post)} />
-      </form>
-    </div>
-  );
-};
-
-// A simple "loading" button
-const LoadingButton = ({ loading, label, onClick }) => {
-  const buttonLabel = loading ? 'Loading ...' : label;
-  return (
-    <button onClick={onClick}>{buttonLabel}</button>
-  )
-};
-```
+<Tabs
+  defaultValue="code"
+  values={[
+    { label: 'Code', value: 'code', },
+    { label: 'Preview', value: 'preview', },
+  ]
+}>
+<TabItem value="code">
+  <iframe
+    src="https://codesandbox.io/embed/onekijs-use-post-ustdh?fontsize=14&hidenavigation=1&initialpath=%2Fusers%2Fcreate&module=%2Fsrc%2Froutes%2Fusers%2Fcreate%2FUserCreate.js&theme=dark&view=editor"
+    style={{width:'100%', height:'1300px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+<TabItem value="preview">
+  <iframe
+    src="https://codesandbox.io/embed/onekijs-use-post-ustdh?fontsize=14&hidenavigation=1&initialpath=%2Fusers%2Fcreate&module=%2Fsrc%2Froutes%2Fusers%2Fcreate%2FUserCreate.js&theme=dark&view=preview"
+    style={{width:'100%', height:'1300px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    title="onekijs-basic-app"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+</TabItem>
+</Tabs>
