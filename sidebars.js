@@ -16,6 +16,7 @@ module.exports = {
       "components/app"
     ],
     Hooks: [
+      "hooks/introduction",
       "hooks/use-settings",
       "hooks/use-get",
       "hooks/use-post",
