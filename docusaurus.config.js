@@ -9,13 +9,12 @@ module.exports = {
   themeConfig: {
     navbar: {
       title: 'Oneki.js',
-      logo: {
+      /*logo: {
         alt: 'Oneki.js Logo',
         src: 'img/logo.svg',
-      },
+      },*/
       links: [
-        {to: 'docs/getting-started/installation', label: 'Getting started', position: 'left'},
-        {to: 'docs/doc1', label: 'Docs', position: 'left'},
+        {to: 'docs/getting-started/installation', label: 'Docs', position: 'right'},
         {
           href: 'https://github.com/oneki/onekijs',
           label: 'GitHub',
@@ -30,12 +29,16 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/doc1',
+              label: 'Getting Started',
+              to: 'docs/getting-started/installation',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2',
+              label: 'Demo app',
+              to: 'docs/getting-started/crud-app',
+            },
+            {
+              label: 'Hooks',
+              to: 'docs/hooks/use-settings',
             },
           ],
         },
@@ -44,7 +47,7 @@ module.exports = {
           items: [
             {
               label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              href: 'https://stackoverflow.com/questions/tagged/onekijs',
             }
           ],
         },

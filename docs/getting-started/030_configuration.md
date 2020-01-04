@@ -25,7 +25,7 @@ Click on the icon <img width="20px" height="20px" alt="Notification architecture
 <TabItem value="code">
   <iframe
     src="https://codesandbox.io/embed/onekijs-crud-oixg2?fontsize=14&module=%2Fsrc%2Froutes%2Fusers%2FUsers.js&theme=dark&view=editor"
-    style={{width:'100%', height:'1000px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    style={{width:'100%', height:'650px', border:0, bordeRadius: '4px', overflow:'hidden'}}
     title="onekijs-basic-app"
     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
@@ -33,7 +33,7 @@ Click on the icon <img width="20px" height="20px" alt="Notification architecture
 <TabItem value="preview">
   <iframe
     src="https://codesandbox.io/embed/onekijs-crud-oixg2?fontsize=14&module=%2Fsrc%2Froutes%2Fusers%2FUsers.js&theme=dark&view=preview"
-    style={{width:'100%', height:'1000px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    style={{width:'100%', height:'650px', border:0, bordeRadius: '4px', overflow:'hidden'}}
     title="onekijs-basic-app"
     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
