@@ -16,7 +16,8 @@ Therefore, the developer can built more quickly powerful webapps respecting the 
 ## Installation
 
 Create a new React application with **[Create React App](https://create-react-app.dev/)** and add **onekijs** as a dependency:
-```
+```javascript
+// npm install -g yarn
 yarn create react-app my-app
 cd my-app
 yarn add onekijs
@@ -31,5 +32,5 @@ yarn install
 * [Redux](https://redux.js.org/)
 * [Redux Saga](https://redux-saga.js.org/) 
 
-> **Oneki.js** has an opinionated approach on how to use these librairies and tries to remove most of the boilerplate, but it's important to understand how it works underneath.
+> **Oneki.js** has an opinionated approach on how to use these librairies and tries to remove a lot of boilerplate, but it's important to understand how it works underneath.
 

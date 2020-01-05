@@ -1,17 +1,25 @@
 ---
-id: basic-app
-title: Basic Application
-sidebar_label: Basic Application
+id: getting-started
+title: Getting started
+sidebar_label: Getting started
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The basic app consists of a simple website with the following assets:
+To get started, we are going to build a minimal application consisting of a simple website with two pages:
 - A homepage displaying the message "This is the main page".
 - A users page displaying the message "This is the user page".
 - A menu to navigate between these two pages.
 
-After creating the project as described ***[on the installation page](installation)***, replace the content of ***index.js*** with the following code:
+Create a new React application with **[Create React App](https://create-react-app.dev/)** and add **onekijs** as a dependency:
+```javascript
+// npm install -g yarn
+yarn create react-app my-app
+cd my-app
+yarn add onekijs
+yarn install
+```
+and then replace the content of ***index.js*** with the following code:
 <Tabs
   defaultValue="code"
   values={[

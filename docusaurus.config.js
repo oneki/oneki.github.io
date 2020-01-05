@@ -14,7 +14,7 @@ module.exports = {
         src: 'img/logo.svg',
       },*/
       links: [
-        {to: 'docs/getting-started/installation', label: 'Docs', position: 'right'},
+        {to: 'docs/overview/installation', label: 'Docs', position: 'right'},
         {
           href: 'https://github.com/oneki/onekijs',
           label: 'GitHub',
@@ -30,11 +30,11 @@ module.exports = {
           items: [
             {
               label: 'Getting Started',
-              to: 'docs/getting-started/installation',
+              to: 'docs/overview/installation',
             },
             {
               label: 'Demo app',
-              to: 'docs/getting-started/crud-app',
+              to: 'docs/overview/crud-app',
             },
             {
               label: 'Hooks',

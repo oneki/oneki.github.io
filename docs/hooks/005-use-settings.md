@@ -51,7 +51,7 @@ The minimal example shows how to retrieve a setting inside a Component.
 }>
 <TabItem value="code">
   <iframe
-    src="https://codesandbox.io/embed/cool-bell-mqvi7?fontsize=14&hidenavigation=1&theme=dark&view=editor"
+    src="https://codesandbox.io/embed/onekijs-use-settings-mqvi7?fontsize=14&hidenavigation=1&theme=dark&view=editor"
     style={{width:'100%', height:'900px', border:0, bordeRadius: '4px', overflow:'hidden'}}
     title="onekijs-basic-app"
     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
@@ -59,7 +59,7 @@ The minimal example shows how to retrieve a setting inside a Component.
 </TabItem>
 <TabItem value="preview">
   <iframe
-    src="https://codesandbox.io/embed/cool-bell-mqvi7?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+    src="https://codesandbox.io/embed/onekijs-use-settings-mqvi7?fontsize=14&hidenavigation=1&theme=dark&view=preview"
     style={{width:'100%', height:'900px', border:0, bordeRadius: '4px', overflow:'hidden'}}
     title="onekijs-basic-app"
     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"

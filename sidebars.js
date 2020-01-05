@@ -7,10 +7,12 @@
 
 module.exports = {
   someSidebar: {
-    "Getting Started": [
-      "getting-started/installation",
-      "getting-started/basic-app",
-      "getting-started/crud-app"
+    "Overview": [
+      "overview/installation",
+      "overview/getting-started",
+      "overview/settings",
+      "overview/crud-app",
+      "overview/file-structure"
     ],
     Components: [
       "components/app"
@@ -25,8 +27,9 @@ module.exports = {
       "hooks/use-notification-service",
       "hooks/use-notifications",
       "hooks/use-local-service",
-      "hooks/use-redux-service"
-    ],
-    Advanced: ["advanced/file-structure"]
+      "hooks/use-redux-service",
+      "hooks/use-redux-selector",
+      "hooks/use-login-service"
+    ]
   }
 };
