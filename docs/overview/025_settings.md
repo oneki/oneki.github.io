@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-***Oneki.js*** recommends to put the configuration parameters in a central place. Generally, the configuration is placed in the files **settings.*.js** next to the entry point **index.js**.
+***Oneki.js*** recommends to put the configuration parameters in a central place. Generally, the configuration is placed in the file **settings.js** next to the entry point **index.js**.
 
 ```javascript
 My-App
@@ -40,7 +40,7 @@ The settings object is a simple object (not an array) that is passed to ***App**
 <TabItem value="code">
   <iframe
     src="https://codesandbox.io/embed/onekijs-settings-minimal-rq4c5?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fsettings.js&theme=dark&view=editor"
-    style={{width:'100%', height:'600px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    style={{width:'100%', height:'470px', border:0, bordeRadius: '4px', overflow:'hidden'}}
     title="onekijs-basic-app"
     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
@@ -48,7 +48,7 @@ The settings object is a simple object (not an array) that is passed to ***App**
 <TabItem value="preview">
   <iframe
     src="https://codesandbox.io/embed/onekijs-settings-minimal-rq4c5?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fsettings.js&theme=dark&view=preview"
-    style={{width:'100%', height:'600px', border:0, bordeRadius: '4px', overflow:'hidden'}}
+    style={{width:'100%', height:'470px', border:0, bordeRadius: '4px', overflow:'hidden'}}
     title="onekijs-basic-app"
     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
@@ -56,7 +56,7 @@ The settings object is a simple object (not an array) that is passed to ***App**
 </Tabs>
 
 ### Multi environments example
-This example shows how to manage settings in a multi environment setup.
+This example shows how to manage settings in a multi environments setup.
 <Tabs
   defaultValue="code"
   values={[
