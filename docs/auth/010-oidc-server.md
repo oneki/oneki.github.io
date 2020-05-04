@@ -60,10 +60,10 @@ User -> google_authorize: submitCredentials()
 ```
 
 To authenticate against an OpenID Connect Identity Provider (OIDC IDP), you have to create two routes
-* **a login route**: this route is called by a direct link or following a 401 HTTP Error
-* **a login callback route**: this route is called by OIDC IDP after a successfull authentication
+* **a login route/page**: this route is called by a direct link or following a 401 HTTP Error
+* **a login callback route/page**: this route is called by OIDC IDP after a successfull authentication
 
-Each route/page component should only contains one call to a hook. The code is the same for a NextJS App or a Create React App
+The code is the same for a NextJS App or a Create React App
 
 <Tabs
   defaultValue="login"
@@ -83,6 +83,7 @@ export default React.memo(() => {
   const options = {};
   const [state] = useLoginService(idpName, options);
   return null;
+}
 ```
 
 <br/><br/>
@@ -192,12 +193,7 @@ export default React.memo(() => {
   const options = {};
   const [state] = useLoginCallbackService(options);
   return null;
+}
 ```
 </TabItem>
 </Tabs>
-
-
-
-
-
-TODO describe other configurations and add examples
