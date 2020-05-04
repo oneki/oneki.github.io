@@ -63,7 +63,7 @@ and then create the following files:
 }>
 <TabItem value="code">
   <iframe
-    src="https://codesandbox.io/embed/onekijs-next-hello-world-l4743?fontsize=14&hidenavigation=1&theme=dark&view=editor"
+    src="https://codesandbox.io/embed/github/oneki/onekijs-example/tree/master/next/hello-world?fontsize=14&hidenavigation=1&theme=dark&view=editor"
     style={{width:'100%', height:'600px', border:0, bordeRadius: '4px', overflow:'hidden'}}
     title="onekijs-basic-app"
     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
@@ -71,14 +71,14 @@ and then create the following files:
 </TabItem>
 <TabItem value="preview">
   <iframe
-    src="https://codesandbox.io/embed/onekijs-next-hello-world-l4743?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+    src="https://codesandbox.io/embed/github/oneki/onekijs-example/tree/master/next/hello-world?fontsize=14&hidenavigation=1&theme=dark&view=preview"
     style={{width:'100%', height:'600px', border:0, bordeRadius: '4px', overflow:'hidden'}}
     title="onekijs-basic-app"
     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
 </TabItem>
 </Tabs>
-<b>Note</b>: Codesandbox.io doesn't support pages under src/pages. This is why the pages are under /pages
+
 </TabItem>
 <TabItem value="cra">
 Create a new React application with <b><a href="https://create-react-app.dev/">Create React App</a></b> and add <b>onekijs</b> as a dependency:

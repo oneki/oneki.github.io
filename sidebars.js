@@ -8,28 +8,38 @@
 module.exports = {
   someSidebar: {
     "Overview": [
-      "overview/installation",
       "overview/getting-started",
-      "overview/settings",
-      "overview/crud-app",
+      "overview/app",
       "overview/file-structure"
     ],
-    Components: [
-      "components/app"
+    Configuration: [
+      "configuration/settings",
+      "configuration/use-settings",
+      "configuration/multi-env",
     ],
-    Hooks: [
-      "hooks/introduction",
-      "hooks/use-settings",
-      "hooks/use-get",
-      "hooks/use-post",
-      "hooks/use-put",
-      "hooks/use-delete",
+    Data: [
+      "data/use-get",
+      "data/use-post",
+      "data/use-put",
+      "data/use-delete",
+      "data/use-redux-service",
+      "data/use-redux-selector",      
+      "data/crud-app",
+    ], 
+    Notification: [
       "hooks/use-notification-service",
       "hooks/use-notifications",
-      "hooks/use-local-service",
-      "hooks/use-redux-service",
-      "hooks/use-redux-selector",
+    ],
+    Authentication: [
       "hooks/use-login-service"
+    ],
+    I18n: [
+    ],
+    Advanced: [
+      "hooks/use-local-service"
+    ],         
+    Examples: [
+      "examples/crud-app",
     ]
   }
 };

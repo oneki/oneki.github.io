@@ -13,8 +13,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12
+    - run: npm install -g yarn # Extra Step
     - name: NPM Build
-      run: npm install && npm run build
+      run: yarn install && yarn build
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
