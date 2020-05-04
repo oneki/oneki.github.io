@@ -3,7 +3,83 @@ id: file-structure
 title: File structure
 sidebar_label: File structure
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 We recommend the following file structure:
+
+<Tabs
+  defaultValue="next"
+  values={[
+    { label: 'Next App', value: 'next', },
+    { label: 'Create React App', value: 'cra', },
+  ]
+}>
+<TabItem value="next">
+
+```javascript
+My-App
+├─ public // see nextjs documentation
+│  ├─ locales
+│  │  └─ en
+│  │  │  └─ translation.json // locales in english
+│  │  └─ fr
+│  │  │  └─ translation.json // locales in french
+│  ├─ logo.svg 
+│  ├─ robots.txt 
+│  └─ ... // You are free to create your own structure 
+│
+├─ src
+│  ├─ components // folder containing all components but routes
+│  │  ├─ myComponent // a folder is created for each standalone component (camelCase)
+│  │  │  ├─ myComponentHeader // Each slave component has its own folder
+│  │  │  │  └─ ...  // Same structure as myComponent folder
+│  │  │  ├─ index.js // a file that export MyComponent
+│  │  │  ├─ MyComponent.module.css // Optional: the CSS of the component (PascalCase)
+│  │  │  ├─ MyComponent.js // The component itself (PascalCase)
+│  │  │  └─ MyComponent.test.js  // Unit tests of the component (PascalCase)
+│  │
+│  ├─ css
+│  │  └─ app.css // see nextjs documentation
+│  │
+│  ├─ layout // folder containing all layouts
+│  │  ├─ siteLayout // a folder is created for each standalone component (camelCase)
+│  │  │  ├─ Header // Each slave component has its own folder
+│  │  │  │  └─ ...  // Same structure as SiteLayout folder
+│  │  │  ├─ index.js // a file that export SiteLayout
+│  │  │  ├─ SiteLayout.module.css // Optional: the CSS of the component (PascalCase)
+│  │  │  ├─ SiteLayout.js // The component itself (PascalCase)
+│  │  │  └─ SiteLayout.test.js  // Unit tests of the component (PascalCase)
+│  │
+│  ├─ pages // folder containing all pages. Pages are the entry points (see nextjs doc)
+│  │  ├─ users // a folder is created for each top route
+│  │  │  ├─ [id] // Dynamic route, see nextjs documentation
+│  │  │  │  ├─ edit.js //edit user page /users/:id/edit
+│  │  │  │  └─ index.js //view user page /users/:id
+│  │  │  ├─ index.js // list all users page /users
+│  │  │  └─ new.js // new user page /users/new
+│  │  ├─ _app.js // the wrapper component common to all pages that bootstraps the App (<NextApp />)
+│  │  └─ index.js // the index page /
+│  │
+│  ├─ utils // a folder to contain any utility code. You are free to create your own structure
+│  │  ├─ string.js
+│  │  └─ ...
+│  │
+│  ├─ i18n.js // Bootstrap of the i18n library
+│  └─ settings.js // a central file to configure your app
+│
+├─ .env.development // contain variables specific to the DEV environement
+├─ .env.development.local // contains sensitive data (not commited on GIT)
+├─ .gitignore
+├─ next.config.js // not mandatory. Specific configuration for nextjs
+├─ package.json
+├─ postcss.config.js // not mandatory. Only present if postcss is used
+├─ README.md
+├─ yarn.lock
+```
+</TabItem>
+<TabItem value="cra">
+
 ```javascript
 My-App
 ├─ public // see create react app documentation
@@ -25,7 +101,7 @@ My-App
 │  │  ├─ myComponent // a folder is created for each standalone component (camelCase)
 │  │  │  ├─ myComponentHeader // Each slave component has its own folder
 │  │  │  │  └─ ...  // Same structure as myComponent folder
-│  │  │  ├─ index.js // a file containing only: export { default } from './MyComponent'
+│  │  │  ├─ index.js // a file that export MyComponent
 │  │  │  ├─ image1.png // a file needed only by MyComponent (camelCase)
 │  │  │  ├─ MyComponent.css // Optional: the CSS of the component (PascalCase)
 │  │  │  ├─ MyComponent.js // The component itself (PascalCase)
@@ -41,7 +117,7 @@ My-App
 │  │  │  │  └─ ... 
 │  │  │  ├─ list
 │  │  │  │  └─ ... 
-│  │  │  ├─ index.js // a file containing only: export { default } from './User.js'
+│  │  │  ├─ index.js // a file that export Users
 │  │  │  ├─ Users.js // The component itself
 │  │  │  └─ Users.test.js  // Unit tests of the component
 │  │
@@ -60,3 +136,5 @@ My-App
 ├─ README.md
 ├─ yarn.lock
 ```
+</TabItem>
+</Tabs>
