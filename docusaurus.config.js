@@ -1,3 +1,5 @@
+const simplePlantUML = require("@akebifiky/remark-simple-plantuml");
+
 module.exports = {
   title: 'Oneki.js',
   tagline: 'An opinionated framework based on React',
@@ -70,6 +72,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          remarkPlugins: [simplePlantUML],
           editUrl:
             'https://github.com/oneki/oneki.github.io/edit/source/',
         },

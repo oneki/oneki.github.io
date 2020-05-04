@@ -7,6 +7,58 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+```plantuml
+@startuml
+!includeurl https://brunofranki.github.io/static/asciidoc-plantuml-skin.iuml
+actor User
+box "App (Browser)"
+    participant "/restricted" as restricted
+    participant "/login" as login
+    participant "/login/callback" as callback
+end box
+box "IDP (Google)"
+    participant "/authorize" as google_authorize
+    participant "/token" as google_token
+    participant "/userinfo" as google_userinfo
+end box
+box "App backend"
+    participant "/oauth2/token" as token
+    participant "/userinfo" as userinfo
+end box
+User -> restricted: navigate()
+  activate restricted
+  restricted -> login: redirect()
+    activate login
+    login -> login: get settings()
+    login -> google_authorize: redirect()
+      activate google_authorize
+      google_authorize -> google_authorize: displayForm()
+    return
+  return
+return
+
+User -> google_authorize: submitCredentials()
+  activate google_authorize
+  google_authorize -> callback: redirect()
+    deactivate google_authorize
+    activate callback
+    callback -> token: getToken()
+      activate token
+      token -> google_token: getToken()
+        activate google_token
+      return
+    token -> callback: setCookie()
+  callback -> restricted: redirect()
+  deactivate callback
+    activate restricted
+    restricted -> User
+    deactivate restricted
+  
+
+
+@enduml
+```
+
 To authenticate against an OpenID Connect Identity Provider (OIDC IDP), you have to create two routes
 * **a login route**: this route is called by a direct link or following a 401 HTTP Error
 * **a login callback route**: this route is called by OIDC IDP after a successfull authentication
