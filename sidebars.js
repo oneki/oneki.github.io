@@ -31,7 +31,7 @@ module.exports = {
       "hooks/use-notifications",
     ],
     Authentication: [
-      "hooks/use-login-service"
+      "auth/oidc-server"
     ],
     I18n: [
     ],

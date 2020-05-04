@@ -1,0 +1,151 @@
+---
+id: oidc-server
+title: OpenID Connect (server side)
+sidebar_label: OpenID Connect (server side)
+---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+To authenticate against an OpenID Connect Identity Provider (OIDC IDP), you have to create two routes
+* **a login route**: this route is called by a direct link or following a 401 HTTP Error
+* **a login callback route**: this route is called by OIDC IDP after a successfull authentication
+
+Each route/page component should only contains one call to a hook. The code is the same for a NextJS App or a Create React App
+
+<Tabs
+  defaultValue="login"
+  values={[
+    { label: 'Login', value: 'login', },      
+    { label: 'Login Callback', value: 'loginCallback', },
+  ]
+}>
+<TabItem value="login">
+
+```javascript
+import React from "react";
+import { useLoginService } from "onekijs";
+
+export default React.memo(() => {
+  const idpName = 'google';
+  const options = {};
+  const [state] = useLoginService(idpName, options);
+  return null;
+```
+
+<br/><br/>
+
+## Parameters
+#### Inputs
+```javascript
+// [Optional] the name of the IDP used for the login -- defaults to "default"
+idpName: string
+// [Optional] options object -- defaults to {}
+options: {
+  // a callback function triggered when an error is thrown -- defaults to notificationService.error
+  onError: func
+}
+```
+#### Outputs
+```javascript
+state: {
+  // a boolean that is true when a AJAX request is pending
+  loading: boolean,
+
+  // In case of a failure, errorMessage contains a description of the failure
+  errorMessage: string,
+
+  // doNotRender is flag to indicate if a form should be rendered or not
+  // i.e: in case of an external identify provider, a redirect is done in the useEffect 
+  // and there is no need to render something
+  doNotRender: boolean
+}
+```
+
+<br/><br/>
+
+## Configuration
+***useLoginService*** is fully configured in settings.js<br/>
+The configuration **must** be defined under the key "**idp/:idpName**". For example, if **idpName**=_google_, the config must look like this:
+```javascript
+const settings = {
+  id: {
+    google: {
+      type: "oidc_server",
+      ...
+    }
+  }
+}
+```
+
+<br/><br/>
+
+#### Mandatory attributes
+
+| Key           |      Type     | Description |
+| ------------- | ------------- | ------------|
+| **authorizeEndpoint** | string \|<br/>function(idp,context) | The _authorization endpoint_*_ identified by:<ul><li>a string (relative or absolute URL)</li><li>or a function returning the URL</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
+| **clientId** | string | the _client_id_ created on the IDP (identity provider) |
+| **logoutEndpoint** | string \|<br/>function(idp,context) | Can be<ul><li>A relative or absolute URL</li><li>A function returning the URL</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
+| **tokenEndpoint** | string \|<br/>function(grant_type, idp, context) | Can be<ul><li>a relative or absolute URL</li><li>A function that does an AJAX POST request to the token endpoint and returns a object of type "Token"</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
+| **type** | string | must be "**oidc_server**" |
+| **userinfoEndpoint** | string \|<br/> function (idp, context) | Can be:<ul><li>A relative or absolute URL</li><li>A string with the following format:<br/>*token://<token_prop>* where <token_prop> is one of: id_token, access_token</li><li>A function that returns an object that represents the userInfo. For example a object like this: {email: 'foo@example.com', roles: ['ADMIN']}}</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
+
+<br/><br/>
+
+#### Optional attributes
+
+| Key           |      Type     | Description | Default |
+| ------------- | ------------- | ------------| ------- |
+| **callback** | function(response, idp, context): [token,userInfo] | Callback called at the end of the authentication for extracting the token and the userInfo from the response. <br/><br/>**Inputs**<ul><li>response: the response from the authentication server</li><li>idp: the configuration of the IDP used</li><li>context: an object containing the redux store, the router and the settings</li></ul>**Outputs**<ul><li>token: the oauth2 token</li><li>userInfo: the securityContext of the user</li></ul> | null |
+| **codeChallengeMethod** | string | Method that was used to derive an authorization code challenge | S256 |
+| **jwksEndpoint** | string \|<br/>function(token, idp, context)  | jwksEndpoint is **mandatory** if _validate_ = true.<br/><br/>Can be<ul><li>A relative or absolute URL</li><li>A function that returns a public key</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js | null |
+| **logoutCallbackRoute** | string | a relative or absolute URL called by the OIDC server after a successfull logout. Should be used to remove the cookie on the server side | null |
+| **pkce** | boolean | flag to indicate if the PKCE extension is applied. Recommended |true|
+| **nonce** | boolean | flag to indicate if the nonce in the id_token is validated on the client side. Should be done on the server side  | false |
+| **postLoginRedirectKey** | string | When calling the _authorize_ endpoint, _postLoginRedirectKey_ represents the name of the parameter to indicate the redirect URI | redirect_uri |
+| **postLogoutRedirectKey** | string | When calling the _logout_ endpoint, _postLoginRedirectKey_ represents the name of the parameter to indicate the redirect URI | post_logout_redirect_uri |
+| **responseType** | string | only _code_ is supported right now | code |
+| **scope** | string | the value of the parameter "scope" sent to the *authorize* endpoint. Should generally be redefined | openid |
+| **state** | boolean | flag to indicate if the javascript client send a state to the IDP. Recommended for mitigating attacks | true |
+| **validate** | boolean | flag to indicate if the id_token and the access_token are validated. Should generally be done on the server side | false |
+
+<br/><br/>
+
+## Configuration example
+```javascript
+const settings = {
+  idp: {
+    google: {
+      type: 'oidc_server', 
+      clientId: '1eb5cq6p7d8dm8g4q9jk6qdve5',  // id given by the Google              
+      authorizeEndpoint: 'https://accounts.google.com/o/oauth2/v2/auth',    // URL given by Google. Will be called by the client
+      tokenEndpoint: '/api/oauth2/token',   // URL to your server (will handle the fetch of the token from Google thanks to the authorization code provided by the client)
+      userinfoEndpoint: '/api/oauth2/userinfo', // URL to your server (will get the userinfo from Google thanks to the access_token)
+      logoutEndpoint: '/api/oauth2/logout', // should ideally be a IDP URL. Here Google does not support logout, so it's a URL from the server which will only remove the cookie
+      scope: 'openid email profile', // ask to Google the profile and the email of the user
+    }
+  }
+}
+```
+
+</TabItem>
+<TabItem value="loginCallback">
+
+```javascript
+import React from "react";
+import { useLoginCallbackService } from "onekijs";
+
+export default React.memo(() => {
+  const options = {};
+  const [state] = useLoginCallbackService(options);
+  return null;
+```
+</TabItem>
+</Tabs>
+
+
+
+
+
+TODO describe other configurations and add examples
