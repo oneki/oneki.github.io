@@ -8,8 +8,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 To authenticate against an OpenID Connect Identity Provider (OIDC IDP), you have to create two routes
-* **a login route**: this route is called by a direct link or following a 401 HTTP Error
-* **a login callback route**: this route is called by OIDC IDP after a successfull authentication
+* **a login route/page**: this route is called by a direct link or following a 401 HTTP Error
+* **a login callback route/page**: this route is called by OIDC IDP after a successfull authentication
 
 The code is the same for a NextJS App or a Create React App
 
