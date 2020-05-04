@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 * [Immer](https://immerjs.github.io/immer/docs/introduction) 
 
 The goal of **Oneki.js** is to propose a framework on top of these librairies that hides most of the complexity.
-Therefore, the developer can built more quickly powerful webapps respecting the best practices.
+Therefore, the developer can build more quickly powerful webapps respecting the best practices.
 
 > ***Note***: the documentation often contains two tabs: 
 - one for apps built on top of Next.js
@@ -78,6 +78,24 @@ and then create the following files:
     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
 </TabItem>
 </Tabs>
+
+Via a command line enter:
+```
+yarn dev
+```
+to start a livereload webserver. <br/>
+The website is available on http://localhost:3000<br/>
+Any modification done on the source code will refresh the page to take into account the change.
+
+Please note that the ***NextApp*** component configures automatically a ***Redux store***<br/>
+if you want to provide your own redux store, you can pass it as a prop to ***App***
+
+### Build
+To build the application, enter:
+```
+yarn build
+```
+The result of the build is available in the folder **.next**. Check the documentation of Next.js for more information concerning the build / deploy possiblities
 
 </TabItem>
 <TabItem value="cra">
