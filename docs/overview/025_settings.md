@@ -7,7 +7,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-***Oneki.js*** recommends to put the configuration parameters in a central place. Generally, the configuration is placed in the file **settings.js** under ***src directory***.
+
+***Oneki.js*** recommends to put the configuration parameters in a central place. Generally, the configuration is placed in the file **settings.js**.
+
+<Tabs
+  defaultValue="next"
+  values={[
+    { label: 'Next App', value: 'next', },
+    { label: 'Create React App', value: 'cra', },
+  ]
+}>
+<TabItem value="next">
 
 ```
 My-App
@@ -26,6 +36,23 @@ My-App
 ├─ README.md
 ├─ yarn.lock
 ```
+
+</TabItem>
+<TabItem value="cra">
+
+```javascript
+My-App
+│  ├─ index.js // The bootstrap of the app (entry point)
+│  └─ settings.js  // This file that centralizes all the configurations
+│
+├─ .gitignore
+├─ package.json
+├─ README.md
+├─ yarn.lock
+```
+</TabItem>
+</Tabs>
+
 The content of **settings.js** is available across the application via the hook [useSettings](../hooks/use-settings).
 
 The filename "**settings.js**" is a convention and could be anything else. Actually, ***Oneki.js*** expects to receive a "Settings" object during its bootstrap and this object could come from anywhere.
