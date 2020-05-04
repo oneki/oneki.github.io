@@ -7,12 +7,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-***Oneki.js*** recommends to put the configuration parameters in a central place. Generally, the configuration is placed in the file **settings.js** next to the entry point **index.js**.
+***Oneki.js*** recommends to put the configuration parameters in a central place. Generally, the configuration is placed in the file **settings.js** under ***src directory***.
 
-```javascript
+```
 My-App
-│  ├─ index.js // The bootstrap of the app (entry point)
-│  └─ settings.js  // This file that centralizes all the configurations
+│  ├─ src
+|  |  ├─ layout
+|  |  |  └─ SiteLayout.js
+|  |  |  
+|  |  ├─ pages
+|  |  |  ├─ _app.js
+|  |  |  └─ index.js
+|  |  |  
+|  |  └─ settings.js
 │
 ├─ .gitignore
 ├─ package.json
@@ -23,10 +30,32 @@ The content of **settings.js** is available across the application via the hook 
 
 The filename "**settings.js**" is a convention and could be anything else. Actually, ***Oneki.js*** expects to receive a "Settings" object during its bootstrap and this object could come from anywhere.
 
+Some component of the framework uses the content ***settings.js*** to configure themself. For example, the notification service can be configured like this:
+
+```javascript
+// content of settings.js
+export default {
+  notification: {
+    default: {
+      ttl: 1000, // the number of seconds the notification is visible
+      max: 5
+    },
+    error: {
+      ttl: 0, // if the notification is an error, it never disappears by itself
+      max: 3,
+      persist: true
+    }
+  }
+};
+```
+
 For more information concerning the bootstrap of an ***Oneki.js application***, check the [App component documentation page](../components/app).
 
 ## Examples
-### Minimal example
+
+https://github.com/oneki/onekijs-example/tree/master/auth-oidc
+
+<!-- ### Minimal example
 The minimal example consists of a simple settings file that is common to any environement.<br/>
 The settings object is a simple object (not an array) that is passed to ***App*** as a prop.
 
@@ -80,4 +109,4 @@ This example shows how to manage settings in a multi environments setup.
     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
 </TabItem>
-</Tabs>
+</Tabs> -->
