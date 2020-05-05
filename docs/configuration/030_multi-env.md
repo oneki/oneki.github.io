@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 The file ***settings.js*** is the central place to contain all configuration variables. However, some variables are different by environment (i.e: development, staging, acceptance, production). They are called environment variables.
 
-To avoid inserting unexpected environment variables in the final bundle, the name of the variable **must be** prefixed like this:
+To avoid inserting unexpected environment variables in the final bundle, the name of the variables **must be** prefixed like this:
 
 | Application type | Prefix | Example
 | ---------------- | ------ | -------
