@@ -7,6 +7,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+> **Oneki.js** supports the Open ID Connect (OIDC) authorization code flow where the authorization code is exchanged for an access token via a server. This is the most common and secure way to retrieve the access token 
+
+In ***settings.js***, when the type is **"oidc_server"**, ***Oneki.js*** implements the following scenario:
+
 ```plantuml
 @startuml
 !includeurl https://brunofranki.github.io/static/asciidoc-plantuml-skin.iuml
@@ -25,30 +29,30 @@ box "App backend"
     participant "/oauth2/token" as token
     participant "/userinfo" as userinfo
 end box
-User -> restricted: navigate()
+User -> restricted: navigate
   activate restricted
-  restricted -> login: redirect()
+  restricted -> login: redirect
     activate login
-    login -> login: get settings()
-    login -> google_authorize: redirect()
+    login -> login: read settings
+    login -> google_authorize: redirect
       activate google_authorize
-      google_authorize -> google_authorize: displayForm()
+      google_authorize -> google_authorize: display form
     return
   return
 return
 
-User -> google_authorize: submitCredentials()
+User -> google_authorize: submit credentials
   activate google_authorize
-  google_authorize -> callback: redirect()
+  google_authorize -> callback: redirect
     deactivate google_authorize
     activate callback
-    callback -> token: getToken()
+    callback -> token: exchange code
       activate token
-      token -> google_token: getToken()
+      token -> google_token: exchange code
         activate google_token
       return
-    token -> callback: setCookie()
-  callback -> restricted: redirect()
+    token -> callback: set token in cookie
+  callback -> restricted: redirect
   deactivate callback
     activate restricted
     restricted -> User
@@ -59,9 +63,9 @@ User -> google_authorize: submitCredentials()
 @enduml
 ```
 
-To authenticate against an OpenID Connect Identity Provider (OIDC IDP), you have to create two routes
-* **a login route/page**: this route is called by a direct link or following a 401 HTTP Error
-* **a login callback route/page**: this route is called by OIDC IDP after a successfull authentication
+To authenticate against an OpenID Connect Identity Provider (OIDC IDP), you have to create two pages/routes:
+* **login**: this page is displayed following a click on a link or a redirect following a 401 HTTP Error
+* **login callback**: this route is called by the OIDC IDP (i.e: Google) after a successfull authentication
 
 The code is the same for a NextJS App or a Create React App
 
@@ -93,8 +97,10 @@ export default React.memo(() => {
 ```javascript
 // [Optional] the name of the IDP used for the login -- defaults to "default"
 idpName: string
+
 // [Optional] options object -- defaults to {}
 options: {
+
   // a callback function triggered when an error is thrown -- defaults to notificationService.error
   onError: func
 }
@@ -171,11 +177,11 @@ const settings = {
   idp: {
     google: {
       type: 'oidc_server', 
-      clientId: '1eb5cq6p7d8dm8g4q9jk6qdve5',  // id given by the Google              
-      authorizeEndpoint: 'https://accounts.google.com/o/oauth2/v2/auth',    // URL given by Google. Will be called by the client
-      tokenEndpoint: '/api/oauth2/token',   // URL to your server (will handle the fetch of the token from Google thanks to the authorization code provided by the client)
-      userinfoEndpoint: '/api/oauth2/userinfo', // URL to your server (will get the userinfo from Google thanks to the access_token)
-      logoutEndpoint: '/api/oauth2/logout', // should ideally be a IDP URL. Here Google does not support logout, so it's a URL from the server which will only remove the cookie
+      clientId: '1eb5cq6p7d8dm8g4q9jk6qdve5', // id given by Google              
+      authorizeEndpoint: 'https://accounts.google.com/o/oauth2/v2/auth', // URL given by Google. Will be called by the client
+      tokenEndpoint: '/api/oauth2/token',   // URL of a service exposed by your server that exchanges the authorization code for an access token by calling the Google /token endpoint
+      userinfoEndpoint: '/api/oauth2/userinfo', // URL of a service exposed by your server that returns the details about the logged-in user
+      logoutEndpoint: '/api/oauth2/logout', // should ideally be an IDP URL. Unfortunately Google does not support logout, so it's a URL from the server which only removes the cookie
       scope: 'openid email profile', // ask to Google the profile and the email of the user
     }
   }
