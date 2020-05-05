@@ -46,8 +46,9 @@ My-App
 
 ```javascript
 My-App
-│  ├─ index.js // The bootstrap of the app (entry point)
-│  └─ settings.js  // This file that centralizes all the configurations
+│  ├─ src
+│  │  ├─ index.js // The bootstrap of the app (entry point)
+│  │  └─ settings.js  // This file that centralizes all the configurations
 │
 ├─ .gitignore
 ├─ package.json
@@ -57,16 +58,16 @@ My-App
 </TabItem>
 </Tabs>
 
-The content of **settings.js** is available across the application via the hook [useSettings](../configuration/use-settings).
+The content of **settings.js** is available across the application via the hook [useSettings](../configuration/use-settings) and also automatically injected in all **reducers** and **saga**
 
-Some component of the framework uses the content ***settings.js*** to configure themself. For example, the notification service is configured like this:
+Some components of the framework use the content of ***settings.js*** to configure themself. For example, the notification service is configured like this:
 
 ```javascript
 // content of settings.js
 export default {
   notification: {
     default: {
-      ttl: 1000, // the number of seconds the notification is visible
+      ttl: 1000, // the number of milliseconds the notification is visible
       max: 5
     },
     error: {

@@ -16,7 +16,7 @@ To avoid inserting unexpected environment variables in the final bundle, the nam
 | Create React App | **REACT\_APP_** | REACT_APP_API_URL=https://api.oneki.net
 | Next.js APP      | **NEXT_** | NEXT_API_URL=https://api.oneki.net
 
-The environment variables can be defined in on of these files:
+The environment variables can be defined in one of these files:
 
 ```java
 My-App
@@ -37,7 +37,7 @@ My-App
 | .env.development | Environment variables specific to the development environment. The development environment is the one started with **yarn dev** or **next** |
 | .env.development.local | same as ***.env.development*** but this file **should not** be committed on GIT.<br/>Therefore this file can contain more sensitive data<br/><br/>**Note**: This file is generally not used with **create react app** as it should only contain data that will not be bundled in a file loaded by the browser |
 | .env.production | Environment variables specific to a production environment. A production environment is any environment built with ** yarn build**. This file is generally not committed on GIT but created by a CI when building the app (so the file is different between staging and production) |
-| .env.development.local | same as ***.env.production*** but this file **should not** be committed on GIT.<br/>Therefore this file can contain more sensitive data<br/><br/>**Note**: This file is generally not used with **create react app** as it should only contain data that will not be bundled in a file loaded by the browser |
+| .env.production.local | same as ***.env.production*** but this file **should not** be committed on GIT.<br/>Therefore this file can contain more sensitive data<br/><br/>**Note**: This file is generally not used with **create react app** as it should only contain data that will not be bundled in a file loaded by the browser |
 
 These files should only contain environment variables. <br/>The whole configuration should be stored in ***settings.js*** and environment variables **must** be referenced using **process.env.**<env_variable>
 
