@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 const settings = useSettings();
 const setting = useSetting(key);
 ```
-***useSettings*** returns the whole object that is passed as a prop to ***App*** (generally defined in settings.js)<br/>
+***useSettings*** returns the whole object that is passed as a prop to the ***Application*** (generally defined in settings.js)<br/>
 ***useSetting*** returns a specific entry from Settings idenfified by **key**
 
 > ***Note***: The settings object is frozen and can't be updated.
@@ -21,7 +21,7 @@ useSettings has no input.
 
 #### Outputs
 ```javascript
-// the settings passed to <App /> via the "settings" props.
+// the settings passed to <App /> or <NextApp /> via the "settings" props.
 // We recommand to define this object in the file settings.js
 settings: object
 ```
