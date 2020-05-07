@@ -3,6 +3,7 @@ id: getting-started
 title: Getting started
 sidebar_label: Getting started
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -13,8 +14,13 @@ import TabItem from '@theme/TabItem';
 * [Redux Saga](https://redux-saga.js.org/) 
 * [Immer](https://immerjs.github.io/immer/docs/introduction) 
 
-The goal of **Oneki.js** is to propose a framework on top of these librairies that hides most of the complexity.
-Therefore, the developer can build more quickly powerful webapps respecting the best practices.
+<img alt="Onekijs architecture" src={useBaseUrl('img/onekijs-Application.svg')} />;
+
+<br/><br/>
+
+The goal of **Oneki.js** is to propose a framework on top of these librairies that hides most of their complexities.<br/>
+Therefore, the developer can build more quickly powerful webapps respecting the best practices (e.g: immutability)<br/><br/>
+It is **strongly advised** to have a good knowledge of these libraries to use Oneki.js correctly
 
 > ***Note***: the documentation often contains two tabs: 
 - one for apps built on top of Next.js
@@ -87,15 +93,14 @@ to start a livereload webserver. <br/>
 The website is available on http://localhost:3000<br/>
 Any modification done on the source code will refresh the page to take into account the change.
 
-Please note that the ***NextApp*** component configures automatically a ***Redux store***<br/>
-if you want to provide your own redux store, you can pass it as a prop to ***App***
-
 ### Build
 To build the application, enter:
 ```
 yarn build
 ```
-The result of the build is available in the folder **.next**. Check the documentation of Next.js for more information concerning the build / deploy possiblities
+The result of the build is available in the folder **.next**. 
+
+Check the documentation of [Next.js](https://nextjs.org/) for more information concerning the build / deploy possiblities
 
 </TabItem>
 <TabItem value="cra">
