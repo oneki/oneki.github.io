@@ -35,10 +35,10 @@ User -> restricted: navigate
     login -> login: read settings
     login -> google_authorize: redirect
       activate google_authorize
-      google_authorize -> google_authorize: display form
-    return
-  return
-return
+    deactivate login
+    deactivate restricted
+    google_authorize -> User: display form
+    deactivate google_authorize
 
 User -> google_authorize: submit credentials
   activate google_authorize
