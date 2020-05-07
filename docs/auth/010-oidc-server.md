@@ -65,9 +65,11 @@ User -> google_authorize: submit credentials
 @enduml
 ```
 
-To authenticate against an OpenID Connect Identity Provider (OIDC IDP), you have to create two pages/routes:
+To authenticate against an OpenID Connect Identity Provider (OIDC IDP), you have to create four pages/routes:
 * **login**: this page is displayed following a click on a link or a redirect following a 401 HTTP Error
 * **login callback**: this route is called by the OIDC IDP (i.e: Google) after a successfull authentication
+* **logout**: this page is displayed following a click on a logout link or if there is no activity for x minutes (configurable via settings)
+* **logout callback**: this route is called by the OIDC IDP after a successfull logout
 
 The code is the same for a NextJS App or a Create React App
 
@@ -76,6 +78,8 @@ The code is the same for a NextJS App or a Create React App
   values={[
     { label: 'Login', value: 'login', },      
     { label: 'Login Callback', value: 'loginCallback', },
+    { label: 'Logout', value: 'logout', },
+    { label: 'Logout Callback', value: 'logoutCallback', },
   ]
 }>
 <TabItem value="login">
@@ -123,10 +127,141 @@ state: {
 }
 ```
 
+</TabItem>
+<TabItem value="loginCallback">
+
+```javascript
+import React from "react";
+import { useLoginCallbackService } from "onekijs";
+
+export default React.memo(() => {
+  const idpName = 'google';
+  const options = {};
+  const [state] = useLoginCallbackService(idpName,options);
+  return null;
+}
+```
+
 <br/><br/>
 
+## Parameters
+#### Inputs
+```javascript
+// [Optional] the name of the IDP used for the login -- defaults to "default"
+idpName: string
+
+// [Optional] options object -- defaults to {}
+options: {
+  // a callback function triggered when an the login is successfull -- The default redirects the user from the calling page
+  onSuccess: func
+  // a callback function triggered when an error is thrown -- defaults to notificationService.error
+  onError: func
+}
+```
+#### Outputs
+```javascript
+state: {
+  // a boolean that is true when a AJAX request is pending
+  loading: boolean,
+
+  // In case of a failure, errorMessage contains a description of the failure
+  errorMessage: string,
+
+  // doNotRender is flag to indicate if a form should be rendered or not
+  // i.e: in case of an external identify provider, a redirect is done in the useEffect 
+  // and there is no need to render something
+  doNotRender: boolean
+}
+```
+
+</TabItem>
+<TabItem value="logout">
+
+```javascript
+import React from "react";
+import { useLogoutService } from "onekijs";
+
+export default React.memo(() => {
+  const options = {};
+  const [state] = useLogoutService(options);
+  return null;
+}
+```
+
+<br/><br/>
+
+## Parameters
+#### Inputs
+```javascript
+// [Optional] options object -- defaults to {}
+options: {
+  // a callback function triggered when an error is thrown -- defaults to notificationService.error
+  onError: func
+}
+```
+#### Outputs
+```javascript
+state: {
+  // a boolean that is true when a AJAX request is pending
+  loading: boolean,
+
+  // In case of a failure, errorMessage contains a description of the failure
+  errorMessage: string,
+
+  // doNotRender is flag to indicate if a form should be rendered or not
+  // i.e: in case of an external identify provider, a redirect is done in the useEffect 
+  // and there is no need to render something
+  doNotRender: boolean
+}
+```
+
+</TabItem>
+<TabItem value="logoutCallback">
+
+```javascript
+import React from "react";
+import { useLoginCallbackService } from "onekijs";
+
+export default React.memo(() => {
+  const options = {};
+  const [state] = useLogoutCallbackService(options);
+  return null;
+}
+```
+
+<br/><br/>
+
+## Parameters
+#### Inputs
+```javascript
+// [Optional] options object -- defaults to {}
+options: {
+  // a callback function triggered when an the logout is successfull -- The default redirects the user to the home page
+  onSuccess: func
+  // a callback function triggered when an error is thrown -- defaults to notificationService.error
+  onError: func
+}
+```
+#### Outputs
+```javascript
+state: {
+  // a boolean that is true when a AJAX request is pending
+  loading: boolean,
+
+  // In case of a failure, errorMessage contains a description of the failure
+  errorMessage: string,
+
+  // doNotRender is flag to indicate if a form should be rendered or not
+  // i.e: in case of an external identify provider, a redirect is done in the useEffect 
+  // and there is no need to render something
+  doNotRender: boolean
+}
+```
+</TabItem>
+</Tabs>
+
 ## Configuration
-***useLoginService*** is fully configured in settings.js<br/>
+***useLoginService***, ***useLoginCallbackService***, ***useLogoutService***, ***useLogoutCallbackService*** are fully configured in settings.js<br/>
 The configuration **must** be defined under the key "**idp/:idpName**". For example, if **idpName**=_google_, the config must look like this:
 ```javascript
 const settings = {
@@ -145,12 +280,12 @@ const settings = {
 
 | Key           |      Type     | Description |
 | ------------- | ------------- | ------------|
-| **authorizeEndpoint** | string \|<br/>function(idp,context) | The _authorization endpoint_*_ identified by:<ul><li>a string (relative or absolute URL)</li><li>or a function returning the URL</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
+| **authorizeEndpoint** | string \|<br/>function(idp,context) | Can be<ul><li>a string (relative or absolute URL)</li><li>or a function returning the URL</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
 | **clientId** | string | the _client_id_ created on the IDP (identity provider) |
 | **logoutEndpoint** | string \|<br/>function(idp,context) | Can be<ul><li>A relative or absolute URL</li><li>A function returning the URL</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
 | **tokenEndpoint** | string \|<br/>function(grant_type, idp, context) | Can be<ul><li>a relative or absolute URL</li><li>A function that does an AJAX POST request to the token endpoint and returns a object of type "Token"</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
 | **type** | string | must be "**oidc_server**" |
-| **userinfoEndpoint** | string \|<br/> function (idp, context) | Can be:<ul><li>A relative or absolute URL</li><li>A string with the following format:<br/>*token://<token_prop>* where <token_prop> is one of: id_token, access_token</li><li>A function that returns an object that represents the userInfo. For example a object like this: {email: 'foo@example.com', roles: ['ADMIN']}}</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
+| **userinfoEndpoint** | string \|<br/> function (idp, context) | Can be:<ul><li>A relative or absolute URL</li><li>A function that returns an object that represents the userInfo. For example a object like this: {email: 'foo@example.com', roles: ['ADMIN']}}</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
 
 <br/><br/>
 
@@ -189,19 +324,3 @@ const settings = {
   }
 }
 ```
-
-</TabItem>
-<TabItem value="loginCallback">
-
-```javascript
-import React from "react";
-import { useLoginCallbackService } from "onekijs";
-
-export default React.memo(() => {
-  const options = {};
-  const [state] = useLoginCallbackService(options);
-  return null;
-}
-```
-</TabItem>
-</Tabs>

@@ -13,7 +13,7 @@ module.exports = {
       "overview/file-structure"
     ],
     Configuration: [
-      "configuration/settings",
+      "configuration/introduction",
       "configuration/use-settings",
       "configuration/multi-env",
     ],
