@@ -34,6 +34,7 @@ module.exports = {
       "auth/oidc-server"
     ],
     I18n: [
+      "i18n/introduction"
     ],
     Advanced: [
       "hooks/use-local-service"
