@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 > **Oneki.js** supports the Open ID Connect (OIDC) authorization code flow where the authorization code is exchanged for an access token via a server. This is the most common and secure way to retrieve the access token 
 
-In ***settings.js***, when the type is **"oidc_server"**, ***Oneki.js*** implements the following scenario:
+In ***settings.js***, when the "idp type" is **"oidc_server"**, ***Oneki.js*** implements the following scenario:
 
 ```plantuml
 @startuml
@@ -23,9 +23,8 @@ end box
 box "IDP (Google)"
     participant "/authorize" as google_authorize
     participant "/token" as google_token
-    participant "/userinfo" as google_userinfo
 end box
-box "App backend"
+box "App (backend)"
     participant "/oauth2/token" as token
     participant "/userinfo" as userinfo
 end box
@@ -36,10 +35,10 @@ User -> restricted: navigate
     login -> login: read settings
     login -> google_authorize: redirect
       activate google_authorize
-      google_authorize -> google_authorize: display form
-    return
-  return
-return
+    deactivate login
+    deactivate restricted
+    google_authorize -> User: display form
+    deactivate google_authorize
 
 User -> google_authorize: submit credentials
   activate google_authorize
@@ -51,7 +50,10 @@ User -> google_authorize: submit credentials
       token -> google_token: exchange code
         activate google_token
       return
-    token -> callback: set token in cookie
+    return: set token in cookie
+    callback -> userinfo: get user details
+      activate userinfo
+    return
   callback -> restricted: redirect
   deactivate callback
     activate restricted
