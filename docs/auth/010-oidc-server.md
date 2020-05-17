@@ -91,7 +91,10 @@ import { useLoginService } from "onekijs";
 export default React.memo(() => {
   const idpName = 'google';
   const options = {};
-  const [state] = useLoginService(idpName, options);
+  const [error] = useLoginService(idpName, options);
+  if (error) {
+    return <div>{error.payload.message} <span onClick={() => error.remove()}>X</span></div>
+  }
   return null;
 }
 ```
@@ -107,23 +110,23 @@ idpName: string
 // [Optional] options object -- defaults to {}
 options: {
 
-  // a callback function triggered when an error is thrown -- defaults to notificationService.error
+  // a callback function triggered when an error is thrown -- defaults to send error on topic "login-error"
   onError: func
 }
 ```
 #### Outputs
 ```javascript
-state: {
-  // a boolean that is true when a AJAX request is pending
-  loading: boolean,
+error: {
+  payload: {
+    // description of the error
+    message: string,
 
-  // In case of a failure, errorMessage contains a description of the failure
-  errorMessage: string,
-
-  // doNotRender is flag to indicate if a form should be rendered or not
-  // i.e: in case of an external identify provider, a redirect is done in the useEffect 
-  // and there is no need to render something
-  doNotRender: boolean
+    // code of the error
+    code: string,
+  }
+  
+  // remove the error
+  remove: func
 }
 ```
 
@@ -137,7 +140,10 @@ import { useLoginCallbackService } from "onekijs";
 export default React.memo(() => {
   const idpName = 'google';
   const options = {};
-  const [state] = useLoginCallbackService(idpName,options);
+  const [error] = useLoginCallbackService(idpName,options);
+  if (error) {
+    return <div>{error.payload.message} <span onClick={() => error.remove()}>X</span></div>
+  }
   return null;
 }
 ```
@@ -154,23 +160,23 @@ idpName: string
 options: {
   // a callback function triggered when an the login is successfull -- The default redirects the user from the calling page
   onSuccess: func
-  // a callback function triggered when an error is thrown -- defaults to notificationService.error
+  // a callback function triggered when an error is thrown -- defaults to send error on topic "login-error"
   onError: func
 }
 ```
 #### Outputs
 ```javascript
-state: {
-  // a boolean that is true when a AJAX request is pending
-  loading: boolean,
+error: {
+  payload: {
+    // description of the error
+    message: string,
 
-  // In case of a failure, errorMessage contains a description of the failure
-  errorMessage: string,
-
-  // doNotRender is flag to indicate if a form should be rendered or not
-  // i.e: in case of an external identify provider, a redirect is done in the useEffect 
-  // and there is no need to render something
-  doNotRender: boolean
+    // code of the error
+    code: string,
+  }
+  
+  // remove the error
+  remove: func
 }
 ```
 
@@ -183,7 +189,10 @@ import { useLogoutService } from "onekijs";
 
 export default React.memo(() => {
   const options = {};
-  const [state] = useLogoutService(options);
+  const [error] = useLogoutService(options);
+  if (error) {
+    return <div>{error.payload.message} <span onClick={() => error.remove()}>X</span></div>
+  }
   return null;
 }
 ```
@@ -195,23 +204,23 @@ export default React.memo(() => {
 ```javascript
 // [Optional] options object -- defaults to {}
 options: {
-  // a callback function triggered when an error is thrown -- defaults to notificationService.error
+  // a callback function triggered when an error is thrown -- defaults to send error on topic "logout-error"
   onError: func
 }
 ```
 #### Outputs
 ```javascript
-state: {
-  // a boolean that is true when a AJAX request is pending
-  loading: boolean,
+error: {
+  payload: {
+    // description of the error
+    message: string,
 
-  // In case of a failure, errorMessage contains a description of the failure
-  errorMessage: string,
-
-  // doNotRender is flag to indicate if a form should be rendered or not
-  // i.e: in case of an external identify provider, a redirect is done in the useEffect 
-  // and there is no need to render something
-  doNotRender: boolean
+    // code of the error
+    code: string,
+  }
+  
+  // remove the error
+  remove: func
 }
 ```
 
@@ -224,7 +233,10 @@ import { useLoginCallbackService } from "onekijs";
 
 export default React.memo(() => {
   const options = {};
-  const [state] = useLogoutCallbackService(options);
+  const [error] = useLogoutCallbackService(options);
+  if (error) {
+    return <div>{error.payload.message} <span onClick={() => error.remove()}>X</span></div>
+  }
   return null;
 }
 ```
@@ -238,23 +250,23 @@ export default React.memo(() => {
 options: {
   // a callback function triggered when an the logout is successfull -- The default redirects the user to the home page
   onSuccess: func
-  // a callback function triggered when an error is thrown -- defaults to notificationService.error
+  // a callback function triggered when an error is thrown -- defaults to send error on topic "logout-error"
   onError: func
 }
 ```
 #### Outputs
 ```javascript
-state: {
-  // a boolean that is true when a AJAX request is pending
-  loading: boolean,
+error: {
+  payload: {
+    // description of the error
+    message: string,
 
-  // In case of a failure, errorMessage contains a description of the failure
-  errorMessage: string,
-
-  // doNotRender is flag to indicate if a form should be rendered or not
-  // i.e: in case of an external identify provider, a redirect is done in the useEffect 
-  // and there is no need to render something
-  doNotRender: boolean
+    // code of the error
+    code: string,
+  }
+  
+  // remove the error
+  remove: func
 }
 ```
 </TabItem>
@@ -280,12 +292,12 @@ const settings = {
 
 | Key           |      Type     | Description |
 | ------------- | ------------- | ------------|
-| **authorizeEndpoint** | string \|<br/>function(idp,context) | Can be<ul><li>a string (relative or absolute URL)</li><li>or a function returning the URL</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
+| **authorizeEndpoint** | string \|<br/>function(context) | Can be<ul><li>a string (relative or absolute URL)</li><li>or a function returning the URL</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
 | **clientId** | string | the _client_id_ created on the IDP (identity provider) |
-| **logoutEndpoint** | string \|<br/>function(idp,context) | Can be<ul><li>A relative or absolute URL</li><li>A function returning the URL</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
-| **tokenEndpoint** | string \|<br/>function(grant_type, idp, context) | Can be<ul><li>a relative or absolute URL</li><li>A function that does an AJAX POST request to the token endpoint and returns a object of type "Token"</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
+| **logoutEndpoint** | string \|<br/>function(context) | Can be<ul><li>A relative or absolute URL</li><li>A function returning the URL</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
+| **tokenEndpoint** | string \|<br/>function(grant_type, context) | Can be<ul><li>a relative or absolute URL</li><li>A function that does an AJAX POST request to the token endpoint and returns a object of type "Token"</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
 | **type** | string | must be "**oidc_server**" |
-| **userinfoEndpoint** | string \|<br/> function (idp, context) | Can be:<ul><li>A relative or absolute URL</li><li>A function that returns an object that represents the userInfo. For example a object like this: {email: 'foo@example.com', roles: ['ADMIN']}}</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
+| **userinfoEndpoint** | string \|<br/> function (context) | Can be:<ul><li>A relative or absolute URL</li><li>A function that returns an object that represents the userInfo. For example a object like this: {email: 'foo@example.com', roles: ['ADMIN']}}</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js |
 
 <br/><br/>
 
@@ -293,10 +305,11 @@ const settings = {
 
 | Key           |      Type     | Description | Default |
 | ------------- | ------------- | ------------| ------- |
-| **callback** | function(response, idp, context): [token,userInfo] | Callback called at the end of the authentication for extracting the token and the userInfo from the response. <br/><br/>**Inputs**<ul><li>response: the response from the authentication server</li><li>idp: the configuration of the IDP used</li><li>context: an object containing the redux store, the router and the settings</li></ul>**Outputs**<ul><li>token: the oauth2 token</li><li>userInfo: the securityContext of the user</li></ul> | null |
+| **callback** | function(response, context): [token,userInfo] | Callback called at the end of the authentication for extracting the token and the userInfo from the response. <br/><br/>**Inputs**<ul><li>response: the response from the authentication server</li><li>context: an object containing the configuration of the IDP used, the redux store, the router, the settings and i18n infos</li></ul>**Outputs**<ul><li>token: the oauth2 token</li><li>userInfo: the securityContext of the user</li></ul> | null |
 | **codeChallengeMethod** | string | Method that was used to derive an authorization code challenge | S256 |
-| **jwksEndpoint** | string \|<br/>function(token, idp, context)  | jwksEndpoint is **mandatory** if _validate_ = true.<br/><br/>Can be<ul><li>A relative or absolute URL</li><li>A function that returns a public key</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js | null |
-| **logoutCallbackRoute** | string | a relative or absolute URL called by the OIDC server after a successfull logout. Should be used to remove the cookie on the server side | null |
+| **jwksEndpoint** | string \|<br/>function(token, context)  | jwksEndpoint is **mandatory** if _validate_ = true.<br/><br/>Can be<ul><li>A relative or absolute URL</li><li>A function that returns a public key</li></ul>if it's a relative URL, it's prefixed by the server.baseUrl from settings.js | null |
+| **loginCallbackRoute** | string | a relative or absolute URL called by the OIDC server after a successfull login. | [loginRoute]/callback |
+| **logoutCallbackRoute** | string | a relative or absolute URL called by the OIDC server after a successfull logout. Should be used to remove the cookie on the server side | [logoutRoute]/callback |
 | **pkce** | boolean | flag to indicate if the PKCE extension is applied. Recommended |true|
 | **nonce** | boolean | flag to indicate if the nonce in the id_token is validated on the client side. Should be done on the server side  | false |
 | **postLoginRedirectKey** | string | When calling the _authorize_ endpoint, _postLoginRedirectKey_ represents the name of the parameter to indicate the redirect URI | redirect_uri |
@@ -318,7 +331,7 @@ const settings = {
       authorizeEndpoint: 'https://accounts.google.com/o/oauth2/v2/auth', // URL given by Google. Will be called by the client
       tokenEndpoint: '/api/oauth2/token',   // URL of a service exposed by your server that exchanges the authorization code for an access token by calling the Google /token endpoint
       userinfoEndpoint: '/api/oauth2/userinfo', // URL of a service exposed by your server that returns the details about the logged-in user
-      logoutEndpoint: '/api/oauth2/logout', // should ideally be an IDP URL. Unfortunately Google does not support logout, so it's a URL from the server which only removes the cookie
+      logoutEndpoint: '/api/oauth2/logout', // URL exposed by your server which call the IDP logout URL and then removes the cookie
       scope: 'openid email profile', // ask to Google the profile and the email of the user
     }
   }
