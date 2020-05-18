@@ -52,36 +52,26 @@ Here is a very simple example of a translation file:
 }
 ```
 
-## I18n
-To make a component available in multiple languages, you can use the hook ***useTranslation*** which has the following signature
+## Hooks
+***Oneki.js*** provides several tools to make a component available in multiple languages
 
+### useTranslation
+This is the main hook that returns a component and a function that are used to translate a content.
 ```javascript
 const [T, t, locale, loading] = useTranslation([namespaces]);
 ```
-
-### Parameters
-#### Inputs
 ```javascript
-// The translations can be split in multiple files to only load what is needed
-// By convention, the namespace "common" contains translations common to any pages
-// and you don't need to specify it
-namespace: [string]
+<div><T>Welcome</T></div> //output <div>Welcome</div> or <div>Bienvenue</div>
+```
+Check the [useTranslation documentation page](useTranslation) for more info
+
+### useLocale
+This hook returns the current selected language
+```javascript
+const locale = useLocale() // -> locale = fr
 ```
 
-#### Outputs
-```javascript
-// A component to translate JSX content
-T: Component,
 
-// A helper function to translate a string
-t: func(text: string),
-
-// the current selected language
-locale: string
-
-// a flag to indicate that the retrieval of translation files is in progress
-loading: boolean
-```
 
 ## Example
 Here is a very basic example of a component available in multiple languages
@@ -106,7 +96,7 @@ const IndexPage = () => {
   const [T, t, locale, loading] = useTranslation();
   const firstname = "Joe";
   return (
-    <div>{t("Welcome")} {firstname} !</div>
+    <div><T>Welcome</T> {firstname} !</div>
   );
 }
 export default withLayout(IndexPage, SiteLayout);
@@ -143,7 +133,7 @@ const IndexPage = (props) => {
   const [T, t, locale, loading] = useTranslation();
   const firstname = "Joe";
   return (
-    <div>{t("Welcome")} {firstname} !</div>
+    <div>><T>Welcome</T> {firstname} !</div>
   );
 }
 
@@ -165,7 +155,7 @@ const I18Component = () => {
   const [T, t, locale, loading] = useTranslation();
   const firstname = "Joe";
   return (
-    <div>{t("Welcome")} {firstname} !</div>
+    <div>><T>Welcome</T> {firstname} !</div>
   );
 }
 ```

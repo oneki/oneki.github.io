@@ -61,24 +61,32 @@ The content of a translation file is a simple key/value JSON file like this
 
 ```json
 {
-  "Welcome": "Welcome"
+  "Welcome": "Bienvenue"
 }
 ```
 
-The key and value can be more complex and look like the content of a JSX component<br/>
+A key can be prefixed to support plurals:
+```json
+{
+  "User": "Utilisateur",
+  "plural::User": "Utilisateurs"
+}
+```
+
+The key and value can be more complex and looks like the content of a JSX component<br/>
 Check TODO for all possibilities
 ```json
 {
   // example of a translation containing a variable
-  "Welcome": "Welcome {{name}} !", 
+  "Welcome": "Bienvenue {{name}} !", 
 
   // Same example as above but when the key is not specified by the developer. The key is therefore equal to the content of the default language
-  "Welcome {{name}} !": "Welcome {{name}}!", 
+  "Welcome {{name}} !": "Bienvenue {{name}}!", 
 
   // translation of a more complex JSX component
-  "user.connected": "User <1>{{name}}</1> is connected", 
+  "user.connected": "Utilisateur <1>{{name}}</1> est connecté", 
 
   // Same example as above but when the key is not specified
-  "User <1>{{name}}</1> is connected": "User <1>{{name}}</1> is connected"
+  "User <1>{{name}}</1> is connected": "Utilisateur <1>{{name}}</1> est connecté"
 }
 ```
