@@ -3,39 +3,68 @@ id: i18nService
 title: useI18nService
 sidebar_label: useI18nService
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Oneki.js provides a service 
-To make a component available in multiple languages, you can use the hook ***useTranslation*** which has the following signature
+Oneki.js provides a service that provide some helper methods related to i18n like switching between locales.
+
+### Hook
+
+The service can be instancied via the hook **useI18nService**
 
 ```javascript
-const [T, t, locale, loading] = useTranslation([namespaces]);
+const i18nService = useI18nService();
 ```
 
-***useTranslation*** loads the translations from the server if there are not yet available locally
+The service exposes these methods:
 
-## Parameters
-### Inputs
+| method                                          | Description            |
+| ----------------------------------------------- | ---------------------- |
+| changeLocale(locale[, context])                 | Switch between locales |
+| fetchTranslations(locale, namespaces[,options]) | load translations      |
+
+### Example
+
 ```javascript
-// The translations can be split in multiple files to only load what is needed
-// By convention, the namespace "common" contains translations common to any pages
-// and you don't need to specify it
-namespace: [string]
-```
+import React from "react";
+import {
+  layout,
+  useI18nService,
+  I18nLink,
+  useSetting,
+  useLocale,
+} from "onekijs";
 
-### Outputs
-```javascript
-// A component to translate JSX content
-T: Component,
-
-// A helper function to translate a string
-t: func(text: string),
-
-// the current selected language
-locale: string
-
-// a flag to indicate that the retrieval of translation files is in progress
-loading: boolean
+const Example = ({ children }) => {
+  const i18nService = useI18nService();
+  const locales = useSetting("i18n.locales");
+  const currentLocale = useLocale();
+  return (
+    <>
+      <div>
+        <h4>
+          Change locale via buttons:
+          <button onClick={() => i18nService.changeLocale("en")}>
+            en
+          </button> | <button onClick={() => i18nService.changeLocale("fr")}>fr</button>
+        </h4>
+        <h4>
+          Change locale via dropdown:
+          <select
+            value={currentLocale}
+            onChange={(e) => i18nService.changeLocale(e.target.value)}
+          >
+            {locales.map((l) => (
+              <option key={l} value={l}>
+                {l}
+              </option>
+            ))}
+          </select>
+        </h4>
+      </div>
+    </>
+  );
+};
 ```

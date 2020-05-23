@@ -52,20 +52,20 @@ My-App
 │  │  │  └─ SiteLayout.test.js  // Unit tests of the component (PascalCase)
 │  │
 │  ├─ pages // folder containing all pages. Pages are the entry points (see nextjs doc)
-│  │  ├─ users // a folder is created for each top route
-│  │  │  ├─ [id] // Dynamic route, see nextjs documentation
-│  │  │  │  ├─ edit.js //edit user page /users/:id/edit
-│  │  │  │  └─ index.js //view user page /users/:id
-│  │  │  ├─ index.js // list all users page /users
-│  │  │  └─ new.js // new user page /users/new
+│  │  ├─ [lang]] // a folder is created for each top route
+│  │  │  ├─ users // a folder is created for each top route
+│  │  │  │  ├─ [id] // Dynamic route, see nextjs documentation
+│  │  │  │  │  ├─ edit.js //edit user page /users/:id/edit
+│  │  │  │  │  └─ index.js //view user page /users/:id
+│  │  │  │  ├─ index.js // list all users page /users
+│  │  │  │  └─ new.js // new user page /users/new
 │  │  ├─ _app.js // the wrapper component common to all pages that bootstraps the App (<NextApp />)
-│  │  └─ index.js // the index page /
+│  │  └─ index.js // the index page /. Redirect to the correct locale
 │  │
 │  ├─ utils // a folder to contain any utility code. You are free to create your own structure
 │  │  ├─ string.js
 │  │  └─ ...
 │  │
-│  ├─ i18n.js // Bootstrap of the i18n library
 │  └─ settings.js // a central file to configure your app
 │
 ├─ .env.development // contain variables specific to the DEV environement
