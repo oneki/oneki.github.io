@@ -52,35 +52,11 @@ Here is a very simple example of a translation file:
 }
 ```
 
-## I18n
+## Hook
 To make a component available in multiple languages, you can use the hook ***useTranslation*** which has the following signature
 
 ```javascript
 const [T, t, locale, loading] = useTranslation([namespaces]);
-```
-
-### Parameters
-#### Inputs
-```javascript
-// The translations can be split in multiple files to only load what is needed
-// By convention, the namespace "common" contains translations common to any pages
-// and you don't need to specify it
-namespace: [string]
-```
-
-#### Outputs
-```javascript
-// A component to translate JSX content
-T: Component,
-
-// A helper function to translate a string
-t: func(text: string),
-
-// the current selected language
-locale: string
-
-// a flag to indicate that the retrieval of translation files is in progress
-loading: boolean
 ```
 
 ## Example
@@ -106,7 +82,7 @@ const IndexPage = () => {
   const [T, t, locale, loading] = useTranslation();
   const firstname = "Joe";
   return (
-    <div>{t("Welcome")} {firstname} !</div>
+    <div><T>Welcome</T> {firstname} !</div>
   );
 }
 export default withLayout(IndexPage, SiteLayout);
@@ -143,7 +119,11 @@ const IndexPage = (props) => {
   const [T, t, locale, loading] = useTranslation();
   const firstname = "Joe";
   return (
-    <div>{t("Welcome")} {firstname} !</div>
+    <>
+      <div><T>Welcome</T> {firstname} !</div>
+      <img src="avatar.jpg" title={t("avatar")} width="100" height="50">
+    <>
+    
   );
 }
 
