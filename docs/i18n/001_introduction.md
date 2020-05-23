@@ -52,8 +52,8 @@ Here is a very simple example of a translation file:
 }
 ```
 
-## Hooks
-***Oneki.js*** provides several tools to make a component available in multiple languages
+## Hook
+To make a component available in multiple languages, you can use the hook ***useTranslation*** which has the following signature
 
 ### useTranslation
 This is the main hook that returns a component and a function that are used to translate a content.
@@ -133,7 +133,11 @@ const IndexPage = (props) => {
   const [T, t, locale, loading] = useTranslation();
   const firstname = "Joe";
   return (
-    <div>><T>Welcome</T> {firstname} !</div>
+    <>
+      <div><T>Welcome</T> {firstname} !</div>
+      <img src="avatar.jpg" title={t("avatar")} width="100" height="50">
+    <>
+    
   );
 }
 

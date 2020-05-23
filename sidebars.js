@@ -36,7 +36,8 @@ module.exports = {
     I18n: [
       "i18n/introduction",
       "i18n/translations",
-      "i18n/useTranslation"
+      "i18n/useTranslation",
+      "i18n/i18nService"
     ],
     Advanced: [
       "hooks/use-local-service"
