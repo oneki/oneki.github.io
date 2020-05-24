@@ -22,14 +22,11 @@ module.exports = {
       "state-management/global-state",
       "state-management/local-state",
     ],
-    Data: [
+    "REST services": [
       "data/use-get",
       "data/use-post",
       "data/use-put",
-      "data/use-delete",
-      "data/use-redux-service",
-      "data/use-redux-selector",      
-      "data/crud-app",
+      "data/use-delete"
     ], 
     Notification: [
       "hooks/use-notification-service",
