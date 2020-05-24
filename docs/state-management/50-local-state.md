@@ -7,6 +7,25 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+If only one component needs to react to specific data, it's not necessary to store the data in a global state. For this kind of data, a local state is enough.<br/>
+For simple use case, it's often enough to use the standard **useState** from React and we recommend that.
+
+For more complexe use cases, **Oneki.js** introduce the concept of **[Local services](./local-state)**. <br/>
+Generally, you will create a **[Local services](./local-state)** when you need either
+- a scenario
+- or an immutable state
+
+
+An example of scenario is the retrieval of data via an AJAX GET request. The scenario consists of the following steps:
+- Update the "loading" variable in the local state to **true**
+- Perform the AJAX GET requests and store the result in the local state
+- Update the "loading" variable in the local state to **false**
+
+You can instanciate a **[Local services](./local-state)** multiple times in several components to reuse the same logic.<br/>
+E.g: the scenario above is exactly what the hook **useGet** is doing and you can reuse it in several components
+
+## Local service
+
 ```javascript
 const [state, service] = useLocalService(serviceDefinition, initialState);
 ```
@@ -21,9 +40,6 @@ The goal of ***useLocalService*** is to create a service local to the component 
 **Oneki.js** has an opinionated approach on how to use these librairies and tries to remove most of the boilerplate, but it's important to understand how it works underneath.
 
 > Check the **advanced** section to have an in depth view of a service.
-
-### Architecture
-<img alt="Service architecture" src={useBaseUrl('img/service_archi.svg')} />;
 
 ### Parameters
 #### Inputs
@@ -49,7 +65,7 @@ Reducer is an object where each entry represents a ***Reducer* method**
 Reducer: {
   method1: function (state,    // the local state
                      payload,  // the payload of the action that was dispatched
-                     context),
+                     context), // context contains {store, router, settings, i18n}
   method2: function (state, 
                      payload,
                      context),
@@ -63,7 +79,7 @@ Saga is an object where each entry represents a ***Saga* method**
 Saga: {
   method3: latest ( // Saga effect. could be: latest | every | leading. Indicate how to handle an action when another action of the same type is still in progress.
               function* (payload, // the payload of the action that was dispatched
-                        context)), 
+                        context)), // context contains {store, router, settings, i18n}
   method4: every (
               function* (payload,
                         context)), 

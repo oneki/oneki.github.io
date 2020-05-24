@@ -7,6 +7,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+If several components react on a same data, it's a good practice to use a global state to store it. The most popular library to handle this kind of state is **Redux**
+
+When the application starts, **Oneki.js** creates automatically a Redux store (or you can provide your own) and introduces the concept of:
+- **[Redux services](./global-state)** to update the global (Redux) state.
+- **[useReduxSelector](./use-redux-selector)** to retrieve data from the global state.
+
+## Redux service
+A redux service is instancied via the hook **useReduxService**:
+
 ```javascript
 const service = useReduxService(serviceDefinition);
 ```
@@ -14,8 +23,8 @@ The goal of ***useReduxService*** is to create a singleton with two kinds of met
 * ***Reducer* methods**: the role of these methods is to update the redux state. These methods are generally very simple.
 * ***Saga* methods**: 
   * These methods are generally asynchronous and more complex. 
-  * A saga method is more like a flow. Each step of the flow can be asynchronous and can trigger a re-render
-  * A saga method never updates the Redux state by itself. It always calls a *Reducer* method to do that.
+  * A saga method is more like a flow or a scenario. Each step of the flow can be asynchronous and can trigger a re-render
+  * A saga method never updates the Redux state by itself. It always calls a ***Reducer*** method to do that.
 
 > A redux service is unique across the application (singleton) and can be reused in multiple components.
 
@@ -47,7 +56,7 @@ Reducer is an object where each entry represents a ***Reducer* method**
 Reducer: {
   method1: function (state,    // the full redux state
                      payload,  // the payload of the action that was dispatched
-                     context),
+                     context), // context contains {store, router, settings, i18n}
   method2: function (state, 
                      payload,
                      context),
@@ -61,7 +70,7 @@ Saga is an object where each entry represents a ***Saga* method**
 Saga: {
   method3: latest ( // Saga effect. could be: latest | every | leading. Indicate how to handle an action when another action of the same type is still in progress.
               function* (payload, // the payload of the action that was dispatched
-                        context)), 
+                        context)), // context contains {store, router, settings, i18n}
   method4: every (
               function* (payload,
                         context)), 
@@ -70,7 +79,7 @@ Saga: {
 ```
 #### Outputs
 ```javascript
-// A singleton service that has all reducer and saga methods defined in the serviceDefinition
+// A singleton service that has all reducers and saga methods defined in the serviceDefinition
 // The signature of these methods is the same whether they are Reducer or Saga.
 service: {
 
