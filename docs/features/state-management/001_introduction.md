@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 - Saga
 - Immer
 
-**Oneki.js** introduces the concept of ***services*** that handle a ***local*** (local service) or ***global*** state (redux service) very easily and following the best practices (immutability, action, reducers, ...).
+**Oneki.js** introduces the concept of ***services*** handling a ***local*** (local service) or ***global*** state (redux service) very easily and following the best practices (immutability, action, reducers, ...).
 
 The developer doesn't need to create actions, reducers, selectors, ... everything is created automatically by the service.
 
@@ -23,15 +23,16 @@ The developer doesn't need to create actions, reducers, selectors, ... everythin
 If several components react on a same data, it's a good practice to use a global state to store it. The most popular library to handle this kind of state is **Redux**
 
 When the application starts, **Oneki.js** creates automatically a Redux store (or you can provide your own) and introduces the concept of:
-- **[Redux services](./global-state)** to update the global (Redux) state.
-- **[useReduxSelector](./use-redux-selector)** to retrieve data from the global state.
+- **[useGlobalService](./global-state)** to handle complex logic updating the global state.
+- **[useGlobalState](./use-redux-selector)** is a generic global service to get and set data from/to the global state using a selector
+- **[useGlobalProp](./use-global-prop)** is a generic global service equivalent to the standard **useState** from React, but for the global state
 
-A **[Redux service](./global-state)** is a singleton and each component uses the same instance.
+A **[Global service](./global-state)** is a singleton and each component uses the same instance.
 
 ### Basic Example
 
 ```javascript
-import { useReduxService, useReduxSelector } from "onekijs";
+import { useGlobalService, useReduxSelector } from "onekijs";
 import React from "react";
 import { myGlobalService } from "./MyGlobalService";
 
@@ -40,7 +41,7 @@ export default () => {
   // inject the global service that has a method "updateFoo" to update
   // the field "foo" of the global state
   // myGlobalService is a singleton shared by several components
-  const service = useReduxService(myGlobalService);
+  const service = useGlobalService(myGlobalService);
 
   // useReduxSelector is a hook that selects a single entry in the Redux state
   const foo = useReduxSelector("foo");

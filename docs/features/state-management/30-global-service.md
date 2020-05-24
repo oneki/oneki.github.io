@@ -9,17 +9,94 @@ import TabItem from '@theme/TabItem';
 
 If several components react on a same data, it's a good practice to use a global state to store it. The most popular library to handle this kind of state is **Redux**
 
-When the application starts, **Oneki.js** creates automatically a Redux store (or you can provide your own) and introduces the concept of:
-- **[Redux services](./global-state)** to update the global (Redux) state.
-- **[useReduxSelector](./use-redux-selector)** to retrieve data from the global state.
+When the application starts, **Oneki.js** creates automatically a Redux store (or you can provide your own) and provides the following hooks to manipulate the global state:
+- **[useGlobalState](./use-redux-selector)**: instantiate a global service provided by **Oneki.js** to get and set data from/to the global state using a selector
+- **[useGlobalProp](./use-global-prop)**: instantiate a global service provided by **Oneki.js** equivalent to the standard **useState** from React, but for the global state
+- **[useGlobalService](./global-state)**: instantiate a custom global service handling complex logic.
 
-## Redux service
-A redux service is instancied via the hook **useReduxService**:
+A **[Global service](./global-state)** is a singleton and each component shares the same instance. It's created only the first time a component instantiates it.
+
+## useGlobalState
+**Oneki.js** provide the hook ***useGlobalState*** to retrieve and set data from/to the global state. Each time the data matching the selector is updated in the global state, the component is re-rendered.
+
+***useGlobalState*** is similar to ***useSelector*** from **React Redux** but is tailored to be used with a Redux Store built by Oneki.js<br/>
+The difference between ***useSelector*** and ***useGlobalState*** are the following:
+
+| useSelector (Redux)         |      useGlobalState (Oneki.js)   |
+| ------------- | ------------- |
+| A equality function can be passed as a second argument | There is no need for a equality function as the Redux state built by Oneki.js is fully immutable |
+| There is no possibility to pass a default value | A default value can be passed as a second argument. This value is returned if the selector returns *undefined* |
+| It doesn't return a function to update the global state | Along with the data returned by the selector, it also returns a function to update an entry in the global state
+
+> Be sure to read the documentation of [Redux](https://redux.js.org/) to understand exactly how it works.
 
 ```javascript
-const service = useReduxService(serviceDefinition);
+const [globalState, setGlobalState] = useGlobalState(selector, defaultValue);
 ```
-The goal of ***useReduxService*** is to create a singleton with two kinds of methods:
+
+
+### Parameters
+#### Inputs
+```javascript
+// [Optional] selector is a function returning a subset of the state
+// default: (state) => state
+selector: function(state): any
+
+// [Optional] This value is returned if the selector returns *undefined*
+defautValue: any 
+```
+#### Outputs
+```javascript
+// A subset of the global state
+globalState: any
+
+// function to update a specific entry in the global state
+setGlobalState: function(key, value)
+```
+
+## useGlobalProp
+**Oneki.js** provide the hook ***useGlobalState*** to retrieve data from the global state. Each time the data is updated in the global state, the component is re-rendered.
+
+***useGlobalState*** is similar to ***useSelector*** from **React Redux** but is tailored to be used with a Redux Store built by Oneki.js<br/>
+The difference between ***useSelector*** and ***useGlobalState*** are the following:
+
+| useSelector (Redux)         |      useGlobalState (Oneki.js)   |
+| ------------- | ------------- |
+| Selector is a function | Selector is a function or a string which represent a key in the Redux state. |
+| A equality function can be passed as a second argument | There is no need for a equality function as the Redux state built by Oneki.js is fully immutable |
+| There is no possibility to pass a default value | A default value can be passed as a second argument. This value is returned if the selector returns *undefined* |
+
+> Be sure to read the documentation of [Redux](https://redux.js.org/) to understand exactly how it works.
+
+```javascript
+const result = useGlobalState(selector, defaultValue);
+```
+
+
+### Parameters
+#### Inputs
+```javascript
+// [Mandatory] selector is a function or a string.
+// If selector is a function, it returns a subset of the state
+// If selector is a string, then the string represents a key in the state
+selector: function(state): any | string
+
+// [Optional] This value is returned if the selector returns *undefined*
+defautValue: any 
+```
+#### Outputs
+```javascript
+// The result is a subset of the Redux state
+result: any
+```
+
+## useGlobalService
+A redux service is instancied via the hook **useGlobalService**:
+
+```javascript
+const service = useGlobalService(serviceDefinition);
+```
+The goal of ***useGlobalService*** is to create a singleton with two kinds of methods:
 * ***Reducer* methods**: the role of these methods is to update the redux state. These methods are generally very simple.
 * ***Saga* methods**: 
   * These methods are generally asynchronous and more complex. 
@@ -90,42 +167,6 @@ service: {
   ...
 
 }
-```
-
-## useReduxSelector
-**Oneki.js** provide the hook ***useReduxSelector*** to retrieve data from the global state. Each time the data is updated in the global state, the component is re-rendered.
-
-***useReduxSelector*** is similar to ***useSelector*** from **React Redux** but is tailored to be used with a Redux Store built by Oneki.js<br/>
-The difference between ***useSelector*** and ***useReduxSelector*** are the following:
-
-| useSelector (Redux)         |      useReduxSelector (Oneki.js)   |
-| ------------- | ------------- |
-| Selector is a function | Selector is a function or a string which represent a key in the Redux state. |
-| A equality function can be passed as a second argument | There is no need for a equality function as the Redux state built by Oneki.js is fully immutable |
-| There is no possibility to pass a default value | A default value can be passed as a second argument. This value is returned if the selector returns *undefined* |
-
-> Be sure to read the documentation of [Redux](https://redux.js.org/) to understand exactly how it works.
-
-```javascript
-const result = useReduxSelector(selector, defaultValue);
-```
-
-
-### Parameters
-#### Inputs
-```javascript
-// [Mandatory] selector is a function or a string.
-// If selector is a function, it returns a subset of the state
-// If selector is a string, then the string represents a key in the state
-selector: function(state): any | string
-
-// [Optional] This value is returned if the selector returns *undefined*
-defautValue: any 
-```
-#### Outputs
-```javascript
-// The result is a subset of the Redux state
-result: any
 ```
 
 ## Examples

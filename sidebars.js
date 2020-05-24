@@ -10,29 +10,48 @@ module.exports = {
     "Overview": [
       "overview/getting-started",
       "overview/app",
-      "overview/file-structure"
     ],
-    Configuration: [
-      "configuration/introduction",
-      "configuration/use-settings",
-      "configuration/multi-env",
-    ],
-    "State Management": [
-      "state-management/introduction",
-      "state-management/global-service",
-      "state-management/local-service",
-    ],
-    Authentication: [
-      "auth/oidc-server"
-    ],
-    I18n: [
-      "i18n/introduction",
-      "i18n/translations",
-      "i18n/useTranslation",
-      "i18n/i18nService",
-      "i18n/serverSideRendering"
+    "Features": [
+      "features/introduction",
+      {
+        type: "category",
+        label: "Configuration",
+        items: [
+          "features/configuration/introduction",
+          "features/configuration/use-settings",
+          "features/configuration/multi-env",
+        ]
+      },
+      {
+        type: "category",
+        label: "State Management",
+        items: [
+          "features/state-management/introduction",
+          "features/state-management/global-service",
+          "features/state-management/local-service",
+        ]
+      },
+      {
+        type: "category",
+        label: "Authentication",
+        items: [
+          "features/auth/oidc-server"
+        ]
+      },            
+      {
+        type: "category",
+        label: "I18n",
+        items: [
+          "features/i18n/introduction",
+          "features/i18n/translations",
+          "features/i18n/useTranslation",
+          "features/i18n/i18nService",
+          "features/i18n/serverSideRendering"
+        ]
+      },      
     ],
     "Services": [
+      "services/introduction",
       {
         type: "category",
         label: "Notification",
@@ -51,10 +70,19 @@ module.exports = {
           "services/rest/use-put",
           "services/rest/use-delete"
         ]
-      }
+      },
+      {
+        type: "category",
+        label: "Custom service",
+        items: [
+          "services/custom/introduction",
+          "services/custom/global-service",
+          "services/custom/local-service",
+        ]
+      }      
     ],    
     Advanced: [
-      "hooks/use-local-service"
+      "advanced/file-structure"
     ],         
     Examples: [
       "examples/crud-app",
