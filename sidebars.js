@@ -19,18 +19,8 @@ module.exports = {
     ],
     "State Management": [
       "state-management/introduction",
-      "state-management/global-state",
-      "state-management/local-state",
-    ],
-    "REST services": [
-      "data/use-get",
-      "data/use-post",
-      "data/use-put",
-      "data/use-delete"
-    ], 
-    Notification: [
-      "hooks/use-notification-service",
-      "hooks/use-notifications",
+      "state-management/global-service",
+      "state-management/local-service",
     ],
     Authentication: [
       "auth/oidc-server"
@@ -42,6 +32,27 @@ module.exports = {
       "i18n/i18nService",
       "i18n/serverSideRendering"
     ],
+    "Services": [
+      {
+        type: "category",
+        label: "Notification",
+        items: [
+          "services/notification/introduction",
+          "services/notification/use-notification-service",
+          "services/notification/use-notifications",
+        ]
+      },      
+      {
+        type: "category",
+        label: "REST services",
+        items: [
+          "services/rest/use-get",
+          "services/rest/use-post",
+          "services/rest/use-put",
+          "services/rest/use-delete"
+        ]
+      }
+    ],    
     Advanced: [
       "hooks/use-local-service"
     ],         

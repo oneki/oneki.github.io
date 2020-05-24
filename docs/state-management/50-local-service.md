@@ -1,7 +1,7 @@
 ---
-id: local-state
-title: Local state
-sidebar_label: Local state
+id: local-service
+title: Local service
+sidebar_label: Local service
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';

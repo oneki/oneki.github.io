@@ -1,7 +1,7 @@
 ---
-id: global-state
-title: Global state
-sidebar_label: Global state
+id: global-service
+title: Global service
+sidebar_label: Global service
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
