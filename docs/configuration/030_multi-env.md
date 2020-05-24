@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The file ***settings.js*** is the central place to contain all configuration variables. However, some variables are different by environment (i.e: development, staging, acceptance, production). They are called environment variables.
+The file ***settings.js*** is the central place to contain all configuration variables. However, some variables are different by environment (e.g: development, staging, acceptance, production). They are called environment variables.
 
 To avoid inserting unexpected environment variables in the final bundle, the name of the variables **must be** prefixed like this:
 

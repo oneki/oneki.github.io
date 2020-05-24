@@ -67,7 +67,7 @@ User -> google_authorize: submit credentials
 
 To authenticate against an OpenID Connect Identity Provider (OIDC IDP), you have to create four pages/routes:
 * **login**: this page is displayed following a click on a link or a redirect following a 401 HTTP Error
-* **login callback**: this route is called by the OIDC IDP (i.e: Google) after a successfull authentication
+* **login callback**: this route is called by the OIDC IDP (e.g: Google) after a successfull authentication
 * **logout**: this page is displayed following a click on a logout link or if there is no activity for x minutes (configurable via settings)
 * **logout callback**: this route is called by the OIDC IDP after a successfull logout
 

@@ -41,7 +41,7 @@ state: {
   errorMessage: string,
 
   // doNotRender is flag to indicate if a form should be rendered or not
-  // i.e: in case of an external identify provider, a redirect is done in the useEffect 
+  // e.g: in case of an external identify provider, a redirect is done in the useEffect 
   // and there is no need to render something
   doNotRender: boolean
 }

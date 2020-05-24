@@ -19,7 +19,7 @@ The separation of translations into multiple files provide the following benefit
 
 ### Common namespace
 By convention, the default namespace is named **common** and is automatically loaded.<br/>
-It's a good practice to put anything common to the whole application in this file (i.e: the text in the navbar). <br/>
+It's a good practice to put anything common to the whole application in this file (e.g: the text in the navbar). <br/>
 For small applications, it's common to put every translations only in this file.
 
 ### Example

@@ -17,6 +17,11 @@ module.exports = {
       "configuration/use-settings",
       "configuration/multi-env",
     ],
+    "State Management": [
+      "state-management/introduction",
+      "state-management/global-state",
+      "state-management/local-state",
+    ],
     Data: [
       "data/use-get",
       "data/use-post",
