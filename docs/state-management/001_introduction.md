@@ -26,7 +26,7 @@ When the application starts, **Oneki.js** creates automatically a Redux store (o
 - **[Redux services](./global-state)** to update the global (Redux) state.
 - **[useReduxSelector](./use-redux-selector)** to retrieve data from the global state.
 
-A **Redux service** is a singleton and each component uses the same instance.
+A **[Redux service](./global-state)** is a singleton and each component uses the same instance.
 
 ### Basic Example
 
@@ -54,6 +54,21 @@ export default () => {
 };
 ```
 
+The **myGlobalService** looks like this:
+
+```javascript
+export default const myGlobalService = {
+  name: "myGlobalService",
+  reducers: {
+    updateFoo: function(state, fooValue) {
+      // state is the full global state
+      // Immer is used under the hood to handle correctly immutability
+      state.foo = fooValue;
+    }
+  }
+};
+```
+
 ## Local state
 If only one component needs to react to specific data, it's not necessary to store the data in a global state. For this kind of data, a local state is enough.<br/>
 For simple use case, it's often enough to use the standard **useState** from React and we recommend that.
@@ -69,3 +84,37 @@ An example of scenario is the retrieval of data via an AJAX GET request. The sce
 You can instanciate a **[Local services](./local-state)** multiple times in several components to reuse the same logic.<br/>
 E.g: the scenario above is exactly what the hook **useGet** is doing and you can reuse it in several components
 
+### Basic Example
+This very basic example is for demonstration only as a simple **useState** would be normally enough.
+```javascript
+import { useLocalService } from "onekijs";
+import React from "react";
+import { myLocalService } from "./MyLocalService";
+
+let uid = 0;
+export default () => {
+  // instanciate a local service
+  const [state, service] = useLocalService(myLocalService);
+
+  return (
+    <div>
+      <button onClick={() => service.updateFoo(`foo-${++uid})`)}>Update</button>
+      {foo && <div>Value in global state: {foo}</div>}
+    </div>
+  );
+};
+```
+
+The **myLocalService** looks like this:
+
+```javascript
+export default const myLocalService = {
+  reducers: {
+    updateFoo: function(state, fooValue) {
+      // state is the local state
+      // Immer is used under the hood to handle correctly immutability
+      state.foo = fooValue;
+    }
+  }
+};
+```
