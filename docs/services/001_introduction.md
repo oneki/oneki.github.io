@@ -20,9 +20,9 @@ The developer doesn't need to create actions, reducers, selectors, ... everythin
 
 | Service          |      Description|
 | ------------- | ------------- |
-| [Notification](use-settings) | Services to centralize notifications in a global state and display them  |
-| [REST](use-settings) | Services to easily interact with a backend service via REST calls  |
+| [Notification](./notification/introduction) | Services to centralize notifications in a global state and display them  |
+| [REST](./rest/use-get) | Services to easily interact with a backend service via REST calls  |
 
 ## Build your own
 
-***Oneki.js*** provides also a library to build your own services. These services can be complex and asynchronous
+***Oneki.js*** provides also a library to build **[your own services](./custom/introduction)**. These services can be complex and asynchronous

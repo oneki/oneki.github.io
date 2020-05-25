@@ -27,13 +27,13 @@ module.exports = {
         label: "State Management",
         items: [
           "features/state-management/introduction",
-          "features/state-management/global-service",
-          "features/state-management/local-service",
+          "features/state-management/global-state",
+          "features/state-management/local-state",
         ]
       },
       {
         type: "category",
-        label: "Authentication",
+        label: "Auth",
         items: [
           "features/auth/oidc-server"
         ]

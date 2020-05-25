@@ -12,61 +12,41 @@ import TabItem from '@theme/TabItem';
 - Saga
 - Immer
 
-**Oneki.js** introduces the concept of ***services*** handling a ***local*** (local service) or ***global*** state (redux service) very easily and following the best practices (immutability, action, reducers, ...).
+**Oneki.js** tries to hide all the complexity and boiler plate code needed to handle correctly a state with these libraries.
 
-The developer doesn't need to create actions, reducers, selectors, ... everything is created automatically by the service.
+**Oneki.js** proposes several hooks to handle easily an immutable ***local*** or  ***global*** state. These states are immutable thanks to [Immer](https://immerjs.github.io/immer/docs/introduction)<br/>
+The global state is managed by [Redux](https://redux.js.org/introduction/getting-started).
 
-## Architecture
-<img alt="Service architecture" src={useBaseUrl('img/onekijs-State Management.svg')} />
+The developer doesn't need to create actions, reducers, selectors, ... everything is created automatically by the framework
 
 ## Global state
 If several components react on a same data, it's a good practice to use a global state to store it. The most popular library to handle this kind of state is **Redux**
 
-When the application starts, **Oneki.js** creates automatically a Redux store (or you can provide your own) and introduces the concept of:
-- **[useGlobalService](./global-state)** to handle complex logic updating the global state.
-- **[useGlobalState](./use-redux-selector)** is a generic global service to get and set data from/to the global state using a selector
-- **[useGlobalProp](./use-global-prop)** is a generic global service equivalent to the standard **useState** from React, but for the global state
+When the application starts, **Oneki.js** creates automatically a Redux store (or you can provide your own) and provides generic hooks to handle it:
+- **[useGlobalProp](./global-state)** is a generic global service equivalent to the standard **useState** from React, but for the global state. It retrieves a specific data from the global state and provide a setter to upate it.
+- **[useGlobalState](./global-state)** to retrieve and react on data from the global state using a selector
+- **[useGlobalStateService](./global-state)** is a generic global service to update any data in the global state
 
-A **[Global service](./global-state)** is a singleton and each component uses the same instance.
+> ***Note***: For advanced use cases involving asynchronous flows, **Oneki.js** provides also a hook to create a **globalService**.<br/>This part is more complex and described in [another section of the documentation](../../services/custom/global-service)
 
 ### Basic Example
 
 ```javascript
-import { useGlobalService, useReduxSelector } from "onekijs";
+import { useGlobalProp } from "onekijs";
 import React from "react";
 import { myGlobalService } from "./MyGlobalService";
 
 let uid = 0;
 export default () => {
-  // inject the global service that has a method "updateFoo" to update
-  // the field "foo" of the global state
-  // myGlobalService is a singleton shared by several components
-  const service = useGlobalService(myGlobalService);
-
-  // useReduxSelector is a hook that selects a single entry in the Redux state
-  const foo = useReduxSelector("foo");
+  // useGlobalProp is a hook that selects a single entry in the Redux state
+  const [foo, setFoo] = useGlobalProp("foo");
 
   return (
     <div>
-      <button onClick={() => service.updateFoo(`foo-${++uid})`)}>Update</button>
+      <button onClick={() => setFoo(`foo-${++uid})`)}>Update</button>
       {foo && <div>Value in global state: {foo}</div>}
     </div>
   );
-};
-```
-
-The **myGlobalService** looks like this:
-
-```javascript
-export default const myGlobalService = {
-  name: "myGlobalService",
-  reducers: {
-    updateFoo: function(state, fooValue) {
-      // state is the full global state
-      // Immer is used under the hood to handle correctly immutability
-      state.foo = fooValue;
-    }
-  }
 };
 ```
 

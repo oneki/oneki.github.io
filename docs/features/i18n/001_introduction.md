@@ -146,7 +146,7 @@ export default withLayout(IndexPage, SiteLayout);
 <br/>
 
 #### Server side rendering
-TODO
+Example not yet available
 
 </TabItem>
 <TabItem value="cra">
