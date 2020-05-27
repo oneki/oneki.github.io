@@ -10,8 +10,8 @@ import TabItem from '@theme/TabItem';
 If only one component needs to react to specific data, it's not necessary to store the data in a global state. For this kind of data, a local state is enough.<br/>
 For simple use case, it's often enough to use the standard **useState** from React and we recommend that.
 
-For more complexe use cases, **Oneki.js** introduce the concept of **[Local services](./local-state)**. <br/>
-Generally, you will create a **[Local services](./local-state)** when you need either
+For more complexe use cases, **Oneki.js** introduce the concept of **Local services]**. <br/>
+Generally, you will create a **Local services** when you need either
 - a scenario
 - or an immutable state
 
@@ -21,7 +21,7 @@ An example of scenario is the retrieval of data via an AJAX GET request. The sce
 - Perform the AJAX GET requests and store the result in the local state
 - Update the "loading" variable in the local state to **false**
 
-You can instanciate a **[Local services](./local-state)** multiple times in several components to reuse the same logic.<br/>
+You can instanciate a **Local services** multiple times in several components to reuse the same logic.<br/>
 E.g: the scenario above is exactly what the hook **useGet** is doing and you can reuse it in several components
 
 ## Local service
@@ -105,7 +105,7 @@ state: object // the local state handled by the service
 
 ## Examples
 ### Minimal example
-This example shows how to send a ajax POST request to a back end server to create a user. Actually, ***[usePost](use-post)*** is based on this approach.<br/>
+This example shows how to send a ajax POST request to a back end server to create a user. Actually, ***[usePost](../rest/use-post)*** is based on this approach.<br/>
 A Saga method is defined to handle correctly the "loading ..." indicator and the asynchronous AJAX request
 
 <Tabs

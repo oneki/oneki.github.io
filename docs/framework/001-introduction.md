@@ -15,3 +15,6 @@ import TabItem from '@theme/TabItem';
 | [State Management](./state-management/introduction)      | A powerful state management library based on Redux, Immer and Saga |
 | [Auth](./auth/oidc-server)      | A complete authentication library that supports Form based authentication, but also implements the Open ID connect standard |
 | [I18n](./i18n/introduction)      | An Internationalization (i18n) library to make an app available in multiple languages. This library works with Create React app and Next.js |
+| [Data](./rest/use-get) | A library to easily interact with a backend service via REST calls  |
+| [Notification](./notification/introduction) | A library to centralize notifications in a global state and display them  |
+| [Service](./service/introduction) | A library to create complex services  |

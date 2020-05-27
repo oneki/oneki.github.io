@@ -11,76 +11,73 @@ module.exports = {
       "overview/getting-started",
       "overview/app",
     ],
-    "Features": [
-      "features/introduction",
+    "Framework": [
+      "framework/introduction",
       {
         type: "category",
         label: "Configuration",
         items: [
-          "features/configuration/introduction",
-          "features/configuration/use-settings",
-          "features/configuration/multi-env",
+          "framework/configuration/introduction",
+          "framework/configuration/use-settings",
+          "framework/configuration/multi-env",
         ]
       },
       {
         type: "category",
         label: "State Management",
         items: [
-          "features/state-management/introduction",
-          "features/state-management/global-state",
-          "features/state-management/local-state",
+          "framework/state-management/introduction",
+          "framework/state-management/global-state",
+          "framework/state-management/local-state",
         ]
       },
       {
         type: "category",
         label: "Auth",
         items: [
-          "features/auth/oidc-server"
+          "framework/auth/oidc-server"
         ]
       },            
       {
         type: "category",
         label: "I18n",
         items: [
-          "features/i18n/introduction",
-          "features/i18n/translations",
-          "features/i18n/useTranslation",
-          "features/i18n/i18nService",
-          "features/i18n/serverSideRendering"
+          "framework/i18n/introduction",
+          "framework/i18n/translations",
+          "framework/i18n/useTranslation",
+          "framework/i18n/i18nService",
+          "framework/i18n/serverSideRendering"
         ]
-      },      
-    ],
-    "Services": [
-      "services/introduction",
+      }, 
+      {
+        type: "category",
+        label: "Data",
+        items: [
+          "framework/rest/use-get",
+          "framework/rest/use-post",
+          "framework/rest/use-put",
+          "framework/rest/use-delete"
+        ]
+      },   
       {
         type: "category",
         label: "Notification",
         items: [
-          "services/notification/introduction",
-          "services/notification/use-notification-service",
-          "services/notification/use-notifications",
-        ]
-      },      
-      {
-        type: "category",
-        label: "REST services",
-        items: [
-          "services/rest/use-get",
-          "services/rest/use-post",
-          "services/rest/use-put",
-          "services/rest/use-delete"
+          "framework/notification/introduction",
+          "framework/notification/use-notification-service",
+          "framework/notification/use-notifications",
         ]
       },
       {
         type: "category",
-        label: "Custom service",
+        label: "Service",
         items: [
-          "services/custom/introduction",
-          "services/custom/global-service",
-          "services/custom/local-service",
+          "framework/service/introduction",
+          "framework/service/global-service",
+          "framework/service/local-service",
         ]
-      }      
-    ],    
+      }              
+    ],   
     Advanced: [
       "advanced/file-structure"
     ],         
