@@ -13,6 +13,7 @@ module.exports = {
     ],
     "Framework": [
       "framework/introduction",
+      "framework/layout/layout",
       {
         type: "category",
         label: "Configuration",
