@@ -36,6 +36,7 @@ module.exports = {
         type: "category",
         label: "Auth",
         items: [
+          "framework/auth/introduction",
           "framework/auth/oidc-server"
         ]
       },            

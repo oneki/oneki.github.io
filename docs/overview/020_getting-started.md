@@ -6,6 +6,7 @@ sidebar_label: Getting started
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import NextSandbox from '@site/src/components/NextSandbox';
 
 **Oneki.js** is a React framework based of the following components: 
 * [React](https://reactjs.org/)
@@ -22,15 +23,19 @@ The goal of **Oneki.js** is to propose a framework on top of these librairies th
 Therefore, the developer can build more quickly powerful webapps respecting the best practices (e.g: immutability)<br/><br/>
 It is **strongly advised** to have a good knowledge of these libraries to use Oneki.js correctly
 
-> ***Note***: the documentation often contains two tabs: 
-- one for apps built on top of Next.js
-- one for apps built on top of create react app
+
 
 ### First app
 To get started, we are going to build a minimal application consisting of a simple website with two pages:
 - A homepage displaying the message "This is the main page".
 - A users page displaying the message "This is the users page".
 - A menu to navigate between these two pages.
+
+:::tip Note
+the documentation often contains two tabs: 
+- one for apps built on top of Next.js
+- one for apps built on top of create react app
+:::
 
 <Tabs
   defaultValue="next"
@@ -57,33 +62,19 @@ and then create the following files:
 | src/pages/index.js | The **/** page |
 | src/pages/users.js | The **/users** page |
 | src/pages/_app.js | A **common wrapper** for all pages. This wrapper creates the Oneki.js Application |
-| src/layout/SiteLayout | A Layout common to several pages. This layout is applied thanks to the HOC **"withLayout"** |
 
-<!-- Copy and Paste Me -->
-<Tabs
-  defaultValue="code"
-  values={[
-    { label: 'Code', value: 'code', },
-    { label: 'Preview', value: 'preview', },
-  ]
-}>
-<TabItem value="code">
-  <iframe
-    src="https://codesandbox.io/embed/github/oneki/onekijs-example/tree/master/next/hello-world?fontsize=14&hidenavigation=1&theme=dark&view=editor"
-    style={{width:'100%', height:'600px', border:0, bordeRadius: '4px', overflow:'hidden'}}
-    title="onekijs-basic-app"
-    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
-</TabItem>
-<TabItem value="preview">
-  <iframe
-    src="https://codesandbox.io/embed/github/oneki/onekijs-example/tree/master/next/hello-world?fontsize=14&hidenavigation=1&theme=dark&view=preview"
-    style={{width:'100%', height:'600px', border:0, bordeRadius: '4px', overflow:'hidden'}}
-    title="onekijs-basic-app"
-    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
-</TabItem>
-</Tabs>
+
+:::note Code Editor
+The code below is hosted on **[Code Sandbox](http://codesandbox.io/)**. <br/>
+Click on the button "Open Sandbox" to view/edit the code with an online IDE.
+:::
+
+<NextSandbox 
+  name="application/simple" 
+  height="600" 
+  modules={['/src/pages/index.js','/src/pages/users.js','/src/pages/_app.js']} 
+/>
+
 
 Via a command line enter:
 ```
