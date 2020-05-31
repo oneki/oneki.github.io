@@ -79,8 +79,8 @@ const context = {
 }
 ```
 
-#### login/logout endpoint
-Login and logout endpoints specify how to interact with the backend.<br/>
+## Endpoint
+Endpoints specify how to interact with the backend.<br/>
 For example, in a Form based authentication, you must indicate the URL used to send the username / password to do the authentication.
 
 You can provide the value in two ways:
@@ -90,7 +90,7 @@ You can provide the value in two ways:
 | String | If a String is provided, this is the URL to call the backend. <br/>If the URL is relative (e.g: ***/api/login***), it's prefixed with the ***server.baseUrl*** from settings.js | /api/login
 | Function | Instead of a String, a function with the format **(context) => URL** can be specified. **Oneki.js** executes it to retrieve the URL<br/><br/>This function can be **async** | (context) => https://oneki.org/api/login
 
-##### Examples
+###### Examples
 
 ```javascript
 export default {
@@ -110,20 +110,21 @@ export default {
 }
 ```
 
-#### userinfo endpoint
+### userinfo endpoint
 The userinfo endpoint is used to retrieve the security context of the logged-in user. The security context often contains attributes like name, firstname, email, roles, ...
 
-The userinfo endpoint is used to retrieve the security context of the logged user. The security context often contains attributes like name, firstname, email, roles, ...
 
-You can provide the value in three ways:
+
+The userinfo endpoint is a little bit different because one can provide the value in three ways:
 
 | Way | Description | Example
 | --- | ----------- | -------
 | String (URL) | a URL String. <br/>If the URL is relative (e.g: ***/api/userinfo***), it's prefixed with the ***server.baseUrl*** from settings.js | /api/userinfo
 | Function | Instead of a String, a function with the format **(context) => URL** can be specified. **Oneki.js** executes it to retrieve the URL<br/><br/>This function can be **async** | (context) => https://oneki.org/api/userinfo
-| String (token...) | A string starting with ***token***.<br/>**Oneki.js** extracts the JWT token from the response and uses it as the security context.<br/>Must be one of these values:<ul><li>**token://id_token**</li><li>**token://access_token**</li><li>**token**</li></ul>[see token extraction](#token-extraction) | token://id_token
+| String (token...) | A string starting with ***token***.<br/>**Oneki.js** extracts the JWT token from the global state and uses it as the security context.<br/>The global state is populated with the token during the authentication<br/><br/>Must be one of these values:<ul><li>**token://id_token**</li><li>**token://access_token**</li><li>**token**</li></ul>[see token extraction](#token-extraction) | token://id_token
 
-When the value starts with **token**, the response from **userinfoEndpoint** must be a JSON string like this one
+##### Token
+When the value starts with **token**, it means that the backend doesn't expose a userinfo endpoint, but the security context can be retrieved from a token existing in the global state (under the key **auth.token**) with the following format:
 
 ```json
 {
@@ -132,6 +133,8 @@ When the value starts with **token**, the response from **userinfoEndpoint** mus
   ...
 }
 ```
+The token is stored in the global state via a **[callback function](#callback)**
+
 ##### Token extraction
 
 if the value is 
@@ -139,73 +142,30 @@ if the value is
 - **token://access_token**, then the token JWT_ACCESS_TOKEN_IN_BASE64 is parsed and the claims become the security context.
 - **token**, then the whole response becomes the security context (there is no parsing)
 
-
-## Configuration parameters
-
-### Form based authentication
-The configuration parameters are the following:
-
-#### Mandatory attributes
-
-| Key           |      Type     | Description |
-| ------------- | ------------- | ------------|
-| **type** | string | must be "**form**" |
-| **loginEndpoint** | string \|<br/>function(context) | Can be<ul><li>A relative or absolute URL</li><li>A function returning the URL</li></ul> |
-| **logoutEndpoint** | string \|<br/>function(context) | Can be<ul><li>A relative or absolute URL</li><li>A function returning the URL</li></ul>|
-| **userinfoEndpoint** | string \|<br/> function (context) | Can be:<ul><li>A relative or absolute URL</li><li>A function that returns an object representing the userInfo. <br/>For example a object like this: {email: 'foo@example.com', roles: ['ADMIN']}}</li></ul> |
-
-#### Optional attributes
-
-| Key           |      Type     | Default | Description |
-| ------------- | ------------- | --------| ----------- |
-| **loginMethod** | string | POST | if **loginEndpoint** is an URL, the method used to send username and password to the server |
-| **loginContentType** | string | application/json | can be<ul><li>application/x-www-form-urlencoded</li><li>application/json</li></ul> |
-| **usernameKey** | string | username | the field expected by the server for the username |
-| **passwordKey** | string | password | the field expected by the server for the password |
-| **rememberMeKey** | string | rememberMe | the field expected by the server for the rememberMe feature |
-| **logoutMethod** | string | GET | if **logoutEndpoint** is an URL, the method used to call the logout URL|
-| **callback** | function(response, context): [token,securityContext] | null | a callback function to parse the result of the authentication.<br/>The fonction returns optionally a token and/or a securityContext  (if not set, it's assumed that the session is done via a cookie and the security context is retrieved via the **userinfoEndpoint** defined above) |
-
-#### Example
+###### Example
 ```javascript
-export default {
-  idp: {
-    default: {
-      // MANDATORY parameters
-      type: 'form',
-      loginEndpoint: '/api/login',
-      logoutEndpoint: '/api/logout',
-      userinfoEndpoint: '/api/whoami',
-
-      // OPTIONAL parameters
-      loginMethod: 'POST',
-      loginContentType: 'application/json',
-      usernameKey: 'username',
-      passwordKey: 'password',
-      rememberMeKey: 'rememberMe',
-      logoutMethod: 'GET',
-      callback: (result, context) => [null, result]  
-    }
-  }
-}
+userinfoEndpoint: '/api/whoami'
+// or
+userInfoEndpoint: (context) => '/api/whoami'
+// or
+userInfoEndpoint: 'token://id_token' //will not call the backend, but expects that the token is in the global state
 ```
 
-### External authentication
-The configuration parameters are the following:
+## Callback
+Via **settings.js** you can specific a callback executed at the end of the authentication process<br/>
 
-#### Mandatory attributes
+```javascript
+callback: (result, context) => [token, securityContext]
+```
 
-| Key           |      Type     | Description |
-| ------------- | ------------- | ------------|
-| **type** | string | must be "**external**" |
-| **loginEndpoint** | string \|<br/>function(context) | Can be<ul><li>A relative or absolute URL</li><li>A function returning the URL</li></ul>A redirect is done to this URL |
-| **logoutEndpoint** | string \|<br/>function(context) | Can be<ul><li>A relative or absolute URL</li><li>A function returning the URL</li></ul>|
-| **userinfoEndpoint** | string \|<br/> function (context) | Can be:<ul><li>A relative or absolute URL</li><li>A function that returns an object representing the userInfo. <br/>For example a object like this: {email: 'foo@example.com', roles: ['ADMIN']}}</li></ul> |
+The callback receives the **[context](#context)** but also a **result** object. The **result** object is specific to the type of authentication<br/>
+***Example***: For a Form based authentication, the **result** object is the response from the backend
 
-#### Optional attributes
-
-| Key           |      Type     | Default | Description |
-| ------------- | ------------- | --------| ----------- |
-| **loginMethod** | string | POST | if **loginEndpoint** is an URL, the method used to send username and password to the server |
-| **loginContentType** | string | application/json | can be<ul><li>application/x-www-form-urlencoded</li><li>application/json</li></ul> |
- 
+The callback returns optionally a token and/or a securityContext:
+- The **token** must have a specific format **[described here](#token)**. **Oneki.js** stores the token in one of the following location (based on the configuration attribute **persist**):
+  - **no storage** (if persist = null)
+  - **global state** with the key **auth.token** (if persist = "memory")
+  - **cookie** (if persist = "cookie")
+  - **sessionStorage** (if persist = "sessionStorage")
+  - **localStorage** (if persist = "localStorage")
+- The **securityContext** is stored in the global state with the key **auth.securityContext**

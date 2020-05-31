@@ -70,6 +70,51 @@ endif
 
 In the schema above, *the logic specific to the type of authentication* is entirely based on configuration variables found in **[settings.js](#Configuration)**
 
+**Example**: Here is the logic specific to a **[form based authentication](./authentication-type/form-based)**
+
+```plantuml
+@startuml
+!includeurl https://brunofranki.github.io/static/asciidoc-plantuml-skin.iuml
+actor User
+box "App (Browser)"
+    participant "/restricted" as restricted
+    participant "/login" as login
+end box
+box "App (backend)"
+    participant "/api/auth" as auth
+    participant "/api/whoami" as whoami
+end box
+User -> restricted: navigate
+  activate restricted
+  restricted -> login: redirect
+    deactivate restricted
+    activate login
+    login -> login: read settings
+    login -> login: save original route (/restricted)
+    login -> User: display form
+    deactivate login
+User -> login: Submit credentials
+  activate login
+  login -> auth: POST username/password
+    activate auth
+    auth -> auth: validate credentials
+  return set cookie (if success)
+alt auth failed
+  login -> User: display ErrorComponent
+else auth successful
+  login -> restricted: redirect to /restricted
+    deactivate login
+    activate restricted
+    restricted -> whoami: GET securityContext
+      activate whoami
+    return
+    restricted -> User: display page
+    deactivate restricted
+  end
+
+@enduml
+```
+
 ## Configuration
 As usual, the configuration is done via **[settings.js](../configuration/introduction)**
 
@@ -80,7 +125,7 @@ export default {
   idp: {
     default: {
       type: 'form',
-      loginEndpoint: '/api/login',
+      loginEndpoint: '/api/auth',
       logoutEndpoint: '/api/logout',
       userinfoEndpoint: '/api/whoami',
     },    
