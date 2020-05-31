@@ -277,7 +277,7 @@ error: {
 The configuration **must** be defined under the key "**idp/:idpName**". For example, if **idpName**=_google_, the config must look like this:
 ```javascript
 const settings = {
-  id: {
+  idp: {
     google: {
       type: "oidc_server",
       ...

@@ -62,13 +62,35 @@ stop
 @enduml
 ```
 
+In the schema above, *the logic specific to the type of authentication* is entirely based on configuration variables found in **[settings.js](#Configuration)**
+
+## Configuration
+As usual, the configuration is done via **[settings.js](../configuration/introduction)**
+
+Here is a example of Form based authentication configuration:
+
+```javascript
+export default {
+  idp: {
+    default: {
+      type: 'form',
+      loginEndpoint: '/api/login',
+      logoutEndpoint: '/api/logout',
+      userinfoEndpoint: '/api/whoami',
+    },    
+  }
+}
+```
+
+For more info, check this page (TODO)
+
 ## Secure page / component
 **Oneki.js** provides an ***[HOC](https://reactjs.org/docs/higher-order-components.html)*** to secure a component:
 
 ```javascript
 const SecureComponent = secure(Component, validator, options);
 ```
-If the user is not yet logged, this HOC redirects him to the login page<br/>
+If the user is not yet logged in, this HOC redirects him to the login page<br/>
 If the logged user doesn't have the right to display the page, it displays an error
 
 ##### Examples
@@ -78,14 +100,13 @@ const SecuredPage = secure(Page);
 
 // verify that the user is logged in and has the role ADMIN
 const SecuredPage2 = secure(Page2, (securityContext) => {
-  
   return securityContext && 
          securityContext.roles &&
          securityContext.roles.includes('ADMIN'));
 }
 ```
 
-For more info, check this page (TODO)
+Secure HOC is described in detail on **[this page](./secure-hoc)**
 
 ## Security context
 The security context is stored in the global Redux state under the key **auth.securityContext** and accessible anywhere with the hook ***useSecurityContext***
@@ -119,31 +140,11 @@ For more info, check this page (TODO)
 | logout | Service that handle the logout request
 | logout callback | When the logout is done by an external party (e.g an OIDC IDP), this service handles the callback
 
-## Configuration
-As usual, the configuration is done via **[settings.js](../configuration/introduction)**
-
-Here is a example of Form based authentication configuration:
-
-```javascript
-export default {
-  idp: {
-    default: {
-      type: 'form',
-      loginEndpoint: '/api/login',
-      logoutEndpoint: '/api/logout',
-      userinfoEndpoint: '/api/whoami',
-    },    
-  }
-}
-```
-
-For more info, check this page (TODO)
-
 ## Example
 
 <NextSandbox 
   name="auth/form" 
   height="600" 
-  modules={['/src/pages/admin.js','/src/pages/login.js','/src/pages/logout.js', 'src/settings.js']} 
+  modules={['/src/pages/profile.js', '/src/pages/admin.js','/src/pages/login.js','/src/pages/logout.js', 'src/settings.js']} 
 />
 

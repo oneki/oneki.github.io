@@ -34,10 +34,18 @@ module.exports = {
       },
       {
         type: "category",
-        label: "Auth",
+        label: "Authentication",
         items: [
           "framework/auth/introduction",
-          "framework/auth/oidc-server"
+          "framework/auth/configuration",
+          "framework/auth/secure-page",
+          {
+            type: "category",
+            label: "Authentication type",
+            items: [
+              "framework/auth/oidc-server"
+            ]
+          }
         ]
       },            
       {
