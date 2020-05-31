@@ -43,7 +43,8 @@ module.exports = {
             type: "category",
             label: "Authentication type",
             items: [
-              "framework/auth/oidc-server"
+              "framework/auth/authentication-type/form-based",
+              "framework/auth/authentication-type/oidc-server"
             ]
           }
         ]

@@ -1,3 +1,0 @@
-@startuml oidc-server-sequence
-Bob -> Alice : hello
-@enduml

@@ -47,16 +47,27 @@ export default {
 Instantiation of the service
 
 ```javascript
+// Login service will use the configuration idp.myId
 useLoginService('myId');
 
-// As no id is indicated below, the id 'default' is used
+// As no id is indicated below, login service will use idp.default
 useLoginService();
 ```
 
 ## String vs Function
-For many attributes, the value can be a **String** or a **Function**. The function can be **async** and receives a ***[context](#context)***
+For many attributes, the value can be a **String** or a **Function**.<br/>
+The function can be **async** and receives a ***[context](#context)***
 
-#### Context
+Example:
+```javascript
+loginEndpoint: '/en/auth'
+// or
+loginEndpoint: (context) => {
+  return `https://example.com/${context.i18n.locale}/auth`
+}
+```
+
+### Context
 The context contains the following attributes:
 
 ```javascript
@@ -69,8 +80,8 @@ const context = {
 }
 ```
 
-#### login/logout endpoint
-Some of the attributes of the configuration are the login and logout endpoints to interact with the backend.<br/>
+### Endpoint
+Some of the attributes of the configuration are the endpoints to interact with the backend.<br/>
 For example, in a Form based authentication, you must indicate the URL used to send the username / password to do the authentication.
 
 You can provide the value in two ways:
@@ -101,19 +112,19 @@ export default {
 ```
 
 #### userinfo endpoint
-The userinfo endpoint is used to retrieve the security context of the logged user. The security context often contains attributes like name, firstname, email, roles, ...
-
 One of the attributes of the configuration is the userinfo endpoint to interact with the backend.
+
+The userinfo endpoint is used to retrieve the security context of the logged user. The security context often contains attributes like name, firstname, email, roles, ...
 
 You can provide the value in three ways:
 
 | Way | Description | Example
 | --- | ----------- | -------
-| String (token://...) | **Oneki.js** extracts the JWT token from the response and uses it as the security context.<br/>Must be one of these values:<ul><li>**token://id_token**</li><li>**token://access_token**</li><li>**token://token**</li></ul>[see token extraction](#token-extraction) | token://id_token
-| String (URL) | If a String is provided, this is the URL to call the backend. <br/>If the URL is relative (e.g: ***/api/userinfo***), it's prefixed with the ***server.baseUrl*** from settings.js | /api/userinfo
+| String (URL) | a URL String. <br/>If the URL is relative (e.g: ***/api/userinfo***), it's prefixed with the ***server.baseUrl*** from settings.js | /api/userinfo
 | Function | Instead of a String, a function with the format **(context) => URL** can be specified. **Oneki.js** executes it to retrieve the URL<br/><br/>This function can be **async** | (context) => https://oneki.org/api/userinfo
+| String (token...) | A string starting with ***token***.<br/>**Oneki.js** extracts the JWT token from the response and uses it as the security context.<br/>Must be one of these values:<ul><li>**token://id_token**</li><li>**token://access_token**</li><li>**token**</li></ul>[see token extraction](#token-extraction) | token://id_token
 
-When the value starts with **token://**, the response from **userinfoEndpoint** should be a JSON string like this one
+When the value starts with **token**, the response from **userinfoEndpoint** must be a JSON string like this one
 
 ```json
 {
@@ -127,7 +138,7 @@ When the value starts with **token://**, the response from **userinfoEndpoint** 
 if the value is 
 - **token://id_token**, then the token JWT_ID_TOKEN_IN_BASE64 is parsed and the claims become the security context.
 - **token://access_token**, then the token JWT_ACCESS_TOKEN_IN_BASE64 is parsed and the claims become the security context.
-- **token://token**, then the whole response becomes the security context (there is no parsing)
+- **token**, then the whole response becomes the security context (there is no parsing)
 
 
 ## Configuration parameters
