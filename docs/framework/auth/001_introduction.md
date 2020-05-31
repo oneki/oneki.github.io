@@ -53,12 +53,18 @@ if (secure page / component?) then (yes)
       end
     endif
   else (not null)
+  endif
+  if (authorized?) then (yes)
     :display page;
+    stop;
+  else (no)
+    :display error;
+    end
   endif
 else (no)
   :display page;
+  stop;
 endif
-stop
 @enduml
 ```
 
