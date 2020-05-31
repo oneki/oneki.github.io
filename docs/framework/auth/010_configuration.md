@@ -10,17 +10,17 @@ import NextSandbox from '@site/src/components/NextSandbox';
 
 The goal of the authentication library is to provide the same service / methods for any kind of authentication. Everything specific to a type of authentication is configured in **[settings.js](../configuration/introduction)**
 
-There are 4 types of configuration which all have their specific format: 
+There are 4 types of authentication, each having their specific configuration format: 
 
 | Use case | Type | Description |
 | -------- | ----- | -----------
 | Form based | form | Authentication via a standard username / password React form | 
 | External authentication | external | Authentication is handled by an external system redirecting to the application once the authenticiation is done |
-| Open ID Connect | oidc_server<br/>oidc_client | Authentication via Open ID Connect authorization code flow.<br/><br/>**oidc_server** means that the exchange of the authorization code for a token is done backend side<br/><br/>**oidc_client** means that everything is done client side (less secure) |
+| Open ID Connect | oidc_server<br/>oidc_client | Authentication via Open ID Connect authorization code flow.<br/><br/>**oidc_server** means that the exchange of the authorization code for a token is done on backend side<br/>**oidc_client** means that everything is done on client side (less secure but doesn't require a server) |
 | Oauth2| oauth2 | Authentication via Oauth2 authorization code flow. |
 
 ## Structure
-The authentication services provided by **Oneki.js** retrieve their configuration from the key ***idp/:idpName*** in **settings.js** where ***idpName*** is an ID that is used when the service is instantied.
+The authentication services provided by **Oneki.js** retrieve their configuration from the key ***idp/:idpName*** in **settings.js** where ***idpName*** is an ID used when the service is instantied.
 
 ##### Examples
 Content of settings.js
@@ -55,8 +55,7 @@ useLoginService();
 ```
 
 ## String vs Function
-For many attributes, the value can be a **String** or a **Function**.<br/>
-The function can be **async** and receives a ***[context](#context)***
+For many attributes, the value can be a **String** or a **Function** (can be **async**) receiving a ***[context](#context)***
 
 Example:
 ```javascript
@@ -72,7 +71,7 @@ The context contains the following attributes:
 
 ```javascript
 const context = {
-  idp // the configuration of the currently used IDP from settings.js
+  idp // the configuration of the active IDP from settings.js
   router
   store // the Redux store
   settings // the full settings.js
@@ -80,8 +79,8 @@ const context = {
 }
 ```
 
-### Endpoint
-Some of the attributes of the configuration are the endpoints to interact with the backend.<br/>
+#### login/logout endpoint
+Login and logout endpoints specify how to interact with the backend.<br/>
 For example, in a Form based authentication, you must indicate the URL used to send the username / password to do the authentication.
 
 You can provide the value in two ways:
@@ -112,7 +111,7 @@ export default {
 ```
 
 #### userinfo endpoint
-One of the attributes of the configuration is the userinfo endpoint to interact with the backend.
+The userinfo endpoint is used to retrieve the security context of the logged-in user. The security context often contains attributes like name, firstname, email, roles, ...
 
 The userinfo endpoint is used to retrieve the security context of the logged user. The security context often contains attributes like name, firstname, email, roles, ...
 
