@@ -133,7 +133,7 @@ export default {
 }
 ```
 
-For more info, check this page (TODO)
+The various configuration are described in detail on **[this page](./authentication-type/introduction)**
 
 ## Secure page / component
 **Oneki.js** provides an ***[HOC](https://reactjs.org/docs/higher-order-components.html)*** to secure a component:
@@ -157,7 +157,7 @@ const SecuredPage2 = secure(Page2, (securityContext) => {
 }
 ```
 
-Secure HOC is described in detail on **[this page](./secure-hoc)**
+Secure HOC is described in detail on **[this page](./secure-page)**
 
 ## Security context
 The security context is stored in the global Redux state under the key **auth.securityContext** and accessible anywhere with the hook ***useSecurityContext***
@@ -179,7 +179,7 @@ const [securityContext, loading] = useSecurityContext(); // securityContext is u
 const [email, loading] = useSecurityContext("email"); // email is undefined if user is not logged in
 ```
 
-For more info, check this page (TODO)
+The security context is described in detail on **[this page](./secure-context)**
 
 ## Services
 **Oneki.js** provide up to 4 services you can use to implement the authentication process:

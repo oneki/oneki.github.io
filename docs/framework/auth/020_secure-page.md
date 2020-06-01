@@ -18,30 +18,20 @@ If the logged user doesn't have the right to display the page, it displays an er
 
 ### Parameters
 #### Inputs
-```javascript
-// [Mandatory] the component to protect. Only authorized users will see it
-Component: Component,
+*Mandatory parameters are in bold*
 
-// [Optional] By default, a user is authorized if he's logged in.
-// validator is a function to apply a more complex logic like 
-// authorizing the user based on a attribute in the security context
-validator: (securityContext) => boolean
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| **Component** | React Component | the component to protect. Only authorized users will see it |
+| validator | (securityContext) => boolean | By default, a user is authorized if he's logged in.<br/><br/> `validator` is a function to apply a more complex logic like authorizing the user based on a attribute in the security context |
+| options | Object | Object with non mandatory attributes |
+| options.<br/>ErrorComponent | React Component | The component to display if the user is not authorized or not yet logged in.<br/><br/>By default<ul><li>if he user is not yet logged in, he's redirected to the login page</li><li>if he's not authorized, a dummy component is displayed</li></ul> |
 
-// all options below are [optional]
-options: {
-  // The component to display if the user is not authorized or
-  // not yet logged in.
-  // By default:
-  //  - if he user is not yet logged in, he's redirected to the login page
-  //  - if he's not authorized, a dummy component is displayed
-  ErrorComponent: Component
-} 
-```
 #### Outputs
-```javascript
-// The component secured. This is the one that should be exported
-SecureComponent: Component
-```
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| SecureComponent | React Component | The component secured. This is the one that should be exported
 
 ## Example
 This example shows two protected pages

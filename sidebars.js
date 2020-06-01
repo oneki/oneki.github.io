@@ -37,12 +37,13 @@ module.exports = {
         label: "Authentication",
         items: [
           "framework/auth/introduction",
-          "framework/auth/configuration",
           "framework/auth/secure-page",
+          "framework/auth/security-context",
           {
             type: "category",
             label: "Authentication type",
             items: [
+              "framework/auth/authentication-type/introduction",
               "framework/auth/authentication-type/form-based",
               "framework/auth/authentication-type/oidc-server"
             ]
