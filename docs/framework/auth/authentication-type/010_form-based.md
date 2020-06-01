@@ -86,7 +86,7 @@ The configuration parameters are the following:
 | **logoutMethod** | string | GET | if **logoutEndpoint** is an URL, the method used to call the logout URL|
 | **callback** | function(response, context): [token,securityContext] | null | a callback function to parse the result of the authentication.<br/>The fonction returns optionally a token and/or a securityContext  (if not set, it's assumed that the session is done via a cookie and the security context is retrieved via the **userinfoEndpoint** defined above) |
 
-#### Example
+#### Configuration example
 ```javascript
 export default {
   idp: {
@@ -109,4 +109,10 @@ export default {
   }
 }
 ```
- 
+
+## Example
+<NextSandbox 
+  name="auth/form" 
+  height="600" 
+  modules={['src/settings.js', '/src/pages/login.js', '/src/pages/logout.js', '/src/pages/profile.js', '/src/pages/admin.js']} 
+/>

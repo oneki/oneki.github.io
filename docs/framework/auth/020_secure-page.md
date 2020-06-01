@@ -24,7 +24,7 @@ If the logged user doesn't have the right to display the page, it displays an er
 | --------- | ---- | ----------- |
 | **Component** | React Component | the component to protect. Only authorized users will see it |
 | validator | (securityContext) => boolean | By default, a user is authorized if he's logged in.<br/><br/> `validator` is a function to apply a more complex logic like authorizing the user based on a attribute in the security context |
-| options | Object | Object with non mandatory attributes |
+| options | Object | Object with non mandatory attributes<br/><br/>**Defaults**: \{\} |
 | options.<br/>ErrorComponent | React Component | The component to display if the user is not authorized or not yet logged in.<br/><br/>By default<ul><li>if he user is not yet logged in, he's redirected to the login page</li><li>if he's not authorized, a dummy component is displayed</li></ul> |
 
 #### Outputs

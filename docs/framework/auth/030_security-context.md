@@ -8,7 +8,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NextSandbox from '@site/src/components/NextSandbox';
 
-The security context represents the profile of the logged-in user. It's generally retrieved from the backend by calling an API like ***/whoami***
+The security context represents the profile of the logged-in user.<br/>It's generally fetched from the backend during the authentication (via **useLoginService**) or by calling an API like /whoami (via **useSecurityContext**)
+
 
 **Oneki.js** doesn't expect a specific format for the security context. You can put in what you want. The content of the security context is generally profile attributes like email, name, firstname, roles, ... 
 
@@ -67,4 +68,77 @@ This example displays the logged-in user's email in the navbar
   modules={['/src/component/header/LoggedUser.js']} 
 />
 
+## Advanced
+
+Here is the logic to retrieve the `security context`:
+
+```plantuml
+@startuml
+!includeurl https://brunofranki.github.io/static/asciidoc-plantuml-skin.iuml
+start
+:useSecurityContext;
+if (securityContext in global state?) then (yes)
+  :return securityContext;
+  stop;
+else (no)
+  :set loading true;
+  if (userinfoEndpoint = function?) then (yes)
+    :call userinfoEndpoint(); 
+      note left
+        delegate the fetching of
+        the security context to a
+        function provided in settings.js
+
+        This function can be async
+      end note
+    -[dashed]->
+  else (no)
+    if (userinfoEndpoint = URL?) then (yes)
+      :fetch security context;
+      note left
+        call the URL indicated in
+        settings.js to fetch the
+        security context
+      end note      
+      -[dashed]->
+    else (no)
+      if (token in global state?) then (yes)
+        :set loading false;
+        :extract security context
+        from token;
+        :return security context;
+        stop
+      else (no)
+        :load token from
+        persistent storage;
+        if (token?) then (yes)
+          :set loading false;
+          :extract security context
+          from token;
+          note left
+            The claims in the JWT token
+            become the security context
+          end note            
+          :return security context;  
+          stop     
+        else (no)
+          :fetch security context;
+          -[dashed]->
+        endif
+      endif    
+    endif
+  endif
+  :set loading false;
+  if (error?) then (yes)
+    :return undefined;
+    stop
+  else (no)
+    :set security context
+    in global state;
+    :return security context;
+    stop
+  endif  
+endif
+@enduml
+```
 

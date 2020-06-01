@@ -1,7 +1,7 @@
 ---
-id: oidc-server
-title: OpenID Connect (server side)
-sidebar_label: OIDC (server side)
+id: oidc-client
+title: OpenID Connect (client side)
+sidebar_label: OIDC (client side)
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';

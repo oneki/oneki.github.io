@@ -39,6 +39,7 @@ module.exports = {
           "framework/auth/introduction",
           "framework/auth/secure-page",
           "framework/auth/security-context",
+          "framework/auth/services",
           {
             type: "category",
             label: "Authentication type",
