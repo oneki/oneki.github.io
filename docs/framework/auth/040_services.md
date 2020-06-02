@@ -13,9 +13,9 @@ import NextSandbox from '@site/src/components/NextSandbox';
 | Service | Description |
 | ------- | ----------- |
 | **[login service](#login-service)** | Service handling the login request. e.g: a AJAX POST, a redirect to an OIDC IDP, ...
-| login callback service | When the authentication is done by an external party (e.g an OIDC IDP), this service handles the callback following a login
-| logout service | Service handling the logout request
-| logout callback service | When the logout is done by an external party (e.g an OIDC IDP), this service handles the callback following a logout
+| **[login callback service](#login-callback-service)** | When the authentication is done by an external party (e.g an OIDC IDP), this service handles the callback following a login
+| **[logout service ](#logout-service)** | Service handling the logout request
+| **[logout callback service ](#logout-callback-service)** | When the logout is done by an external party (e.g an OIDC IDP), this service handles the callback following a logout
 
 ## Login service
 
