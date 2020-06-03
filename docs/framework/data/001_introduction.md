@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 import NextSandbox from '@site/src/components/NextSandbox';
 
 
-***Oneki.js*** provides several hooks to call an API. The goal of these hooks is to help the developer implementing the following logic:
+***Oneki.js*** provides several hooks to call an API. The goal of these hooks is to help the developer implement the following logic:
 - Displaying a loading indicator
 - Sending the AJAX request
 - Stop displaying the loading indicator
