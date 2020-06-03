@@ -66,10 +66,11 @@ module.exports = {
         type: "category",
         label: "Data",
         items: [
-          "framework/rest/use-get",
-          "framework/rest/use-post",
-          "framework/rest/use-put",
-          "framework/rest/use-delete"
+          "framework/data/introduction",
+          "framework/data/use-get",
+          "framework/data/use-post",
+          "framework/data/use-put",
+          "framework/data/use-delete"
         ]
       },   
       {

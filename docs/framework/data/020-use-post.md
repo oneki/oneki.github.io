@@ -7,8 +7,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ```javascript
-const [post, loading] = usePost(url, options);
-const [post, loading] = useSecurePost(url, options);
+const [submit, loading] = usePost(url, options);
+const [submit, loading] = useSecurePost(url, options);
 ```
 The goal of ***usePost*** is to send an ajax POST request and returns back the payload sent by the server.<br/>
 By default, the body of the request is a JSON string.
@@ -53,7 +53,7 @@ options: {
 // the signature is: post(data, options) where:
 // - "data" is the body of the POST request
 // - "options" is the same object as the one used for usePost. Use this object to override an option passed to usePost
-post: function(data, options),
+submit: function(data, options),
 
 // a flag to indicate if the ajax request is pending
 // "loading" is true only after 100ms (configurable via settings.js) and if the ajax request is pending
