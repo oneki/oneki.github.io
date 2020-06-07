@@ -7,6 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NextSandbox from '@site/src/components/NextSandbox';
+import CraSandbox from '@site/src/components/CraSandbox';
 
 **Oneki.js** is a React framework based of the following components: 
 * [React](https://reactjs.org/)
@@ -53,7 +54,6 @@ Create a new React application with <b>Create Next App</b> and add <b>onekijs</b
 yarn create next-app my-app
 cd my-app
 yarn add onekijs
-yarn install
 ```
 and then create the following files:
 
@@ -102,34 +102,19 @@ Create a new React application with <b><a href="https://create-react-app.dev/">C
 yarn create react-app my-app
 cd my-app
 yarn add onekijs
-yarn install
 ```
 
-and then replace the content of ***index.js*** with the following code:
-<Tabs
-  defaultValue="code"
-  values={[
-    { label: 'Code', value: 'code', },
-    { label: 'Preview', value: 'preview', }, 
-  ]
-}>
-<TabItem value="code">
-  <iframe
-    src="https://codesandbox.io/embed/onekijs-basic-app-pqyr9?fontsize=14&hidenavigation=1&theme=dark&view=editor"
-    style={{width:'100%', height:'600px', border:0, bordeRadius: '4px', overflow:'hidden'}}
-    title="onekijs-basic-app"
-    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
-</TabItem>
-<TabItem value="preview">
-  <iframe
-    src="https://codesandbox.io/embed/onekijs-basic-app-pqyr9?fontsize=14&hidenavigation=1&theme=dark&view=preview"
-    style={{width:'100%', height:'600px', border:0, bordeRadius: '4px', overflow:'hidden'}}
-    title="onekijs-basic-app"
-    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
-</TabItem>
-</Tabs>
+and then replace the content of ***index.js*** with the following code: 
+
+:::note Code Editor
+The code below is hosted on **[Code Sandbox](http://codesandbox.io/)**. <br/>
+Click on the button "Open Sandbox" to view/edit the code with an online IDE.
+:::
+<CraSandbox 
+  name="application/simple" 
+  height="600" 
+  modules={['/src/index.js']} 
+/>
 
 Via a command line enter:
 ```
