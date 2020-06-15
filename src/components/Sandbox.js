@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Sandbox = ({type, name, height=500, modules}) => {
-  let url = `https://codesandbox.io/embed/github/oneki/onekijs-example/tree/master/${type}/${name}?codemirror=1&fontsize=14&theme=dark&view=editor`;
+const Sandbox = ({name, height=500, modules, branch='master'}) => {
+  let url = `https://codesandbox.io/embed/github/oneki/onekijs/tree/${branch}/examples/${name}?codemirror=1&fontsize=14&theme=dark&view=editor`;
   if (modules) {
     url += "&module=";
      modules.forEach((module, idx) => {

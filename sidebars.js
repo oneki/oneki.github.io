@@ -84,6 +84,14 @@ module.exports = {
       },
       {
         type: "category",
+        label: "Form",
+        items: [
+          "framework/form/introduction",
+          "framework/form/use-form",
+        ]
+      },
+      {
+        type: "category",
         label: "Service",
         items: [
           "framework/service/introduction",
