@@ -6,8 +6,7 @@ sidebar_label: Getting started
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import NextSandbox from '@site/src/components/NextSandbox';
-import CraSandbox from '@site/src/components/CraSandbox';
+import Sandbox from '@site/src/components/Sandbox';
 
 **Oneki.js** is a React framework based of the following components: 
 * [React](https://reactjs.org/)
@@ -53,7 +52,7 @@ Create a new React application with <b>Create Next App</b> and add <b>onekijs</b
 // npm install -g yarn
 yarn create next-app my-app
 cd my-app
-yarn add onekijs
+yarn add onekijs-next
 ```
 and then create the following files:
 
@@ -69,8 +68,8 @@ The code below is hosted on **[Code Sandbox](http://codesandbox.io/)**. <br/>
 Click on the button "Open Sandbox" to view/edit the code with an online IDE.
 :::
 
-<NextSandbox 
-  name="application/simple" 
+<Sandbox 
+  name="next-app-basic" 
   height="600" 
   modules={['/src/pages/index.js','/src/pages/users.js','/src/pages/_app.js']} 
 />
@@ -101,7 +100,7 @@ Create a new React application with <b><a href="https://create-react-app.dev/">C
 // npm install -g yarn
 yarn create react-app my-app
 cd my-app
-yarn add onekijs
+yarn add onekijs-cra
 ```
 
 and then replace the content of ***index.js*** with the following code: 
@@ -110,8 +109,8 @@ and then replace the content of ***index.js*** with the following code:
 The code below is hosted on **[Code Sandbox](http://codesandbox.io/)**. <br/>
 Click on the button "Open Sandbox" to view/edit the code with an online IDE.
 :::
-<CraSandbox 
-  name="application/simple" 
+<Sandbox 
+  name="cra-app-basic" 
   height="600" 
   modules={['/src/index.js']} 
 />

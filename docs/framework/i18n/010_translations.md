@@ -81,7 +81,6 @@ A key can be prefixed to support plurals:
 ```
 
 The key and value can be more complex and looks like the content of a JSX component<br/>
-Check TODO for all possibilities
 ```json
 {
   // Basic example
@@ -98,5 +97,53 @@ Check TODO for all possibilities
 
   // Same example as above but when the key is not specified
   "User <1>{{name}}</1> is connected": "Utilisateur <1>{{name}}</1> est connecté"
+}
+```
+
+### Modifiers
+For advanced use cases, you can add one or several modifiers to a variable like this:
+
+```json
+{
+  // Basic example: first name will be in uppercase
+  "Welcome {{firstname}}": "Welcome {{firstname | uppercase}}", // <T>Welcome {{firstname}}<T>
+}
+```
+
+A modifier is a function with at least two parameters:
+- **value**: the value of the variable on which the modifier is applied
+- **locale**: the current locale
+
+The modifiers must be defined in **settings.js** under the key **i18n.modifiers**. 
+
+```javascript
+export default {
+  i18n: {
+    ...
+    modifiers: {
+      uppercase: (value, locale) => value ? value.toUpperCase() : value
+    }
+  }
+}
+```
+
+#### Modifiers with parameters
+You can even pass one or more parameters to a modifier like this
+```json
+{
+  // display only the 5 first chars of the firstname
+  "Welcome {{firstname}}": "Welcome {{firstname | maxlength(5)}}", // <T>Welcome {{firstname}}<T>
+}
+```
+
+The modifier defined in **settings.js** looks like this:
+```javascript
+export default {
+  i18n: {
+    ...
+    modifiers: {
+      maxlength: (value, locale, length) => value ? value.substring(length) : value
+    }
+  }
 }
 ```

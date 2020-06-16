@@ -18,6 +18,7 @@ import NextSandbox from '@site/src/components/NextSandbox';
 ## Fetching data
 **Oneki.js** provides the hook **useGet** to fetch data from a server via an `HTTP AJAX GET request`. The request is sent every time the URL changes.
 
+
 ```javascript
 const [data, loading, refresh] = useGet(url, options);
 ```
