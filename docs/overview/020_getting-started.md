@@ -52,7 +52,7 @@ Create a new React application with <b>Create Next App</b> and add <b>onekijs</b
 // npm install -g yarn
 yarn create next-app my-app
 cd my-app
-yarn add onekijs
+yarn add onekijs-next
 ```
 and then create the following files:
 
@@ -100,7 +100,7 @@ Create a new React application with <b><a href="https://create-react-app.dev/">C
 // npm install -g yarn
 yarn create react-app my-app
 cd my-app
-yarn add onekijs
+yarn add onekijs-cra
 ```
 
 and then replace the content of ***index.js*** with the following code: 
