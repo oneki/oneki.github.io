@@ -88,6 +88,9 @@ module.exports = {
         items: [
           "framework/form/introduction",
           "framework/form/use-form",
+          "framework/form/field",
+          "framework/form/wrapper",
+          "framework/form/use-form-context",
         ]
       },
       {
