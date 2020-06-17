@@ -90,6 +90,7 @@ module.exports = {
           "framework/form/use-form",
           "framework/form/field",
           "framework/form/wrapper",
+          "framework/form/validations",
           "framework/form/use-form-context",
         ]
       },

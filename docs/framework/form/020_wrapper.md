@@ -1,15 +1,15 @@
 ---
 id: wrapper
-title: Core component wrappers
-sidebar_label: Core component wrappers
+title: Core wrappers
+sidebar_label: Core wrappers
 ---
 
 import Sandbox from '@site/src/components/Sandbox';
 
-The **[field](./field)** method provided by **[useForm](./use-form)** is the simplest way to register a field with a form because it's not necessary to modify the component as soon as it accepts the common props **`name`**, **`value`**, **`onChange`** and **`onBlur`**  
+The **[field](./field#field)** method provided by **[useForm](./use-form)** is the simplest way to register a field with a form because it's not necessary to modify the component as soon as it accepts the common props **`name`**, **`value`**, **`onChange`** and **`onBlur`**  
 The downside of this method is that it's not very performant as it rerenders the field anytime any value is changed.
 
-**OnekiJS** comes with a wrapper for each React core form component. These wrappers will register automatically the field and provide additional props to specify validators in a more "React way".
+**OnekiJS** comes with a wrapper for each React core form component. These wrappers will register automatically the field and provide additional props to specify validators in a more "React way". Internally, they leverage the **[useField](./field#usefield)** hook
 
 | Core component | Wrapper      |
 | -------------- | ------------ |
@@ -18,7 +18,7 @@ The downside of this method is that it's not very performant as it rerenders the
 | `<textarea>`   | `<Textarea>` |
 
 Each wrapper requires at least the **`name`** prop. The name prop must match the path of the value in the values object. Check the **[field](./field)** for more detail  
-Each wrapper accepts the same props as the wrapper component but accept also additional props for defining validators
+Each wrapper accepts the same props as the wrapped component but also accepts additional props for validators
 
 | Prop                | Required | Description                                                                                                                                                   | Example                                                    |
 | ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
