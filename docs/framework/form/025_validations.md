@@ -15,7 +15,7 @@ There are different ways to validate the content of the form
 
 The **[field](./field#field)** method and the **[useField](./field#usefield)** hook accept both a list of validators a their second argument.
 
-A validator is a function or a async function receiving a value and returning a boolean (for the validity) and a error message
+A validator is a function or a async function receiving a value and returning a boolean (for the validity) and an error message
 
 ```javascript
 const { valid, message } = (value) => {};
@@ -26,11 +26,11 @@ A validator often expects a configuration to be reusable in different contexts.
 To do that, just wrap the validator in a closure.
 
 ```javascript
-const validator = (config) => {
+const maxlengthValidator = maxlength => {
   return value => {
     return {
-      valid: value.length <= config.maxlength
-      message: `Cannot exceed ${config.maxlength} characters`
+      valid: value.length <= maxlength
+      message: `Cannot exceed ${maxlength} characters`
     }
   }
 }
@@ -87,8 +87,8 @@ branch="features/form"
 
 ## Complex validations
 
-Sometimes, a validation implies more than one field. For example, the confirm password validator checks that the content of two different fields are similar
-**[useForm](./useForm)** provides some methods to modify externally the validation status of a field
+Sometimes, a validation implies more than one field. For example, the confirm password validator checks that the content of two different fields are similar.  
+**[useForm](./useForm)** provides some methods to control externally the validation status of a field.
 
 ```javascript
 const { setError, setWarning, setOK, setPendingValidation } = useForm();
@@ -96,10 +96,10 @@ const { setError, setWarning, setOK, setPendingValidation } = useForm();
 
 | Name                 | Signature                                                 | Description                                                                                                                                                                                                                                                                                   |
 | -------------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **setPendingValidation** | `setPendingValidation(fieldName, validatorName, pending)` | Mark the field as pending a validation<br/> - **`fieldName`**: name of the field affected by the validation<br /> - **`validatorName`**: name of the validator doing the validation<br /> - **`matcher`**: boolean (true = add the validation, false = clear the validation)                                                |
-| **setError**             | `setError(fieldName, validatorName, message, matcher)`    | Set the field in error<br /> - **`fieldName`**: name of the field affected by the validation<br /> - **`validatorName`**: name of the validator doing the validation<br /> - **`message`**: message describing the error<br /> - **`matcher`**: boolean (true = add the validation, false = clear the validation)   |
-| **setWarning**           | `setWarning(fieldName, validatorName, message, matcher)`  | Set the field in warning<br /> - **`fieldName`**: name of the field affected by the validation<br /> - **`validatorName`**: name of the validator doing the validation<br /> - **`message`**: message describing the warning<br /> - **`matcher`**: boolean (true = add the validation, false = clear the validation) |
-| **setOK**                | `setWarning(fieldName, validatorName, matcher)`           | Mark the field as valid <br /> - **`fieldName`**: name of the field affected by the validation<br /> - **`validatorName`**: name of the validator doing the validation<br /> - **`matcher`**: boolean (true = add the validation, false = clear the validation)                                                |
+| **setPendingValidation** | `setPendingValidation(fieldName, validatorId, matcher)` | Mark the field as pending a validation<br/> - **`fieldName`**: name of the field affected by the validation<br /> - **`validatorId`**: unique id of the validator doing the validation<br /> - **`matcher`**: boolean (true = add the validation, false = clear the validation)                                                |
+| **setError**             | `setError(fieldName, validatorId, message, matcher)`    | Set the field in error<br /> - **`fieldName`**: name of the field affected by the validation<br /> - **`validatorId`**: unique id of the validator doing the validation<br /> - **`message`**: message describing the error<br /> - **`matcher`**: boolean (true = add the validation, false = clear the validation)   |
+| **setWarning**           | `setWarning(fieldName, validatorId, message, matcher)`  | Set the field in warning<br /> - **`fieldName`**: name of the field affected by the validation<br /> - **`validatorId`**: unique id of the validator doing the validation<br /> - **`message`**: message describing the warning<br /> - **`matcher`**: boolean (true = add the validation, false = clear the validation) |
+| **setOK**                | `setOK(fieldName, validatorId, matcher)`           | Mark the field as valid <br /> - **`fieldName`**: name of the field affected by the validation<br /> - **`validatorId`**: unique id of the validator doing the validation<br /> - **`matcher`**: boolean (true = add the validation, false = clear the validation)                                                |
 
 :::note Note
 Generally, these methods are used in conjunction with the **[rule](./rules#rule)** method or the **[useRule](./rules#userule)** hook.

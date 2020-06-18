@@ -9,7 +9,7 @@ import Sandbox from '@site/src/components/Sandbox';
 The **[field](./field#field)** method provided by **[useForm](./use-form)** is the simplest way to register a field with a form because it's not necessary to modify the component as soon as it accepts the common props **`name`**, **`value`**, **`onChange`** and **`onBlur`**  
 The downside of this method is that it's not very performant as it rerenders the field anytime any value is changed.
 
-**OnekiJS** comes with a wrapper for each React core form component. These wrappers will register automatically the field and provide additional props to specify validators in a more "React way". Internally, they leverage the **[useField](./field#usefield)** hook
+**Oneki.js** comes with a wrapper for each React core form component. These wrappers will register automatically the field and provide additional props to specify validators in a more "React way". Internally, they leverage the **[useField](./field#usefield)** hook
 
 | Core component | Wrapper      |
 | -------------- | ------------ |

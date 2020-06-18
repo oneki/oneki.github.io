@@ -26,8 +26,8 @@ const { name, value, onChange, onBlur } = field(name, validators, options);
 
 | Name                     | Description                                                                                                                                                                               | Example                                                                                         |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| **name**                 | Name of the field. Must match the path in the values object<br /> A sub property is accessed via a dot --> `address.street`<br/>A item of an array is accessed via its index --> `item.2` | `lastname`<br />`address.street`<br />`children.1.firstname`                                    |
-| **validators**           | An array of validators. Check the **[Validations](./validation)** section for more details                                                                                                | `[required(), maxlength(5), regex('/^[a-zA-Z]*$', 'Can only contains alphabetical characters)]` |
+| **name**                 | Name of the field. Must match the path in the values object<br /> A sub property is accessed via a dot --> `"address.street"`<br/>A item of an array is accessed via its index --> `"item.2"` | `"lastname"`<br />`"address.street"`<br />`"children.1.firstname"`                                    |
+| **validators**           | An array of validators. Check the **[Validations](./validation)** section for more details                                                                                                | `[required(), maxlength(5)]` |
 | **options.defaultValue** | Default value of the field                                                                                                                                                                |                                                                                                 |
 
 ### Outputs
@@ -57,10 +57,10 @@ The signature of the **`useField`** hook is the same as the **[field](#field-met
 
 ```javascript
 import { useField } from "onkeijs-cra"; //  or import { useField } from 'onkeijs-next'
-const { name, value, onChange, onBlur } = field(name, validators, options);
+const { name, value, onChange, onBlur } = useField(name, validators, options);
 ```
 
-**OnekiJS** comes with some components wrapping core form react component (see the **[Core component wrappers](./wrapper)** section).  
+**Oneki.js** comes with some components wrapping core form react component (see the **[Core component wrappers](./wrapper)** section).  
 To create a custom one, check the **[Custom wrappers](./custom-wrapper)** section
 
 :::note Note

@@ -13,12 +13,20 @@ This component has two main roles
 - it handles the submit action
 - it provides a context to sub components
 
-<Sandbox
-name="cra-form-basic"
-height="700"
-modules={['/src/pages/basic.js']}
-branch="features/form"
-/>
+```jsx
+import { Form } from 'onekijs-cra'; // or from onekijs-next
+
+export const MyForm = () => {
+  const { Form } = useForm(values => console.log(values));
+
+  return (
+    <Form>
+      <div><b>Name: </b><Input name="lastname" /></div>
+      <button type="submit">Submit</button>
+    </Form>
+  );
+};
+```
 
 ## Signature
 
@@ -80,3 +88,12 @@ const {
 | **submit**          | The submit method used to execute all validations, gather the content of the form and call the user-submit method <br/> Low level API, generally hidden by the `Form` component | `submit()`                                                                 |
 | **values**          | The full content of the form <br/> It's preferable to use `getValue` instead of `values` to avoid having to handle undefined values                                                | `values.address.street`                                                    |
 | **validations**     | All field validations of the form <br/> It's preferable to use `getValidation` instead of `validations` to avoid having to handle undefined validations                            | `validations.address.street.status`                                        |
+
+## Example
+
+<Sandbox
+name="cra-form-basic"
+height="700"
+modules={['/src/pages/basic.js']}
+branch="features/form"
+/>

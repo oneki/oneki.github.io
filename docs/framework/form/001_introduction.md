@@ -10,7 +10,7 @@ sidebar_label: Introduction
 | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | **[useForm](./use-form)**               | Starting point to create a new form                                                                                                  |
 | **[field](./field)**                    | How to register a field with a form                                                                                                  |
-| **[Core wrappers](./wrapper)**          | How to use OnekiJS components wrapping standard form react components to gain performance and avoid having to write boilerplate code |
+| **[Core wrappers](./wrapper)**          | How to use Oneki.js components wrapping standard form react components to gain performance and avoid having to write boilerplate code |
 | **[Validations](./validations)**        | How to attach validators to a field                                                                                                  |
 | **[Custom wrappers](./custom-wrapper)** | How to create a custom wrapper around any third party form component                                                                 |
 | **[Initial values](./initial-value)**   | How to create a form with initial values (create form vs edit form)                                                                  |
