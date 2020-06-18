@@ -3,8 +3,13 @@ id: use-form-context
 title: useFormContext
 sidebar_label: useFormContext
 ---
-
 import Sandbox from '@site/src/components/Sandbox';
+
+The **`useFormContext`** is used internally by **`useField`**, **`useValue`** and **`useValidation`**.  
+This context is provided by the **`<Form>`** component and is only available to components rendered as children of **`<Form>`**  
+
+**`useFormContext`** is generally used to get the methods for changing the state of the form (**`setValue`**, **`setError`**, **`setWarning`**, **`setOK`**, **`setPendingValidation`**)  
+For specific cases, this hook provides some methods to register or unregister a listener executing an action on a value change or a validation change.
 
 ## Signature
 
@@ -20,10 +25,8 @@ const {
   // low level API
   clearValidation, // use preferably setError, setWarning, setOK, setPendingValidation with a "false" matcher
   init, // used internally by useField
-  offFieldChange, // used internally by useField
   offValidationChange, // used internally by useValidation
   offValueChange, // used internally by useValue
-  onFieldChange, // used internally by useField
   onValidationChange, // used internally by useValidation
   onValueChange, // used internally by useValue
   setValidation, // use preferably setError, setWarning, setOK, setPendingValidation with a "true" matcher

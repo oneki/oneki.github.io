@@ -91,6 +91,10 @@ module.exports = {
           "framework/form/field",
           "framework/form/wrapper",
           "framework/form/validations",
+          "framework/form/custom-wrapper",
+          "framework/form/initial-value",
+          "framework/form/bind",
+          "framework/form/rules",
           "framework/form/use-form-context",
         ]
       },
