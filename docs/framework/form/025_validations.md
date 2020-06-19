@@ -82,7 +82,7 @@ Once a async validator is attached to a field, there are two renders each time t
 name="cra-form-basic"
 height="1000"
 modules={['/src/pages/validator.js']}
-branch="features/form"
+branch="master"
 />
 
 ## Complex validations
@@ -111,5 +111,5 @@ Generally, these methods are used in conjunction with the **[rule](./rules#rule)
 name="cra-form-basic"
 height="1000"
 modules={['/src/pages/complex_validator.js']}
-branch="features/form"
+branch="master"
 />

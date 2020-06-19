@@ -37,5 +37,5 @@ Each wrapper accepts the same props as the wrapped component but also accepts ad
 name="cra-form-basic"
 height="1000"
 modules={['/src/pages/wrapper.js']}
-branch="features/form"
+branch="master"
 />

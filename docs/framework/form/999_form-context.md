@@ -5,11 +5,15 @@ sidebar_label: useFormContext
 ---
 import Sandbox from '@site/src/components/Sandbox';
 
-The **`useFormContext`** is used internally by **`useField`**, **`useValue`** and **`useValidation`**.  
+The **`useFormContext`** is used internally by **`useField`**, **`useValue`**, **`useValidation`**, **`useBind`** and **`useRule`**.  
 This context is provided by the **`<Form>`** component and is only available to components rendered as children of **`<Form>`**  
 
 **`useFormContext`** is generally used to get the methods for changing the state of the form (**`setValue`**, **`setError`**, **`setWarning`**, **`setOK`**, **`setPendingValidation`**)  
 For specific cases, this hook provides some methods to register or unregister a listener executing an action on a value change or a validation change.
+
+:::note Note
+**`useFormContext`** never mutates and thus never forces a rerendering of a component
+:::
 
 ## Signature
 

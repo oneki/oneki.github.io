@@ -104,5 +104,5 @@ const InputWithValidation = React.memo(props => {
 name="cra-form-basic"
 height="1000"
 modules={['/src/pages/custom_component.js']}
-branch="features/form"
+branch="master"
 />

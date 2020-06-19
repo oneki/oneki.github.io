@@ -45,7 +45,7 @@ const { name, value, onChange, onBlur } = field(name, validators, options);
 name="cra-form-basic"
 height="1000"
 modules={['/src/pages/field.js']}
-branch="features/form"
+branch="master"
 />
 
 ## useField
