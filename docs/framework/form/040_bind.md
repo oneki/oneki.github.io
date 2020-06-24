@@ -16,11 +16,10 @@ There are different ways to create a binding
 
 ## bind method
 
-This method is provided by **[useForm](./use-form)** and you should only use it at the same level than **[useForm](./use-form)** for creating synchronous bindings.  
-You should never pass it to a sub component because it does not force a rerendering when one of the observed value is modified.  
+This method is provided by **[useForm](./use-form)** for creating synchronous bindings and must be a sibling of **[useForm](./use-form)**.  
 
 :::note Note
-Since it should only be used at the same level than **[useForm](./use-form)**, it assumes that the rerendering is triggered by **[useForm](./use-form)**
+It must only be used as a sibling of **[useForm](./use-form)** because it assumes that the rerendering is triggered by **[useForm](./use-form)**
 :::
 
 ```jsx
@@ -41,13 +40,12 @@ const result = bind(binder, observed);
 
 | Argument     | Description                                                                                            | Example                                                   |
 | ------------ | ------------------------------------------------------------------------------------------------------ | --------------------------------------------------------- |
-| **binder**   | A synchronous unction receiving as arguments the observed field values and returning the binding value | `` (firstname, lastname) => `${firstname} ${lastname}` `` |
+| **binder**   | A synchronous function receiving as arguments the observed field values and returning the binding value | `` (firstname, lastname) => `${firstname} ${lastname}` `` |
 | **observed** | A array of fieldnames observed by the binder                                                           | `['firstname', 'lastname']`                               |
 
 ## asyncBind method
 
-This method is provided by **[useForm](./use-form)** and you should only use it at the same level than **[useForm](./use-form)** for creating asynchronous bindings.  
-You should never pass it to a sub component because it does not force a rerendering when one of the observed value is modified.  
+This method is provided by **[useForm](./use-form)** for creating asynchronous bindings and must be a sibling of **[useForm](./use-form)**.  
 **`asyncBind`** accepts a async function as argument and only returns the value when the async function resolves. Until then, the result is not modified (returns the old one) but a loading flag is set to true
 
 ```jsx
@@ -64,7 +62,7 @@ const [repositories, loading, error] = asyncBind(environment => {
 It's a two phase binding
 
 - An observed value is changed -> **`useForm`** forces a rerendering of the component
-- The  **`asyncBind`** is executed. Since it's an async function, the first return is **`[oldValue|undefined, true, null]`**
+- The  **`asyncBind`** is executed. Since it's an async function, it first returns **`[oldValue|undefined, true, null]`**
 - The async function resolves, the asyncBind forces a rerendering of the component and returns **`[newValue, false, null]`** if there is no error or **`[oldValue, false, Error(msg)]`** if there is an error
 :::
 
@@ -92,7 +90,7 @@ const [result, loading, error] = asyncBind(binder, observed);
 ## useBind hook
 
 To create a synchronous bind inside a wrapper component, you should use the **`useBind`** hook.  
-This hook has the same signature than the **[bind](#bind-method)** method but forces a rerending of the component when one of the observed value is changed
+This hook has the same signature as the **[bind](#bind-method)** method but forces a rerending of the component when one of the observed value is changed
 
 ```jsx
 import { useBind } from 'onekijs-cra'; // or from 'onekijs-next'
@@ -120,7 +118,7 @@ const result = useBind(binder, observed);
 ## useAsyncBind hook
 
 To create a asynchronous bind inside a wrapper component, you should use the **`useAyncBind`** hook.  
-This hook has the same signature than the **[aysncBind](#asyncbind-method)** method but forces a rerending of the component when one of the observed value is changed  
+This hook has the same signature as the **[aysncBind](#asyncbind-method)** method but forces a rerending of the component when one of the observed value is changed  
 **`useAsyncBind`** accepts a async function as argument and only returns the value when the async function resolves. Until then, the result is not modified (returns the old one) but a loading flag is set to true
 
 ```jsx

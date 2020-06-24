@@ -14,14 +14,17 @@ This component has two main roles
 - it provides a context to sub components
 
 ```jsx
-import { Form } from 'onekijs-cra'; // or from onekijs-next
+import { Form } from "onekijs-cra"; // or from onekijs-next
 
 export const MyForm = () => {
-  const { Form } = useForm(values => console.log(values));
+  const { Form } = useForm((values) => console.log(values));
 
   return (
     <Form>
-      <div><b>Name: </b><Input name="lastname" /></div>
+      <div>
+        <b>Name: </b>
+        <Input name="lastname" />
+      </div>
       <button type="submit">Submit</button>
     </Form>
   );
@@ -57,10 +60,13 @@ const {
 
 ### Inputs
 
-| Name                      | Description                                                            |
-| ------------------------- | ---------------------------------------------------------------------- |
-| **submit**                | A function receiving the content of the form after a successful submit |
-| **options.initialValues** | Initial value of the form                                              |
+| Name                      | Description                                                                                                                                                                                                                                                                                                                                                            | Default    |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **submit**                | A function receiving the content of the form after a successful submit                                                                                                                                                                                                                                                                                                 |
+| **options.initialValues** | Initial value of the form                                                                                                                                                                                                                                                                                                                                              | **`{}`**   |
+| **options.touchOn**       | Indicates which event marks the field as touched.<br />The validations of a field are compiled as soon as it has been touched.<br /><br />Valid values are<br /> - **`blur`**: when the field is exited<br />- **`change`**: when the content of the field is changed<br /> - **`focus`**: when the field is entered<br />   - **`load`**: when the field is loaded<br /> - **`submit`**: when the form is submitted | **`blur`** |
+| **options.onError**       | A function called when the submit button is pressed and there are still fields in warning <br/><br/> **Signature**: `onError(fields, formValue)`<br/> - **`fields`**: fields in error (key = fieldName, value = validation object)<br/> - **`formValue`**: the full value of the form                                                                                  | **`null`** |
+| **options.onWarning**     | A function called when the submit button is pressed and there are still fields in warning <br/><br/> **Signature**: `onWarning(fields, formValue)`<br/> - **`fields`**: fields in warning (key = fieldName, value = validation object)<br/> - **`formValue`**: the full value of the form                                                                              | **`null`** |
 
 ### High Level Outputs
 
@@ -83,11 +89,11 @@ const {
 
 | Name                | Description                                                                                                                                                                     | Example                                                                    |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| **clearValidation** | Remove a validation from a field. <br /> Check the **[Validations](./validations)** section for more details                                                                      | `clearValidation('lastname', 'required', ERROR)`                           |
+| **clearValidation** | Remove a validation from a field. <br /> Check the **[Validations](./validations)** section for more details                                                                    | `clearValidation('lastname', 'required', ERROR)`                           |
 | **setValidation**   | Add a validation to a field. <br /> Check the **[Validations](./validations)** section for more details                                                                         | `setValidation('lastname', 'required', ERROR, 'Lastname cannot be empty')` |
 | **submit**          | The submit method used to execute all validations, gather the content of the form and call the user-submit method <br/> Low level API, generally hidden by the `Form` component | `submit()`                                                                 |
-| **values**          | The full content of the form <br/> It's preferable to use `getValue` instead of `values` to avoid having to handle undefined values                                                | `values.address.street`                                                    |
-| **validations**     | All field validations of the form <br/> It's preferable to use `getValidation` instead of `validations` to avoid having to handle undefined validations                            | `validations.address.street.status`                                        |
+| **values**          | The full content of the form <br/> It's preferable to use `getValue` instead of `values` to avoid having to handle undefined values                                             | `values.address.street`                                                    |
+| **validations**     | All field validations of the form (even of non-touched fields) <br/> It's preferable to use `getValidation` instead of `validations` because it takes care of the `touch` status and return `{ message:null, status:null }` if the validation has not been yet initialized                        | `validations['address.street'].status`                                     |
 
 ## Example
 

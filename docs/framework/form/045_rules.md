@@ -6,7 +6,7 @@ sidebar_label: Rules
 
 import Sandbox from '@site/src/components/Sandbox';
 
-It's often useful to be able to externally change the value or the validation of one field of the form.  
+It's often useful to externally change the value or the validation of one field of the form.  
 **[useForm](./use-form)** provides several methods for that
 
 ```javascript
@@ -29,7 +29,7 @@ const {
 | **setWarning**           | `setWarning(fieldName, validatorId, message, matcher)`  | Set the field in warning<br /> - **`fieldName`**: name of the field affected by the validation<br /> - **`validatorId`**: unique id of the validator doing the validation<br /> - **`message`**: message describing the warning<br /> - **`matcher`**: boolean (true = add the validation, false = clear the validation) |
 | **setOK**                | `setOK(fieldName, validatorId, matcher)`                | Mark the field as valid <br /> - **`fieldName`**: name of the field affected by the validation<br /> - **`validatorId`**: unique id of the validator doing the validation<br /> - **`matcher`**: boolean (true = add the validation, false = clear the validation)                                                       |
 
-If often happens that a controller change of the form is the result of a field change (check the **[complex validation example](./validations#complex-validation-example)**)  
+If often happens that a change of a field change leads to an update of another field (check the **[complex validation example](./validations#complex-validation-example)**)  
 The framework offers two ways to achieve these kind of scenario
 
 - The **[rule](#rule-method)** method provided by **[useForm](./use-form)**
@@ -37,11 +37,10 @@ The framework offers two ways to achieve these kind of scenario
 
 ## rule method
 
-This method is provided by **[useForm](./use-form)** and you should only use it at the same level than **[useForm](./use-form)**.  
-You should never pass it to a sub component because it does not force a rerendering when one of the observed value is modified.
+This method is provided by **[useForm](./use-form)** and you must only use it as a sibling of **[useForm](./use-form)**.  
 
 :::note Note
-Since it should only be used at the same level than **[useForm](./use-form)**, it assumes that the rerendering is triggered by **[useForm](./use-form)**
+It must only be used as a sibling of **[useForm](./use-form)** because it assumes that the rerendering is triggered by **[useForm](./use-form)**
 :::
 
 ```jsx
@@ -70,8 +69,8 @@ rule(executor, observed);
 
 | Argument     | Description                                                                             | Example                                                                                                                                         |
 | ------------ | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| **executor** | A synchronous or asynchronous function receiving as arguments the observed field values | `(password, confirmPassword) => setError('confirmPassword', 'password-match-validator', "Passwords don't match", password !== confirmPassword)` |
-| **observed** | A array of fieldnames observed by the binder                                            | `['password', 'confirmPassword']`                                                                                                               |
+| **executor** | A synchronous or asynchronous function that receive as arguments the observed field values | `(password, confirmPassword) => setError('confirmPassword', 'password-match-validator', "Passwords don't match", password !== confirmPassword)` |
+| **observed** | A array of fieldnames observed by the executor                                            | `['password', 'confirmPassword']`                                                                                                               |
 
 ## useRule hook
 
@@ -80,6 +79,8 @@ This hook has the same signature than the **[rule](#rule-method)** method but fo
 
 ```jsx
 import { useRule } from "onekijs-cra"; // or from 'onekijs-next'
+
+const { setError } = useFormContext();
 
 useRule(
   async (username) => {
@@ -103,8 +104,8 @@ userRule(executor, observed);
 
 | Argument     | Description                                                                             | Example                                                                                                                                         |
 | ------------ | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| **executor** | A synchronous or asynchronous function receiving as arguments the observed field values | `(password, confirmPassword) => setError('confirmPassword', 'password-match-validator', "Passwords don't match", password !== confirmPassword)` |
-| **observed** | A array of fieldnames observed by the binder                                            | `['password', 'confirmPassword']`                                                                                                               |
+| **executor** | A synchronous or asynchronous function that receive as arguments the observed field values | `(password, confirmPassword) => setError('confirmPassword', 'password-match-validator', "Passwords don't match", password !== confirmPassword)` |
+| **observed** | A array of fieldnames observed by the executor                                            | `['password', 'confirmPassword']`                                                                                                               |
 
 :::note Note
 **`useRule`** uses internally **[useFormContext](./use-form-context)**, meaning that it only works if the component is rendered as a child of a **`<Form>`** component

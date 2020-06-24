@@ -42,31 +42,41 @@ For each field, the form collects all validator results and compiles them in a v
 This object can be accessed via the **`getValidation`** method provided by useForm or the **`useValidation`** hook inside a custom component
 
 ```javascript
-const { message, status } = getValidation(fieldName);
-const { message, status } = useValidation(fieldName);
+const { message, status, statusCode } = getValidation(fieldName);
+const { message, status, statusCode } = useValidation(fieldName);
 ```
 
 | Name        | Description                                                                                  |
 | ----------- | -------------------------------------------------------------------------------------------- |
-| **status**  | can be **`null`** (not yet validated), **`ok`**, **`warning`**, **`error`** or **`loading`** |
+| **status**  | can be **`null`** (not yet validated), **`loading`** , **`error`**, **`warning`** or **`ok`** |
+| **statusCode**  | can be **`null`** (not yet validated), **`0`** (for loading), **`1`** (for error), **`2`** (for warning) or **`3`** (for ok) |
 | **message** | only defined if status is **`warning`** or **`error`**                                       |
 
 :::note Note
-During the compilation, the validator results are ordered by their status  
+During the compilation, the validator results are ordered by their statusCode  
 The compilator checks first if a validator returns a **`loading`** result then checks if a validator an **`error`** result and so on. Once it finds a match, the compilation stops and the validation object is returned  
 If nothing is found, it returns `{ status: null, message: null }`
 :::
 
 :::note Note
-The compilation is done only when the field has been touched. A field is touched the first time the field triggers an onBlur event.
+By default, the compilation is done only when the field has been touched. To control when the field is touched, check options of **[useForm](./use-form#inputs)** and **[field](./field#inputs)**
+:::
+
+:::note Note
+`Oneki.js` provides a constant for each statusCode  
+
+```javascript
+import { OK, WARNING, ERROR, LOADING } from 'onekijs-cra'; // or from 'onekijs-next'
+```
+
 :::
 
 ### Async validator
 
 Once a async validator is attached to a field, there are two renders each time the value is changed
 
-- the first render get a loading validation object `{ status: 'loading', message: null }`
-- once the validator resolves, the second render get the final validation object `{ status: 'error|warning|ok', message: 'error_msg|warning_msg|null' }`
+- the first render get a loading validation object `{ status: 'loading', statusCode: LOADING, message: null }`
+- once the validator resolves, the second render get the final validation object `{ status: 'error|warning|ok', statusCode: ERROR|WARNING|OK, message: 'error_msg|warning_msg|null' }`
 
 ### Built-in validators
 
