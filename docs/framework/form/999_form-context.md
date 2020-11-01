@@ -3,8 +3,17 @@ id: use-form-context
 title: useFormContext
 sidebar_label: useFormContext
 ---
-
 import Sandbox from '@site/src/components/Sandbox';
+
+The **`useFormContext`** is used internally by **`useField`**, **`useValue`**, **`useValidation`**, **`useBind`** and **`useRule`**.  
+This context is provided by the **`<Form>`** component and is only available to components rendered as children of **`<Form>`**  
+
+**`useFormContext`** is generally used to get the methods for changing the state of the form (**`setValue`**, **`setError`**, **`setWarning`**, **`setOK`**, **`setPendingValidation`**)  
+For specific cases, this hook provides some methods to register or unregister a listener executing an action on a value change or a validation change.
+
+:::note Note
+**`useFormContext`** never mutates and thus never forces a rerendering of a component
+:::
 
 ## Signature
 
@@ -20,16 +29,14 @@ const {
   // low level API
   clearValidation, // use preferably setError, setWarning, setOK, setPendingValidation with a "false" matcher
   init, // used internally by useField
-  offFieldChange, // used internally by useField
   offValidationChange, // used internally by useValidation
   offValueChange, // used internally by useValue
-  onFieldChange, // used internally by useField
   onValidationChange, // used internally by useValidation
   onValueChange, // used internally by useValue
   setValidation, // use preferably setError, setWarning, setOK, setPendingValidation with a "true" matcher
   submit, // used internally by <Form> to handle the submit action
-  values, // Use internally by useField and useValue to initialize the value
-  validations, // Use internally by useField and useValidation to initialize the value
+  valuesRef, // Use internally by useField and useValue to initialize the value
+  validationsRef, // Use internally and useValidation to initialize the validation
 } = useFormContext();
 ```
 
@@ -52,14 +59,12 @@ None
 | Name                    | Description                                                                                                                                                                                                                                                                                 | Example                                                                                   |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | **clearValidation**     | Remove a validation from a field. <br /> Check the **[Validations](./validations)** section for more details                                                                                                                                                                                  | `clearValidation('lastname', 'required', ERROR)`                                          |
-| **init**                | Same signature as **[field(name, validators, options)](./field)**.<br />Register a field as a controlled element. <br /> Do not return the value of the field but only { onChange, onBlur, name }. Use `useValue` to get the value                                                          | `init('lastname', [required()])`                                                          |
-| **offFieldChange**      | Remove a listener listening on a field change. <br /> Field listeners are considered as low level API and are generally hidden behind the `useField` hook                                                                                                                                   | `offFieldChange(listener, ['lastname', 'firstname])`                                      |
+| **init**                | Same signature as **[field(name, validators, options)](./field)**.<br />Register a field as a controlled element. <br /> Do not return the value of the field but only { onChange, onFocus, onBlur, name }. Use `useValue` to get the value                                                          | `init('lastname', [required()])`                                                          |
 | **offValidationChange** | Remove a listener listening on a validation change. <br /> Validation listeners are considered as low level API and are generally hidden behind the `useValidation` hook                                                                                                                    | `offValidationChange(listener, ['lastname', 'firstname])`                                 |
 | **offValueChange**      | Remove a listener listening on a value change. <br /> Value listeners are considered as low level API and are generally hidden behind the `useValue` hook                                                                                                                                   | `offValueChange(listener, ['lastname', 'firstname])`                                      |
-| **onFieldChange**       | Add a listener listening on a field change. <br /> Field listeners are considered as low level API and are generally hidden behind the `useField` hook **Signature:**`onFieldChange((field1, field2, ...) => {}, [fieldName1, fieldName2, ...])`                                 | `onFieldChange((lastnameField => console.log(lastnameField), ['lastname'])`               |
 | **onValidationChange**  | Add a listener listening on a validation change. <br /> Validation listeners are considered as low level API and are generally hidden behind the `useValidation` hook **Signature:**`onValidationChange((validaton_field1, validation_field2, ...) => {}, [fieldName1, fieldName2, ...])`    | `onValidationChange(lastnameValidation => console.log(lastnameValidation), ['lastname'])` |
 | **onValueChange**       | Add a listener listening on a value change. <br /> Value listeners are considered as low level API and are generally hidden behind the `useValue`, `useBind` and `useRule` hooks<br /> **Signature:**`onValueChange((value_field1, value_field2, ...) => {}, [fieldName21, fieldName2, ...])` | `onValueChange(lastnameValue => console.log(lastnameValue), ['lastname'])`                |
 | **setValidation**     | Add a validation to a field. <br /> Check the **[Validations](./validations)** section for more details                                                                                                                                                                                  | `setValidation('lastname', 'required', ERROR, 'Lastname cannot be empty')`                                          |
 | **submit**              | The submit method used to execute all validations, gather the content of the form and call the user-submit method <br/> Low level API, generally hidden by the `Form` component                                                                                                             | `submit()`                                                                                |
-| **values**              | The full content of the form <br/> Do not rerender the component when changed<br/> It's preferable to use `useValue` which rerender the component if changed                                                                                                                                | `values.address.street`                                                                   |
-| **validations**         | All validations of the form <br/> Do not rerender the component when changed<br/> It's preferable to use `useValidation` which rerender the component if changed                                                                                                                            | `validations.address.street.status`                                                       |
+| **valuesRef**              | A **[ref object](https://reactjs.org/docs/hooks-reference.html#useref)** with the full content of the form <br/> Do not rerender the component when changed<br/> It's preferable to use `useValue` which rerender the component if changed                                                                                                                                | `valuesRef.current.address.street`                                                                   |
+| **validationsRef**         | A **[ref object](https://reactjs.org/docs/hooks-reference.html#useref)** with all field validations (even of non-touched fields) <br/> Do not rerender the component when changed<br/> It's preferable to use `useValidation` which rerenders the component if changed and takes care of the `touch` status                                                                                                                           | `validationsRef.current['address.street'].status`                                                       |
