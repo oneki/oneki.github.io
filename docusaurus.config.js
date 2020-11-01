@@ -11,11 +11,11 @@ module.exports = {
   themeConfig: {
     navbar: {
       title: 'Oneki.js',
-      /*logo: {
+      logo: {
         alt: 'Oneki.js Logo',
         src: 'img/logo.svg',
-      },*/
-      links: [
+      },
+      items: [
         {to: 'docs/overview/installation', label: 'Docs', position: 'right'},
         {
           href: 'https://github.com/oneki/onekijs',
