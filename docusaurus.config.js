@@ -16,7 +16,7 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
-        {to: 'docs/overview/installation', label: 'Docs', position: 'right'},
+        {to: 'docs/overview/getting-started/introduction', label: 'Docs', position: 'right'},
         {
           href: 'https://github.com/oneki/onekijs',
           label: 'GitHub',
@@ -32,7 +32,7 @@ module.exports = {
           items: [
             {
               label: 'Getting Started',
-              to: 'docs/overview/installation',
+              to: 'docs/overview/getting-started/introduction',
             },
             {
               label: 'Demo app',

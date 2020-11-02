@@ -8,7 +8,16 @@
 module.exports = {
   someSidebar: {
     "Overview": [
-      "overview/getting-started",
+      {
+        type: "category",
+        label: "Getting started",
+        items: [
+          "overview/getting-started/introduction",
+          "overview/getting-started/creating-project",
+          "overview/getting-started/navigation",
+          "overview/getting-started/global-state",
+        ]   
+      },
       "overview/app",
     ],
     "Framework": [
