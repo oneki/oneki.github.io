@@ -20,7 +20,6 @@ Please note that the URL changes when you click on the link.
 :::
 
 <Sandbox 
-  branch="feature/getting-started"
   name="step2-navigation"
   type="getting-started"
   view="preview"
@@ -29,7 +28,7 @@ Please note that the URL changes when you click on the link.
 />
 
 
-## Upgrade to an Oneki.js app
+## Upgrading to an Oneki.js app
 
 To be able to navigate between pages, we first transform the basic react app created during the previous step into an Oneki.js app
 

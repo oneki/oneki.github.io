@@ -27,7 +27,6 @@ The "checkout" button is now clickable and displays the cart page
 :::
 
 <Sandbox
-branch="feature/getting-started"
 name="step3-global-state"
 type="getting-started"
 view="preview"
@@ -164,8 +163,7 @@ export default ProductDetailsPage;
 ```
 
 :::tip Immutability
-As mentioned above, the global state is immutable. Therefore, to update the cart, one must use cart.contcat() to build a new array and not cart.push().
-
+As mentioned above, the global state is immutable. Therefore, to update the cart, one must use cart.contcat() to build a new array and not cart.push().<br/>
 Oneki.js handles transparently the immutability of the global state. The "cart" variable is a standard javascript object that you can manipulate like any other javascript object excepted it's frozen.
 
 **Advanced tip**: As the "cart" variable is immutable, the "Cart" component could use React.memo to be more performant
@@ -230,3 +228,5 @@ export default Navbar;
 ```
 
 ## Next step
+Currenty, the content of the cart is only stored in memory (in the global store) and if you refresh the page, the content is lost.<br/>
+In the next steps, we will add the possibility to authenticate a user and then save the content of the cart in the cloud.

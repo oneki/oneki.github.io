@@ -16,6 +16,8 @@ module.exports = {
           "overview/getting-started/creating-project",
           "overview/getting-started/navigation",
           "overview/getting-started/global-state",
+          "overview/getting-started/authentication",
+          "overview/getting-started/data",
         ]   
       },
       "overview/app",

@@ -20,7 +20,6 @@ Click on the button "Open Sandbox" to view/edit the code with an online IDE.
 :::
 
 <Sandbox 
-  branch="feature/getting-started"
   name="step1-react-app"
   type="getting-started"
   view="preview"
