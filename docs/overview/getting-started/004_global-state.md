@@ -21,7 +21,7 @@ Oneki.js provides a top level state for the application to store data on which a
 
 The result of this step is the following:
 
-:::note New in this step
+:::info New in this step
 You can now add a product to the cart by clicking on the button "Buy" available on the product details page.<br/>
 The "checkout" button is now clickable and displays the cart page
 :::
@@ -67,8 +67,7 @@ The global state is an **immutable** javascript object that looks like this:
 ```
 
 :::note
-By default, the global state is an empty object when the application starts. In our case, it means that the cart page displays an empty list of product.
-
+By default, the global state is an empty object when the application starts. In our case, it means that the cart page displays an empty list of product.<br/>
 If needed, it's possible to pass an initial state to the `<App />` component
 :::
 
@@ -84,6 +83,24 @@ const CartPage: FC = () => {
 
 export default CartPage;
 ```
+
+:::info
+It's a good practice to use a constant to identify a property in the global state. Indeed, if a refactoring is needed further on, it's easier to find which component uses which property.
+:::
+
+```tsx {3,6} title="src/@utils/constants.ts"
+export const STATE_CART = 'cart';
+```
+
+We can then update the cart page to use this constant:
+
+```tsx {2} title="src/cart/cart.tsx"
+const CartPage: FC = () => {
+  const cart: ProductType[] = useGlobalSelector(STATE_CART, []); // TODO change to useGlobalProp
+  return <Cart cart={cart} />;
+};
+```
+
 
 The Cart component displays the list of products:
 
@@ -145,7 +162,7 @@ A click on the "Buy" button calls a function that adds the product to the "cart"
 ```tsx {3,6} title="src/products/details.tsx"
 const ProductDetailsPage: FC = () => {
   const { id } = useParams<ProductDetailsParams>();
-  const [cart, setCart] = useGlobalProp<ProductType[]>('cart', []); // TODO update to useGlobalState
+  const [cart, setCart] = useGlobalProp<ProductType[]>(STATE_CART, []); // TODO update to useGlobalState
 
   const product = products[+id];
   return (
@@ -162,7 +179,7 @@ const ProductDetailsPage: FC = () => {
 export default ProductDetailsPage;
 ```
 
-:::tip Immutability
+:::caution Immutability
 As mentioned above, the global state is immutable. Therefore, to update the cart, one must use cart.contcat() to build a new array and not cart.push().<br/>
 Oneki.js handles transparently the immutability of the global state. The "cart" variable is a standard javascript object that you can manipulate like any other javascript object excepted it's frozen.
 

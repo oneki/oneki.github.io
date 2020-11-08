@@ -21,7 +21,7 @@ Oneki.js provides an authentication library offering:
 
 The result of this step is the following:
 
-:::note New in this step
+:::info New in this step
 The cart page (acessible via the checkout button) is now restricted to authenticated user only<br/>
 If you are not authenticated yet, you are redirected to the login page when you can sign in.
 :::

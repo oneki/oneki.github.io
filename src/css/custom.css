@@ -35,10 +35,41 @@
   --ifm-color-primary-light: #4e89e8;
   --ifm-color-primary-lighter: #5a91ea;
   --ifm-color-primary-lightest: #80aaef;
+
+
+
+}
+
+.alert--info {
+  --ifm-alert-background-color: #d9edf7;
+  --ifm-alert-border-color: #d9edf7;
+  --ifm-alert-color: #31708f;
+  --ra-admonition-icon-color: #31708f;
+}
+
+.alert--success {
+  --ifm-alert-background-color: #DFF2BF;
+  --ifm-alert-border-color: #DFF2BF;
+  --ifm-alert-color: #4F8A10;
+  --ra-admonition-icon-color: #4F8A10;
+}
+
+.alert--warning {
+  --ifm-alert-background-color: #FEEFB3;
+  --ifm-alert-border-color: #FEEFB3;
+  --ifm-alert-color: #9F6000;
+  --ra-admonition-icon-color: #9F6000;
+}
+
+.alert--danger {
+  --ifm-alert-background-color: #FFBABA;
+  --ifm-alert-border-color: #FFBABA;
+  --ifm-alert-color: #D8000C;
+  --ra-admonition-icon-color: #D8000C;
 }
 
 .docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
+  background-color: rgb(63 75 111);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);

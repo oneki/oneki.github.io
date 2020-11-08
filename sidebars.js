@@ -18,6 +18,9 @@ module.exports = {
           "overview/getting-started/global-state",
           "overview/getting-started/authentication",
           "overview/getting-started/data",
+          "overview/getting-started/notification",
+          "overview/getting-started/error-handling",
+          "overview/getting-started/i18n",
         ]   
       },
       "overview/app",

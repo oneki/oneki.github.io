@@ -14,7 +14,7 @@ This step consists of transforming a standard React application into an **Oneki.
 ## Final result
 The result of this step is the following:
 
-:::note New in this step
+:::info New in this step
 You can now click on a product (i.e: the link "Phone XL") to display the details of the product<br/>
 Please note that the URL changes when you click on the link.
 :::
