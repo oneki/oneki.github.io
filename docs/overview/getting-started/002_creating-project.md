@@ -20,11 +20,11 @@ Click on the button "Open Sandbox" to view/edit the code with an online IDE.
 :::
 
 <Sandbox 
-  name="step1-react-app"
+  name="step01-react-app"
   type="getting-started"
   view="preview"
   height="600" 
-  modules={['/src/index.tsx','/src/products/index.tsx']} 
+  modules={['/src/index.tsx','/src/pages/products/index.tsx']} 
 />
 
 
@@ -59,7 +59,7 @@ ReactDOM.render(
 );
 ```
 
-```tsx title="src/products/index.tsx"
+```tsx title="src/pages/products/index.tsx"
 const ProductsPage: FC = () => {
   return (
     <div>
@@ -102,7 +102,7 @@ export const products: ProductType[] = [
 export default ProductsPage;
 ```
 
-```tsx title="src/products/@components/Product.tsx"
+```tsx title="src/pages/products/@components/Product.tsx"
 type ProductOptions = {
   product: ProductType;
   onClick: () => void;

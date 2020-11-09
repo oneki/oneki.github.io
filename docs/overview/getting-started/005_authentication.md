@@ -27,11 +27,11 @@ If you are not authenticated yet, you are redirected to the login page when you 
 :::
 
 <Sandbox
-name="step4-authentication"
+name="step04-authentication"
 type="getting-started"
 view="preview"
 height="600"
-modules={['/src/index.tsx','/src/products/index.tsx']}
+modules={['/src/index.tsx','/src/pages/products/index.tsx']}
 />
 
 ## Securing the cart page
@@ -47,7 +47,7 @@ In this tutorial, we are going to use these hooks:
 
 To prevent non authenticated user to access the cart page, use the HOC **secure** (to learn more about HOC, [click here](https://reactjs.org/docs/higher-order-components.html))
 
-```tsx {6} title="src/cart/index.tsx"
+```tsx {6} title="src/pages/cart/index.tsx"
 const CartPage: FC = () => {
   const cart: ProductType[] = useGlobalSelector('cart', []); // TODO change to useGlobalProp
   return <Cart cart={cart} />;
@@ -80,9 +80,7 @@ import settings from './settings';
 
 ReactDOM.render(
   <App settings={settings}>
-    <AppLayout>
-      <MainRouter />
-    </AppLayout>
+    <RootRouter />
   </App>,
   document.getElementById('root'),
 );
@@ -134,7 +132,7 @@ Then create the auth page:
 The auth page is using the hook **useForm** which is explained later in the step **[Adding form](./form)**
 :::
 
-```tsx title="src/auth/index.tsx"
+```tsx title="src/pages/auth/index.tsx"
 const AuthPage: FC = () => {
   const [error, submitting , submit] = useLogin();
 
@@ -164,7 +162,7 @@ export default AuthPage;
 
 Create a route to associate the AuthPage to /auth
 
-```tsx title="src/auth/@router.tsx"
+```tsx title="src/pages/auth/@router.tsx"
 const AuthRouter = (): JSX.Element => {
   const match = useRouteMatch();
   return (
@@ -178,27 +176,33 @@ const AuthRouter = (): JSX.Element => {
 export default AuthRouter;
 ```
 
-```tsx {4-6} title="src/@router.tsx"
-const MainRouter = (): JSX.Element => {
+```tsx {4-6} title="src/pages/@router.tsx"
+const RootRouter = (): JSX.Element => {
   return (
     <Switch>
       <Route path="/auth">
         <AuthRouter />
       </Route>
-      <Route path="/products">
-        <ProductsRouter />
-      </Route>
-      <Route path="/cart">
-        <CartRouter />
-      </Route>
       <Route>
-        <Redirect to="/products" />
+        <AppLayout>
+          <Switch>
+            <Route path="/products">
+              <ProductsRouter />
+            </Route>
+            <Route path="/cart">
+              <CartRouter />
+            </Route>
+            <Route>
+              <Redirect to="/products" />
+            </Route>
+          </Switch>
+        </AppLayout>
       </Route>
     </Switch>
   );
 };
 
-export default MainRouter;
+export default RootRouter;
 ```
 
 ### Updating Navbar to display the logged user
@@ -213,9 +217,9 @@ The content of the security context is the response sent by the backend when cal
 }
 ```
 
-To display the username in the Navbar, update src/@components/Navbar.tsx:
+To display the username in the Navbar, update src/pages/@components/Navbar.tsx:
 
-```tsx {5,11-13} title="src/@components/Navbar.tsx"
+```tsx {5,11-13} title="src/pages/@components/Navbar.tsx"
 const Navbar: FC = () => {
   // retrieve the field username from the security context
   // if the user is not logged, loggedUser is undefined
@@ -266,7 +270,7 @@ export default {
 Create a logout page to handle the logout process.<br/>
 By default, the hook **useLogout** sends a GET request to the backend server
 
-```tsx title="src/auth/logout.tsx"
+```tsx title="src/pages/auth/logout.tsx"
 const AuthLogoutPage: FC = () => {
   const [error, loading] = useLogout();
 
@@ -280,7 +284,7 @@ export default AuthLogoutPage;
 
 Update the router to take into account this new page
 
-```tsx {5-7} title="src/auth/@router.tsx"
+```tsx {5-7} title="src/pages/auth/@router.tsx"
 const AuthRouter = (): JSX.Element => {
   const match = useRouteMatch();
   return (
@@ -300,7 +304,7 @@ export default AuthRouter;
 
 ### Updating Navbar to display a logout link
 
-```tsx {12-14} title="src/@components/Navbar.tsx"
+```tsx {12-14} title="src/pages/@components/Navbar.tsx"
 const Navbar: FC = () => {
   const [loggedUser] = useSecurityContext('username');
   return (

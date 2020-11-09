@@ -20,11 +20,11 @@ A click on the "Share" button displays a "success" notification and a click on t
 :::
 
 <Sandbox
-name="step6-notification"
+name="step06-notification"
 type="getting-started"
 view="preview"
 height="600"
-modules={['/src/index.tsx','/src/products/index.tsx']}
+modules={['/src/index.tsx','/src/pages/products/index.tsx']}
 />
 
 :::note
@@ -55,7 +55,7 @@ const notification = {
 Oneki.js provides a service to send notifications, but not a widget to display them.<br/>
 First, let's create the widget "Notification Center" to display them. If the topic is `success`, the notification appears in green and if it's `error`, the notification appears in red.
 
-```tsx {4-5} title="src/@utils/constants.ts"
+```tsx {4-5} title="src/pages/@libs/constants.ts"
 export const STATE_CART = 'cart';
 export const URL_ADD_PRODUCT = '/cart/products';
 export const URL_CART = '/cart';
@@ -63,7 +63,7 @@ export const NOTIF_TOPIC_ERROR = 'error';
 export const NOTIF_TOPIC_SUCCESS = 'success';
 ```
 
-```tsx title="src/@components/NotificationCenter.tsx"
+```tsx title="src/pages/@components/NotificationCenter.tsx"
 const NotificationCenter: FC = () => {
   // useNotifications returns an arry of notification
   const errors = useNotifications(NOTIF_TOPIC_ERROR);
@@ -98,7 +98,7 @@ export default NotificationCenter;
 
 As we want to centralize all notifications, we attach this widget to `<AppLayout />`:
 
-```tsx {6} title="src/@layout/AppLyout.tsx"
+```tsx {6} title="src/pages/@layouts/AppLyout.tsx"
 const AppLayout: FC = ({ children }) => {
   return (
     <div>
@@ -122,7 +122,7 @@ Replace the code to:
 
 A click on these button sends a notification on a specific topic and the `<NotificationCenter />` displays them.
 
-```tsx {2,12-28} title="src/products/index.tsx"
+```tsx {2,12-28} title="src/pages/products/index.tsx"
 const ProductsPage: FC = () => {
   const notificationService = useNotificationService();
 

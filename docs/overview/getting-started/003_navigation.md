@@ -20,11 +20,11 @@ Please note that the URL changes when you click on the link.
 :::
 
 <Sandbox 
-  name="step2-navigation"
+  name="step02-navigation"
   type="getting-started"
   view="preview"
   height="600" 
-  modules={['/src/index.tsx','/src/products/index.tsx']} 
+  modules={['/src/index.tsx','/src/pages/products/index.tsx']} 
 />
 
 
@@ -37,11 +37,7 @@ Update the entry point (src/index.tsx) to wrap the whole application with the On
 ```tsx title="src/index.tsx"
 ReactDOM.render(
   <App>
-    {/* AppLayout is a layout common to all pages. It contains the Navbar */}
-    <AppLayout>
-      {/* The routes are defined in the file src/@router.tsx */}
-      <MainRouter />
-    </AppLayout>
+    <RootRouter />
   </App>,
   document.getElementById('root'),
 );
@@ -60,29 +56,32 @@ This component is generally the outermost component of an application and is res
 We need to declare the routes so React router can link a `Page component` to a URL.<br/>
 The routes are declared in their own file named `@router.tsx` and can be nested.<br/>For example:
 
-- Top level routes like `/`, `/users`, `/products`, ... are defined in src/@router.tsx
-- Sub routes like `/products/new`, `/products/:id`, `/products/:id/edit`, ... are defined in src/products/@router.tsx
+- Top level routes like `/`, `/users`, `/products`, ... are defined in src/pages/@router.tsx
+- Sub routes like `/products/new`, `/products/:id`, `/products/:id/edit`, ... are defined in src/pages/products/@router.tsx
 
-```tsx title="src/@router.tsx"
-const MainRouter = (): JSX.Element => {
+```tsx title="src/pages/@router.tsx"
+const RootRouter = (): JSX.Element => {
   return (
-    <Switch>
-      <Route path="/products">
-        {/* all routes starting with /products are defined in src/products/@router.tsx */}
-        <ProductsRouter />
-      </Route>
-      <Route>
-        {/* redirect by default to /products as we don't have any homepage in this example */}
-        <Redirect to="/products" />
-      </Route>
-    </Switch>
+    <AppLayout>
+      {/* AppLayout is a layout common to all pages */}
+      <Switch>
+        <Route path="/products">
+          {/* all routes starting with /products are defined in src/products/@router.tsx */}
+          <ProductsRouter />
+        </Route>
+        <Route>
+          {/* redirect by default to /products as we don't have any homepage in this example */}
+          <Redirect to="/products" />
+        </Route>
+      </Switch>
+    </AppLayout>
   );
 };
 
-export default MainRouter;
+export default RootRouter;
 ```
 
-```tsx title="src/products/@router.tsx"
+```tsx title="src/pages/products/@router.tsx"
 const ProductsRouter = (): JSX.Element => {
   const match = useRouteMatch();
   return (
@@ -111,7 +110,7 @@ To navigate between pages, React Router offers the component `<Link/>` that repl
 
 The `<Product />` component that displays a product in the product list is updated to use `<Link />`
 
-```tsx {5} title="src/products/@components/Product.tsx"
+```tsx {5} title="src/pages/products/@components/Product.tsx"
 const Product: FC<ProductOptions> = ({ product, id, onClick, onNotify }) => {
   return (
     <div>

@@ -21,6 +21,7 @@ module.exports = {
           "overview/getting-started/notification",
           "overview/getting-started/error-handling",
           "overview/getting-started/i18n",
+          "overview/getting-started/form",
         ]   
       },
       "overview/app",

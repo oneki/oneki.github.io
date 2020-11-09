@@ -29,14 +29,14 @@ name="step6-notification"
 type="getting-started"
 view="preview"
 height="600"
-modules={['/src/index.tsx','/src/products/index.tsx']}
+modules={['/src/index.tsx','/src/pages/products/index.tsx']}
 />
 
 ## Error boundaries
 You can pass a component to `<App />` (via the prop `ErrorBoundaryComponent`). This component will be called when an error occurs during the rendering.<br/>
 First, let's create this component
 
-```tsx title="src/@components/ErrorBoundary.tsx"
+```tsx title="src/pages/@components/ErrorBoundary.tsx"
 const ErrorBoundary: FC<ErrorBoundaryComponentProps> = ({ error, errorInfo }) => {
   return (
     <div className="error-boundary-container">
@@ -61,9 +61,7 @@ Update the entry point to pass this component to `<App />`
 ```tsx {2} title="src/index.tsx"
 ReactDOM.render(
   <App settings={settings} ErrorBoundaryComponent={ErrorBoundary}>
-    <AppLayout>
-      <MainRouter />
-    </AppLayout>
+    <RootRouter />
   </App>,
   document.getElementById('root'),
 );
@@ -71,7 +69,7 @@ ReactDOM.render(
 
 To simulate an error during the rendering phase, update the product details page to simulate an error when the product name is "Phone Invalid":
 
-```tsx {13-16} title="src/products/details.tsx"
+```tsx {13-16} title="src/pages/products/[id]/index.tsx"
 const ProductDetailsPage: FC = () => {
   const { id } = useParams<ProductDetailsParams>();
   const [submit] = usePost<ProductType>(URL_ADD_PRODUCT, {
@@ -113,7 +111,7 @@ To simulate an error coming from the server, a new API is exposed by the server 
 
 Update the `Product details page` to call this new API and to use `NotificationService` instead of `window.alert`:
 
-```tsx {2} title="src/@utils/constants.ts"
+```tsx {2} title="src/pages/@libs/constants.ts"
 export const STATE_CART = 'cart';
 export const URL_ADD_PRODUCT = '/cart/products-not-available';
 export const URL_CART = '/cart';
@@ -121,7 +119,7 @@ export const NOTIF_TOPIC_ERROR = 'error';
 export const NOTIF_TOPIC_SUCCESS = 'success';
 ```
 
-```tsx {5-11} title="src/products/details.tsx"
+```tsx {5-11} title="src/pages/products/[id]/index.tsx"
 const ProductDetailsPage: FC = () => {
   const { id } = useParams<ProductDetailsParams>();
   const notificationService = useNotificationService();
@@ -167,7 +165,7 @@ When using an Oneki.js hook, if you don't specify a callback to handle errors, i
 
 Therefore, we can update the `Product details page` and remove the onError callback:
 
-```tsx title="src/products/details.tsx"
+```tsx title="src/pages/products/[id]/index.tsx"
 const ProductDetailsPage: FC = () => {
   const { id } = useParams<ProductDetailsParams>();
   const notificationService = useNotificationService();

@@ -22,11 +22,11 @@ The content of the cart is retrieve from the server with an AJAX GET request.
 :::
 
 <Sandbox
-name="step5-data"
+name="step05-data"
 type="getting-started"
 view="preview"
 height="600"
-modules={['/src/index.tsx','/src/products/index.tsx']}
+modules={['/src/index.tsx','/src/pages/products/index.tsx']}
 />
 
 :::note
@@ -44,7 +44,7 @@ To prevent loosing the content of the shopping cart after a refresh, the "Buy" b
 Update the product details page to use the hook **usePost** instead of **useGlobalState**.<br/>
 The hook accepts a success and error callbacks executed once it receives a response from the server:
 
-```tsx {2} title="src/@utils/constants.ts"
+```tsx {2} title="src/pages/@libs/constants.ts"
 export const STATE_CART = 'cart';
 export const URL_ADD_PRODUCT = '/cart/products';
 ```
@@ -74,13 +74,13 @@ const ProductDetailsPage: FC = () => {
 The cart page is updated to retrieve the content of the cart from the server.<br/>
 Update the page to use the hook **useGet** to perform an AJAX GET request each time the page is displayed
 
-```tsx {3} title="src/@utils/constants.ts"
+```tsx {3} title="src/pages/@libs/constants.ts"
 export const STATE_CART = 'cart';
 export const URL_ADD_PRODUCT = '/cart/products';
 export const URL_CART = '/cart';
 ```
 
-```tsx {2} title="src/cart/index.tsx"
+```tsx {2} title="src/pages/cart/index.tsx"
 const CartPage: FC = () => {
   const [cart, loading] = useGet<CartResponse>(URL_CART);
   return (
@@ -104,7 +104,7 @@ Update the page to use the hook **useDelete** to perform an AJAX DELETE request.
 
 We want to refresh the page once the cart is emptied. We use the "refresh" function provided by **useGet** to perform that.
 
-```tsx {2-10,14-18} title="src/cart/index.tsx"
+```tsx {2-10,14-18} title="src/pages/cart/index.tsx"
 const CartPage: FC = () => {
   const [cart, loading, refresh] = useGet<CartResponse>(URL_CART);
   const [deleleCart] = useDelete(URL_CART, {

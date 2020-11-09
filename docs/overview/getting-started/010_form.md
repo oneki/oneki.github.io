@@ -1,7 +1,7 @@
 ---
-id: i18n
-title: Internationalization (i18n)
-sidebar_label: Internationalization
+id: form
+title: Using form for user input
+sidebar_label: Using form for user input
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,15 +9,20 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
 
-This step consists in proposing the website in several languages.
+This step consists in introducing how to build form with Oneki.js
+
+Building forms with React require a lot of code and can be hard to maintain.<br/>
+Oneki.js proposes a library to control a form and reduce drastically the code.
 
 ## Final result
 
 The result of this step is the following:
 
 :::info New in this step
-The website is now available in english and french. You can switch locale via a link in the navbar<br/>
-Please note the text "TODO" on the Cart page which is more complex to handle (styling + plural)
+The login page now validates that the username and password are filled in
+
+A new page is added to sign up. The form on the sign up page verifies asynchronously if the username is available or not<br/>
+Certain elements of the form are displayed or not depending on the value of a field
 :::
 
 <Sandbox
@@ -28,28 +33,53 @@ height="600"
 modules={['/src/index.tsx','/src/pages/products/index.tsx']}
 />
 
-## Configuration
-You specify the languages supported by the website via the standard `src/settings.ts` file:
+## Adding validation
+Let's update the login page to verify that the username and password are filled in and that the username contains only alphanumeric charaters (max size 20)<br/>
+The value of the form is updated every time the user enters a caracter. At the bottom of the form, We add a "debug" component to display in real time the value of the form<br/>
+This real-time update also allows to have a real time validation:
 
-```ts {2-6} title="src/settings.ts"
-export default {
-  i18n: {
-    locales: ['en', 'fr'], // supported locales
-    defaultLocale: 'en',
-    url: '/locales', // the URL to retrieves the JSON files with the translations
-  },
-  routes: {
-    login: '/auth',
-  },
-  idp: {
-    default: {
-      type: 'form',
-      loginEndpoint: '/auth/login',
-      logoutEndpoint: '/auth/logout',
-      userinfoEndpoint: '/userinfo',
-    },
-  },
-} as AppSettings;
+```tsx {4,13,18-21,27,29,34} title="src/pages/auth/index.tsx"
+const AuthPage: FC = () => {
+  const [error, , submit] = useLogin();
+  const [T, t] = useTranslation();
+  const { Form, values, getValidation } = useForm(submit);
+
+  return (
+    <div className="login-container">
+      <Form className="login-form">
+        {error && <div className="error">Error: {error.message}</div>}
+        <div>
+          <label>
+            <T>Username</T>
+            <span className="error">{getValidation('username').message}</span>
+          </label>
+          <Input
+            name="username"
+            type="text"
+            required={true}
+            requiredMessage={t('Username is mandatory')}
+            regex="^[a-zA-Z0-9.]{1,20}$"
+            regexMessage={t('Username must contain only alphanumeric chars (max 20)')}
+          />
+        </div>
+        <div>
+          <label>
+            <T>Password</T>
+            <span className="error">{getValidation('password').message}</span>
+          </label>
+          <Input name="password" type="password" required={true} requiredMessage={t('Password is mandatory')} />
+        </div>
+        <SubmitButton>
+          <T>Submit</T>
+        </SubmitButton>
+        <pre className="debug">{JSON.stringify(values, null, 2)}</pre>
+      </Form>
+    </div>
+  );
+};
+
+export default AuthPage;
+
 ```
 
 ## Translations

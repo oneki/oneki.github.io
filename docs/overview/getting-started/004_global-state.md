@@ -27,11 +27,11 @@ The "checkout" button is now clickable and displays the cart page
 :::
 
 <Sandbox
-name="step3-global-state"
+name="step03-global-state"
 type="getting-started"
 view="preview"
 height="600"
-modules={['/src/index.tsx','/src/products/index.tsx']}
+modules={['/src/index.tsx','/src/pages/products/index.tsx']}
 />
 
 ## Adding global state management
@@ -73,7 +73,7 @@ If needed, it's possible to pass an initial state to the `<App />` component
 
 Add a new page to display the list of products the user wants to buy:
 
-```tsx title="src/cart/cart.tsx"
+```tsx title="src/pages/cart/cart.tsx"
 const CartPage: FC = () => {
   // Reacts on the property 'cart' of the global state of the application
   // Each time the property 'cart' is updated, the component is refreshed
@@ -88,13 +88,13 @@ export default CartPage;
 It's a good practice to use a constant to identify a property in the global state. Indeed, if a refactoring is needed further on, it's easier to find which component uses which property.
 :::
 
-```tsx {3,6} title="src/@utils/constants.ts"
+```tsx {3,6} title="src/pages/@libs/constants.ts"
 export const STATE_CART = 'cart';
 ```
 
 We can then update the cart page to use this constant:
 
-```tsx {2} title="src/cart/cart.tsx"
+```tsx {2} title="src/pages/cart/cart.tsx"
 const CartPage: FC = () => {
   const cart: ProductType[] = useGlobalSelector(STATE_CART, []); // TODO change to useGlobalProp
   return <Cart cart={cart} />;
@@ -104,7 +104,7 @@ const CartPage: FC = () => {
 
 The Cart component displays the list of products:
 
-```tsx title="src/cart/cart.tsx"
+```tsx title="src/pages/cart/cart.tsx"
 const Cart: FC<CartOptions> = ({ cart }) => {
   return (
     <div>
@@ -131,7 +131,7 @@ export default Cart;
 
 Update the product details component to display a button to purchase the product.
 
-```tsx {3,16} title="src/products/@components/ProductDetails.tsx"
+```tsx {3,16} title="src/pages/products/@components/ProductDetails.tsx"
 type ProductDetailsOptions = {
   product: ProductType;
   onBuy: () => void;
@@ -159,7 +159,7 @@ export default ProductDetails;
 Update the product details page to handle the click on the "Buy" button.<br/>
 A click on the "Buy" button calls a function that adds the product to the "cart" property of the global state.<br/>As the cart page reacts on this property, the product will automatically appears on it.
 
-```tsx {3,6} title="src/products/details.tsx"
+```tsx {3,6} title="src/pages/products/[id]/index.tsx"
 const ProductDetailsPage: FC = () => {
   const { id } = useParams<ProductDetailsParams>();
   const [cart, setCart] = useGlobalProp<ProductType[]>(STATE_CART, []); // TODO update to useGlobalState
@@ -188,28 +188,30 @@ Oneki.js handles transparently the immutability of the global state. The "cart" 
 
 ## Updating the navigation
 Update the main router to add a route to display the cart page
-```tsx {7-9} title="src/@router.tsx"
-const MainRouter = (): JSX.Element => {
+```tsx {8-10} title="src/pages/@router.tsx"
+const RootRouter = (): JSX.Element => {
   return (
-    <Switch>
-      <Route path="/products">
-        <ProductsRouter />
-      </Route>
-      <Route path="/cart">
-        <CartRouter />
-      </Route>
-      <Route>
-        <Redirect to="/products" />
-      </Route>
-    </Switch>
+    <AppLayout>
+      <Switch>
+        <Route path="/products">
+          <ProductsRouter />
+        </Route>
+        <Route path="/cart">
+          <CartRouter />
+        </Route>
+        <Route>
+          <Redirect to="/products" />
+        </Route>
+      </Switch>
+    </AppLayout>
   );
 };
 
-export default MainRouter;
+export default RootRouter;
 ```
 
 Create a router to handle the /cart** routes
-```tsx {5-7} title="src/cart/@router.tsx"
+```tsx {5-7} title="src/pages/cart/@router.tsx"
 const CartRouter = (): JSX.Element => {
   const match = useRouteMatch();
   return (
@@ -226,7 +228,7 @@ export default CartRouter;
 
 and finally, update the "Checkout" button to navigate to the cart page
 
-```tsx {7} title="src/@components/Navbar.tsx"
+```tsx {7} title="src/pages/@components/Navbar.tsx"
 const Navbar: FC = () => {
   return (
     <div className="app-top-bar">
