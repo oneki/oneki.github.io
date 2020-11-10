@@ -179,7 +179,7 @@ const [securityContext, loading] = useSecurityContext(); // securityContext is u
 const [email, loading] = useSecurityContext("email"); // email is undefined if user is not logged in
 ```
 
-The security context is described in detail on **[this page](./secure-context)**
+The security context is described in detail on **[this page](./security-context)**
 
 ## Services
 **Oneki.js** provide up to 4 services you can use to implement the authentication process:

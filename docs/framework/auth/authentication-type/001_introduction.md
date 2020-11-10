@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NextSandbox from '@site/src/components/NextSandbox';
 
-The goal of the authentication library is to provide the same service / methods for any kind of authentication. Everything specific to a type of authentication is configured in **[settings.js](../configuration/introduction)**
+The goal of the authentication library is to provide the same service / methods for any kind of authentication. Everything specific to a type of authentication is configured in **[settings.js](../../configuration/introduction)**
 
 There are 4 types of authentication, each having their specific configuration format: 
 

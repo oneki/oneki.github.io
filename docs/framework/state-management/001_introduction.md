@@ -27,7 +27,7 @@ When the application starts, **Oneki.js** creates automatically a Redux store (o
 - **[useGlobalState](./global-state)** to retrieve and react on data from the global state using a selector
 - **[useGlobalStateService](./global-state)** is a generic global service to update any data in the global state
 
-> ***Note***: For advanced use cases involving asynchronous flows, **Oneki.js** provides also a hook to create a **globalService**.<br/>This part is more complex and described in [another section of the documentation](../../services/custom/global-service)
+> ***Note***: For advanced use cases involving asynchronous flows, **Oneki.js** provides also a hook to create a **globalService**.<br/>This part is more complex and described in [another section of the documentation](../service/global-service)
 
 ### Basic Example
 
