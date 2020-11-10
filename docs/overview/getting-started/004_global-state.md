@@ -73,7 +73,7 @@ If needed, it's possible to pass an initial state to the `<App />` component
 
 Add a new page to display the list of products the user wants to buy:
 
-```tsx title="src/pages/cart/cart.tsx"
+```tsx title="src/pages/cart.tsx"
 const CartPage: FC = () => {
   // Reacts on the property 'cart' of the global state of the application
   // Each time the property 'cart' is updated, the component is refreshed
@@ -94,7 +94,7 @@ export const STATE_CART = 'cart';
 
 We can then update the cart page to use this constant:
 
-```tsx {2} title="src/pages/cart/cart.tsx"
+```tsx {2} title="src/pages/cart.tsx"
 const CartPage: FC = () => {
   const cart: ProductType[] = useGlobalSelector(STATE_CART, []); // TODO change to useGlobalProp
   return <Cart cart={cart} />;
@@ -104,7 +104,7 @@ const CartPage: FC = () => {
 
 The Cart component displays the list of products:
 
-```tsx title="src/pages/cart/cart.tsx"
+```tsx title="src/pages/cart.tsx"
 const Cart: FC<CartOptions> = ({ cart }) => {
   return (
     <div>
@@ -197,7 +197,7 @@ const RootRouter = (): JSX.Element => {
           <ProductsRouter />
         </Route>
         <Route path="/cart">
-          <CartRouter />
+          <CartPage />
         </Route>
         <Route>
           <Redirect to="/products" />
@@ -208,22 +208,6 @@ const RootRouter = (): JSX.Element => {
 };
 
 export default RootRouter;
-```
-
-Create a router to handle the /cart** routes
-```tsx {5-7} title="src/pages/cart/@router.tsx"
-const CartRouter = (): JSX.Element => {
-  const match = useRouteMatch();
-  return (
-    <Switch>
-      <Route path={match.path}>
-        <CartPage />
-      </Route>
-    </Switch>
-  );
-};
-
-export default CartRouter;
 ```
 
 and finally, update the "Checkout" button to navigate to the cart page

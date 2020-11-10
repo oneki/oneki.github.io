@@ -47,7 +47,7 @@ In this tutorial, we are going to use these hooks:
 
 To prevent non authenticated user to access the cart page, use the HOC **secure** (to learn more about HOC, [click here](https://reactjs.org/docs/higher-order-components.html))
 
-```tsx {6} title="src/pages/cart/index.tsx"
+```tsx {6} title="src/pages/cart.tsx"
 const CartPage: FC = () => {
   const cart: ProductType[] = useGlobalSelector('cart', []); // TODO change to useGlobalProp
   return <Cart cart={cart} />;
@@ -132,8 +132,8 @@ Then create the auth page:
 The auth page is using the hook **useForm** which is explained later in the step **[Adding form](./form)**
 :::
 
-```tsx title="src/pages/auth/index.tsx"
-const AuthPage: FC = () => {
+```tsx title="src/pages/login.tsx"
+const LoginPage: FC = () => {
   const [error, submitting , submit] = useLogin();
 
   const { Form } = useForm(submit);
@@ -157,31 +157,17 @@ const AuthPage: FC = () => {
   );
 };
 
-export default AuthPage;
+export default LoginPage;
 ```
 
-Create a route to associate the AuthPage to /auth
-
-```tsx title="src/pages/auth/@router.tsx"
-const AuthRouter = (): JSX.Element => {
-  const match = useRouteMatch();
-  return (
-      <Route path={match.path}>
-        <AuthPage />
-      </Route>
-    </Switch>
-  );
-};
-
-export default AuthRouter;
-```
+Create a route to associate the LoginPage to /auth
 
 ```tsx {4-6} title="src/pages/@router.tsx"
 const RootRouter = (): JSX.Element => {
   return (
     <Switch>
-      <Route path="/auth">
-        <AuthRouter />
+      <Route path="/login">
+        <LoginPage />
       </Route>
       <Route>
         <AppLayout>
@@ -190,7 +176,7 @@ const RootRouter = (): JSX.Element => {
               <ProductsRouter />
             </Route>
             <Route path="/cart">
-              <CartRouter />
+              <CartPage />
             </Route>
             <Route>
               <Redirect to="/products" />
@@ -270,8 +256,8 @@ export default {
 Create a logout page to handle the logout process.<br/>
 By default, the hook **useLogout** sends a GET request to the backend server
 
-```tsx title="src/pages/auth/logout.tsx"
-const AuthLogoutPage: FC = () => {
+```tsx title="src/pages/logout.tsx"
+const LogoutPage: FC = () => {
   const [error, loading] = useLogout();
 
   if (error) return <div>Error: {JSON.stringify(error)}</div>;
@@ -279,27 +265,41 @@ const AuthLogoutPage: FC = () => {
   return null;
 };
 
-export default AuthLogoutPage;
+export default LogoutPage;
 ```
 
 Update the router to take into account this new page
 
-```tsx {5-7} title="src/pages/auth/@router.tsx"
-const AuthRouter = (): JSX.Element => {
-  const match = useRouteMatch();
+```tsx {7-9} title="src/pages/@router.tsx"
+const RootRouter = (): JSX.Element => {
   return (
     <Switch>
-      <Route path={`${match.path}/logout`}>
-        <AuthLogoutPage />
+      <Route path="/login">
+        <LoginPage />
       </Route>
-      <Route path={match.path}>
-        <AuthPage />
+      <Route path="/logout">
+        <LogoutPage />
+      </Route>
+      <Route>
+        <AppLayout>
+          <Switch>
+            <Route path="/products">
+              <ProductsRouter />
+            </Route>
+            <Route path="/cart">
+              <CartPage />
+            </Route>
+            <Route>
+              <Redirect to="/products" />
+            </Route>
+          </Switch>
+        </AppLayout>
       </Route>
     </Switch>
   );
 };
 
-export default AuthRouter;
+export default RootRouter;
 ```
 
 ### Updating Navbar to display a logout link
@@ -316,7 +316,7 @@ const Navbar: FC = () => {
         {loggedUser && (
           <div className="user">
             {loggedUser}{' '}
-            <Link className="logout" to="/auth/logout">
+            <Link className="logout" to="/logout">
               [Log out]
             </Link>
           </div>

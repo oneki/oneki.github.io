@@ -1,7 +1,7 @@
 ---
 id: creating-project
-title: Creating project
-sidebar_label: Creating project
+title: Creating the project
+sidebar_label: Creating the project
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';

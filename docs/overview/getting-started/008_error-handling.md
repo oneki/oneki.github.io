@@ -24,8 +24,13 @@ The third product is now named "Invalid product". A click on this product simula
 The "Buy" button now calls an API that returns an HTTP 400 error indicating that the product is not available at the moment
 :::
 
+:::caution
+Codesandbox executes the project in dev mode. Therefore, the `<ErrorBoundary />` component is hidden by the stacktrace displayed by create react app<br/>
+Just press "ESC" to hide this stacktrace.
+:::
+
 <Sandbox
-name="step6-notification"
+name="step07-error-handling"
 type="getting-started"
 view="preview"
 height="600"

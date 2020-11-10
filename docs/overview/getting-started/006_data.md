@@ -80,7 +80,7 @@ export const URL_ADD_PRODUCT = '/cart/products';
 export const URL_CART = '/cart';
 ```
 
-```tsx {2} title="src/pages/cart/index.tsx"
+```tsx {2} title="src/pages/cart.tsx"
 const CartPage: FC = () => {
   const [cart, loading] = useGet<CartResponse>(URL_CART);
   return (
@@ -104,7 +104,7 @@ Update the page to use the hook **useDelete** to perform an AJAX DELETE request.
 
 We want to refresh the page once the cart is emptied. We use the "refresh" function provided by **useGet** to perform that.
 
-```tsx {2-10,14-18} title="src/pages/cart/index.tsx"
+```tsx {2-10,14-18} title="src/pages/cart.tsx"
 const CartPage: FC = () => {
   const [cart, loading, refresh] = useGet<CartResponse>(URL_CART);
   const [deleleCart] = useDelete(URL_CART, {
