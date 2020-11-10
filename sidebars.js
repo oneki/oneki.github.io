@@ -22,6 +22,7 @@ module.exports = {
           "overview/getting-started/error-handling",
           "overview/getting-started/i18n",
           "overview/getting-started/form",
+          "overview/getting-started/service",
         ]   
       },
       "overview/app",
