@@ -36,11 +36,11 @@ module.exports = {
             },
             {
               label: 'Demo app',
-              to: 'docs/overview/crud-app',
+              to: 'docs/overview/getting-started/creating-project',
             },
             {
-              label: 'Hooks',
-              to: 'docs/hooks/use-settings',
+              label: 'Framework',
+              to: 'docs/framework/introduction',
             },
           ],
         },

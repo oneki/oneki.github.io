@@ -105,7 +105,7 @@ state: object // the local state handled by the service
 
 ## Examples
 ### Minimal example
-This example shows how to send a ajax POST request to a back end server to create a user. Actually, ***[usePost](../rest/use-post)*** is based on this approach.<br/>
+This example shows how to send a ajax POST request to a back end server to create a user. Actually, ***[usePost](../data/use-post)*** is based on this approach.<br/>
 A Saga method is defined to handle correctly the "loading ..." indicator and the asynchronous AJAX request
 
 <Tabs

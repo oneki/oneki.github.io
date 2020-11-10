@@ -98,7 +98,7 @@ branch="master"
 ## Complex validations
 
 Sometimes, a validation implies more than one field. For example, the confirm password validator checks that the content of two different fields are similar.  
-**[useForm](./useForm)** provides some methods to control externally the validation status of a field.
+**[useForm](./use-form)** provides some methods to control externally the validation status of a field.
 
 ```javascript
 const { setError, setWarning, setOK, setPendingValidation } = useForm();

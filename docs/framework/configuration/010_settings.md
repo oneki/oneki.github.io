@@ -76,7 +76,7 @@ export default {
 };
 ```
 
-For more information concerning the bootstrap of an ***Oneki.js application***, check the [App component documentation page](../overview/app).
+For more information concerning the bootstrap of an ***Oneki.js application***, check the [App component documentation page](../../overview/app).
 
 ## Examples
 

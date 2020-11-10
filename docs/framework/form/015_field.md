@@ -10,7 +10,7 @@ A field must be registered with a form to be controlled.
 There are different ways to register a field with a form
 
 - The `field`method provided by **[useForm](./use-form)**
-- The `useField` hook. Check the **[Write your own wrapper component](./custom-component)** page for more details
+- The `useField` hook. Check the **[Write your own wrapper component](./custom-wrapper)** page for more details
 - The `init` method provided by **[useFormContext](./use-form-context)**. Low level API.
 
 ## field method
@@ -27,7 +27,7 @@ const { name, value, onChange, onFocus, onBlur } = field(name, validators, optio
 | Name                     | Description                                                                                                                                                                               | Example                                                                                         |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | **name**                 | Name of the field. Must match the path in the values object<br /> A sub property is accessed via a dot --> `"address.street"`<br/>A item of an array is accessed via its index --> `"item.2"` | `"lastname"`<br />`"address.street"`<br />`"children.1.firstname"`                                    |
-| **validators**           | An array of validators. Check the **[Validations](./validation)** section for more details                                                                                                | `[required(), maxlength(5)]` |
+| **validators**           | An array of validators. Check the **[Validations](./validations)** section for more details                                                                                                | `[required(), maxlength(5)]` |
 | **options.defaultValue** | Default value of the field                                                                                                                                                                | `defaultValue: 'open'`                                                                                                |
 | **options.touchOn** | *Overrides the setting defined at the **[form](./use-form#inputs)** level* <br/><br/>Indicates which event marks the field as touched.<br />The validations of a field are compiled as soon as it has been touched.<br /><br />Valid values are<br /> - **`blur`**: when the field is exited<br /> - **`change`**: when the content of the field is changed<br />  - **`focus`**: when the field is entered<br /> - **`load`**: when the field is loaded<br /> - **`submit`**: when the form is submitted                                         | `touchOn: 'focus'`|
 
