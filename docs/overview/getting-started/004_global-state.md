@@ -232,4 +232,4 @@ export default Navbar;
 
 ## Next step
 Currenty, the content of the cart is only stored in memory (in the global store) and if you refresh the page, the content is lost.<br/>
-In the next steps, we will add the possibility to authenticate a user and then save the content of the cart in the cloud.
+**[In the next step](authentication)**, we will add the possibility to authenticate a user and then save the content of the cart in the cloud.

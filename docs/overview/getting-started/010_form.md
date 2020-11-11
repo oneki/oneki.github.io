@@ -258,3 +258,5 @@ const SignupPage: FC = () => {
 export default SignupPage;
 ```
 
+## Next step
+**[In the next step](service)**, we introduce the concept of services which allow adding complex logic to the application.

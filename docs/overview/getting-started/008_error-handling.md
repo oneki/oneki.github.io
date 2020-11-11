@@ -193,4 +193,4 @@ export default ProductDetailsPage;
 
 
 ## Next step
-In the next step, we adapt the application to different languages (internationalization and localization).
+**[In the next step](i18n)**, we adapt the application to different languages (internationalization and localization).

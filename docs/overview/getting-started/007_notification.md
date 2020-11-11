@@ -162,4 +162,4 @@ export default ProductsPage;
 
 ## Next step
 Now that we can identify the logged user, we can save the content of the cart in the cloud so we don't loose its content after a refresh<br/>
-In the next step, we introduce the services offered by Oneki.js to retrieve and send data via AJAX requests. 
+**[In the next step](error-handling)**, we introduce the services offered by Oneki.js to retrieve and send data via AJAX requests. 

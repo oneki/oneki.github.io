@@ -133,4 +133,4 @@ export default secure(CartPage);
 
 ## Next step
 Currently, the notifications are displayed via `window.alert()` which is not very user friendly and configurable.<br/>
-In the next step, we improve that and introduce how to centralize notifications.
+**[In the next step](notification)**, we improve that and introduce how to centralize notifications.
