@@ -61,7 +61,7 @@ We want to add a button on the product page to check its availability. A click o
 6. Enable the button
 
 Therefore, the state contains the following elements:
-```ts title="src/pages/products/@services/AvailabilityService.ts"
+```ts title="src/modules/products/services/AvailabilityService.ts"
 export interface AvailabilityState {
   // a flag to indicate if a request is in flight
   loading: boolean;
@@ -86,7 +86,7 @@ The class must be annotated with @service. This is something specific to Typescr
 If you don't use Typescript, please check this page
 :::
 
-```ts title="src/pages/products/@services/AvailabilityService.ts"
+```ts title="src/modules/products/services/AvailabilityService.ts"
 @service
 export default class AvailabilityService extends LocalService<AvailabilityState> {
   //TODO implementation
@@ -105,7 +105,7 @@ Reducer methods must be annotated with @reducer
 
 Let's add these two methods:
 
-```ts {3-14} title="src/pages/products/@services/AvailabilityService.ts"
+```ts {3-14} title="src/modules/products/services/AvailabilityService.ts"
 @service
 export default class AvailabilityService extends LocalService<AvailabilityState> {
   @reducer
@@ -133,7 +133,7 @@ For our service, we need one saga that will implement the following scenario:
 
 Let's add this method:
 
-```ts {18-23} title="src/pages/products/@services/AvailabilityService.ts"
+```ts {18-23} title="src/modules/products/services/AvailabilityService.ts"
 @service
 export default class AvailabilityService extends LocalService<AvailabilityState> {
   @reducer
@@ -167,7 +167,7 @@ As we created a local service, we must use `useLocalService`:
 Let's upadte the `ProductDetails` component to add a button `Check Availability` that uses the service:
 
 
-```tsx {1-3,7,30-50} title="src/pages/products/@components/ProductDetails.ts"
+```tsx {1-3,7,30-50} title="src/modules/products/components/ProductDetails.ts"
 const initialAvailabilityState: AvailabilityState = {
   loading: false,
 };
@@ -232,7 +232,7 @@ One common approch is to send a notification on the topic `error` so the `<Notif
 
 To be able to use the NotificationService inside the AvailabilityService, one must inject it.
 
-```ts {3,22,26-28} title="src/pages/products/@services/AvailabilityService.ts"
+```ts {3,22,26-28} title="src/modules/products/services/AvailabilityService.ts"
 @service
 export default class AvailabilityService extends LocalService<AvailabilityState> {
   notificationService = inject(NotificationService);

@@ -147,7 +147,7 @@ export default SignupPage;
 
 The router is updated to add a route for this page
 
-```tsx {13-15} title="src/pages/@router.tsx"
+```tsx {13-15} title="src/pages/_router.tsx"
 const RootRouter = (): JSX.Element => {
   return (
     <Switch>

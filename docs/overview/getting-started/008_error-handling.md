@@ -41,7 +41,7 @@ modules={['/src/index.tsx','/src/pages/products/index.tsx']}
 You can pass a component to `<App />` (via the prop `ErrorBoundaryComponent`). This component will be called when an error occurs during the rendering.<br/>
 First, let's create this component
 
-```tsx title="src/pages/@components/ErrorBoundary.tsx"
+```tsx title="src/modules/core/components/ErrorBoundary.tsx"
 const ErrorBoundary: FC<ErrorBoundaryComponentProps> = ({ error, errorInfo }) => {
   return (
     <div className="error-boundary-container">
@@ -116,7 +116,7 @@ To simulate an error coming from the server, a new API is exposed by the server 
 
 Update the `Product details page` to call this new API and to use `NotificationService` instead of `window.alert`:
 
-```tsx {2} title="src/pages/@libs/constants.ts"
+```tsx {2} title="src/modules/core/libs/constants.ts"
 export const STATE_CART = 'cart';
 export const URL_ADD_PRODUCT = '/cart/products-not-available';
 export const URL_CART = '/cart';

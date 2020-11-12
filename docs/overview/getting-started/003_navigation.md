@@ -56,10 +56,10 @@ This component is generally the outermost component of an application and is res
 We need to declare the routes so React router can link a `Page component` to a URL.<br/>
 The routes are declared in their own file named `@router.tsx` and can be nested.<br/>For example:
 
-- Top level routes like `/`, `/users`, `/products`, ... are defined in src/pages/@router.tsx
-- Sub routes like `/products/new`, `/products/:id`, `/products/:id/edit`, ... are defined in src/pages/products/@router.tsx
+- Top level routes like `/`, `/users`, `/products`, ... are defined in src/pages/_router.tsx
+- Sub routes like `/products/new`, `/products/:id`, `/products/:id/edit`, ... are defined in src/pages/products/_router.tsx
 
-```tsx title="src/pages/@router.tsx"
+```tsx title="src/pages/_router.tsx"
 const RootRouter = (): JSX.Element => {
   return (
     <AppLayout>
@@ -81,7 +81,7 @@ const RootRouter = (): JSX.Element => {
 export default RootRouter;
 ```
 
-```tsx title="src/pages/products/@router.tsx"
+```tsx title="src/pages/products/_router.tsx"
 const ProductsRouter = (): JSX.Element => {
   const match = useRouteMatch();
   return (
@@ -110,7 +110,7 @@ To navigate between pages, React Router offers the component `<Link/>` that repl
 
 The `<Product />` component that displays a product in the product list is updated to use `<Link />`
 
-```tsx {5} title="src/pages/products/@components/Product.tsx"
+```tsx {5} title="src/modules/products/components/Product.tsx"
 const Product: FC<ProductOptions> = ({ product, id, onClick, onNotify }) => {
   return (
     <div>

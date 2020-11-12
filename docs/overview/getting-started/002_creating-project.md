@@ -102,7 +102,7 @@ export const products: ProductType[] = [
 export default ProductsPage;
 ```
 
-```tsx title="src/pages/products/@components/Product.tsx"
+```tsx title="src/modules/products/components/Product.tsx"
 type ProductOptions = {
   product: ProductType;
   onClick: () => void;

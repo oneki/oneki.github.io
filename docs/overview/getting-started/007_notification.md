@@ -55,7 +55,7 @@ const notification = {
 Oneki.js provides a service to send notifications, but not a widget to display them.<br/>
 First, let's create the widget "Notification Center" to display them. If the topic is `success`, the notification appears in green and if it's `error`, the notification appears in red.
 
-```tsx {4-5} title="src/pages/@libs/constants.ts"
+```tsx {4-5} title="src/modules/core/libs/constants.ts"
 export const STATE_CART = 'cart';
 export const URL_ADD_PRODUCT = '/cart/products';
 export const URL_CART = '/cart';
@@ -63,7 +63,7 @@ export const NOTIF_TOPIC_ERROR = 'error';
 export const NOTIF_TOPIC_SUCCESS = 'success';
 ```
 
-```tsx title="src/pages/@components/NotificationCenter.tsx"
+```tsx title="src/modules/core/components/NotificationCenter.tsx"
 const NotificationCenter: FC = () => {
   // useNotifications returns an arry of notification
   const errors = useNotifications(NOTIF_TOPIC_ERROR);
@@ -98,7 +98,7 @@ export default NotificationCenter;
 
 As we want to centralize all notifications, we attach this widget to `<AppLayout />`:
 
-```tsx {6} title="src/pages/@layouts/AppLyout.tsx"
+```tsx {6} title="src/modules/core/layouts/AppLyout.tsx"
 const AppLayout: FC = ({ children }) => {
   return (
     <div>

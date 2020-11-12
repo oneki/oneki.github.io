@@ -88,7 +88,7 @@ export default CartPage;
 It's a good practice to use a constant to identify a property in the global state. Indeed, if a refactoring is needed further on, it's easier to find which component uses which property.
 :::
 
-```tsx {3,6} title="src/pages/@libs/constants.ts"
+```tsx {3,6} title="src/modules/core/libs/constants.ts"
 export const STATE_CART = 'cart';
 ```
 
@@ -131,7 +131,7 @@ export default Cart;
 
 Update the product details component to display a button to purchase the product.
 
-```tsx {3,16} title="src/pages/products/@components/ProductDetails.tsx"
+```tsx {3,16} title="src/modules/products/components/ProductDetails.tsx"
 type ProductDetailsOptions = {
   product: ProductType;
   onBuy: () => void;
@@ -188,7 +188,7 @@ Oneki.js handles transparently the immutability of the global state. The "cart" 
 
 ## Updating the navigation
 Update the main router to add a route to display the cart page
-```tsx {8-10} title="src/pages/@router.tsx"
+```tsx {8-10} title="src/pages/_router.tsx"
 const RootRouter = (): JSX.Element => {
   return (
     <AppLayout>
@@ -212,7 +212,7 @@ export default RootRouter;
 
 and finally, update the "Checkout" button to navigate to the cart page
 
-```tsx {7} title="src/pages/@components/Navbar.tsx"
+```tsx {7} title="src/modules/core/components/Navbar.tsx"
 const Navbar: FC = () => {
   return (
     <div className="app-top-bar">

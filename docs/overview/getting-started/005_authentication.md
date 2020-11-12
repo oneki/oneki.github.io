@@ -162,7 +162,7 @@ export default LoginPage;
 
 Create a route to associate the LoginPage to /auth
 
-```tsx {4-6} title="src/pages/@router.tsx"
+```tsx {4-6} title="src/pages/_router.tsx"
 const RootRouter = (): JSX.Element => {
   return (
     <Switch>
@@ -203,9 +203,9 @@ The content of the security context is the response sent by the backend when cal
 }
 ```
 
-To display the username in the Navbar, update src/pages/@components/Navbar.tsx:
+To display the username in the Navbar, update src/modules/core/components/Navbar.tsx:
 
-```tsx {5,11-13} title="src/pages/@components/Navbar.tsx"
+```tsx {5,11-13} title="src/modules/core/components/Navbar.tsx"
 const Navbar: FC = () => {
   // retrieve the field username from the security context
   // if the user is not logged, loggedUser is undefined
@@ -270,7 +270,7 @@ export default LogoutPage;
 
 Update the router to take into account this new page
 
-```tsx {7-9} title="src/pages/@router.tsx"
+```tsx {7-9} title="src/pages/_router.tsx"
 const RootRouter = (): JSX.Element => {
   return (
     <Switch>
@@ -304,7 +304,7 @@ export default RootRouter;
 
 ### Updating Navbar to display a logout link
 
-```tsx {12-14} title="src/pages/@components/Navbar.tsx"
+```tsx {12-14} title="src/modules/core/components/Navbar.tsx"
 const Navbar: FC = () => {
   const [loggedUser] = useSecurityContext('username');
   return (

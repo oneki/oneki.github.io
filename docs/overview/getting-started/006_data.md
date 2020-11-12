@@ -44,7 +44,7 @@ To prevent loosing the content of the shopping cart after a refresh, the "Buy" b
 Update the product details page to use the hook **usePost** instead of **useGlobalState**.<br/>
 The hook accepts a success and error callbacks executed once it receives a response from the server:
 
-```tsx {2} title="src/pages/@libs/constants.ts"
+```tsx {2} title="src/modules/core/libs/constants.ts"
 export const STATE_CART = 'cart';
 export const URL_ADD_PRODUCT = '/cart/products';
 ```
@@ -74,7 +74,7 @@ const ProductDetailsPage: FC = () => {
 The cart page is updated to retrieve the content of the cart from the server.<br/>
 Update the page to use the hook **useGet** to perform an AJAX GET request each time the page is displayed
 
-```tsx {3} title="src/pages/@libs/constants.ts"
+```tsx {3} title="src/modules/core/libs/constants.ts"
 export const STATE_CART = 'cart';
 export const URL_ADD_PRODUCT = '/cart/products';
 export const URL_CART = '/cart';
