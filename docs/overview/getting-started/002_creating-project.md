@@ -21,7 +21,7 @@ Click on the button "Open Sandbox" to view/edit the code with an online IDE.
 
 <Sandbox 
   name="step01-react-app"
-  type="getting-started"
+  type="getting-started/cra"
   view="preview"
   height="600" 
   modules={['/src/index.tsx','/src/pages/products/index.tsx']} 

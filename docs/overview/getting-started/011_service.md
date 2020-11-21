@@ -45,7 +45,7 @@ When you click on this button, the application calls the server to verify if the
 
 <Sandbox
 name="step10-service"
-type="getting-started"
+type="getting-started/cra"
 view="preview"
 height="600"
 modules={['/src/index.tsx','/src/pages/products/index.tsx']}

@@ -28,7 +28,7 @@ The "checkout" button is now clickable and displays the cart page
 
 <Sandbox
 name="step03-global-state"
-type="getting-started"
+type="getting-started/cra"
 view="preview"
 height="600"
 modules={['/src/index.tsx','/src/pages/products/index.tsx']}

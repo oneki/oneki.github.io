@@ -23,7 +23,7 @@ The content of the cart is retrieve from the server with an AJAX GET request.
 
 <Sandbox
 name="step05-data"
-type="getting-started"
+type="getting-started/cra"
 view="preview"
 height="600"
 modules={['/src/index.tsx','/src/pages/products/index.tsx']}

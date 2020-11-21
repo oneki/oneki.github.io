@@ -27,7 +27,7 @@ Certain elements of the form are displayed or not depending on the value of a fi
 
 <Sandbox
 name="step09-form"
-type="getting-started"
+type="getting-started/cra"
 view="preview"
 height="600"
 modules={['/src/index.tsx','/src/pages/products/index.tsx']}

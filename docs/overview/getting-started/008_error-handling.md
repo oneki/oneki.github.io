@@ -31,7 +31,7 @@ Just press "ESC" to hide this stacktrace.
 
 <Sandbox
 name="step07-error-handling"
-type="getting-started"
+type="getting-started/cra"
 view="preview"
 height="600"
 modules={['/src/index.tsx','/src/pages/products/index.tsx']}

@@ -28,7 +28,7 @@ If you are not authenticated yet, you are redirected to the login page when you 
 
 <Sandbox
 name="step04-authentication"
-type="getting-started"
+type="getting-started/cra"
 view="preview"
 height="600"
 modules={['/src/index.tsx','/src/pages/products/index.tsx']}

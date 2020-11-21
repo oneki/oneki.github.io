@@ -21,7 +21,7 @@ A click on the "Share" button displays a "success" notification and a click on t
 
 <Sandbox
 name="step06-notification"
-type="getting-started"
+type="getting-started/cra"
 view="preview"
 height="600"
 modules={['/src/index.tsx','/src/pages/products/index.tsx']}

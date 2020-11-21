@@ -21,7 +21,7 @@ Please note that the URL changes when you click on the link.
 
 <Sandbox 
   name="step02-navigation"
-  type="getting-started"
+  type="getting-started/cra"
   view="preview"
   height="600" 
   modules={['/src/index.tsx','/src/pages/products/index.tsx']} 
