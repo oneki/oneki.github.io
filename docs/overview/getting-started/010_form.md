@@ -170,7 +170,7 @@ const RootRouter = (): JSX.Element => {
               <CartPage />
             </Route>
             <Route>
-              <Redirect to="/products" />
+              <Redirect href="/products" />
             </Route>
           </Switch>
         </AppLayout>

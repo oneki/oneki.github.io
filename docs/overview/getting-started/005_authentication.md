@@ -179,7 +179,7 @@ const RootRouter = (): JSX.Element => {
               <CartPage />
             </Route>
             <Route>
-              <Redirect to="/products" />
+              <Redirect href="/products" />
             </Route>
           </Switch>
         </AppLayout>
@@ -212,14 +212,14 @@ const Navbar: FC = () => {
   const [loggedUser] = useSecurityContext('username');
   return (
     <div className="app-top-bar">
-      <Link to="/">
+      <Link href="/">
         <h1>My Store</h1>
       </Link>
       <div className="app-top-bar-right">
         {loggedUser && (
           <div className="user">{loggedUser}</div>
         )}
-        <Link to="/cart" className="button fancy-button">
+        <Link href="/cart" className="button fancy-button">
           <i className="material-icons">shopping_cart</i>
           Checkout
         </Link>
@@ -290,7 +290,7 @@ const RootRouter = (): JSX.Element => {
               <CartPage />
             </Route>
             <Route>
-              <Redirect to="/products" />
+              <Redirect href="/products" />
             </Route>
           </Switch>
         </AppLayout>
@@ -309,19 +309,19 @@ const Navbar: FC = () => {
   const [loggedUser] = useSecurityContext('username');
   return (
     <div className="app-top-bar">
-      <Link to="/">
+      <Link href="/">
         <h1>My Store</h1>
       </Link>
       <div className="app-top-bar-right">
         {loggedUser && (
           <div className="user">
             {loggedUser}{' '}
-            <Link className="logout" to="/logout">
+            <Link className="logout" href="/logout">
               [Log out]
             </Link>
           </div>
         )}
-        <Link to="/cart" className="button fancy-button">
+        <Link href="/cart" className="button fancy-button">
           <i className="material-icons">shopping_cart</i>
           Checkout
         </Link>

@@ -161,7 +161,7 @@ A click on the "Buy" button calls a function that adds the product to the "cart"
 
 ```tsx {3,6} title="src/pages/products/[id]/index.tsx"
 const ProductDetailsPage: FC = () => {
-  const { id } = useParams<ProductDetailsParams>();
+  const { id } = useParams();
   const [cart, setCart] = useGlobalProp<ProductType[]>(STATE_CART, []); // TODO update to useGlobalState
 
   const product = products[+id];
@@ -200,7 +200,7 @@ const RootRouter = (): JSX.Element => {
           <CartPage />
         </Route>
         <Route>
-          <Redirect to="/products" />
+          <Redirect href="/products" />
         </Route>
       </Switch>
     </AppLayout>
@@ -216,10 +216,10 @@ and finally, update the "Checkout" button to navigate to the cart page
 const Navbar: FC = () => {
   return (
     <div className="app-top-bar">
-      <Link to="/">
+      <Link href="/">
         <h1>My Store</h1>
       </Link>
-      <Link to="/cart" className="button fancy-button">
+      <Link href="/cart" className="button fancy-button">
         <i className="material-icons">shopping_cart</i>
         Checkout
       </Link>

@@ -51,7 +51,7 @@ export const URL_ADD_PRODUCT = '/cart/products';
 
 ```tsx {3-10} title="src/product/details.tsx"
 const ProductDetailsPage: FC = () => {
-  const { id } = useParams<ProductDetailsParams>();
+  const { id } = useParams();
   const [submit] = usePost<ProductType>(URL_ADD_PRODUCT, {
     onSuccess: () => {
       window.alert('Product added succesfully to the cart!');

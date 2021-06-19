@@ -71,7 +71,7 @@ const RootRouter = (): JSX.Element => {
         </Route>
         <Route>
           {/* redirect by default to /products as we don't have any homepage in this example */}
-          <Redirect to="/products" />
+          <Redirect href="/products" />
         </Route>
       </Switch>
     </AppLayout>

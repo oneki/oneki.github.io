@@ -76,7 +76,7 @@ To simulate an error during the rendering phase, update the product details page
 
 ```tsx {13-16} title="src/pages/products/[id]/index.tsx"
 const ProductDetailsPage: FC = () => {
-  const { id } = useParams<ProductDetailsParams>();
+  const { id } = useParams();
   const [submit] = usePost<ProductType>(URL_ADD_PRODUCT, {
     onSuccess: () => {
       window.alert('Product added succesfully to the cart!');
@@ -126,7 +126,7 @@ export const NOTIF_TOPIC_SUCCESS = 'success';
 
 ```tsx {5-11} title="src/pages/products/[id]/index.tsx"
 const ProductDetailsPage: FC = () => {
-  const { id } = useParams<ProductDetailsParams>();
+  const { id } = useParams();
   const notificationService = useNotificationService();
   const [submit] = usePost<ProductType>(URL_ADD_PRODUCT, {
     onError: (error) => {
@@ -172,7 +172,7 @@ Therefore, we can update the `Product details page` and remove the onError callb
 
 ```tsx title="src/pages/products/[id]/index.tsx"
 const ProductDetailsPage: FC = () => {
-  const { id } = useParams<ProductDetailsParams>();
+  const { id } = useParams();
   const notificationService = useNotificationService();
   const [submit] = usePost<ProductType>(URL_ADD_PRODUCT);
 
