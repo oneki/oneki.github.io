@@ -18,7 +18,9 @@ The result of this step is the following:
 :::info New in this step
 The shopping cart is now saved on the server to not loose its content after a refresh<br/>
 A click on the "Buy" button send an AJAX POST request to add the product to the cart on the server.<br/>
-The content of the cart is retrieve from the server with an AJAX GET request.
+The content of the cart is retrieved from the server with an AJAX GET request.
+
+The list of products on main page is retrieved once and cached locally in the global state.
 :::
 
 <Sandbox
@@ -36,6 +38,7 @@ In this tutorial, we are going to use these hooks:
 - **useGet** performs an AJAX GET request. It returns a loading flag and the result. Each time the URL is updated, the request is performed.
 - **usePost** returns a submitting flag and a "submit" function. The component can use it to send an AJAX POST request
 - **useDelete** returns a "delete" function. The component can use it to send an AJAX DELETE request
+- **useCache** performs an AJAX GET request and caches the response in the global state. The AJAX Request is sent only if the cache doesn't exist or is expired.
 :::
 
 ## Saving the cart on the server
@@ -129,6 +132,46 @@ const CartPage: FC = () => {
 };
 
 export default secure(CartPage);
+```
+
+## Retrieve the list of products only once and cache it
+Up to now, the list of products is hardcoded in src/page `src/pages/products/index.ts`<br/>
+To retrieve the list of products from the server and cache it locally, update the page to use the hook **useCache**.
+
+**useCache** can store the result of an AJAX GET request in the global state for a defined period, so the AJAX GET request is not performed again the next time the list of products is displayed.
+
+```tsx {7-10} title="src/pages/products/index.tsx"
+const ProductsPage: FC = () => {
+  // perform an AJAX GET request and cache the response
+  // the response looks like this:
+  // {
+  //   "products": [{...}]
+  // }
+  const [cache, loading] = useCache<ProductsResponse>(URL_PRODUCT, {
+    // if ttl is not passed, the value in HTTP header response 'cache-control' is used (default: no cache)
+    ttl: NO_EXPIRATION, // The validity time of the cache in seconds (NO_EXPIRATION means infinite)
+  });
+  if (loading) {
+    return null;
+  }
+  return (
+    <div>
+      <h2>Products</h2>
+      {cache?.products &&
+        cache.products.map((product, index) => (
+          <Product
+            key={product.name}
+            product={product}
+            id={index}
+            onClick={() => window.alert('The product has been shared!')}
+            onNotify={() => window.alert('You will be notified when the product goes on sale')}
+          />
+        ))}
+    </div>
+  );
+};
+
+export default ProductsPage;
 ```
 
 ## Next step
