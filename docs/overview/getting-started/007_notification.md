@@ -13,7 +13,7 @@ This step consists of sending all notifications to a "notification center" repon
 
 ## Final result
 
-The result of this step is the following:
+The result of this step is as follows:
 
 :::info New in this step
 A click on the "Share" button displays a "success" notification and a click on the "Notify" button displays an "error" notification

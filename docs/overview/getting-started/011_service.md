@@ -36,7 +36,7 @@ To mutate the state, it exposes two types of methods:
 
 ## Final result
 
-The result of this step is the following:
+The result of this step is as follows:
 
 :::info New in this step
 The product detail page now displays a new button "Check Availability"<br/>

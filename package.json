@@ -10,8 +10,9 @@
   },
   "dependencies": {
     "@akebifiky/remark-simple-plantuml": "^1.0.1",
-    "@docusaurus/core": "^2.0.0-alpha.66",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.66",
+    "@docusaurus/core": "^2.0.0-beta.4",
+    "@docusaurus/preset-classic": "^2.0.0-beta.4",
+    "@saucelabs/theme-github-codeblock": "^0.0.4",
     "classnames": "^2.2.6",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"

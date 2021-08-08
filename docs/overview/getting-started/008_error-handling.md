@@ -17,7 +17,7 @@ This step consists of handling these type of errors.
 
 ## Final result
 
-The result of this step is the following:
+The result of this step is as follows:
 
 :::info New in this step
 The third product is now named "Invalid product". A click on this product simulate an error during the rendering of the page.<br/>

@@ -13,7 +13,7 @@ This step consists of adding some interaction with a backend system via AJAX req
 
 ## Final result
 
-The result of this step is the following:
+The result of this step is as follows:
 
 :::info New in this step
 The shopping cart is now saved on the server to not loose its content after a refresh<br/>

@@ -5,7 +5,7 @@ sidebar_label: Adding state management
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
+import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
 
@@ -14,39 +14,55 @@ This step consists of adding a global state management to the application<br/>
 :::note
 The core feature of React is to offer components that rerender when a state change.<br/>**[The state](https://reactjs.org/docs/state-and-lifecycle.html)** can be the internal state of the component or the state of a parent component (see [The Data Flows Down](https://reactjs.org/docs/state-and-lifecycle.html#the-data-flows-down))
 
-Oneki.js provides a top level state for the application to store data on which any component can access and react. This global state is based on **[Redux](https://redux.js.org/)**.
+Oneki.js provides a global state for the application to store the data that any component can access and react to. This global state is based on **[Redux](https://redux.js.org/)**.
 :::
 
 ## Final result
 
-The result of this step is the following:
+The result of this step is as follows:
 
 :::info New in this step
-You can now add a product to the cart by clicking on the button "Buy" available on the product details page.<br/>
+You can now add a product to the cart by clicking on the "Buy" button available on the product details page.<br/>
 The "checkout" button is now clickable and displays the cart page
 :::
 
-<Sandbox
-name="step03-global-state"
-type="getting-started/cra"
-view="preview"
-height="600"
-modules={['/src/index.tsx','/src/pages/products/index.tsx']}
-/>
+<Tabs>
+  <TabItem value="cra">
+    <Sandbox
+    name="step03-global-state"
+    type="getting-started/cra"
+    view="preview"
+    height="600"
+    modules={['/src/index.tsx','/src/pages/products/index.tsx']}
+    />
+  </TabItem>
+  <TabItem value="next">
+    <Sandbox
+      name="step03-global-state"
+      type="getting-started/next"
+      view="preview"
+      height="600"
+      modules={['/src/pages/index.tsx','/src/pages/_app.tsx']}
+      />
+  </TabItem>
+
+</Tabs>
+
+
 
 ## Adding global state management
 
-Oneki.js provides out of the box a store to hold the global state. The store is a Redux store and is automatically bootstraped via the `<App />` component
+Oneki.js provides a store to hold the global state. The store is a Redux store and is automatically started by the `<App />` / `<NextApp />` component.
 
 :::note
-Oneki.js provides several hooks to update and react on data of the global state.<br/>
-In this tutorial, we are going to use the hooks:
+Oneki.js provides several hooks to update and react on the global state.<br/>
+In this tutorial, we will use these hooks:
 
 - **useGlobalState** to react on a data of the global state, but also to update it
 - **useGlobalProp** to only react on a data of the global state
 :::
 
-## Adding the cart page
+## Adding the shopping cart page
 This list of products is stored in the global state under the key "cart".<br/>
 The global state is an **immutable** javascript object that looks like this:
 
@@ -65,24 +81,35 @@ The global state is an **immutable** javascript object that looks like this:
   ];
 }
 ```
+<p/>
 
 :::note
-By default, the global state is an empty object when the application starts. In our case, it means that the cart page displays an empty list of product.<br/>
-If needed, it's possible to pass an initial state to the `<App />` component
+By default, the global state is an empty object when the application starts. In our case, this means that the shopping cart page displays an empty list of products.<br/>
+If necessary, it's possible to pass an initial state to the `<App />` / `<NextApp />` component.
 :::
 
 Add a new page to display the list of products the user wants to buy:
 
-```tsx title="src/pages/cart.tsx"
-const CartPage: FC = () => {
-  // Reacts on the property 'cart' of the global state of the application
-  // Each time the property 'cart' is updated, the component is refreshed
-  const cart: ProductType[] = useGlobalSelector("cart", []); // TODO change to useGlobalProp
-  return <Cart cart={cart} />;
-};
+<Tabs>
+  <TabItem value="cra">
 
-export default CartPage;
-```
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/getting-started/cra/step03-global-state/src/pages/cart.tsx
+```  
+  </TabItem>
+  <TabItem value="next">
+
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/getting-started/next/step03-global-state/src/pages/cart.tsx
+```  
+
+:::note Layout
+The function `withLayout` is a **[HOC](https://reactjs.org/docs/higher-order-components.html)** to provide a consistent layout between each pages of a Next.js application. **[More details here](../../framework/layout/layout)**
+:::
+
+  </TabItem>
+</Tabs>
+
 
 :::info
 It's a good practice to use a constant to identify a property in the global state. Indeed, if a refactoring is needed further on, it's easier to find which component uses which property.
@@ -91,145 +118,93 @@ It's a good practice to use a constant to identify a property in the global stat
 ```tsx {3,6} title="src/modules/core/libs/constants.ts"
 export const STATE_CART = 'cart';
 ```
-
-We can then update the cart page to use this constant:
-
-```tsx {2} title="src/pages/cart.tsx"
-const CartPage: FC = () => {
-  const cart: ProductType[] = useGlobalSelector(STATE_CART, []); // TODO change to useGlobalProp
-  return <Cart cart={cart} />;
-};
-```
-
-
+<p/>
 The Cart component displays the list of products:
 
-```tsx title="src/pages/cart.tsx"
-const Cart: FC<CartOptions> = ({ cart }) => {
-  return (
-    <div>
-      <h3>Cart</h3>
+<Tabs>
+  <TabItem value="cra">
 
-      {cart.map((item, index) => (
-        <div key={`item-${index}`} className="cart-item">
-          <span>{item.name}</span>
-          <span>{currency(item.price)}</span>
-        </div>
-      ))}
-    </div>
-  );
-};
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/getting-started/cra/step03-global-state/src/modules/core/components/Cart.tsx
+```  
+  </TabItem>
+  <TabItem value="next">
 
-type CartOptions = {
-  cart: ProductType[];
-};
-
-export default Cart;
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/getting-started/next/step03-global-state/src/modules/core/components/Cart.tsx
 ```
+  </TabItem>
+</Tabs>
 
 ## Adding the "Buy" button
 
 Update the product details component to display a button to purchase the product.
 
-```tsx {3,16} title="src/modules/products/components/ProductDetails.tsx"
-type ProductDetailsOptions = {
-  product: ProductType;
-  onBuy: () => void;
-};
+<Tabs>
+  <TabItem value="cra">
 
-const ProductDetails: FC<ProductDetailsOptions> = ({ product, onBuy }) => {
-  return (
-    <div>
-      <h2>Product Details</h2>
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/getting-started/cra/step03-global-state/src/modules/products/components/ProductDetails.tsx
+```  
+  </TabItem>
+  <TabItem value="next">
 
-      <div>
-        <h3>{product.name}</h3>
-        <h4>{currency(product.price)}</h4>
-        <p>{product.description}</p>
-
-        <button onClick={onBuy}>Buy</button>
-      </div>
-    </div>
-  );
-};
-
-export default ProductDetails;
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/getting-started/next/step03-global-state/src/modules/products/components/ProductDetails.tsx
 ```
+  </TabItem>
+</Tabs>
 
 Update the product details page to handle the click on the "Buy" button.<br/>
 A click on the "Buy" button calls a function that adds the product to the "cart" property of the global state.<br/>As the cart page reacts on this property, the product will automatically appears on it.
 
-```tsx {3,6} title="src/pages/products/[id]/index.tsx"
-const ProductDetailsPage: FC = () => {
-  const { id } = useParams();
-  const [cart, setCart] = useGlobalProp<ProductType[]>(STATE_CART, []); // TODO update to useGlobalState
+<Tabs>
+  <TabItem value="cra">
 
-  const product = products[+id];
-  return (
-    <ProductDetails
-      product={product}
-      onBuy={() => {
-        setCart(cart.concat(product));
-        window.alert('Your product has been added to the cart!');
-      }}
-    />
-  );
-};
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/getting-started/cra/step03-global-state/src/pages/products/%5BproductId%5D/index.tsx
+```  
+  </TabItem>
+  <TabItem value="next">
 
-export default ProductDetailsPage;
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/getting-started/next/step03-global-state/src/pages/products/%5BproductId%5D/index.tsx
 ```
+  </TabItem>
+</Tabs>
 
 :::caution Immutability
-As mentioned above, the global state is immutable. Therefore, to update the cart, one must use cart.contcat() to build a new array and not cart.push().<br/>
-Oneki.js handles transparently the immutability of the global state. The "cart" variable is a standard javascript object that you can manipulate like any other javascript object excepted it's frozen.
+As mentioned above, the global state is immutable. Therefore, to update the cart, you need to use `cart.contcat()` to build a new array and not `cart.push()`.<br/>
+Oneki.js transparently handles the immutability of the global state. The `cart` variable is a standard javascript object that you can manipulate like any other javascript object excepted that it is frozen.
 
-**Advanced tip**: As the "cart" variable is immutable, the "Cart" component could use React.memo to be more performant
+**Advanced tip**: As the `cart` variable is immutable, the &lt;Cart/&gt; component could use React.memo to be more efficient
 :::
 
 ## Updating the navigation
+<Tabs>
+  <TabItem value="cra">
 Update the main router to add a route to display the cart page
-```tsx {8-10} title="src/pages/_router.tsx"
-const RootRouter = (): JSX.Element => {
-  return (
-    <AppLayout>
-      <Switch>
-        <Route path="/products">
-          <ProductsRouter />
-        </Route>
-        <Route path="/cart">
-          <CartPage />
-        </Route>
-        <Route>
-          <Redirect href="/products" />
-        </Route>
-      </Switch>
-    </AppLayout>
-  );
-};
 
-export default RootRouter;
-```
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/getting-started/cra/step03-global-state/src/pages/_router.tsx
+``` 
 
 and finally, update the "Checkout" button to navigate to the cart page
 
-```tsx {7} title="src/modules/core/components/Navbar.tsx"
-const Navbar: FC = () => {
-  return (
-    <div className="app-top-bar">
-      <Link href="/">
-        <h1>My Store</h1>
-      </Link>
-      <Link href="/cart" className="button fancy-button">
-        <i className="material-icons">shopping_cart</i>
-        Checkout
-      </Link>
-    </div>
-  );
-};
-
-export default Navbar;
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/getting-started/cra/step03-global-state/src/modules/core/components/Navbar.tsx
 ```
 
+  </TabItem>
+  <TabItem value="next">
+Update the "Checkout" button to navigate to the cart page
+
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/getting-started/next/step03-global-state/src/modules/core/components/Navbar.tsx
+```
+  </TabItem>
+</Tabs>
+
 ## Next step
-Currenty, the content of the cart is only stored in memory (in the global store) and if you refresh the page, the content is lost.<br/>
-**[In the next step](authentication)**, we will add the possibility to authenticate a user and then save the content of the cart in the cloud.
+Currently, the contents of the cart are only stored in memory (in the global state) and if you refresh the page, the contents are lost.<br/>
+**[In the next step](authentication)**, we will add the ability to authenticate a user and then save the cart contents in the cloud.

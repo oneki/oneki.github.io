@@ -16,7 +16,7 @@ Oneki.js proposes a library to control a form and reduce drastically the code.
 
 ## Final result
 
-The result of this step is the following:
+The result of this step is as follows:
 
 :::info New in this step
 The login page now validates that the username and password are filled in

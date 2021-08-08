@@ -1,65 +1,70 @@
 const simplePlantUML = require("@akebifiky/remark-simple-plantuml");
 
 module.exports = {
-  title: 'Oneki.js',
-  tagline: 'An opinionated framework based on React',
-  url: 'https://oneki.github.io',
-  baseUrl: '/',
-  favicon: 'img/favicon.ico',
-  organizationName: 'Oneki', // Usually your GitHub org/user name.
-  projectName: 'Oneki.js', // Usually your repo name.
+  title: "Oneki.js",
+  tagline: "An opinionated framework based on React",
+  url: "https://oneki.github.io",
+  baseUrl: "/",
+  favicon: "img/favicon.ico",
+  organizationName: "Oneki", // Usually your GitHub org/user name.
+  projectName: "Oneki.js", // Usually your repo name.
+  themes: ["@saucelabs/theme-github-codeblock"],
   themeConfig: {
     navbar: {
-      title: 'Oneki.js',
+      title: "Oneki.js",
       logo: {
-        alt: 'Oneki.js Logo',
-        src: 'img/logo.svg',
+        alt: "Oneki.js Logo",
+        src: "img/logo.svg",
       },
       items: [
-        {to: 'docs/overview/getting-started/introduction', label: 'Docs', position: 'right'},
         {
-          href: 'https://github.com/oneki/onekijs',
-          label: 'GitHub',
-          position: 'right',
+          to: "docs/overview/getting-started/introduction",
+          label: "Docs",
+          position: "right",
+        },
+        {
+          href: "https://github.com/oneki/onekijs",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'Getting Started',
-              to: 'docs/overview/getting-started/introduction',
+              label: "Getting Started",
+              to: "docs/overview/getting-started/introduction",
             },
             {
-              label: 'Demo app',
-              to: 'docs/overview/getting-started/creating-project',
+              label: "Demo app",
+              to: "docs/overview/getting-started/creating-project",
             },
             {
-              label: 'Framework',
-              to: 'docs/framework/introduction',
+              label: "Framework",
+              to: "docs/framework/introduction",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "Community",
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/onekijs',
-            }
+              label: "Stack Overflow",
+              href: "https://stackoverflow.com/questions/tagged/onekijs",
+            },
           ],
         },
         {
-          title: 'Social',
+          title: "Social",
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/oneki/onekijs',
-            }
+              label: "GitHub",
+              href: "https://github.com/oneki/onekijs",
+            },
           ],
         },
       ],
@@ -68,16 +73,15 @@ module.exports = {
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           remarkPlugins: [simplePlantUML],
-          editUrl:
-            'https://github.com/oneki/oneki.github.io/edit/source/',
+          editUrl: "https://github.com/oneki/oneki.github.io/edit/source/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],

@@ -6,10 +6,11 @@ export default ({ children }) => {
   console.log("children", children);
   return (
     <Tabs
-      defaultValue="next"
+      groupId="application-types"
+      defaultValue="cra"
       values={[
-        { label: "Nextjs App", value: "next" },
         { label: "Create React App", value: "cra" },
+        { label: "Nextjs App", value: "next" },
       ]}
     >
       {children}
