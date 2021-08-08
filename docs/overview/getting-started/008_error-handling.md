@@ -5,7 +5,7 @@ sidebar_label: Handling errors
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
+import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
 
@@ -13,7 +13,7 @@ Two types of error can occur:
 - The ones throwed during the rendering of a component. To handle this type of errors, React recommends to implement **[Error Boundaries](https://reactjs.org/docs/error-boundaries.html)**
 - The standard ones throwed by your javascript code (try/catch) or returned by the server
 
-This step consists of handling these type of errors.
+This step consists in handling these type of errors.
 
 ## Final result
 

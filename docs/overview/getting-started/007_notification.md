@@ -5,36 +5,50 @@ sidebar_label: Centralizing notifications
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
+import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
 
-This step consists of sending all notifications to a "notification center" reponsible of displaying them.
+This step consists in sending all notifications to a "notification center" in charge of displaying them.
 
 ## Final result
 
 The result of this step is as follows:
 
 :::info New in this step
-A click on the "Share" button displays a "success" notification and a click on the "Notify" button displays an "error" notification
+Clicking the "Share" button displays a "success" notification and clicking the "Notify" button displays an "error" notification
 :::
 
-<Sandbox
-name="step06-notification"
-type="getting-started/cra"
-view="preview"
-height="600"
-modules={['/src/index.tsx','/src/pages/products/index.tsx']}
-/>
+<Tabs>
+  <TabItem value="cra">
+    <Sandbox
+    name="step06-notification"
+    type="getting-started/cra"
+    view="preview"
+    height="600"
+    modules={['/src/index.tsx','/src/pages/products/index.tsx']}
+    />
+  </TabItem>
+  <TabItem value="next">
+    <Sandbox
+      name="step06-notification"
+      type="getting-started/next"
+      view="preview"
+      height="600"
+      modules={['/src/pages/index.tsx','/src/pages/_app.tsx']}
+      />
+  </TabItem>
+
+</Tabs>
 
 :::note
 Oneki.js provides two hooks to centralize notifications:
 
 - **useNotificationService** returns a service to send notifications on a topic (error topic, success topic, ...)
-- **useNotifications** returns the notifications of a specific topic. Each time a notification is added or removed from the topic, the component is refreshed.
+- **useNotifications** returns notifications for a specific topic. Each time a notification is added or removed from the topic, the component is refreshed.
 :::
 
-A notification is a javascript object containing in particular these fields:
+A notification is a javascript object containing at least these fields:
 
 ```javascript
 const notification = {
@@ -53,113 +67,83 @@ const notification = {
 
 ## Notification center
 Oneki.js provides a service to send notifications, but not a widget to display them.<br/>
-First, let's create the widget "Notification Center" to display them. If the topic is `success`, the notification appears in green and if it's `error`, the notification appears in red.
+First, let's create the "Notification Center" widget to display them. If the topic is `success`, the notification appears in green and if it's `error`, the notification appears in red.
 
-```tsx {4-5} title="src/modules/core/libs/constants.ts"
-export const STATE_CART = 'cart';
-export const URL_ADD_PRODUCT = '/cart/products';
-export const URL_CART = '/cart';
-export const NOTIF_TOPIC_ERROR = 'error';
-export const NOTIF_TOPIC_SUCCESS = 'success';
-```
+<Tabs>
+  <TabItem value="cra">
 
-```tsx title="src/modules/core/components/NotificationCenter.tsx"
-const NotificationCenter: FC = () => {
-  // useNotifications returns an arry of notification
-  const errors = useNotifications(NOTIF_TOPIC_ERROR);
-  const successes = useNotifications(NOTIF_TOPIC_SUCCESS);
-  const notifications = mergeNotifications(errors, successes);
+  ```tsx {4-5} title="src/modules/core/libs/constants.ts"
+  export const STATE_CART = 'cart';
+  export const URL_ADD_PRODUCT = '/cart/products';
+  export const URL_CART = '/cart';
+  export const NOTIF_TOPIC_ERROR = 'error';
+  export const NOTIF_TOPIC_SUCCESS = 'success';
+  ```
+  <p/>
 
-  return (
-    <>
-      {notifications.map((notification, index) => (
-        <div
-          key={notification.id}
-          className={`snackbar ${notification.topic}`}
-          style={{ bottom: `${60 * index + 30}px` }}
-        >
-          <span>{notification.payload.message}</span>
-          <span className="close" onClick={() => notification.remove()}>
-            x
-          </span>
-        </div>
-      ))}
-    </>
-  );
-};
+  ```tsx reference
+  https://github.com/oneki/onekijs/blob/master/getting-started/cra/step06-notification/src/modules/core/components/NotificationCenter.tsx
+  ```
 
-// Merge all notifications and order them by timestamp
-const mergeNotifications = (a: Notification[], b: Notification[]): Notification[] => {
-  return a.concat(b).sort((a, b) => a.timestamp - b.timestamp);
-};
+  As we want to centralize all notifications, we attach this widget to <code>&lt;AppLayout /&gt;</code>
 
-export default NotificationCenter;
-```
+  ```tsx reference
+  https://github.com/oneki/onekijs/blob/master/getting-started/cra/step06-notification/src/modules/core/layouts/AppLayout.tsx
+  ```
 
-As we want to centralize all notifications, we attach this widget to `<AppLayout />`:
+  </TabItem>
+  <TabItem value="next">
 
-```tsx {6} title="src/modules/core/layouts/AppLyout.tsx"
-const AppLayout: FC = ({ children }) => {
-  return (
-    <div>
-      <NotificationCenter />
-      <Navbar />
-      <div className="container">{children}</div>
-    </div>
-  );
-};
+  ```tsx {4-5} title="src/modules/core/libs/constants.ts"
+  export const STATE_CART = 'cart';
+  export const URL_ADD_PRODUCT = '/api/cart/products';
+  export const URL_CART = '/api/cart';
+  export const NOTIF_TOPIC_ERROR = 'error';
+  export const NOTIF_TOPIC_SUCCESS = 'success';
+  ```
+  <p/>
 
-export default AppLayout;
-```
+  ```tsx reference
+  https://github.com/oneki/onekijs/blob/master/getting-started/next/step06-notification/src/modules/core/components/NotificationCenter.tsx
+  ```
+
+  As we want to centralize all notifications, we attach this widget to <code>&lt;AppLayout /&gt;</code>
+
+  ```tsx reference
+  https://github.com/oneki/onekijs/blob/master/getting-started/next/step06-notification/src/modules/core/layouts/AppLayout.tsx
+  ```
+
+  </TabItem>
+
+</Tabs>
 
 ## Sending the notifications
 
-Up to now, the page listing the product uses the built-in `window.alert()` to display a notification.<br/>
-Replace the code to:
+So far, the page listing the products uses the built-in function `window.alert()` to display a notification.<br/>
+We want to:
 
-- display a `Success` notification when cliking on the button `Share`.<br/>The notification disappears automatically after 5 seconds.
-- display an `Error` notification when cliking on the button `Notify`
+- display a `Success` notification when the `Share` button is clicked.<br/>The notification disappears automatically after 5 seconds.
+- display an `Error` notification when clicking on the `Notify` button.
 
-A click on these button sends a notification on a specific topic and the `<NotificationCenter />` displays them.
+Clicking on these buttons sends a notification to a specific topic and the `<NotificationCenter />` displays them.
 
-```tsx {2,12-28} title="src/pages/products/index.tsx"
-const ProductsPage: FC = () => {
-  const notificationService = useNotificationService();
+<Tabs>
+  <TabItem value="cra">
 
-  return (
-    <div>
-      <h2>Products</h2>
-      {products.map((product, index) => (
-        <Product
-          key={product.name}
-          product={product}
-          id={index}
-          onClick={() =>
-            notificationService.send({
-              topic: NOTIF_TOPIC_SUCCESS,
-              ttl: 5000,
-              payload: {
-                message: 'The product has been shared!',
-              },
-            })
-          }
-          onNotify={() =>
-            notificationService.send({
-              topic: NOTIF_TOPIC_ERROR,
-              payload: {
-                message: 'You will be notified when the product goes on sale',
-              },
-            })
-          }
-        />
-      ))}
-    </div>
-  );
-};
+  ```tsx reference
+  https://github.com/oneki/onekijs/blob/master/getting-started/cra/step06-notification/src/pages/products/index.tsx
+  ```
 
-export default ProductsPage;
-```
+  </TabItem>
+  <TabItem value="next">
+
+  ```tsx reference
+  https://github.com/oneki/onekijs/blob/master/getting-started/next/step06-notification/src/pages/index.tsx
+  ```
+
+  </TabItem>
+
+</Tabs>
 
 ## Next step
-Now that we can identify the logged user, we can save the content of the cart in the cloud so we don't loose its content after a refresh<br/>
-**[In the next step](error-handling)**, we introduce the services offered by Oneki.js to retrieve and send data via AJAX requests. 
+**[In the next step](error-handling)**, we introduce the services offered by Oneki.js to handle errors.

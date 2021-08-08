@@ -9,7 +9,7 @@ import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
 
-This step consists of adding a global state management to the application<br/>
+This step consists in adding a global state management to the application<br/>
 
 :::note
 The core feature of React is to offer components that rerender when a state change.<br/>**[The state](https://reactjs.org/docs/state-and-lifecycle.html)** can be the internal state of the component or the state of a parent component (see [The Data Flows Down](https://reactjs.org/docs/state-and-lifecycle.html#the-data-flows-down))
@@ -166,6 +166,10 @@ https://github.com/oneki/onekijs/blob/master/getting-started/cra/step03-global-s
 ```  
   </TabItem>
   <TabItem value="next">
+
+:::info
+The page below uses **Static Generation** (*getStaticProps* and *getStaticPaths*) which is a feature provided by Next.js. That means in production, the page HTML is generated when you run <code>next build</code>
+:::
 
 ```tsx reference
 https://github.com/oneki/onekijs/blob/master/getting-started/next/step03-global-state/src/pages/products/%5BproductId%5D/index.tsx

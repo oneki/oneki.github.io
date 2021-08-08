@@ -5,7 +5,7 @@ sidebar_label: Using form for user input
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
+import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
 
