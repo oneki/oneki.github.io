@@ -82,7 +82,7 @@ To create a projet named **mystore-app**, enter the following command:
 
 ```javascript
 // npm install -g yarn
-yarn next react-app mystore-app --template typescript
+yarn create next-app --typescript
 ```
   </TabItem>
 
