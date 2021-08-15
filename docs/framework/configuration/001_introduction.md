@@ -4,66 +4,79 @@ title: Introduction
 sidebar_label: Introduction
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
+import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
+import Sandbox from '@site/src/components/Sandbox';
 
 
-***Oneki.js*** recommends to put the configuration parameters in a central place. Generally, the configuration is placed in the file **settings.js**.
+***Oneki.js*** recommends to put the configuration parameters in a central place. Generally, the configuration is placed in the file **src/settings.ts**.
 
 <img alt="Notification architecture" src={useBaseUrl('img/configuration/onekijs-Configuration.svg')} />;
 
-The filename "**settings.js**" is a convention and could be anything else. Actually, ***Oneki.js*** expects to receive a "Settings" object during its bootstrap and this object could come from anywhere.
+The filename "**settings.ts**" is a convention and could be anything else. Actually, ***Oneki.js*** expects to receive a "Settings" object during its bootstrap and this object could come from anywhere.
 
-<Tabs
-  defaultValue="next"
-  values={[
-    { label: 'Next App', value: 'next', },
-    { label: 'Create React App', value: 'cra', },
-  ]
-}>
-<TabItem value="next">
+<Tabs>
+  <TabItem value="cra">
 
+```tsx
+import settings from '../settings';
+
+<App settings={settings} />
 ```
+
+<p/>
+
+```javascript
 My-App
-│  ├─ src
-|  |  ├─ layout
-|  |  |  └─ SiteLayout.js
+│  ├─ src  
+|  |  ├─ pages
+|  |  |  └─ index.tsx
 |  |  |  
+|  |  └─ settings.ts
+│
+├─ .gitignore
+├─ package.json
+├─ README.md
+├─ yarn.lock
+```
+
+  </TabItem>
+  <TabItem value="next">
+
+```tsx
+import settings from '../settings';
+
+const MyApp: FC<NextAppProps> = (props) => {
+  return <NextApp settings={settings} />;
+};
+```
+
+<p/>
+
+```javascript
+My-App
+│  ├─ src  
 |  |  ├─ pages
 |  |  |  ├─ _app.js
-|  |  |  └─ index.js
+|  |  |  └─ index.tsx
 |  |  |  
-|  |  └─ settings.js
+|  |  └─ settings.ts
 │
 ├─ .gitignore
 ├─ package.json
 ├─ README.md
 ├─ yarn.lock
-```
+```  
 
-</TabItem>
-<TabItem value="cra">
-
-```javascript
-My-App
-│  ├─ src
-│  │  ├─ index.js // The bootstrap of the app (entry point)
-│  │  └─ settings.js  // This file that centralizes all the configurations
-│
-├─ .gitignore
-├─ package.json
-├─ README.md
-├─ yarn.lock
-```
-</TabItem>
+  </TabItem>
 </Tabs>
 
-The content of **settings.js** is available across the application via the hook [useSettings](../configuration/use-settings) and also automatically injected in all **reducers** and **saga**
+The content of **settings.ts** is available across the application via the hook [useSettings](../configuration/use-settings) and also automatically injected in all **reducers** and **saga**
 
-Some components of the framework use the content of ***settings.js*** to configure themself. For example, the notification service is configured like this:
+Some components of the framework use the content of ***settings.ts*** to configure themself. For example, the notification service is configured like this:
 
 ```javascript
-// content of settings.js
+// content of settings.ts
 export default {
   notification: {
     default: {
@@ -79,7 +92,7 @@ export default {
 };
 ```
 
-For more information concerning the bootstrap of an ***Oneki.js application***, check the [App component documentation page](../../overview/app).
+For more information concerning the bootstrap of an ***Oneki.js application***, check the [App component documentation page](../application/app).
 
 ## Examples
 

@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "docusaurus start --port 8080",
-    "build": "docusaurus build",
+    "start": "TYPEDOC_WATCH=true docusaurus start",
+    "build": "TYPEDOC_WATCH=false docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy"
   },
@@ -14,8 +14,11 @@
     "@docusaurus/preset-classic": "^2.0.0-beta.4",
     "@saucelabs/theme-github-codeblock": "^0.0.4",
     "classnames": "^2.2.6",
+    "docusaurus-plugin-typedoc": "^0.15.3",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "typedoc": "^0.21.5",
+    "typedoc-plugin-markdown": "^3.10.4"
   },
   "browserslist": {
     "production": [
@@ -28,5 +31,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5"
   }
 }

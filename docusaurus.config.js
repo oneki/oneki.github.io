@@ -9,6 +9,19 @@ module.exports = {
   organizationName: "Oneki", // Usually your GitHub org/user name.
   projectName: "Oneki.js", // Usually your repo name.
   themes: ["@saucelabs/theme-github-codeblock"],
+  /*plugins: [
+    [
+      'docusaurus-plugin-typedoc',
+
+      // Plugin / TypeDoc options
+      {
+        entryPoints: ['../onekijs/packages/onekijs-framework/src/index.ts'],
+        tsconfig: '../onekijs/packages/onekijs-framework/tsconfig.json',
+        theme: './theme/oneki',
+        allReflectionsHaveOwnDocument: true,
+      },
+    ],
+  ],*/
   themeConfig: {
     navbar: {
       title: "Oneki.js",
@@ -18,7 +31,7 @@ module.exports = {
       },
       items: [
         {
-          to: "docs/overview/getting-started/introduction",
+          to: "docs/getting-started/introduction",
           label: "Docs",
           position: "right",
         },
@@ -37,11 +50,11 @@ module.exports = {
           items: [
             {
               label: "Getting Started",
-              to: "docs/overview/getting-started/introduction",
+              to: "docs/getting-started/introduction",
             },
             {
               label: "Demo app",
-              to: "docs/overview/getting-started/creating-project",
+              to: "docs/getting-started/creating-project",
             },
             {
               label: "Framework",
