@@ -89,7 +89,7 @@ yarn create next-app --typescript
 </Tabs>
 
 ### Structure
-Even if the project is very simple at this stage, we already structure the project as recommended **[in this chapter](../../advanced/file-structure)**.<br/>
+Even if the project is very simple at this stage, we already structure the project as recommended **[in this chapter](../advanced/file-structure)**.<br/>
 
 <Tabs>
   <TabItem value="cra">

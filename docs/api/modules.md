@@ -237,7 +237,6 @@ custom_edit_url: null
 
 ## Other Functions
 
-- [UseAppContext](functions/UseAppContext.md)
 - [absoluteUrl](functions/absoluteUrl.md)
 - [addCookie](functions/addCookie.md)
 - [append](functions/append.md)
@@ -501,8 +500,4 @@ custom_edit_url: null
 
 Renames and exports: [AppProps](interfaces/AppProps.md)
 
-___
 
-### useTryAppContext
-
-Renames and exports: [UseAppContext](functions/UseAppContext.md)

@@ -25,7 +25,7 @@ yarn install
 ```
 
 ## Next steps
-[Create your first basic application](./getting-started/introduction)
+[Create your first basic application](../getting-started/introduction)
 > To fully master the framework, be sure to read the documentation of 
 * [React](https://reactjs.org/)
 * [React Router](https://reacttraining.com/react-router/)

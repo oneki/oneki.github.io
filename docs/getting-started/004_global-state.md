@@ -104,7 +104,7 @@ https://github.com/oneki/onekijs/blob/master/getting-started/next/step03-global-
 ```  
 
 :::note Layout
-The function `withLayout` is a **[HOC](https://reactjs.org/docs/higher-order-components.html)** to provide a consistent layout between each pages of a Next.js application. **[More details here](../../framework/layout/layout)**
+The function `withLayout` is a **[HOC](https://reactjs.org/docs/higher-order-components.html)** to provide a consistent layout between each pages of a Next.js application. **[More details here](../framework/layout/layout)**
 :::
 
   </TabItem>
