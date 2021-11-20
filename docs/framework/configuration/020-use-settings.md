@@ -7,12 +7,14 @@ sidebar_label: useSettings
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
+import Sandbox from '@site/src/components/Sandbox';
 
 ```javascript
 const settings: AppSettings = useSettings();
 ```
+<p/>
 
-**_useSettings_** returns the whole object that is passed as a prop to the **_Application_** (generally defined in settings.js)
+`useSettings` returns the configuration object that is passed as a prop to **<App/\>** (generally defined in src/settings.ts)
 
 :::info
 The settings object is frozen and can't be updated.
@@ -40,14 +42,14 @@ No input.
   <Sandbox
     name="cra-app-settings"
     height="600"
-    modules={['/src/index.tsx', '/src/settings.ts']}
+    modules={['/src/Main.tsx', '/src/settings.ts', '/src/index.tsx']}
   />
   </TabItem>
   <TabItem value="next">
   <Sandbox
     name="next-app-settings"
     height="600"
-    modules={['/src/page/index.tsx', '/src/settings.ts', '/src/page/_app.tsx']}
+    modules={['/src/pages/index.tsx', '/src/settings.ts', '/src/pages/_app.tsx']}
   />  
   </TabItem>
 </Tabs>

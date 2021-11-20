@@ -9,16 +9,17 @@ import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
 
 
-***Oneki.js*** recommends to put the configuration parameters in a central place. Generally, the configuration is placed in the file **src/settings.ts**.
+***Oneki.js*** recommends placing the configuration settings in a central location. In general, the configuration is placed in the **src/settings.ts** file.
 
 <img alt="Notification architecture" src={useBaseUrl('img/configuration/onekijs-Configuration.svg')} />;
 
-The filename "**settings.ts**" is a convention and could be anything else. Actually, ***Oneki.js*** expects to receive a "Settings" object during its bootstrap and this object could come from anywhere.
+The file name "**settings.ts**" is a convention and could be anything else. In fact, ***Oneki.js*** expects to receive a "Settings" object when it starts and this object can come from anywhere.
 
 <Tabs>
   <TabItem value="cra">
 
 ```tsx
+import { App } from 'onekijs';
 import settings from '../settings';
 
 <App settings={settings} />
@@ -44,9 +45,11 @@ My-App
   <TabItem value="next">
 
 ```tsx
+import { AppProps } from 'next/app';
+import { NextApp } from 'onekijs-next';
 import settings from '../settings';
 
-const MyApp: FC<NextAppProps> = (props) => {
+const MyApp: FC<AppProps> = (props) => {
   return <NextApp settings={settings} />;
 };
 ```
@@ -71,9 +74,9 @@ My-App
   </TabItem>
 </Tabs>
 
-The content of **settings.ts** is available across the application via the hook [useSettings](../configuration/use-settings) and also automatically injected in all **reducers** and **saga**
+The contents of **settings.ts** are available throughout the application via the [useSettings](../configuration/use-settings) hook and are also automatically injected into all **reducers** and **saga**
 
-Some components of the framework use the content of ***settings.ts*** to configure themself. For example, the notification service is configured like this:
+Some framework components use the contents of ***settings.ts*** to configure themselves. For example, the notification service is configured like this:
 
 ```javascript
 // content of settings.ts
@@ -92,9 +95,9 @@ export default {
 };
 ```
 
-For more information concerning the bootstrap of an ***Oneki.js application***, check the [App component documentation page](../application/app).
+For more information about booting an ***Oneki.js application***, see the [App component documentation page](../application/app).
 
-## Examples
+<!-- ## Examples
 
 <Tabs
   defaultValue="code"
@@ -121,7 +124,7 @@ For more information concerning the bootstrap of an ***Oneki.js application***, 
 </TabItem>
 </Tabs>
 
-Click on the icon <img width="20px" height="20px" alt="Notification architecture" src={useBaseUrl('img/hamburger_icon.svg')} /> to access the other files or [open the project in Code Sandbox](https://codesandbox.io/embed/github/oneki/onekijs-example/tree/master/next/form-crud?fontsize=14&module=%2Fsrc%2Froutes%2Fusers%2FUsers.js&theme=dark)
+Click on the icon <img width="20px" height="20px" alt="Notification architecture" src={useBaseUrl('img/hamburger_icon.svg')} /> to access the other files or [open the project in Code Sandbox](https://codesandbox.io/embed/github/oneki/onekijs-example/tree/master/next/form-crud?fontsize=14&module=%2Fsrc%2Froutes%2Fusers%2FUsers.js&theme=dark) -->
 
 <!-- ### Minimal example
 The minimal example consists of a simple settings file that is common to any environement.<br/>
