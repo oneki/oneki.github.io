@@ -45,21 +45,35 @@ module.exports = {
       },
       {
         type: "category",
-        label: "Authentication",
+        label: "AuthN / AuthZ",
         items: [
           "framework/auth/introduction",
-          "framework/auth/secure-page",
-          "framework/auth/security-context",
-          "framework/auth/services",
           {
             type: "category",
-            label: "Authentication type",
+            label: "AuthZ",
             items: [
-              "framework/auth/authentication-type/introduction",
-              "framework/auth/authentication-type/form-based",
-              "framework/auth/authentication-type/oidc-server"
+              "framework/auth/authz/secure-page",
+              "framework/auth/authz/security-context",
             ]
-          }
+          },
+          {
+            type: "category",
+            label: "AuthN",
+            items: [
+              "framework/auth/authn/introduction",
+              "framework/auth/authn/services",
+              "framework/auth/authn/form-based",
+              "framework/auth/authn/external",
+              {
+                type: "category",
+                label: "Open ID Connect",
+                items: [
+                  "framework/auth/authn/oidc-server",
+                  "framework/auth/authn/oidc-client"
+                ]
+              },
+            ]
+          },
         ]
       },            
       {

@@ -3,24 +3,36 @@ id: introduction
 title: Introduction
 sidebar_label: Introduction
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
+import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
-import NextSandbox from '@site/src/components/NextSandbox';
+import Sandbox from '@site/src/components/Sandbox';
 
+**_Oneki.js_** provides an authentication / authorization library to implement the following use cases:
 
-***Oneki.js*** provides an authentication library to implement the following use cases:
+### Authentication (AuthN)
 
-| Use case | Description
-| -------- | -----------
-| Form based | Authentication via a standard username / password React form | 
-| External authentication | Authentication is handled by an external system redirecting to the application once the authenticiation is done |
-| Open ID Connect | Authentication via Open ID Connect authorization code flow. **Oneki.js** fully implements the standard (including state and nonce) |
-| Oauth2| Authentication via Oauth2 authorization code flow. |
+:::info
+The goal of the authentication library is to provide the same service / methods for any type of authentication. Everything specific to an authentication type is configured in **[src/settings.ts](../configuration/introduction)**
+:::
 
-The goal of the authentication library is to provide the same service / methods for any kind of authentication. Everything specific to a type of authentication is configured in **[settings.js](../configuration/introduction)**
+| Use case                                        | Description                                                                                                                            |
+| ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **[Form based](./authn/form-based)**            | Authentication with a username and password provided via a standard web form                                                           |
+| **[External authentication](./authn/external)** | Authentication is handled by an external system that redirects to the application once authenticiation is complete                     |
+| **[Open ID Connect](./authn/oidc-server)**      | Authentication via the Open ID Connect authorization code flow. **Oneki.js** fully implements the standard (including state and nonce) |
+| **Oauth2 **                                     | Authentication via Oauth2 authorization code flow.                                                                                     |
+
+### Authorization (AuthZ)
+
+| Use case                                         | Description                                                                                                                                                                                                                                |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **[Secure component](./authz/secure-page)**      | HOC (High-Order Component) to secure any component.<br/>**E.g**: Give access to an admin page to authorized users only                                                                                                                     |
+| **[Security context](./authz/security-context)** | The security context represents the logged-in user's profile and is available anywhere in the application<br/><br/>A common use case is to retrieve the logged-in user's roles from the security context to display or not certains fields |
 
 ## Architecture
+
 **Oneki.js** implements the same logic for all types of authentication
 
 ```plantuml
@@ -34,15 +46,15 @@ start
   end note
 if (secure page / component?) then (yes)
   if (security context?) then (null)
-    :redirect to 
+    :redirect to
     login page;
     note left
-      Security context is stored 
+      Security context is stored
       in the global state
 
       If not present, redirect the
       user to the login page
-    end note      
+    end note
     -[dashed]-> Logic specific to
   the type of authentication;
     if (auth successful?) then (yes)
@@ -68,9 +80,9 @@ endif
 @enduml
 ```
 
-In the schema above, *the logic specific to the type of authentication* is entirely based on configuration variables found in **[settings.js](#Configuration)**
+In the schema above, _the logic specific to the type of authentication_ is entirely based on configuration variables found in **[src/settings.ts](../configuration/introduction)**
 
-**Example**: Here is the logic specific to a **[form based authentication](./authentication-type/form-based)**
+**Example**: Here is the logic specific to a **[form based authentication](./authn/form-based)**
 
 ```plantuml
 @startuml
@@ -116,86 +128,106 @@ else auth successful
 ```
 
 ## Configuration
-As usual, the configuration is done via **[settings.js](../configuration/introduction)**
 
-Here is a example of Form based authentication configuration:
+As usual, the configuration is done via **[src/settings.ts](../configuration/introduction)**
+
+Here is a example of a Form based authentication configuration:
 
 ```javascript
 export default {
   idp: {
     default: {
-      type: 'form',
-      loginEndpoint: '/api/auth',
-      logoutEndpoint: '/api/logout',
-      userinfoEndpoint: '/api/whoami',
-    },    
-  }
-}
+      type: "form",
+      loginEndpoint: "/api/auth",
+      logoutEndpoint: "/api/logout",
+      userinfoEndpoint: "/api/whoami",
+    },
+  },
+};
 ```
 
-The various configuration are described in detail on **[this page](./authentication-type/introduction)**
+The various configuration are described in detail on **[this page](./authn/introduction)**
 
 ## Secure page / component
-**Oneki.js** provides an ***[HOC](https://reactjs.org/docs/higher-order-components.html)*** to secure a component:
+
+**Oneki.js** provides an **_[HOC](https://reactjs.org/docs/higher-order-components.html)_** to secure a component:
 
 ```javascript
 const SecureComponent = secure(Component, validator, options);
 ```
+
 If the user is not yet logged in, this HOC redirects him to the login page<br/>
 If the logged user doesn't have the right to display the page, it displays an error
 
 ##### Examples
+
 ```javascript
 // Only verify that the user is logged in
 const SecuredPage = secure(Page);
 
 // verify that the user is logged in and has the role ADMIN
 const SecuredPage2 = secure(Page2, (securityContext) => {
-  return securityContext && 
+  return securityContext &&
          securityContext.roles &&
          securityContext.roles.includes('ADMIN'));
 }
 ```
 
-Secure HOC is described in detail on **[this page](./secure-page)**
+Secure HOC is described in detail on **[this page](./authz/secure-page)**
 
 ## Security context
-The security context is stored in the global Redux state under the key **auth.securityContext** and accessible anywhere with the hook ***useSecurityContext***
+
+The security context is stored in the global state of Redux under the `auth.securityContext` key and is accessible everywhere with the `useSecurityContext` hook
 
 ```javascript
 const [securityContext, loading] = useSecurityContext(selector, defaultValue);
 ```
 
-The content of the security context is generally the attributes of the logged user like email, name, firstname, roles, ... 
+The content of the security context is usually the attributes of the connected user such as email, name, firstname, roles, ...  
+**Example**: The claims present in an `JWT ID Token`
 
-**Oneki.js** doesn't expect a specific format for the security context. You can put in what you want.
+**Oneki.js** doesn't expect a specific format for the security context. You can put whatever you want.
 
 ##### Examples
+
 ```javascript
-// retrieve the whole securityContext
-const [securityContext, loading] = useSecurityContext(); // securityContext is undefined if user is not logged in
+// get the whole securityContext
+// securityContext is undefined if user is not logged in
+const [securityContext, loading] = useSecurityContext();
 
 // retrieve a specific attribute of the securityContext
-const [email, loading] = useSecurityContext("email"); // email is undefined if user is not logged in
+// email is undefined if user is not logged in
+const [email, loading] = useSecurityContext("email");
 ```
 
 The security context is described in detail on **[this page](./security-context)**
 
 ## Services
-**Oneki.js** provide up to 4 services you can use to implement the authentication process:
 
-| Service | Description |
-| ------- | ----------- |
-| login | Service that handles the login request. e.g: a AJAX POST, a redirect to an OIDC IDP, ...
-| login callback | When the authentication is done by an external party (e.g an OIDC IDP), this service handles the callback
-| logout | Service that handle the logout request
-| logout callback | When the logout is done by an external party (e.g an OIDC IDP), this service handles the callback
+**Oneki.js** provides 4 services that you can use to implement the authentication process:
+
+| Service         | Description                                                                                               |
+| --------------- | --------------------------------------------------------------------------------------------------------- |
+| **login**           | Service that processes the login request. e.g: a AJAX POST request, a redirect to an OIDC IDP, ...          |
+| **login callback**  | When authentication is peformed by an external party (e.g., an OIDC Identity Provider), this service handles the callback |
+| **logout**          | Service that processes the logout request                                                                    |
+| **logout callback** | When the logout is peformed by an external party (e.g., an OIDC Identity Provider), this service handles the callback         |
 
 ## Example
 
-<NextSandbox 
-  name="auth/form" 
-  height="600" 
-  modules={['/src/pages/profile.js', '/src/pages/admin.js','/src/pages/login.js','/src/pages/logout.js', 'src/settings.js']} 
-/>
-
+<Tabs>
+  <TabItem value="cra">
+  <Sandbox
+    name="cra-auth-form"
+    height="600"
+    modules={['/src/modules/core/layouts/AppLayout.tsx', '/src/pages/restricted.tsx', '/src/pages/admin.tsx', '/src/pages/login.tsx']}
+  />
+  </TabItem>
+  <TabItem value="next">
+  <Sandbox
+    name="next-auth-form"
+    height="600"
+    modules={['/src/pages/index.tsx', '/src/settings.ts', '/src/pages/_app.tsx']}
+  />  
+  </TabItem>
+</Tabs>

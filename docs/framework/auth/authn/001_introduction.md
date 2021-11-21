@@ -8,22 +8,22 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NextSandbox from '@site/src/components/NextSandbox';
 
-The goal of the authentication library is to provide the same service / methods for any kind of authentication. Everything specific to a type of authentication is configured in **[settings.js](../../configuration/introduction)**
+The goal of the authentication library is to provide the same service / methods for any type of authentication. Everything specific to a type of authentication is configured in **[src/settings.ts](../../configuration/introduction)**
 
 There are 4 types of authentication, each having their specific configuration format: 
 
-| Use case | Type | Description |
-| -------- | ----- | -----------
-| Form based | form | Authentication via a standard username / password React form | 
-| External authentication | external | Authentication is handled by an external system redirecting to the application once the authenticiation is done |
-| Open ID Connect | oidc_server<br/>oidc_client | Authentication via Open ID Connect authorization code flow.<br/><br/>**oidc_server** means that the exchange of the authorization code for a token is done on backend side<br/>**oidc_client** means that everything is done on client side (less secure but doesn't require a server) |
-| Oauth2| oauth2 | Authentication via Oauth2 authorization code flow. |
+| Use case                                        | Description                                                                                                                            |
+| ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **[Form based](./authn/form-based)**            | Authentication with a username and password provided via a standard web form                                                           |
+| **[External authentication](./authn/external)** | Authentication is handled by an external system that redirects to the application once authenticiation is complete                     |
+| **[Open ID Connect](./authn/oidc-server)**      | Authentication via the Open ID Connect authorization code flow. **Oneki.js** fully implements the standard (including state and nonce)<br/><br/>**oidc_server** means that the exchange of the authorization code for a token is done on backend side<br/>**oidc_client** means that everything is done on client side (less secure but doesn't require a server) |
+| **Oauth2 **                                     | Authentication via Oauth2 authorization code flow.                                                                                     |
 
 ## Structure
-The authentication services provided by **Oneki.js** retrieve their configuration from the key ***idp/:idpName*** in **settings.js** where ***idpName*** is an ID used when the service is instantied.
+The authentication services provided by **Oneki.js** retrieve their configuration from the key `idp/:idpName` in **src/settings.ts** where `idpName` is an ID used when the service is instantied.
 
 ##### Examples
-Content of settings.js
+Content of **src/settings.ts**
 
 ```javascript
 export default {
@@ -43,8 +43,8 @@ export default {
   }
 }
 ```
-
-Instantiation of the service
+<p/>
+Instantiation of the service:
 
 ```javascript
 // Login service will use the configuration idp.myId
@@ -55,7 +55,7 @@ useLoginService();
 ```
 
 ## String vs Function
-For many attributes, the value can be a **String** or a **Function** (can be **async**) receiving a ***[context](#context)***
+For many attributes in **src/settings.ts**, the value can be a `string`, a `Function` or an `async Function`. The `Function` has the following type: (context) => ... 
 
 Example:
 ```javascript
@@ -63,6 +63,10 @@ loginEndpoint: '/en/auth'
 // or
 loginEndpoint: (context) => {
   return `https://example.com/${context.i18n.locale}/auth`
+}
+// or
+loginEndpoint: async (context) => {
+  return await myAsyncFunction("foo");
 }
 ```
 
@@ -79,8 +83,10 @@ const context = {
 }
 ```
 
+**[See API for more details](../../../api/interfaces/AppContext)**
+
 ## Endpoint
-Endpoints specify how to interact with the backend.<br/>
+Endpoints specify the URLs exposed by the backend.<br/>
 For example, in a Form based authentication, you must indicate the URL used to send the username / password to do the authentication.
 
 You can provide the value in two ways:

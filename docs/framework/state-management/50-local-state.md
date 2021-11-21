@@ -67,7 +67,117 @@ Be sure to read the documentation of [Redux](https://redux.js.org/) and [Redux S
 
 ### Example
 
-The code below shows how to create a `LocalService`
+This very basic example is for demonstration only as a simple **useState** would be normally enough.
+
+<Tabs>
+  <TabItem value="cra">
+
+```javascript
+import { useLocalService } from "onekijs";
+import React from "react";
+import { myLocalService } from "./MyLocalService";
+
+let uid = 0;
+export default () => {
+  // instanciate a local service
+  const [state, service] = useLocalService(myLocalService);
+
+  return (
+    <div>
+      <button onClick={() => service.updateFoo(`foo-${++uid})`)}>Update</button>
+      {foo && <div>Value in global state: {foo}</div>}
+    </div>
+  );
+};
+```
+
+<p/>
+
+The **myLocalService** looks like this:
+
+:::info
+
+You don't need to understand how to build services yet. This **[page](../service/introduction)** explains how to build services
+
+:::
+
+```typescript
+import { AnyState, DefaultLocalService, reducer, service } from 'onekijs';
+import { Settings } from './settings';
+
+export interface MyLocalState extends AnyState {
+  foo: string;
+}
+
+@service
+export class MyLocalService extends DefaultLocalService<MyLocalState> {
+  
+  @reducer
+  setFoo(value: string): void {
+    this.state.foo = value;
+  }
+
+}
+```
+
+  </TabItem>
+  <TabItem value="next">
+
+```typescript
+import { useLocalService } from "onekijs-next";
+import React from "react";
+import { myLocalService } from "./MyLocalService";
+
+let uid = 0;
+export default () => {
+  // instanciate a local service
+  const [state, service] = useLocalService(myLocalService);
+
+  return (
+    <div>
+      <button onClick={() => service.updateFoo(`foo-${++uid})`)}>Update</button>
+      {foo && <div>Value in global state: {foo}</div>}
+    </div>
+  );
+};
+```
+
+<p/>
+
+The **myLocalService** looks like this:
+
+:::info
+
+You don't need to understand how to build services yet. This **[page](../service/introduction)** explains how to build services
+
+:::
+
+```javascript
+import { AnyState, DefaultLocalService, reducer, service } from 'onekijs-next';
+import { Settings } from './settings';
+
+export interface MyLocalState extends AnyState {
+  foo: string;
+}
+
+@service
+export class MyLocalService extends DefaultLocalService<MyLocalState> {
+  
+  @reducer
+  setFoo(value: string): void {
+    this.state.foo = value;
+  }
+
+}
+```
+
+  </TabItem>
+</Tabs>
+
+
+
+
+<!-- The code below shows how to create a `LocalService`
 
 ```tsx reference
 https://github.com/oneki/onekijs/blob/master/getting-started/cra/step10-service/src/modules/products/services/AvailabilityService.ts
@@ -77,5 +187,5 @@ The code below uses the local service to manage a `state`
 
 ```tsx reference
 https://github.com/oneki/onekijs/blob/master/getting-started/cra/step10-service/src/modules/products/components/ProductDetails.tsx
-```
+``` -->
 
