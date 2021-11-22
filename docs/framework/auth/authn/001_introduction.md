@@ -14,35 +14,55 @@ There are 4 types of authentication, each having their specific configuration fo
 
 | Use case                                        | Description                                                                                                                            |
 | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| **[Form based](./authn/form-based)**            | Authentication with a username and password provided via a standard web form                                                           |
-| **[External authentication](./authn/external)** | Authentication is handled by an external system that redirects to the application once authenticiation is complete                     |
-| **[Open ID Connect](./authn/oidc-server)**      | Authentication via the Open ID Connect authorization code flow. **Oneki.js** fully implements the standard (including state and nonce)<br/><br/>**oidc_server** means that the exchange of the authorization code for a token is done on backend side<br/>**oidc_client** means that everything is done on client side (less secure but doesn't require a server) |
+| **[Form based](./form-based)**            | Authentication with a username and password provided via a standard web form                                                           |
+| **[External authentication](./external)** | Authentication is handled by an external system that redirects to the application once authenticiation is complete                     |
+| **[Open ID Connect](./oidc-server)**      | Authentication via the Open ID Connect authorization code flow. **Oneki.js** fully implements the standard (including state and nonce)<br/><br/>**oidc_server** means that the exchange of the authorization code for a token is done on backend side<br/>**oidc_client** means that everything is done on client side (less secure but doesn't require a server) |
 | **Oauth2 **                                     | Authentication via Oauth2 authorization code flow.                                                                                     |
 
-## Structure
+## Configuration
 The authentication services provided by **Oneki.js** retrieve their configuration from the key `idp/:idpName` in **src/settings.ts** where `idpName` is an ID used when the service is instantied.
 
 ##### Examples
 Content of **src/settings.ts**
 
+:::info
+Each type of authentication has its own parameters, but some are common, such as
+* **type**: the type of authentication
+* **userinfoEndpoint**: represents the URL to retrieve the profile of the connected user
+:::
+
 ```javascript
 export default {
   idp: {
     default: {
-      type: "oauth2",
-      ...
-    },
-    myId: {
       type: "form",
+      loginEndpoint: "/api/lgoin",
+      logoutEndpoint: "/api/logout",
+      userinfoEndpoint: "/api/userinfo",
       ...
     },
-    myOtherId: {
+    myOidc: {
+      type: "oidc_server",
+      authorizeEndpoint: process.env.REACT_APP_AUTHORIZE_ENDPOINT,
+      userinfoEndpoint: "/api/userinfo",
+      ...
+    },
+    myOidcClient: {
+      type: "oidc_client",
+      ...
+    },
+    myExternal: {
       type: "external",
+      ...
+    },
+    myOauth2: {
+      type: "oauth2",
       ...
     }
   }
 }
 ```
+
 <p/>
 Instantiation of the service:
 
@@ -54,8 +74,8 @@ useLoginService('myId');
 useLoginService();
 ```
 
-## String vs Function
-For many attributes in **src/settings.ts**, the value can be a `string`, a `Function` or an `async Function`. The `Function` has the following type: (context) => ... 
+### Configuration parameter value
+For many attributes in **src/settings.ts**, the value can be a `string`, a `Function` or an `async Function`
 
 Example:
 ```javascript
@@ -85,80 +105,8 @@ const context = {
 
 **[See API for more details](../../../api/interfaces/AppContext)**
 
-## Endpoint
-Endpoints specify the URLs exposed by the backend.<br/>
-For example, in a Form based authentication, you must indicate the URL used to send the username / password to do the authentication.
-
-You can provide the value in two ways:
-
-| Way | Description | Example
-| --- | ----------- | -------
-| String | If a String is provided, this is the URL to call the backend. <br/>If the URL is relative (e.g: ***/api/login***), it's prefixed with the ***server.baseUrl*** from settings.js | /api/login
-| Function | Instead of a String, a function with the format **(context) => URL** can be specified. **Oneki.js** executes it to retrieve the URL<br/><br/>This function can be **async** | (context) => https://oneki.org/api/login
-
-###### Examples
-
-```javascript
-export default {
-  idp: {
-    default: {
-      type: 'form',
-
-      // Configuration via a function
-      loginEndpoint: ({ idp, router, store, settings, i18n }) => {
-        return `https://example.com/${i18n.locale}/auth`
-      },
-
-      // Configuration via a String
-      logoutEndpoint: '/logout'
-    }
-  }
-}
-```
-
-### userinfo endpoint
-The userinfo endpoint is used to retrieve the security context of the logged-in user. The security context often contains attributes like name, firstname, email, roles, ...
-
-
-
-The userinfo endpoint is a little bit different because one can provide the value in three ways:
-
-| Way | Description | Example
-| --- | ----------- | -------
-| String (URL) | a URL String. <br/>If the URL is relative (e.g: ***/api/userinfo***), it's prefixed with the ***server.baseUrl*** from settings.js | /api/userinfo
-| Function | Instead of a String, a function with the format **(context) => URL** can be specified. **Oneki.js** executes it to retrieve the URL<br/><br/>This function can be **async** | (context) => https://oneki.org/api/userinfo
-| String (token...) | A string starting with ***token***.<br/>**Oneki.js** extracts the JWT token from the global state and uses it as the security context.<br/>The global state is populated with the token during the authentication<br/><br/>Must be one of these values:<ul><li>**token://id_token**</li><li>**token://access_token**</li><li>**token**</li></ul>[see token extraction](#token-extraction) | token://id_token
-
-##### Token
-When the value starts with **token**, it means that the backend doesn't expose a userinfo endpoint, but the security context can be retrieved from a token existing in the global state (under the key **auth.token**) with the following format:
-
-```json
-{
-  "id_token": "JWT_ID_TOKEN_IN_BASE64",
-  "access_token": "JWT_ACCESS_TOKEN_IN_BASE64",
-  ...
-}
-```
-The token is stored in the global state via a **[callback function](#callback)**
-
-##### Token extraction
-
-if the value is 
-- **token://id_token**, then the token JWT_ID_TOKEN_IN_BASE64 is parsed and the claims become the security context.
-- **token://access_token**, then the token JWT_ACCESS_TOKEN_IN_BASE64 is parsed and the claims become the security context.
-- **token**, then the whole response becomes the security context (there is no parsing)
-
-###### Example
-```javascript
-userinfoEndpoint: '/api/whoami'
-// or
-userInfoEndpoint: (context) => '/api/whoami'
-// or
-userInfoEndpoint: 'token://id_token' //will not call the backend, but expects that the token is in the global state
-```
-
 ## Callback
-Via **settings.js** you can specific a callback executed at the end of the authentication process<br/>
+Via **src/settings.ts** you can specific an (optional) callback executed at the end of the authentication process<br/>
 
 ```javascript
 callback: (result, context) => [token, securityContext]

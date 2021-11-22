@@ -200,7 +200,7 @@ const [securityContext, loading] = useSecurityContext();
 const [email, loading] = useSecurityContext("email");
 ```
 
-The security context is described in detail on **[this page](./security-context)**
+The security context is described in detail on **[this page](./authz/security-context)**
 
 ## Services
 

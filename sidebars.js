@@ -61,6 +61,7 @@ module.exports = {
             label: "AuthN",
             items: [
               "framework/auth/authn/introduction",
+              "framework/auth/authn/userinfo",
               "framework/auth/authn/services",
               "framework/auth/authn/form-based",
               "framework/auth/authn/external",

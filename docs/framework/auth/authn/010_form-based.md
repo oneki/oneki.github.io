@@ -16,7 +16,7 @@ import NextSandbox from '@site/src/components/NextSandbox';
 
 ## Architecture
 
-The following scenario is the standard flow when a non logged-in user wants to display a page reserved only for logged-in user. This means that this page is secured thanks to the **[secure HOC](../secure-page)**<br/>
+The following scenario is the standard flow when a non logged-in user wants to display a page reserved only for logged-in user. This means that this page is secured thanks to the **[secure HOC](../authz/secure-page)**<br/>
 This flow can be customized via settings.js
 
 ```plantuml
