@@ -70,7 +70,7 @@ In the above scenario, the **/login page** uses the `useLogin` hook to generate 
 
 ## Configuration
 
-the `useLogin` and `useLogout` hooks are configured via parameters in `src/settings.ts` (**[see configuration](./introduction#configuration)**)
+the `useLogin` and `useLogout` hooks are configured via several parameters in `src/settings.ts` (**[see configuration](./introduction#configuration)**)
 
 **the following parameters are available:**
 
@@ -81,10 +81,10 @@ export default {
       // MANDATORY parameters
       type: "form",
       loginEndpoint: "/api/login",
-      logoutEndpoint: "/api/logout",
-      userinfoEndpoint: "/api/whoami",
 
       // OPTIONAL parameters
+      logoutEndpoint: "/api/logout",
+      userinfoEndpoint: "/api/whoami",
       loginMethod: "POST",
       loginContentType: "application/json",
       usernameKey: "username",
@@ -104,8 +104,8 @@ _Mandatory parameters are marked with a \*_
 | -------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **type**\*             | string                                               | must be "**form**"                                                                                                                                                                                                                                                                                                   |
 | **loginEndpoint**\*    | [loginEndpoint](../../../api/interfaces/IdpSettings#loginendpoint)                      | Can be<ul><li>A relative or absolute URL</li><li>A function returning the URL</li></ul>                                                                                                                                                                                                                              |
-| **logoutEndpoint**\*   | [logoutEndpoint](../../../api/interfaces/IdpSettings#logoutendpoint)                       | Can be<ul><li>A relative or absolute URL</li><li>A function returning the URL</li></ul>                                                                                                                                                                                                                              |
-| **userinfoEndpoint**\* | [userinfoEndpoint](../../../api/interfaces/IdpSettings#userinfoendpoint)                    | Can be:<ul><li>A relative or absolute URL</li><li>A function that returns an object representing the userInfo. <br/>For example a object like this: {email: 'foo@example.com', roles: ['ADMIN']}}</li></ul>                                                                                                          |
+| **logoutEndpoint**   | [logoutEndpoint](../../../api/interfaces/IdpSettings#logoutendpoint)                       | Can be<ul><li>A relative or absolute URL</li><li>A function returning the URL</li></ul>                                                                                                                                                                                                                              |
+| **userinfoEndpoint** | [userinfoEndpoint](../../../api/interfaces/IdpSettings#userinfoendpoint)                    | Can be:<ul><li>A relative or absolute URL</li><li>A function that returns an object representing the userInfo. <br/>For example a object like this: {email: 'foo@example.com', roles: ['ADMIN']}}</li></ul>                                                                                                          |
 | **loginMethod**      | string                                               | if **loginEndpoint** is a URL, the HTTP method used to send the username and password to the server<br/><br/>**Defaults to**: `POST`                                                                                                                                                                                           |
 | **loginContentType** | string                                               | the HTTP Content-Type header value<br/><br/>can be<ul><li>application/x-www-form-urlencoded</li><li>application/json</li></ul><br/>**Defaults to**: `application/json`                                                                                                                                                                                             |
 | **usernameKey**      | string                                               | the name of the parameter in the request sent to the server that contains the **username**<br/><br/>**Defaults to**: username                                                                                                                                                                                                                                 |
@@ -115,6 +115,10 @@ _Mandatory parameters are marked with a \*_
 | **callback**         | [callback](../../../api/interfaces/IdpSettings#callback) | a callback function to parse the `AJAX POST` response.<br/><br/>The fonction returns optionally a token and/or a securityContext<br/>if callback is null, **Oneki.js** assumes that the session is done via a cookie and the security context is retrieved via the **userinfoEndpoint** defined above)<br/><br/>**Defaults to**: null |
 
 ## Example
+
+:::info
+The example below uses the `useForm` hook. This hook expects a function `(data) => void` called when the user clicks on the "Submit" button.
+:::
 
 <Tabs>
   <TabItem value="cra">
