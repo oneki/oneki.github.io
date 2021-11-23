@@ -1,7 +1,7 @@
 ---
 id: external
-title: External
-sidebar_label: External
+title: External authentication
+sidebar_label: External auth
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
