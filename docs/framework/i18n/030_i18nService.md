@@ -1,29 +1,28 @@
 ---
 id: i18nService
-title: useI18nService
-sidebar_label: useI18nService
+title: I18n Service
+sidebar_label: I18n Service
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Oneki.js provides a service that provide some helper methods related to i18n like switching between locales.
+> Oneki.js offers a service that provides some help methods related to internationalization, such as switching from one language to another.
 
-### Hook
-
-The service can be instancied via the hook **useI18nService**
+The service can be instancied with the **useI18nService** hook
 
 ```javascript
 const i18nService = useI18nService();
 ```
 
+<p/>
 The service exposes these methods:
 
-| method                                          | Description            |
-| ----------------------------------------------- | ---------------------- |
-| changeLocale(locale[, context])                 | Switch between locales |
-| fetchTranslations(locale, namespaces[,options]) | load translations      |
+| Name                                            | Type                                                      | Description            |
+| ----------------------------------------------- | --------------------------------------------------------- | ---------------------- |
+| changeLocale                                    | [changeLocale](../../api/classes/I18nService#changelocale) | This method allows you to switch from one language to another |
+| fetchTranslations | [fetchTranslations](../../api/classes/I18nService#fetchtranslations) | load translations                                         |
 
 ### Example
 

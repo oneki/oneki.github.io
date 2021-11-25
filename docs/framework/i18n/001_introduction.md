@@ -4,21 +4,22 @@ title: Introduction
 sidebar_label: Introduction
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
+import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
+import Sandbox from '@site/src/components/Sandbox';
 
 
-> ***Oneki.js*** provides an Internationalization (i18n) library to make an app available in multiple languages. This library works with **Create React app** and **Next.js**
+> ***Oneki.js*** provides an Internationalization library (i18n) to make an application available in multiple languages. This library works with **Create React app** and **Next.js**
 
 ## Configuration
-As usual, the configuration is done via ***settings.js***
+As usual, the configuration is done via ***src/settings.ts***
 
 ```javascript
 export default {
   i18n: {
     locales: ["en", "fr"], // supported locales
     defaultLocale: "en",
-    url: "/locales" // the URL to retrieves the JSON files with the translations
+    url: "/locales" // the base URL to retrieve the JSON files with the translations
   }
 }
 ```
@@ -51,27 +52,31 @@ Here is a very simple example of a translation file:
   "Welcome": "Bienvenue"
 }
 ```
+See **[Translation files](./translations)** for more info
 
-## Hook
-To make a component available in multiple languages, you can use the hook ***useTranslation*** which has the following signature
+## Hooks
 
 ### useTranslation
+To make a component available in multiple languages, you can use the `useTranslation` hook  
 This is the main hook that returns a component and a function that are used to translate a content.
-```javascript
-const [T, t, locale, loading] = useTranslation([namespaces]);
+
+```tsx
+const Example: FC = () => {
+  const [T, t, locale, loading] = useTranslation([namespaces]);
+
+  //output <div>Welcome</div> or <div>Bienvenue</div>
+  return <div><T>Welcome</T></div> 
+}
+
 ```
-```javascript
-<div><T>Welcome</T></div> //output <div>Welcome</div> or <div>Bienvenue</div>
-```
-Check the [useTranslation documentation page](useTranslation) for more info
+See **[useTranslation](./useTranslation)** for more info
 
 ### useLocale
 This hook returns the current selected language
+
 ```javascript
 const locale = useLocale() // -> locale = fr
 ```
-
-
 
 ## Example
 Here is a very basic example of a component available in multiple languages

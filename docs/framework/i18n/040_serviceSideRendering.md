@@ -5,79 +5,63 @@ sidebar_label: Server side rendering
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
+import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
+import Sandbox from '@site/src/components/Sandbox';
 
 > **Note**: This page is specific to application built on top of **Next.js**
 
-**Oneki.js** proposes several helpers to generate pages in different languages on server side. These helpers assume that the path starts with the local and the dynamic attribute is named ***[lang]***<br/>
+**Oneki.js** proposes a help function to use the translation files on server side
 
-The following structure is expected:
+| Name                | Type                                                                        | Description |
+| ------------------- | --------------------------------------------------------------------------- | ----------- |
+| **withI18nStaticProps** | (locale: string, staticProps?: StaticProps, namespaces: string[] = []): any | Inject the content of the translation files in the props that will be received by the page component<br/><br/>**Note**: if no namespace are specified, only the `common` file is injected
 
-```javascript
-My-App
-├─ src
-│  ├─ pages // folder containing all pages. Pages are the entry points (see nextjs doc)
-│  │  ├─ [lang] // a folder is created for each top route
-│  │  │  └─ ...
-│  │  ├─ _app.js // the wrapper component common to all pages that bootstraps the App (<NextApp />)
-│  │  └─ index.js // redirect the user to the correct locale
-```
+**Example**
 
-Therefore if the application is available in english and french, the URLs look like this:
-- https://example.com/en/...
-- https://example.com/fr/...
-
-and https://example.com redirects the user to https://example.com/en or https://example.com/fr (based on the locale auto detected)
-
-## Static pages
-
-### getI18nStaticProps
-For pages that can be generated at build time, **Next.js** retrieves the data by calling the method **getStaticProps**
-
-**Oneki.js** proposes the helper ***getI18nStaticProps*** to retrieve the translations needed by the page, so they can be added in the output of **getStaticProps**
-
-```javascript
-import { getI18nStaticProps } from 'onekijs';
-import fs from 'fs';
-import path from 'path';
-
-const i18nNamespaces = ['users', 'common'];
-
-export async function getStaticProps(context) {
-  // retrieve the translatons associated to namespaces users and common
-  // the output has the following format:
-  // {
-  //   props: {
-  //    "translations": {
-  //       "users": {translations...}
-  //       "common": {translations...} 
-  //     },
-  //     "locale": "en"
-  //   }
-  //   
-  // }
-  const result = getI18nStaticProps(fs, path, context.params.lang, i18nNamespaces);
-  return result;
+If the translation file `public/locales/fr/common.json` is: 
+```json
+{
+  "Welcome": "Bienvenue"
 }
 ```
 
-### withI18nPaths
-As all routes starts with [lang], **Next.js** expects that a method **getStaticPaths** to define a list of paths that have to be rendered to HTML at build time
-
-**Oneki.js** proposes the helper **withI18nPaths** to handle the [lang] attribute
+<p/>
+then
 
 ```javascript
-import { withI18nPaths } from 'onekijs';
-import fs from 'fs';
-import path from 'path';
+withI18nStaticProps('fr', {
+    props: {
+      name: 'Doe',
+      firstname: 'John'
+    },
+});
+```
 
-// Simple example where [lang] is the only dynamic attribute
-export async function getStaticPaths() {
-  return {
-    paths: withI18nPaths(fs, path),
-    fallback: false
+<p/>
+returns
+
+```javascript
+{
+  props: {
+    name: 'Doe',
+    firstname: 'John',
+    translations: {
+      common: {
+        "Welcome": "Bienvenue"
+      }
+    }
   }
 }
 ```
 
+The **<App /\>** component can automatically retrieve the translations of this structure
+
+## Example
+
+<Sandbox
+name="step08-i18n"
+type="getting-started/next"
+height="600"
+modules={['/src/pages/index.tsx','/src/pages/_app.tsx']}
+/>
