@@ -9,33 +9,36 @@ import TabItem from '@theme/TabItem';
 import NextSandbox from '@site/src/components/NextSandbox';
 
 
-***Oneki.js*** provides several hooks to call an API. The goal of these hooks is to help the developer implement the following logic:
-- Displaying a loading indicator
-- Sending the AJAX request
-- Stop displaying the loading indicator
-- Handling the response (success or error) with a default behavior or with a custom handler
+***Oneki.js*** provides several hooks to call an API. The purpose of these hooks is to help the developer implement the following logic:
+- Display a loading indicator
+- Send the AJAX request
+- Stop the display of the loading indicator
+- Handle the response (success or error) with a default behavior or with a custom handler.
 
-## Fetching data
-**Oneki.js** provides the hook **useGet** to fetch data from a server via an `HTTP AJAX GET request`. The request is sent every time the URL changes.
+## Data retrieval
+**Oneki.js** provides the **useGet** and **useCache** hooks to fetch data from a server via an `HTTP AJAX GET request`. 
 
+**useGet** stores the retrieved data in the local state of the component. Everytime the URL changes, the data is retrieved from the server and the component is refreshed.
+
+**useCache** stores the retrieved data retrieved in the global state (one entry in the global state per URL) for a given period. During this period, the data is retrieved from the cache and not from the URL
 
 ```javascript
 const [data, loading, refresh] = useGet(url, options);
+const [data, loading, refresh] = useCache(url, options);
 ```
 
-The hook **useGet** is described in detail on **[this page](./use-get)**
+See **[Data retrieval](./use-get)**
 
-## Creating data
-**Oneki.js** provides the hook **usePost** to create a new resource on a server via an `HTTP AJAX POST request`. The request is sent every time the submit function is called.
+## Data creation
+**Oneki.js** provides the **usePost** hook to create a new resource on a server via an `HTTP AJAX POST request`. 
 
 ```javascript
 const [submit, loading] = usePost(url, options);
 ```
+The request is sent every time the submit function is called. See **[usePost](./use-post)**
 
-The hook **usePost** is described in detail on **[this page](./use-post)**
-
-## Updating data
-**Oneki.js** provides the hooks **usePut** and **usePatch** to update an existing resource on a server via an `HTTP AJAX PUT request` or `HTTP AJAX PATCH request`. The request is sent every time the submit function is called.
+## Data update
+**Oneki.js** provides the **usePut** and **usePatch** hooks to update an existing resource on a server via an `HTTP AJAX PUT request` or `HTTP AJAX PATCH request`.
 
 A PUT request fully updates a resource and a PATCH request only updates some attributes of a resource.
 
@@ -44,13 +47,13 @@ const [submit, loading] = usePut(url, options);
 const [submit, loading] = usePatch(url, options);
 ```
 
-The hook **usePut** is described in detail on **[this page](./use-put)**
+The request is sent every time the submit function is called. See **[usePut](./use-put)**
 
-## Deleting data
-**Oneki.js** provides the hook **useDelete** to delete a resource on a server via an `HTTP AJAX DELETE request`. The request is sent every time the submit function is called.
+## Data deletion
+**Oneki.js** provides the **useDelete** hook to delete a resource on a server via an `HTTP AJAX DELETE request`.
 
 ```javascript
 const [submit, loading] = useDelete(url, options);
 ```
 
-The hook **useDelete** is described in detail on **[this page](./use-delete)**
+The request is sent every time the submit function is called. See **[useDelete](./use-delete)**

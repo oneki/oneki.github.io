@@ -1,7 +1,7 @@
 ---
 id: use-delete
-title: useDelete
-sidebar_label: useDelete
+title: Data deletion
+sidebar_label: Data deletion
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

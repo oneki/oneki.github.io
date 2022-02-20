@@ -1,7 +1,7 @@
 ---
 id: use-put
-title: usePut
-sidebar_label: usePut
+title: Data update
+sidebar_label: Data update
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

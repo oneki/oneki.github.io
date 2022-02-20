@@ -86,7 +86,7 @@ The key and value can be more complex and look like the content of a JSX compone
 ```json
 {
   // Basic example
-  "Welcome": "Welcome", // <T>Welcome<T>
+  "Welcome": "Bienvenue", // <T>Welcome<T>
 
   // example of a translation containing a variable. The key is not equal to the value (the key is therefore an alias)
   // Example: <T alias="Welcome">Welcome {{name}} !</T>

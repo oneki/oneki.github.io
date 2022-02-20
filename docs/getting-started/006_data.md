@@ -68,6 +68,7 @@ The hook accepts a success and error callback executed once it receives a respon
   export const STATE_CART = 'cart';
   export const URL_ADD_PRODUCT = '/cart/products';
   ```
+
   <p/>
 
   ```tsx reference
@@ -81,6 +82,7 @@ The hook accepts a success and error callback executed once it receives a respon
   export const STATE_CART = 'cart';
   export const URL_ADD_PRODUCT = '/api/cart/products';
   ```
+  
   <p/>
 
   ```tsx reference

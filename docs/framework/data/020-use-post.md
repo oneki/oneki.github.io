@@ -1,148 +1,88 @@
 ---
 id: use-post
-title: usePost
-sidebar_label: usePost
+title: Data creation
+sidebar_label: Data creation
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { SandboxExampleButton } from '@site/src/components/Sandbox';
+
+## Hooks
 
 ```javascript
 const [submit, loading] = usePost(url, options);
 const [submit, loading] = useSecurePost(url, options);
 ```
-The goal of ***usePost*** is to send an ajax POST request and returns back the payload sent by the server.<br/>
+***usePost*** hooks executes an ajax POST request and returns back the payload sent by the server.<br/>
 By default, the body of the request is a JSON string.
 > ***useSecurePost*** is similar to ***usePost*** but adds a *Bearer* authorization header that contains the token received and stored by ***useLoginService*** in the redux store
 
-> ***Note***: The data are stored in the state of the component and **not** in the redux store.
+:::note
+The data are stored in the state of the component and **not** in the redux store.
+:::
 
 ### Parameters
 #### Inputs
-```javascript
-// the URL the Ajax request is sent to [mandatory]
-url: string,
+Mandatory parameters are marked with a \*
 
-// all options below are [optional]
-options: {
-  // if onSuccess is a function, this function is called after a sucessful call
-  // if onSuccess is a string, the value must be a URL. The hook does a redirect to this URL after a sucessful call
-  onSuccess: string | function(data, context), 
+| Parameter | | Type | Description |
+| --------- | -- |---- | ----------- |
+| **url**\* | | string | the URL to which the Ajax request is sent |
+| **options** |||An optional object to specify additional options |
+| |**onSuccess**| [AppSuccessCallback](../../../api/types/AppSuccessCallback) | <ul><li>if onSuccess is a function, this function is called on a successful GET (Promise / async allowed)</li><li>if onError is a string then the value must be an URL. The hook does a redirect to this URL on a successful GET</li></ul>**Defaults to**: Nothing is done on a successful GET |
+|| **onError** | [AppErrorCallback](../../../api/types/AppErrorCallback) | <ul><li>if onError is a function, this function is called if the HTTP response is a 4xx or 5xx (Promise / async allowed)</li><li>if onError is a string then the value must be an URL. The hook does a redirect to this URL</li></ul>**Defaults to**: the hook sends a notification to the `error` topic |
+|| **delayLoading** | number | The number of milliseconds to wait before setting the loading flag to true. This value is useful to not display a loading indicator if the request is executed rapidly.<br/><br/> **Defaults to**: 0 |
+|| **auth** | object | see auth |
+|| **headers** | object | the HTTP headers to add in the request<br/><br/> **Defaults to**: no headers added in the request |
+|| **params** | object | Params in the url.<br/>**Example**: if the user is /user/:userId, options.params could be \{userId: '1'\} |
+|| **query** | object | Query params to add the URL.<br/>**Example**: If the final url is /users?name=Doe, options.query will be \{name: 'Doe'\} |
 
-  // if onError is a function, this function is called in case of failure (Promise / async allowed)
-  // if onError is a string, the value must be a URL then the hook does a redirect to this URL after a failure
-  // if onError is not present, the error message is sent directly to the notificationService
-  onError: string | function(error, context),
-
-  // parameters below are passed directly to fetch()
-  // See https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch
-  // for more details
-  headers,
-  credentials,
-  cache,
-  redirect,
-  referrer,
-  referrerPolicy,
-  integrity,
-  keepalive,
-  signal
-} 
+:::note
+The options object also accept these additionnal parameters supported by the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch)
 ```
+headers,
+credentials,
+cache,
+redirect,
+referrer,
+referrerPolicy,
+integrity,
+keepalive,
+signal
+```
+:::
+
 #### Outputs
-```javascript
-// post is a function that sends the ajax POST request
-// the signature is: post(data, options) where:
-// - "data" is the body of the POST request
-// - "options" is the same object as the one used for usePost. Use this object to override an option passed to usePost
-submit: function(data, options),
 
-// a flag to indicate if the ajax request is pending
-// "loading" is true only after 100ms (configurable via settings.js) and if the ajax request is pending
-loading: boolean
-```
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| **submit** | (data, options) => Promise | submit is a function that executes the ajax POST request.<br/>**data** is the body of the POST request<br/>**options** is the same object as the one used for usePost. Use this object to override an option passed to usePost  |
+| **loading** | boolean | A flag to indicate if the ajax request is pending |
+
 ## Examples
 ### Minimal example
-This example shows how to display a form with two input fields: **name** and **firstname** and submit the data to a server via a ajax POST request.
-* If the call is successful, one is redirected to ***/users***
-* If the call fails, the error is sent to the ***notificationService***
+The example below shows how to submit a (fix) JSON object to a server.
 
-<Tabs
-  defaultValue="code"
-  values={[
-    { label: 'Code', value: 'code', },
-    { label: 'Preview', value: 'preview', },
-  ]
-}>
-<TabItem value="code">
-  <iframe
-    src="https://codesandbox.io/embed/onekijs-use-get-notification-t7sfi?fontsize=14&hidenavigation=1&module=%2Fsrc%2Froutes%2Fusers%2Fcreate%2FUserCreate.js&theme=dark&view=editor"
-    style={{width:'100%', height:'1000px', border:0, bordeRadius: '4px', overflow:'hidden'}}
-    title="onekijs-basic-app"
-    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
-</TabItem>
-<TabItem value="preview">
-  <iframe
-    src="https://codesandbox.io/embed/onekijs-use-get-notification-t7sfi?fontsize=14&initialpath=%2Fusers%2Fcreate&hidenavigation=1&module=%2Fsrc%2Froutes%2Fusers%2Fcreate%2FUserCreate.js&theme=dark&view=preview"
-    style={{width:'100%', height:'1000px', border:0, bordeRadius: '4px', overflow:'hidden'}}
-    title="onekijs-basic-app"
-    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
-</TabItem>
-</Tabs>
+<SandboxExampleButton name="cra-data" />
 
-### onSuccess example
-This example show how to display a success message on top of the form if the POST call is successful.
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/examples/cra-data/src/pages/create-user.tsx
+```
 
-<Tabs
-  defaultValue="code"
-  values={[
-    { label: 'Code', value: 'code', },
-    { label: 'Preview', value: 'preview', },
-  ]
-}>
-<TabItem value="code">
-  <iframe
-    src="https://codesandbox.io/embed/onekijs-use-post-8z56k?fontsize=14&hidenavigation=1&module=%2Fsrc%2Froutes%2Fusers%2Fcreate%2FUserCreate.js&theme=dark&view=editor"
-    style={{width:'100%', height:'1200px', border:0, bordeRadius: '4px', overflow:'hidden'}}
-    title="onekijs-basic-app"
-    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
-</TabItem>
-<TabItem value="preview">
-  <iframe
-    src="https://codesandbox.io/embed/onekijs-use-post-8z56k?fontsize=14&hidenavigation=1&initialpath=%2Fusers%2Fcreate&module=%2Fsrc%2Froutes%2Fusers%2Fcreate%2FUserCreate.js&theme=dark&view=preview"
-    style={{width:'100%', height:'1200px', border:0, bordeRadius: '4px', overflow:'hidden'}}
-    title="onekijs-basic-app"
-    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
-</TabItem>
-</Tabs>
+### Form submit
+The example below shows how to submit data to a server by combining the data library (usePost) and the form library (useForm).
 
-### onError with notification example
-This is an example showing how to handle onError using the notification service<br/>
-Actually this is exactly what it's done if no "onError" is specified in useGet
+<SandboxExampleButton name="cra-data" />
 
-<Tabs
-  defaultValue="code"
-  values={[
-    { label: 'Code', value: 'code', },
-    { label: 'Preview', value: 'preview', },
-  ]
-}>
-<TabItem value="code">
-  <iframe
-    src="https://codesandbox.io/embed/onekijs-use-post-ustdh?fontsize=14&hidenavigation=1&initialpath=%2Fusers%2Fcreate&module=%2Fsrc%2Froutes%2Fusers%2Fcreate%2FUserCreate.js&theme=dark&view=editor"
-    style={{width:'100%', height:'1300px', border:0, bordeRadius: '4px', overflow:'hidden'}}
-    title="onekijs-basic-app"
-    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
-</TabItem>
-<TabItem value="preview">
-  <iframe
-    src="https://codesandbox.io/embed/onekijs-use-post-ustdh?fontsize=14&hidenavigation=1&initialpath=%2Fusers%2Fcreate&module=%2Fsrc%2Froutes%2Fusers%2Fcreate%2FUserCreate.js&theme=dark&view=preview"
-    style={{width:'100%', height:'1300px', border:0, bordeRadius: '4px', overflow:'hidden'}}
-    title="onekijs-basic-app"
-    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
-</TabItem>
-</Tabs>
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/examples/cra-data/src/pages/create-user-form.tsx
+```
+
+### Success redirect
+The example below shows how to redirect to the user list page if the user has been successfully created.
+
+<SandboxExampleButton name="cra-data" />
+
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/examples/cra-data/src/pages/create-user-success-redirect.tsx
+```
