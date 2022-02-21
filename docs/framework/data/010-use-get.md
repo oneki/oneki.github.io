@@ -18,7 +18,7 @@ const [data, loading, refresh] = useCache(url, options);
 ```
 <br/>
 
-***useGet*** hook sends an ajax GET request and returns back the data.<br/>
+***useGet*** hook executes an ajax GET request and returns back the data.<br/>
 The ajax request is made during the mount of the component and each time the URL is updated.<br/>
 The data is stored in the component state and **not** in the redux store
 
@@ -37,8 +37,8 @@ Mandatory parameters are marked with a \*
 | --------- | -- |---- | ----------- |
 | **url**\* | | string | the URL to which the Ajax request is sent |
 | **options** |||An optional object to specify additional options |
-| |**onSuccess**| [AppSuccessCallback](../../../api/types/AppSuccessCallback) | <ul><li>if onSuccess is a function, this function is called on a successful GET (Promise / async allowed)</li><li>if onError is a string then the value must be an URL. The hook does a redirect to this URL on a successful GET</li></ul>**Defaults to**: Nothing is done on a successful GET |
-|| **onError** | [AppErrorCallback](../../../api/types/AppErrorCallback) | <ul><li>if onError is a function, this function is called if the HTTP response is a 4xx or 5xx (Promise / async allowed)</li><li>if onError is a string then the value must be an URL. The hook does a redirect to this URL</li></ul>**Defaults to**: the hook sends a notification to the `error` topic |
+| |**onSuccess**| [AppSuccessCallback](../../api/types/AppSuccessCallback) | <ul><li>if onSuccess is a function, this function is called on a successful GET (Promise / async allowed)</li><li>if onError is a string then the value must be an URL. The hook does a redirect to this URL on a successful GET</li></ul>**Defaults to**: Nothing is done on a successful GET |
+|| **onError** | [AppErrorCallback](../../api/types/AppErrorCallback) | <ul><li>if onError is a function, this function is called if the HTTP response is a 4xx or 5xx (Promise / async allowed)</li><li>if onError is a string then the value must be an URL. The hook does a redirect to this URL</li></ul>**Defaults to**: the hook sends a notification to the `error` topic |
 || **delayLoading** | number | The number of milliseconds to wait before setting the loading flag to true. This value is useful to not display a loading indicator if the request is executed rapidly.<br/><br/> **Defaults to**: 0 |
 || **defaultValue** | T | (only supported by useGet). The value returned while the AJAX request is pending.<br/><br/> **Defaults to**: undefined |
 || **auth** | object | see auth |
