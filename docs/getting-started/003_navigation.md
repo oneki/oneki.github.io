@@ -45,6 +45,12 @@ Please note that the URL changes when you click on the link.
 
 In order to be able to navigate between pages, we first need to transform the basic react application created in the previous step into an Oneki.js application.
 
+First add oneki.js to your project
+
+```
+yarn add onekijs
+```
+
 <Tabs>
   <TabItem value="cra">
 Update the entry point (src/index.tsx) to wrap the entire application with the Oneki.js <code>&lt;App/&gt;</code> component.

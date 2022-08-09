@@ -32,7 +32,7 @@ Mandatory parameters are marked with a \*
 | |**onSuccess**| [AppSuccessCallback](../../api/types/AppSuccessCallback) | <ul><li>if onSuccess is a function, this function is called on a successful GET (Promise / async allowed)</li><li>if onError is a string then the value must be an URL. The hook does a redirect to this URL on a successful GET</li></ul>**Defaults to**: Nothing is done on a successful GET |
 || **onError** | [AppErrorCallback](../../api/types/AppErrorCallback) | <ul><li>if onError is a function, this function is called if the HTTP response is a 4xx or 5xx (Promise / async allowed)</li><li>if onError is a string then the value must be an URL. The hook does a redirect to this URL</li></ul>**Defaults to**: the hook sends a notification to the `error` topic |
 || **delayLoading** | number | The number of milliseconds to wait before setting the loading flag to true. This value is useful to not display a loading indicator if the request is executed rapidly.<br/><br/> **Defaults to**: 0 |
-|| **auth** | object | see auth |
+|| **auth** | object | Contains the credentials to be sent in the request. See [Auth](../../api/interfaces/Auth).<br/><br/> **Defaults to**: no credentials sent |
 || **headers** | object | the HTTP headers to add in the request<br/><br/> **Defaults to**: no headers added in the request |
 || **params** | object | Params in the url.<br/>**Example**: if the user is /user/:userId, options.params could be \{userId: '1'\} |
 || **query** | object | Query params to add the URL.<br/>**Example**: If the final url is /users?name=Doe, options.query will be \{name: 'Doe'\} |

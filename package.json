@@ -10,15 +10,16 @@
   },
   "dependencies": {
     "@akebifiky/remark-simple-plantuml": "^1.0.1",
-    "@docusaurus/core": "^2.0.0-beta.9",
-    "@docusaurus/preset-classic": "^2.0.0-beta.9",
-    "@saucelabs/theme-github-codeblock": "^0.0.4",
+    "@docusaurus/core": "^2.0.0",
+    "@docusaurus/preset-classic": "^2.0.0",
+    "@saucelabs/theme-github-codeblock": "^0.1.1",
     "classnames": "^2.2.6",
     "docusaurus-plugin-typedoc": "^0.15.3",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "typedoc": "^0.21.5",
-    "typedoc-plugin-markdown": "^3.10.4"
+    "typedoc-plugin-markdown": "^3.10.4",
+    "url": "^0.11.0"
   },
   "browserslist": {
     "production": [

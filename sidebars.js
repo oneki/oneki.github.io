@@ -90,7 +90,7 @@ module.exports = {
       }, 
       {
         type: "category",
-        label: "Data",
+        label: "API call",
         items: [
           "framework/data/introduction",
           "framework/data/use-get",
@@ -104,6 +104,7 @@ module.exports = {
         label: "Notification",
         items: [
           "framework/notification/introduction",
+          "framework/notification/configuration",
           "framework/notification/use-notification-service",
           "framework/notification/use-notifications",
         ]

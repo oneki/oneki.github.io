@@ -9,18 +9,20 @@ import TabItem from '@theme/TabItem';
 
 > **Oneki.js** provides a global service to centralize notifications in the global state
 
-The notifications are sent using the global **[Notification service](./use-notification-service)** on a specific **topic** and consumed using the hook **[useNotifications](./use-notifications)**
+Notifications are sent using the global **[Notification service](./use-notification-service)** on a specific **topic** and consumed using the **[useNotifications](./use-notifications)** hook
 
 <img alt="Service architecture" src={useBaseUrl('img/onekijs-Notification channel.svg')} />
 
-The topics are created the first time a notification is sent if they don't exist
+:::note
+A topic is created the first time a notification is sent if it doesn't already exist.
+:::
 
 ### Detailed architecture
 
-The **Notification service** stores the notifications in the Redux global state. Each topic consists of a key in the global state under the key **notifications**:
+The **Notification service** stores notifications in the global state. Each topic consists of an entry in the global state under the **notifications** key:
 
 ```javascript
-// global Redux state
+// Redux state
 {
   notifications: {
     error: [{
@@ -37,6 +39,6 @@ The **Notification service** stores the notifications in the Redux global state.
 }
 ```
 
-**useNotifications** selects a specific topic in the global state and is generally used by a central component to display the notifications
+**useNotifications** selects a specific topic in the Redux state and is usually used by a central component to display notifications.
 
 <img alt="Notification architecture" src={useBaseUrl('img/notification_service.svg')} />

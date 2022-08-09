@@ -37,11 +37,10 @@ Mandatory parameters are marked with a \*
 | --------- | -- |---- | ----------- |
 | **url**\* | | string | the URL to which the Ajax request is sent |
 | **options** |||An optional object to specify additional options |
-| |**onSuccess**| [AppSuccessCallback](../../api/types/AppSuccessCallback) | <ul><li>if onSuccess is a function, this function is called on a successful GET (Promise / async allowed)</li><li>if onError is a string then the value must be an URL. The hook does a redirect to this URL on a successful GET</li></ul>**Defaults to**: Nothing is done on a successful GET |
 || **onError** | [AppErrorCallback](../../api/types/AppErrorCallback) | <ul><li>if onError is a function, this function is called if the HTTP response is a 4xx or 5xx (Promise / async allowed)</li><li>if onError is a string then the value must be an URL. The hook does a redirect to this URL</li></ul>**Defaults to**: the hook sends a notification to the `error` topic |
 || **delayLoading** | number | The number of milliseconds to wait before setting the loading flag to true. This value is useful to not display a loading indicator if the request is executed rapidly.<br/><br/> **Defaults to**: 0 |
 || **defaultValue** | T | (only supported by useGet). The value returned while the AJAX request is pending.<br/><br/> **Defaults to**: undefined |
-|| **auth** | object | see auth |
+|| **auth** | object | Contains the credentials to be sent in the request. See [Auth](../../api/interfaces/Auth).<br/><br/> **Defaults to**: no credentials sent|
 || **headers** | object | the HTTP headers to add in the request<br/><br/> **Defaults to**: no headers added in the request |
 || **params** | object | Params in the url.<br/>**Example**: if the user is /user/:userId, options.params could be \{userId: '1'\} |
 || **query** | object | Query params to add the URL.<br/>**Example**: If the final url is /users?name=Doe, options.query will be \{name: 'Doe'\} |
@@ -91,12 +90,12 @@ https://github.com/oneki/onekijs/blob/master/examples/cra-data/src/pages/list-us
 https://github.com/oneki/onekijs/blob/master/examples/cra-data/src/pages/list-users-cache.tsx
 ```
 
-### Pooling example
+### Polling example
 
 <SandboxExampleButton name="cra-data" />
 
 ```tsx reference
-https://github.com/oneki/onekijs/blob/master/examples/cra-data/src/pages/list-users-polling.tsx
+https://github.com/oneki/onekijs/blob/master/examples/cra-data/src/pages/list-users-pooling.tsx
 ```
 
 
