@@ -5,6 +5,8 @@ sidebar_label: Initial values
 ---
 
 import Sandbox from '@site/src/components/Sandbox';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { SandboxExampleButton } from '@site/src/components/Sandbox';
 
 Sometimes, it's useful to use the same form for creating an object or editing an object. For a edit-type form, the fields must be initialized with a initial value.
 There are three ways to set a value to a field
@@ -18,9 +20,9 @@ If nothing has been provided, the value is a empty string (because core react co
 
 ## Example
 
-<Sandbox
-name="cra-form-basic"
-height="1000"
-modules={['/src/pages/initial_value.js']}
-branch="master"
-/>
+
+<SandboxExampleButton name="cra-form-basic" />
+
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/examples/cra-form-basic/src/pages/initial_value.tsx
+```

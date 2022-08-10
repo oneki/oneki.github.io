@@ -5,6 +5,8 @@ sidebar_label: Field
 ---
 
 import Sandbox from '@site/src/components/Sandbox';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { SandboxExampleButton } from '@site/src/components/Sandbox';
 
 A field must be registered with a form to be controlled.
 There are different ways to register a field with a form
@@ -19,53 +21,61 @@ The simplest way to register a field with a form is to use the `field` method pr
 
 ```javascript
 const { field } = useForm();
-const { name, value, onChange, onFocus, onBlur } = field(name, validators, options);
+const { name, value, onChange, onFocus, onBlur } = field(
+  name,
+  validators,
+  options
+);
 ```
 
 ### Inputs
 
-| Name                     | Description                                                                                                                                                                               | Example                                                                                         |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| **name**                 | Name of the field. Must match the path in the values object<br /> A sub property is accessed via a dot --> `"address.street"`<br/>A item of an array is accessed via its index --> `"item.2"` | `"lastname"`<br />`"address.street"`<br />`"children.1.firstname"`                                    |
-| **validators**           | An array of validators. Check the **[Validations](./validations)** section for more details                                                                                                | `[required(), maxlength(5)]` |
-| **options.defaultValue** | Default value of the field                                                                                                                                                                | `defaultValue: 'open'`                                                                                                |
-| **options.touchOn** | *Overrides the setting defined at the **[form](./use-form#inputs)** level* <br/><br/>Indicates which event marks the field as touched.<br />The validations of a field are compiled as soon as it has been touched.<br /><br />Valid values are<br /> - **`blur`**: when the field is exited<br /> - **`change`**: when the content of the field is changed<br />  - **`focus`**: when the field is entered<br /> - **`load`**: when the field is loaded<br /> - **`submit`**: when the form is submitted                                         | `touchOn: 'focus'`|
+| Parameter      |                  | Type                                             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| -------------- | ---------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **name**\*     |                  | string                                           | Name of the field. Must match the path in the values object<br /> A sub property is accessed via a dot --> `"address.street"`<br/>A item of an array is accessed via its index --> `"item.2"`<br/>**Example**: <ul><li>`"lastname"`</li><li>`"address.street"`</li><li>`"children.1.firstname"` </li></ul>                                                                                                                                                                                               |
+| **validators** |                  | [Validator](../../api/types/Validator)[]         | An array of validators. Check the **[Validations](./validations)** section for more details.<br/>**Example**: `[required(), maxlength(5)]`                                                                                                                                                                                                                                                                                                                                                               |
+| **options**    |                  | [FormOptions](../../api/interfaces/FieldOptions) | An object that contains optional options                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|                | **defaultValue** | any                                              | Default value of the field <br/>**Example**: `'open'`                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|                | **touchOn**      | [TouchOnType](../../api/types/TouchOnType)       | _Overrides the setting defined at the **[form](./use-form#inputs)** level_ <br/><br/>Indicates which event marks the field as touched.<br />The validations of a field are compiled as soon as it has been touched.<br /><br />Valid values are<br /> - **`blur`**: when the field is exited<br /> - **`change`**: when the content of the field is changed<br /> - **`focus`**: when the field is entered<br /> - **`load`**: when the field is loaded<br /> - **`submit`**: when the form is submitted |
 
 ### Outputs
 
-| Name         | Description                                                                 |
-| ------------ | --------------------------------------------------------------------------- |
-| **name**     | Name of the field (same as input, given for convenience, see example below) |
-| **value**    | Value of the field                                                          |
-| **onChange** | listener called anytime the value is changed                                |
-| **onFocus**   | listener called when the field is entered                                    |
-| **onBlur**   | listener called when the field is exited                                    |
+| Parameter    | Type          | Description                                                                 |
+| ------------ | ------------- | --------------------------------------------------------------------------- |
+| **name**     | string        | Name of the field (same as input, given for convenience, see example below) |
+| **value**    | any           | Value of the field                                                          |
+| **onChange** | (value): void | listener called anytime the value is changed                                |
+| **onFocus**  | (): void      | listener called when the field is entered                                   |
+| **onBlur**   | (): void      | listener called when the field is exited                                    |
 
 ### Example
 
-<Sandbox
-name="cra-form-basic"
-height="1000"
-modules={['/src/pages/field.js']}
-branch="master"
-/>
+<SandboxExampleButton name="cra-form-basic" />
+
+```tsx reference
+https://github.com/oneki/onekijs/blob/master/examples/cra-form-basic/src/pages/field.tsx
+```
 
 ## useField
 
-The `field` method is the simplest way to register a field with a form but it's also the less performant. Anytime any value of the form is changed, the field is rerendered  
-For better performance, it's better to wrap a form component and register it via the **`useField`** hook since this hook only rerenders the wrapped component when its value is changed.
+The `field()` method is the simplest way to register a field in a form, but it is also the least efficient. Every time any value in the form is updated, the field is re-rendered. <br/>
+For best performance, it is best to wrap a form component and register it with the **``useField`` hook because this hook only renders the wrapped component when its value is changed.
 
 The signature of the **`useField`** hook is the same as the **[field](#field-method)** method
 
 ```javascript
-import { useField } from "onkeijs-cra"; //  or import { useField } from 'onkeijs-next'
-const { name, value, onChange, onFocus, onBlur } = useField(name, validators, options);
+import { useField } from "onkeijs";
+const { name, value, onChange, onFocus, onBlur } = useField(
+  name,
+  validators,
+  options
+);
 ```
 
 **Oneki.js** comes with some components wrapping core form react component (see the **[Core component wrappers](./wrapper)** section).  
 To create a custom one, check the **[Custom wrappers](./custom-wrapper)** section
 
-:::note Note
+:::info Note
 **`useField`** uses internally **[useFormContext](./use-form-context)**, meaning that it only works if the component is rendered as a child of a **`<Form>`** component
 :::
 
@@ -82,12 +92,12 @@ const validationStatus = getValue("address.street").status; // will not throw an
 const validationMessage = getValidation("address.street").message; // will not throw an error if the validation is undefined
 ```
 
-| Name              | Signature                                                                                                                                                                               | Description                                                                                                                                                                                                   |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **getValue**      | `const fieldValue = getValue(fieldName)`                               | Get the form value or the value of a field<br /> - **`fieldName`**: (null \| string) the name of a field. Returns the full content of the form if `fieldName` is undefined, null or empty       |
-| **getValidation** | `const fieldValidation = getValidation(fieldName, touchedOnly)` | Get the validation of the form or the validation of a field<br /> - **`fieldName`**: (null \| string) the name of a field. Returns all validations if `fieldName` is undefined, null or empty.<br /> - **`touchedOnly`**: (bool) only returns validations of touched fields -- defaults to true.| 
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| **getValue**  | <T\>(fieldName: string): T \| undefined | A helper to get the value of a field. Returns undefined if the value is not initialized.<br/>**Example**: `getValue('address.street')`                                                                                                           |
+| **getValidation** | (fieldName?: string, touchedOnly?: boolean): [ContainerValidation](../../api/classes/ContainerValidation) \| [FieldValidation](../../api/classes/FieldValidation)       | A helper to get the validation of a field. Returns `{ status: null, message: null }` if the validation is not initialized.<br/>**touchedOnly** defaults to `true`<br/>**Example**: `getValidation('address.street').status`                                                                                               |
 
-:::note Note
+:::info Note
 **`getValue`** and **`getValidation`** can be used to get a composite value or a composite validation.  
 For example, if there are two fields **`address.street`** and **`address.city`**
 

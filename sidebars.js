@@ -123,7 +123,6 @@ module.exports = {
           "framework/form/bind",
           "framework/form/rules",
           "framework/form/use-form-context",
-          "api/functions/useSetting",
         ]
       },
       {
