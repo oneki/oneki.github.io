@@ -8,6 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 This step consists in introducing how to build form with Oneki.js
 
@@ -56,21 +57,8 @@ This real-time update also allows to have a real time validation.
 We use the component `<Input />` from Oneki.js. This component is a wrapper of `<input>` that can interact with a `FormContext` created by `useForm`
 :::
 
-<Tabs>
-  <TabItem value="cra">
+<GettingStartedSnippet path="/step09-form/src/pages/login.tsx" />
 
-```jsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/cra/step09-form/src/pages/login.tsx
-```
-  </TabItem>
-  <TabItem value="next">
-
-```jsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/next/step09-form/src/pages/login.tsx
-```
-  </TabItem>
-
-</Tabs>
 
 ## Adding a signup page
 To introduce more functionality provided by the form library, let's build the registration page.<br/>

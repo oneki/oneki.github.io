@@ -8,6 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 This step consists in adding an authentication system to the application
 
@@ -61,21 +62,7 @@ In this tutorial, we will use these hooks:
 
 To prevent an unauthenticated user from accessing the shopping cart page, you can use the HOC **secure** (to learn more about the HOC, [click here](https://reactjs.org/docs/higher-order-components.html)).
 
-<Tabs>
-  <TabItem value="cra">
-
-```tsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/cra/step04-authentication/src/pages/cart.tsx
-```  
-  </TabItem>
-  <TabItem value="next">
-
-```tsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/next/step04-authentication/src/pages/cart.tsx
-```  
-
-  </TabItem>
-</Tabs>
+<GettingStartedSnippet path="/step04-authentication/src/pages/cart.tsx" />
 
 By default, an unauthenticated user is redirected to /login. <br/>However, this path can be configured via a global configuration introduced below.
 
@@ -182,8 +169,21 @@ https://github.com/oneki/onekijs/blob/master/getting-started/cra/step04-authenti
 <p/>
 Create a route to associate the <code>&lt;LoginPage/&gt;</code> to <b>/login</b>
 
-```tsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/cra/step04-authentication/src/pages/_router.tsx
+```tsx {4} title="src/pages/_router.tsx"
+const RootRouter = (): JSX.Element => {
+  return (
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route element={<AppLayout />}>
+        <Route path="/products/*" element={<ProductsRouter />} />
+        <Route path="/cart" element={<CartPage />} />
+      </Route>
+      <Route index element={<Navigate to="/products" replace />} />
+    </Routes>
+  );
+};
+
+export default RootRouter;
 ```
 
   </TabItem>
@@ -236,20 +236,7 @@ The content of the security context is the response sent by the backend when the
 <p/>
 To display the username in the Navbar, update the <code>&lt;Navbar/&gt;</code> component:
 
-<Tabs>
-  <TabItem value="cra">
-
-```tsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/cra/step04-authentication/src/modules/core/components/Navbar.tsx
-```
-  </TabItem>
-  <TabItem value="next">
-
-```tsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/next/step04-authentication/src/modules/core/components/Navbar.tsx
-```
-  </TabItem>
-</Tabs>
+<GettingStartedSnippet path="/step04-authentication/src/modules/core/components/Navbar.tsx" />
 
 ## Adding the logout page
 We want to provide the user with a link to log out.<br/>
@@ -285,32 +272,18 @@ https://github.com/oneki/onekijs/blob/master/getting-started/cra/step04-authenti
 
 Update the router to take into account this new page
 
-```tsx {7-9} title="src/pages/_router.tsx"
+```tsx {5} title="src/pages/_router.tsx"
 const RootRouter = (): JSX.Element => {
   return (
-    <Switch>
-      <Route path="/login">
-        <LoginPage />
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/logout" element={<LogoutPage />} />
+      <Route element={<AppLayout />}>
+        <Route path="/products/*" element={<ProductsRouter />} />
+        <Route path="/cart" element={<CartPage />} />
       </Route>
-      <Route path="/logout">
-        <LogoutPage />
-      </Route>
-      <Route>
-        <AppLayout>
-          <Switch>
-            <Route path="/products">
-              <ProductsRouter />
-            </Route>
-            <Route path="/cart">
-              <CartPage />
-            </Route>
-            <Route>
-              <Redirect href="/products" />
-            </Route>
-          </Switch>
-        </AppLayout>
-      </Route>
-    </Switch>
+      <Route index element={<Navigate to="/products" replace />} />
+    </Routes>
   );
 };
 

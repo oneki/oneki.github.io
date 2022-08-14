@@ -8,6 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 This step consists in adding some interaction with a backend system via AJAX requests.
 

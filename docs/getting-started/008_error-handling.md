@@ -8,6 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 Two types of errors can occur:
 - Those thrown when rendering a component. To handle this type of error, React recommends implementing **[Error Boundaries](https://reactjs.org/docs/error-boundaries.html)**.

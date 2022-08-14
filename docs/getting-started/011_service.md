@@ -8,6 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 This step consists in creating its own service.
 
@@ -176,21 +177,8 @@ since we have created a local service, we must use `useLocalService`:
 
 Let's update the `ProductDetails` component to add a `Check Availability` button that uses the service:
 
-<Tabs>
-  <TabItem value="cra">
+<GettingStartedSnippet path="/step10-service/src/modules/products/components/ProductDetails.tsx" />
 
-```jsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/cra/step10-service/src/modules/products/components/ProductDetails.tsx
-```
-  </TabItem>
-  <TabItem value="next">
-
-```jsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/next/step10-service/src/modules/products/components/ProductDetails.tsx
-```
-  </TabItem>
-
-</Tabs>
 
 ## Handling error
 We can improve the service to properly handle errors returned by the server.<br/>
@@ -198,21 +186,7 @@ A common approch is to send a notification on the `error` topic so the `<Notific
 
 To be able to use the NotificationService inside the AvailabilityService, one must inject it.
 
-<Tabs>
-  <TabItem value="cra">
-
-```jsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/cra/step10-service/src/modules/products/services/AvailabilityService.ts
-```
-  </TabItem>
-  <TabItem value="next">
-
-```jsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/next/step10-service/src/modules/products/services/AvailabilityService.ts
-```
-  </TabItem>
-
-</Tabs>
+<GettingStartedSnippet path="/step10-service/src/modules/products/services/AvailabilityService.ts" />
 
 ## Next step
 The getting started tutorial is over. You should now have a good understanding of what Oneki.js can do to help you build enterprise applications !

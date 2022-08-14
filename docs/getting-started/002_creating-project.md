@@ -7,6 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 This step consists in creating a standard React application **without involving Oneki.js**.<br/>
 This application looks exactly like the one proposed on the [Angular site](https://angular.io/start) so you can compare the Angular and React versions.
@@ -56,7 +57,6 @@ A Oneki.js application is built with one of this build tool:
 | ---- | ---------- | ----------
 | Standard React app | **[Create React App](https://create-react-app.dev)** | OnekiJs, React, Redux, Immer, Saga, **React Router Dom**
 | Next.js app | **[Create Next App](https://nextjs.org/)** | OnekiJs, React, Redux, Immer, Saga, **Next**, **Next Router**
-| Gatsby app | Not yet supported |
 
 From then on, you benefit from all the advantages brought by this tool.
 

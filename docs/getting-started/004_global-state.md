@@ -8,6 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 This step consists in adding a global state management to the application<br/>
 
@@ -121,39 +122,13 @@ export const STATE_CART = 'cart';
 <p/>
 The Cart component displays the list of products:
 
-<Tabs>
-  <TabItem value="cra">
-
-```tsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/cra/step03-global-state/src/modules/core/components/Cart.tsx
-```  
-  </TabItem>
-  <TabItem value="next">
-
-```tsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/next/step03-global-state/src/modules/core/components/Cart.tsx
-```
-  </TabItem>
-</Tabs>
+<GettingStartedSnippet path="/step03-global-state/src/modules/core/components/Cart.tsx" />
 
 ## Adding the "Buy" button
 
 Update the product details component to display a button to purchase the product.
 
-<Tabs>
-  <TabItem value="cra">
-
-```tsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/cra/step03-global-state/src/modules/products/components/ProductDetails.tsx
-```  
-  </TabItem>
-  <TabItem value="next">
-
-```tsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/next/step03-global-state/src/modules/products/components/ProductDetails.tsx
-```
-  </TabItem>
-</Tabs>
+<GettingStartedSnippet path="/step03-global-state/src/modules/products/components/ProductDetails.tsx" />
 
 Update the product details page to handle the click on the "Buy" button.<br/>
 A click on the "Buy" button calls a function that adds the product to the "cart" property of the global state.<br/>As the cart page reacts on this property, the product will automatically appears on it.

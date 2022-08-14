@@ -19,6 +19,7 @@ module.exports = {
       "getting-started/i18n",
       "getting-started/form",
       "getting-started/service",
+      "getting-started/theming"
     ],
     "Framework": [
       "framework/introduction",

@@ -8,6 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 This step consists in sending all notifications to a "notification center" in charge of displaying them.
 
@@ -127,23 +128,7 @@ We want to:
 
 Clicking on these buttons sends a notification to a specific topic and the `<NotificationCenter />` displays them.
 
-<Tabs>
-  <TabItem value="cra">
-
-  ```tsx reference
-  https://github.com/oneki/onekijs/blob/master/getting-started/cra/step06-notification/src/pages/products/index.tsx
-  ```
-
-  </TabItem>
-  <TabItem value="next">
-
-  ```tsx reference
-  https://github.com/oneki/onekijs/blob/master/getting-started/next/step06-notification/src/pages/index.tsx
-  ```
-
-  </TabItem>
-
-</Tabs>
+<GettingStartedSnippet craPath="/step06-notification/src/pages/products/index.tsx" nextPath="/step06-notification/src/pages/index.tsx" />
 
 ## Next step
 **[In the next step](error-handling)**, we introduce the services offered by Oneki.js to handle errors.

@@ -7,6 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 **Oneki.js** is a React framework based of the following components: 
 * [React](https://reactjs.org/)
@@ -23,15 +24,18 @@ The goal of **Oneki.js** is to propose a framework built on top of these librair
 Thus, the developer can more easily build webapps by respecting the best practices (e.g: immutability)<br/><br/>
 
 ## Prerequisite
-It is **strongly recommended** to read these documentations before using **Oneki.js**
+**Oneki.js** is a framework built on top of React. It uses React to render the view<br/>It's strongly recommended to read **[the official tutorial](https://reactjs.org/tutorial/tutorial.html)** available on their website
 
-| Library | Description
-| ------- | -----------
-| React | Oneki.js is a framework built on top of React. It uses React to render the view<br/>It's recommended to read **[the official tutorial](https://reactjs.org/tutorial/tutorial.html)** available on their website
-| React Router | Oneki.js uses React Router to offer the navigation between the pages composing the web application. <br />It's recommended to read **[their quick start](https://reactrouter.com/web/guides/quick-start)**
+
+Depending on the build tool you prefer to use, you should also read these documentations:
+
+| Build tool | Description | Documentation
+| ------- | ----------- | ---------------------
+| **[Create React App](https://create-react-app.dev)** | The tool from the React team to build a React application | **[Create React App](https://create-react-app.dev)** and **[React router](https://reactrouter.com/docs/en/v6)**
+| **[Create Next App](https://nextjs.org/)** | The tool to build a Next.js app. Useful if you need server rendering | **[Next.js](https://nextjs.org/)**
 
 #### Optional reading
-Under the hood, Oneki.js uses **Redux** to manage global state, **Immer** for immutability and **Redux Saga** for asynchronous streams.<br/>
+Under the hood, Oneki.js uses **[Redux](https://redux.js.org)** to manage global state, **[Immer](https://immerjs.github.io/immer)** for immutability and **[Redux Saga](https://redux-saga.js.org)** for asynchronous streams.<br/>
 These libraries are completely hidden, but if you want to master Oneki.js, it can be interesting to read their docs.
 
 ## Next step

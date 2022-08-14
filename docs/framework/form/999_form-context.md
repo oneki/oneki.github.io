@@ -5,13 +5,17 @@ sidebar_label: useFormContext
 ---
 import Sandbox from '@site/src/components/Sandbox';
 
-The **`useFormContext`** is used internally by **`useField`**, **`useValue`**, **`useValidation`**, **`useBind`** and **`useRule`**.  
-This context is provided by the **`<Form>`** component and is only available to components rendered as children of **`<Form>`**  
+The **`useFormContext`** hook is used internally by **`useField`**, **`useValue`**, **`useValidation`**, **`useBind`** and **`useRule`**.  
+This context is provided by the **`<Form>`** component and is only available to components rendered as children of **`<Form>`** 
 
-**`useFormContext`** is generally used to get the methods for changing the state of the form (**`setValue`**, **`setError`**, **`setWarning`**, **`setOK`**, **`setPendingValidation`**)  
+:::tip
+Use `useFormContext` instead of `useForm` when inside a component rendered as a child of `<Form>`
+:::
+
+**`useFormContext`** is generally used to get the methods that changes the state of the form (**`setValue`**, **`setError`**, **`setWarning`**, **`setOK`**, **`setPendingValidation`**)  
 For specific cases, this hook provides some methods to register or unregister a listener executing an action on a value change or a validation change.
 
-:::note Note
+:::info
 **`useFormContext`** never mutates and thus never forces a rerendering of a component
 :::
 
@@ -46,13 +50,13 @@ None
 
 ### High level Outputs
 
-| Name                     | Description                                                                                                                                | Example                                                                               |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
-| **setError**             | Mark a field in error. Generally used with `rule` <br /> Check the **[Validations](./validations)** section for more details               | `setError('password', 'complexity', 'Password is too weak', password.length < 6)`     |
-| **setOK**                | Mark a field as OK. Generally used with `rule` <br /> Check the **[Validations](./validations)** section for more details                  | `setOK('password', 'complexity')`                                                     |
-| **setWarning**           | Mark a field in warning. Generally used with `rule` <br /> Check the **[Validations](./validations)** section for more details             | `setWarning('password', 'complexity', 'Password is quite weak', password.length < 8)` |
-| **setPendingValidation** | Mark a field as pending validations. Generally used with `rule` <br /> Check the **[Validations](./validations)** section for more details | `setPendingValidation('password', 'complexity')`                                      |
-| **setValue**             | Set the value of a field. Generally used with `rule` <br /> **Signature:** `setValue(fieldName, value)`                                     | `setValue('lastname', 'Franki')`                                                      |
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |  
+| **setValue** | (fieldName: string, value: any): void | Set the value of a field. Generally used within a `rule`<br/>**Example**: `setValue('lastname', 'Doe')`  
+| **setPendingValidation** | (fieldName: string, validatorName: string, pending?: any): boolean | Mark a field as pending validations. Generally used within a `rule`. Check the **[Validations](./validations)** section for more details<br/>**Example**: `setPendingValidation('password', 'complexity')`                                         |
+| **setError** | (fieldName: string, validatorName: string, message?: string, match?: boolean): boolean            | Mark a field in error. Generally used within a `rule`. Check the **[Validations](./validations)** section for more details.<br/>**Example**: `setError('password', 'complexity', 'Password is too weak', password.length < 6)`   
+| **setWarning**   | (fieldName: string, validatorName: string, message?: string, match?: boolean): boolean        | Mark a field in warning. Generally used with `rule`. Check the **[Validations](./validations)** section for more details.<br/>**Example**: `setWarning('password', 'complexity', 'Password is weak', password.length < 8)` |                                                   |
+| **setOK**  | (fieldName: string, validatorName: string): boolean | Mark a field as OK. Generally used within a `rule`. Check the **[Validations](./validations)** section for more details<br/>**Example**: `setOK('password', 'complexity')`                                                                                                      |
 
 ### Low level Outputs
 

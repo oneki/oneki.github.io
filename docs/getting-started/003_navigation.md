@@ -7,6 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 This step consists in transforming a standard React application into a **Oneki.js** application and adding the possibility to navigate between pages
 
@@ -78,11 +79,11 @@ The routes are declared in their own file named `_router.tsx` and can be nested.
 - Sub routes like `/products/new`, `/products/:id`, `/products/:id/edit`, ... are defined in **src/pages/products/_router.tsx**
 
 ```tsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/cra/step02-navigation/src/pages/_router.tsx#
+https://github.com/oneki/onekijs/blob/master/getting-started/cra/step02-navigation/src/pages/_router.tsx
 ```
 
 ```tsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/cra/step02-navigation/src/pages/products/_router.tsx#
+https://github.com/oneki/onekijs/blob/master/getting-started/cra/step02-navigation/src/pages/products/_router.tsx
 ``` 
 
 :::tip Hooks
