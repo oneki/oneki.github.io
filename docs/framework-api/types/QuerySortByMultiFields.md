@@ -1,0 +1,17 @@
+---
+id: QuerySortByMultiFields
+title: QuerySortByMultiFields
+sidebar_label: QuerySortByMultiFields
+---
+
+
+
+### Properties
+
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
+| **fields** |  |  |
+| dir | [QuerySortDir](/framework-api/types/QuerySortDir.md) |  |
+| id | string |  |

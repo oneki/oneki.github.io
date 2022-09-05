@@ -35,8 +35,8 @@
   --ifm-color-primary-light: #4e89e8;
   --ifm-color-primary-lighter: #5a91ea;
   --ifm-color-primary-lightest: #80aaef;
-
-
+  --ifm-color-secondary-contrast-background: #fcfcff;
+  --docusaurus-details-decoration-color: black;
 
 }
 
@@ -87,5 +87,14 @@
 
 body .codeBlockContainer_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Container-styles-module {
   margin-bottom: 0;
-}    
+} 
+
+body .details_node_modules-\@docusaurus-theme-classic-lib-theme-Details-styles-module {
+  --docusaurus-details-decoration-color: black
+}
+
+details.alert--info {
+  --ifm-alert-background-color: #f5f5f5;
+  --ifm-alert-border-color: #cecece;
+}
 

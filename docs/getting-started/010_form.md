@@ -7,13 +7,13 @@ sidebar_label: Using form for user input
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
-import Sandbox from '@site/src/components/Sandbox';
+import Sandbox, { GettingStartedSandbox} from '@site/src/components/Sandbox';
 import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
-This step consists in introducing how to build form with Oneki.js
+This step consists in introducing how to build form with **`onekijs`**
 
 Building forms with React requires a lot of code and can be difficult to maintain.<br/>
-Oneki.js offers a library to control a form and drastically reduce the code.
+**`onekijs`** offers a library to control a form and drastically reduce the code.
 
 ## Final result
 
@@ -26,27 +26,11 @@ A new page is added for registration. The form on the registration page asynchro
 Some elements of the form are displayed or not depending on the value of a field
 :::
 
-<Tabs>
-  <TabItem value="cra">
-    <Sandbox
-    name="step09-form"
-    type="getting-started/cra"
-    view="preview"
-    height="600"
-    modules={['/src/index.tsx','/src/pages/products/index.tsx']}
-    />
-  </TabItem>
-  <TabItem value="next">
-    <Sandbox
-      name="step09-form"
-      type="getting-started/next"
-      view="preview"
-      height="600"
-      modules={['/src/pages/index.tsx','/src/pages/_app.tsx']}
-      />
-  </TabItem>
-
-</Tabs>
+<GettingStartedSandbox 
+  name="step09-form"
+  craModules={['/src/index.tsx','/src/pages/products/index.tsx']} 
+  nextModules={['/src/pages/index.tsx','/src/pages/_app.tsx']} 
+/>
 
 ## Adding validation
 Let's update the login page to verify that the username and password are filled in and that the username contains only alphanumeric charaters (max size 20)<br/>
@@ -54,7 +38,7 @@ The value of the form is updated every time the user enters a caracter. At the b
 This real-time update also allows to have a real time validation.
 
 :::tip
-We use the component `<Input />` from Oneki.js. This component is a wrapper of `<input>` that can interact with a `FormContext` created by `useForm`
+We use the component `<Input />` from **`onekijs`**. This component is a wrapper of `<input>` that can interact with a `FormContext` created by `useForm`
 :::
 
 <GettingStartedSnippet path="/step09-form/src/pages/login.tsx" />

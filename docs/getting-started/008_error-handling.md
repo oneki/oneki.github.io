@@ -7,7 +7,7 @@ sidebar_label: Handling errors
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
-import Sandbox from '@site/src/components/Sandbox';
+import Sandbox, { GettingStartedSandbox} from '@site/src/components/Sandbox';
 import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 Two types of errors can occur:
@@ -25,32 +25,11 @@ The third product is now named "Invalid product". Clicking on this product simul
 The "Buy" button now calls an API that returns an HTTP 400 error indicating that the product is not available at the moment
 :::
 
-<Tabs>
-  <TabItem value="cra">
-    <Sandbox
-      name="step07-error-handling"
-      type="getting-started/cra"
-      view="preview"
-      height="600"
-      modules={['/src/index.tsx','/src/pages/products/index.tsx']}
-    />
-    <p>
-    <i><b>Note</b>: Codesandbox runs the project in dev mode. Therefore, the <code>&lt;ErrorBoundary /&gt;</code> component is hidden by the stacktrace displayed by create react app<br/>
-    Just press "ESC" to hide this stacktrace.</i>
-    </p>
-
-  </TabItem>
-  <TabItem value="next">
-    <Sandbox
-      name="step07-error-handling"
-      type="getting-started/next"
-      view="preview"
-      height="600"
-      modules={['/src/pages/index.tsx','/src/pages/_app.tsx']}
-      />
-  </TabItem>
-
-</Tabs>
+<GettingStartedSandbox 
+  name="step07-error-handling"
+  craModules={['/src/index.tsx','/src/pages/products/index.tsx']} 
+  nextModules={['/src/pages/index.tsx','/src/pages/_app.tsx']} 
+/>
 
 ## Error boundaries
 You can pass a component to &lt;App /&gt; (via the prop ErrorBoundaryComponent). This component will be displayed when an error occurs during the rendering.
@@ -142,7 +121,7 @@ https://github.com/oneki/onekijs/blob/master/getting-started/next/step07-error-h
 </Tabs>
 
 :::tip
-When using an Oneki.js hook, if you don't specify a callback to handle errors, it will automatically send the following notification
+When using an **`onekijs`** hook, if you don't specify a callback to handle errors, it will automatically send the following notification
 
 ```javascript
 {

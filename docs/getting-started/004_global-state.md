@@ -7,7 +7,7 @@ sidebar_label: Adding state management
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
-import Sandbox from '@site/src/components/Sandbox';
+import Sandbox, { GettingStartedSandbox} from '@site/src/components/Sandbox';
 import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 This step consists in adding a global state management to the application<br/>
@@ -15,7 +15,7 @@ This step consists in adding a global state management to the application<br/>
 :::note
 The core feature of React is to offer components that rerender when a state change.<br/>**[The state](https://reactjs.org/docs/state-and-lifecycle.html)** can be the internal state of the component or the state of a parent component (see [The Data Flows Down](https://reactjs.org/docs/state-and-lifecycle.html#the-data-flows-down))
 
-Oneki.js provides a global state for the application to store the data that any component can access and react to. This global state is based on **[Redux](https://redux.js.org/)**.
+**`onekijs`** provides a global state for the application to store the data that any component can access and react to. This global state is based on **[Redux](https://redux.js.org/)**.
 :::
 
 ## Final result
@@ -27,36 +27,20 @@ You can now add a product to the cart by clicking on the "Buy" button available 
 The "checkout" button is now clickable and displays the cart page
 :::
 
-<Tabs>
-  <TabItem value="cra">
-    <Sandbox
-    name="step03-global-state"
-    type="getting-started/cra"
-    view="preview"
-    height="600"
-    modules={['/src/index.tsx','/src/pages/products/index.tsx']}
-    />
-  </TabItem>
-  <TabItem value="next">
-    <Sandbox
-      name="step03-global-state"
-      type="getting-started/next"
-      view="preview"
-      height="600"
-      modules={['/src/pages/index.tsx','/src/pages/_app.tsx']}
-      />
-  </TabItem>
-
-</Tabs>
+<GettingStartedSandbox 
+  name="step03-global-state"
+  craModules={['/src/index.tsx','/src/pages/products/index.tsx']} 
+  nextModules={['/src/pages/index.tsx','/src/pages/_app.tsx']} 
+/>
 
 
 
 ## Adding global state management
 
-Oneki.js provides a store to hold the global state. The store is a Redux store and is automatically started by the `<App />` / `<NextApp />` component.
+**`onekijs`** provides a store to hold the global state. The store is a Redux store and is automatically started by the `<App />` / `<NextApp />` component.
 
 :::note
-Oneki.js provides several hooks to update and react on the global state.<br/>
+**`onekijs`** provides several hooks to update and react on the global state.<br/>
 In this tutorial, we will use these hooks:
 
 - **useGlobalState** to react on a data of the global state, but also to update it
@@ -154,7 +138,7 @@ https://github.com/oneki/onekijs/blob/master/getting-started/next/step03-global-
 
 :::caution Immutability
 As mentioned above, the global state is immutable. Therefore, to update the cart, you need to use `cart.contcat()` to build a new array and not `cart.push()`.<br/>
-Oneki.js transparently handles the immutability of the global state. The `cart` variable is a standard javascript object that you can manipulate like any other javascript object excepted that it is frozen.
+**`onekijs`** transparently handles the immutability of the global state. The `cart` variable is a standard javascript object that you can manipulate like any other javascript object excepted that it is frozen.
 
 **Advanced tip**: As the `cart` variable is immutable, the &lt;Cart/&gt; component could use React.memo to be more efficient
 :::

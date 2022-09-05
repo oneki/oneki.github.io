@@ -8,6 +8,7 @@ module.exports = {
   favicon: "img/favicon.ico",
   organizationName: "Oneki", // Usually your GitHub org/user name.
   projectName: "Oneki.js", // Usually your repo name.
+  trailingSlash: false,
   themes: ["@saucelabs/theme-github-codeblock"],
   /*plugins: [
     [

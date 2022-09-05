@@ -7,12 +7,12 @@ sidebar_label: Adding authentication
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
-import Sandbox from '@site/src/components/Sandbox';
+import Sandbox, { GettingStartedSandbox} from '@site/src/components/Sandbox';
 import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 This step consists in adding an authentication system to the application
 
-Oneki.js provides an authentication library offering:
+**`onekijs`** provides an authentication library offering:
 
 - several authentication methods (form based, oauth2, external login, ...)
 - the restriction of access to pages to authenticated users only (can be based on roles).
@@ -27,32 +27,16 @@ The shopping cart page (accessible via the checkout button) is now only for auth
 If you are not yet authenticated, you are redirected to the login page where you can log in.
 :::
 
-<Tabs>
-  <TabItem value="cra">
-    <Sandbox
-    name="step04-authentication"
-    type="getting-started/cra"
-    view="preview"
-    height="600"
-    modules={['/src/index.tsx','/src/pages/products/index.tsx']}
-    />
-  </TabItem>
-  <TabItem value="next">
-    <Sandbox
-      name="step04-authentication"
-      type="getting-started/next"
-      view="preview"
-      height="600"
-      modules={['/src/pages/index.tsx','/src/pages/_app.tsx']}
-      />
-  </TabItem>
-
-</Tabs>
+<GettingStartedSandbox 
+  name="step04-authentication"
+  craModules={['/src/index.tsx','/src/pages/products/index.tsx']} 
+  nextModules={['/src/pages/index.tsx','/src/pages/_app.tsx']} 
+/>
 
 ## Securing the cart page
 
 :::note
-Oneki.js provides several hooks to handle authentication<br/>
+**`onekijs`** provides several hooks to handle authentication<br/>
 In this tutorial, we will use these hooks:
 
 - **useLogin** returns a service handling the login phase. In our case, this is sending a POST request to /auth/login containing the username and password.
@@ -67,7 +51,7 @@ To prevent an unauthenticated user from accessing the shopping cart page, you ca
 By default, an unauthenticated user is redirected to /login. <br/>However, this path can be configured via a global configuration introduced below.
 
 ## Adding a global configuration
-Oneki.js recommends to place the configuration settings in a central location. Usually the configuration is placed in the file **src/settings.ts**.
+**`onekijs`** recommends to place the configuration settings in a central location. Usually the configuration is placed in the file **src/settings.ts**.
 
 Some components of the framework use the content of this file to configure themselves. This is the case for the **secure** HOC.<br/>
 To redirect the user to **/auth** instead of **/login**, create the file `src/settings.ts` with the following content:
@@ -351,4 +335,4 @@ export default Navbar;
 
 ## Next step
 Now that we can identify the logged-in user, we can save the cart contents in the cloud so we don't lose its contents after a refresh<br/>
-**[In the next step](data)**, we introduce the services offered by Oneki.js to retrieve and send data via AJAX requests. 
+**[In the next step](data)**, we introduce the services offered by **`onekijs`** to retrieve and send data via AJAX requests. 

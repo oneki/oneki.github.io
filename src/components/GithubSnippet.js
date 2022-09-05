@@ -1,6 +1,6 @@
 import React from "react";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@site/src/components/DocTabs';
+import TabItem from '@theme/TabItem';
 import ReferenceCodeBlock from "@theme/ReferenceCodeBlock";
 
 

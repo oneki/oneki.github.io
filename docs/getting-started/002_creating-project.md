@@ -6,11 +6,11 @@ sidebar_label: Creating the project
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
-import Sandbox from '@site/src/components/Sandbox';
+import Sandbox, { GettingStartedSandbox} from '@site/src/components/Sandbox';
 import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
-This step consists in creating a standard React application **without involving Oneki.js**.<br/>
-This application looks exactly like the one proposed on the [Angular site](https://angular.io/start) so you can compare the Angular and React versions.
+This step consists in creating a standard React application **without involving `onekijs`**.<br/>
+This application looks exactly like the one proposed on the **[Angular site](https://angular.io/start)** so you can compare the Angular and React versions.
 
 ## Step Final result
 The result of this step is as follows:
@@ -20,29 +20,12 @@ The code below is hosted on **[Code Sandbox](http://codesandbox.io/)**. <br/>
 Click the "Open Sandbox" button to view/edit the code with an online IDE.
 :::
 
-<Tabs>
-  <TabItem value="cra">
-    <Sandbox 
-      name="step01-react-app"
-      type="getting-started/cra"
-      view="preview"
-      height="600" 
-      modules={['/src/index.tsx','/src/pages/products/index.tsx']} 
-    /> 
-  </TabItem>
-  <TabItem value="next">
-    <Sandbox 
-      name="step01-next-app"
-      type="getting-started/next"
-      view="preview"
-      height="600" 
-      modules={['/src/pages/index.tsx','/src/pages/_app.tsx']} 
-    /> 
-  </TabItem>
-
-</Tabs>
-
-
+<GettingStartedSandbox 
+  craName="step01-react-app"
+  nextName="step01-next-app"
+  craModules={['/src/index.tsx','/src/pages/products/index.tsx']} 
+  nextModules={['/src/pages/index.tsx','/src/pages/_app.tsx']} 
+/>
 
 
 ## Creating the project
@@ -51,7 +34,7 @@ Click the "Open Sandbox" button to view/edit the code with an online IDE.
 We recommend to use **[Typescript](https://www.typescriptlang.org/)** instead of javascript. Therefore, all examples are in Typescript.
 :::
 
-A Oneki.js application is built with one of this build tool:
+A **`onekijs`** application is built with one of this build tool:
 
 | Type | Build tool | Librairies
 | ---- | ---------- | ----------
@@ -132,4 +115,4 @@ to start a livereload webserver. The website is available at http://localhost:30
 Any change to the source code will refresh the page to reflect the change.
 
 ## Next step
-**[In the next step](navigation)**, we will transform this standard React application into an Oneki.js application and add the ability to navigate between pages.
+**[In the next step](navigation)**, we will transform this standard React application into an **`onekijs`** application and add the ability to navigate between pages.

@@ -7,7 +7,7 @@ sidebar_label: Adding a service
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
-import Sandbox from '@site/src/components/Sandbox';
+import Sandbox, { GettingStartedSandbox} from '@site/src/components/Sandbox';
 import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 This step consists in creating its own service.
@@ -17,7 +17,7 @@ The topic on this page is for advanced use cases.<br/>
 You will implement a service when you need to add advanced logic to your application
 :::
 
-Almost all the functionality provided by Oneki.js are based on services.<br/>
+Almost all the functionality provided by **`onekijs`** are based on services.<br/>
 The role of a service is to mutate a state. This state can be
 
 - **a component state**. In this case, the service is called a "local service"<br/>
@@ -44,27 +44,11 @@ The product detail page now displays a new "Check Availability" button<br/>
 When you click on this button, the application will call the server to check if the product is available or not
 :::
 
-<Tabs>
-  <TabItem value="cra">
-    <Sandbox
-    name="step10-service"
-    type="getting-started/cra"
-    view="preview"
-    height="600"
-    modules={['/src/index.tsx','/src/pages/products/index.tsx']}
-    />
-  </TabItem>
-  <TabItem value="next">
-    <Sandbox
-      name="step10-service"
-      type="getting-started/next"
-      view="preview"
-      height="600"
-      modules={['/src/pages/index.tsx','/src/pages/_app.tsx']}
-      />
-  </TabItem>
-
-</Tabs>
+<GettingStartedSandbox 
+  name="step10-service"
+  craModules={['/src/index.tsx','/src/pages/products/index.tsx']} 
+  nextModules={['/src/pages/index.tsx','/src/pages/_app.tsx']} 
+/>
 
 
 
@@ -94,7 +78,7 @@ Let's create a service to handle this state.<br/>
 A service is a class that extends `LocalService` or `GlobalService`. In our case, the state is local to a component and so the class extends `LocalService`
 
 :::caution
-The class must be annotated with @service. This is something specific to Typescript that allows Oneki.js to create a proxy of this class at runtime.
+The class must be annotated with @service. This is something specific to Typescript that allows **`onekijs`** to create a proxy of this class at runtime.
 :::
 
 ```ts
@@ -172,7 +156,7 @@ export default class AvailabilityService extends LocalService<AvailabilityState>
 ```
 
 ## Using the service
-To instantiate this service, Oneki.js provides the `useLocalService` and `useGlobalService` hooks<br/>
+To instantiate this service, **`onekijs`** provides the `useLocalService` and `useGlobalService` hooks<br/>
 since we have created a local service, we must use `useLocalService`:
 
 Let's update the `ProductDetails` component to add a `Check Availability` button that uses the service:
@@ -189,4 +173,4 @@ To be able to use the NotificationService inside the AvailabilityService, one mu
 <GettingStartedSnippet path="/step10-service/src/modules/products/services/AvailabilityService.ts" />
 
 ## Next step
-The getting started tutorial is over. You should now have a good understanding of what Oneki.js can do to help you build enterprise applications !
+**[In the next step](theming)**, we present you how to have a coherent look and feel thanks to **`onekijs-ui``.

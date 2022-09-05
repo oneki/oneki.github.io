@@ -7,7 +7,7 @@ sidebar_label: Centralizing notifications
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
-import Sandbox from '@site/src/components/Sandbox';
+import Sandbox, { GettingStartedSandbox} from '@site/src/components/Sandbox';
 import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 This step consists in sending all notifications to a "notification center" in charge of displaying them.
@@ -20,30 +20,14 @@ The result of this step is as follows:
 Clicking the "Share" button displays a "success" notification and clicking the "Notify" button displays an "error" notification
 :::
 
-<Tabs>
-  <TabItem value="cra">
-    <Sandbox
-    name="step06-notification"
-    type="getting-started/cra"
-    view="preview"
-    height="600"
-    modules={['/src/index.tsx','/src/pages/products/index.tsx']}
-    />
-  </TabItem>
-  <TabItem value="next">
-    <Sandbox
-      name="step06-notification"
-      type="getting-started/next"
-      view="preview"
-      height="600"
-      modules={['/src/pages/index.tsx','/src/pages/_app.tsx']}
-      />
-  </TabItem>
-
-</Tabs>
+<GettingStartedSandbox 
+  name="step06-notification"
+  craModules={['/src/index.tsx','/src/pages/products/index.tsx']} 
+  nextModules={['/src/pages/index.tsx','/src/pages/_app.tsx']} 
+/>
 
 :::note
-Oneki.js provides two hooks to centralize notifications:
+**`onekijs`** provides two hooks to centralize notifications:
 
 - **useNotificationService** returns a service to send notifications on a topic (error topic, success topic, ...)
 - **useNotifications** returns notifications for a specific topic. Each time a notification is added or removed from the topic, the component is refreshed.
@@ -67,7 +51,7 @@ const notification = {
 ```
 
 ## Notification center
-Oneki.js provides a service to send notifications, but not a widget to display them.<br/>
+**`onekijs`** provides a service to send notifications, but not a widget to display them.<br/>
 First, let's create the "Notification Center" widget to display them. If the topic is `success`, the notification appears in green and if it's `error`, the notification appears in red.
 
 <Tabs>
@@ -131,4 +115,4 @@ Clicking on these buttons sends a notification to a specific topic and the `<Not
 <GettingStartedSnippet craPath="/step06-notification/src/pages/products/index.tsx" nextPath="/step06-notification/src/pages/index.tsx" />
 
 ## Next step
-**[In the next step](error-handling)**, we introduce the services offered by Oneki.js to handle errors.
+**[In the next step](error-handling)**, we introduce the services offered by **`onekijs`** to handle errors.

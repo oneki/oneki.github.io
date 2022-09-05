@@ -7,7 +7,7 @@ sidebar_label: Managing data
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
-import Sandbox from '@site/src/components/Sandbox';
+import Sandbox, { GettingStartedSandbox} from '@site/src/components/Sandbox';
 import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 This step consists in adding some interaction with a backend system via AJAX requests.
@@ -24,30 +24,14 @@ The contents of the cart are retrieved from the server with an AJAX GET request.
 The list of products on the main page is retrieved once and cached locally in the global state.
 :::
 
-<Tabs>
-  <TabItem value="cra">
-    <Sandbox
-    name="step05-data"
-    type="getting-started/cra"
-    view="preview"
-    height="600"
-    modules={['/src/index.tsx','/src/pages/products/index.tsx']}
-    />
-  </TabItem>
-  <TabItem value="next">
-    <Sandbox
-      name="step05-data"
-      type="getting-started/next"
-      view="preview"
-      height="600"
-      modules={['/src/pages/index.tsx','/src/pages/_app.tsx']}
-      />
-  </TabItem>
-
-</Tabs>
+<GettingStartedSandbox 
+  name="step05-data"
+  craModules={['/src/index.tsx','/src/pages/products/index.tsx']} 
+  nextModules={['/src/pages/index.tsx','/src/pages/_app.tsx']} 
+/>
 
 :::note
-Oneki.js provides several hooks to handle interaction with a backend server.<br/>
+**`onekijs`** provides several hooks to handle interaction with a backend server.<br/>
 In this tutorial, we will use these hooks:
 
 - **useGet** makes an AJAX GET request. It returns a load indicator and the result. Each time the URL is updated, the request is executed.

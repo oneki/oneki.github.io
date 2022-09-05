@@ -1,4 +1,6 @@
 import React from "react";
+import Tabs from '@site/src/components/DocTabs';
+import TabItem from '@theme/TabItem';
 
 const Sandbox = ({
   name,
@@ -37,7 +39,7 @@ const Sandbox = ({
 
 export const SandboxExampleButton = ({ name }) => {
   return (
-    <div style={{ textAlign: 'right' }}>
+    <div style={{ textAlign: "right" }}>
       <a
         href={`https://codesandbox.io/s/github/oneki/onekijs/tree/master/examples/${name}`}
         target="_blank"
@@ -59,6 +61,42 @@ export const SandboxExampleButton = ({ name }) => {
         Open in Codesandbox
       </a>
     </div>
+  );
+};
+
+export const GettingStartedSandbox = ({  
+    name,
+    modules,
+    craName,
+    craModules,
+    nextName,
+    nextModules,
+    height = 600,
+    branch = "master"
+  }) => {
+  return (
+    <Tabs>
+      <TabItem value="cra">
+        <Sandbox
+          name={craName ? craName : name}
+          type="getting-started/cra"
+          view="preview"
+          branch={branch}
+          height={height}
+          modules={craModules ? craModules : modules}
+        />
+      </TabItem>
+      <TabItem value="next">
+        <Sandbox
+          name={nextName ? nextName : name}
+          type="getting-started/next"
+          view="preview"
+          branch={branch}
+          height={height}
+          modules={nextModules ? nextModules : modules}
+        />
+      </TabItem>
+    </Tabs>
   );
 };
 

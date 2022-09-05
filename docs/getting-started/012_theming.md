@@ -7,7 +7,7 @@ sidebar_label: Theming
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
-import Sandbox from '@site/src/components/Sandbox';
+import Sandbox, { GettingStartedSandbox} from '@site/src/components/Sandbox';
 import { GettingStartedSnippet } from '@site/src/components/GithubSnippet';
 
 This step consists in introducing **`onekijs-ui`** which is a library that provides many components. Some of them are very complex like a data table with infinite scrolling.<br/>
@@ -30,27 +30,11 @@ The background color of the `<Navbar />` is from the theme<br/>
 The font family is also from the theme
 :::
 
-<Tabs>
-  <TabItem value="cra">
-    <Sandbox
-    name="step10-service"
-    type="getting-started/cra"
-    view="preview"
-    height="600"
-    modules={['/src/index.tsx','/src/pages/products/index.tsx']}
-    />
-  </TabItem>
-  <TabItem value="next">
-    <Sandbox
-      name="step10-service"
-      type="getting-started/next"
-      view="preview"
-      height="600"
-      modules={['/src/pages/index.tsx','/src/pages/_app.tsx']}
-      />
-  </TabItem>
-
-</Tabs>
+<GettingStartedSandbox 
+  name="step11-theming"
+  craModules={['/src/index.tsx','/src/pages/products/index.tsx']} 
+  nextModules={['/src/pages/index.tsx','/src/pages/_app.tsx']} 
+/>
 
 ## Adding onekijs-ui to the project
 **`onekijs-ui`** is a standalone library. So we have to add it to the project
@@ -66,7 +50,7 @@ You can have a look at all the parameters defining the theme **[here](https://gi
 **`onekijs-ui`** allows you to build your own theme from scratch or extend an existing theme to adapt it.
 :::
 
-<GettingStartedSnippet path="/step11-ui/src/index.tsx" />
+<GettingStartedSnippet craPath="/step11-theming/src/index.tsx" nextPath="/step11-theming/src/pages/_app.tsx" />
 
 
 
@@ -194,7 +178,7 @@ Please read this documentation to learn more
 
 The final `<Navbar />` now looks like this
 
-<GettingStartedSnippet path="/step11-ui/src/modules/core/components/Navbar.tsx" />
+<GettingStartedSnippet path="/step11-theming/src/modules/core/components/Navbar.tsx" />
 
 ## Next step
-The getting started tutorial is over. You should now have a good understanding of what Oneki.js can do to help you build enterprise applications !
+The getting started tutorial is over. You should now have a good understanding of what **`onekijs`** can do to help you build enterprise applications !
