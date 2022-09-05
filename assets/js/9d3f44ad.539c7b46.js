@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkonekijs_website=self.webpackChunkonekijs_website||[]).push([[14336],{15745:function(e){e.exports=JSON.parse('{"name":"docusaurus-plugin-content-pages","id":"default"}')}}]);
