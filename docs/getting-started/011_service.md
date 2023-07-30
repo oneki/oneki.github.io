@@ -65,7 +65,7 @@ We want to add a button on the product page to check its availability. Clicking 
 The state therefore contains the following elements:
 ```ts
 export interface AvailabilityState {
-  // a flag to indicate if a request is in flight
+  // a flag to indicate if a request is progress
   loading: boolean;
 
   // the result of the request
@@ -125,6 +125,10 @@ For our service, we need a saga that will implement the following scenario:
 2. Make a request to the server to check availability
 3. Put the result of the query in the state
 4. Update the field `loading` to `false`
+
+:::caution
+Saga methods must be annotated with @saga
+:::
 
 Let's add this method:
 

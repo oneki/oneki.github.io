@@ -106,7 +106,7 @@ const Product: FC<ProductOptions> = ({ product, id, onClick, onNotify }) => {
   return (
     <div>
       <h3>
-        <Link to={`/products/${id}`}>{product.name}</Link>
+        <Link href={`/products/${id}`}>{product.name}</Link>
       </h3>
       {product.description && <p>Description: {product.description}</p>}
       <button onClick={onClick}>Share</button>

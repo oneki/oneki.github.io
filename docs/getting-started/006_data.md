@@ -48,7 +48,8 @@ The hook accepts a success and error callback executed once it receives a respon
 
 <Tabs>
   <TabItem value="cra">
-    
+
+
   ```tsx {2} title="src/modules/core/libs/constants.ts"
   export const STATE_CART = 'cart';
   export const URL_ADD_PRODUCT = '/cart/products';

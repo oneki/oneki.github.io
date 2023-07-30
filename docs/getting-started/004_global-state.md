@@ -137,7 +137,7 @@ https://github.com/oneki/onekijs/blob/master/getting-started/next/step03-global-
 </Tabs>
 
 :::caution Immutability
-As mentioned above, the global state is immutable. Therefore, to update the cart, you need to use `cart.contcat()` to build a new array and not `cart.push()`.<br/>
+As mentioned above, the global state is immutable. Therefore, to update the cart, you need to use `cart.concat()` to build a new array and not `cart.push()`.<br/>
 **`onekijs`** transparently handles the immutability of the global state. The `cart` variable is a standard javascript object that you can manipulate like any other javascript object excepted that it is frozen.
 
 **Advanced tip**: As the `cart` variable is immutable, the &lt;Cart/&gt; component could use React.memo to be more efficient

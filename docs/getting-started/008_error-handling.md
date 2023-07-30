@@ -121,7 +121,8 @@ https://github.com/oneki/onekijs/blob/master/getting-started/next/step07-error-h
 </Tabs>
 
 :::tip
-When using an **`onekijs`** hook, if you don't specify a callback to handle errors, it will automatically send the following notification
+<code>&lt;App /&gt;</code> automatically detects any unhandled error and sends a notification on the error topic.<br/>
+Therefore if you don't specify the <code>onError</code> callback, this notification is sent:
 
 ```javascript
 {
@@ -132,8 +133,6 @@ When using an **`onekijs`** hook, if you don't specify a callback to handle erro
   ...
 }
 ```
-
-Therefore, the onError callback can be omitted
 :::
 
 

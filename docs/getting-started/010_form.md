@@ -26,8 +26,6 @@ A new page is added for registration. The form on the registration page asynchro
 Some elements of the form are displayed or not depending on the value of a field
 :::
 
-<iframe src="https://oneki-gs-vite-step10.surge.sh/" height="600" width="100%" style={{border:"10px solid #EEE"}}></iframe>
-
 
 <GettingStartedSandbox 
   name="step09-form"
