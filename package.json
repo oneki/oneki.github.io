@@ -11,7 +11,7 @@
     "ui": "yarn typedoc:ui && yarn api:ui",
     "framework": "yarn typedoc:framework && yarn api:framework",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "node --max-old-space-size=8192 node_modules/@docusaurus/core/bin/docusaurus.mjs build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy"
   },
