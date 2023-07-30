@@ -17,7 +17,7 @@ email(message: string): Validator
 
 | Parameters | Type | Description |
 | --------- | ---- | ----------- |
-| **message** | string |  |
+| message | string |  |
 
 
 ### Return

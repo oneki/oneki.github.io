@@ -31,7 +31,7 @@ Depending on the build tool you prefer to use, you should also read these docume
 
 | Build tool | Description | Documentation
 | ------- | ----------- | ---------------------
-| **[Create React App](https://create-react-app.dev)** | The tool from the React team to build a React application | **[Create React App](https://create-react-app.dev)** and **[React router](https://reactrouter.com/docs/en/v6)**
+| **[Vite](https://vitejs.dev/)** | The most popular React bundler | **[Vite](https://vitejs.dev/)** and **[React router](https://reactrouter.com/docs/en/v6)**
 | **[Create Next App](https://nextjs.org/)** | The tool to build a Next.js app. Useful if you need server rendering | **[Next.js](https://nextjs.org/)**
 
 #### Optional reading

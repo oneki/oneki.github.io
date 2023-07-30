@@ -17,7 +17,7 @@ useValue(fieldName: string): any
 
 | Parameters | Type | Description |
 | --------- | ---- | ----------- |
-| **fieldName** | string |  |
+| fieldName | string |  |
 
 
 ### Return

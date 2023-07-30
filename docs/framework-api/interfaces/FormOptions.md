@@ -13,3 +13,4 @@ sidebar_label: FormOptions
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | delayLoading | number |  |
+| initialContext | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |

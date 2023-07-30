@@ -38,7 +38,7 @@ A **`onekijs`** application is built with one of this build tool:
 
 | Type | Build tool | Librairies
 | ---- | ---------- | ----------
-| Standard React app | **[Create React App](https://create-react-app.dev)** | OnekiJs, React, Redux, Immer, Saga, **React Router Dom**
+| Standard React app | **[Vite](https://vitejs.dev/)** | OnekiJs, React, Redux, Immer, Saga, **React Router Dom**
 | Next.js app | **[Create Next App](https://nextjs.org/)** | OnekiJs, React, Redux, Immer, Saga, **Next**, **Next Router**
 
 From then on, you benefit from all the advantages brought by this tool.
@@ -50,12 +50,12 @@ The code is slightly different depending on the framework used. Click on the cor
 <Tabs>
   <TabItem value="cra">
 
-**Create react app** is the most popular tool to boostrap a React project. <br/>
+**Vite** is the most popular tool to boostrap a React project. <br/>
 To create a projet named **mystore-app**, enter the following command:
 
 ```javascript
 // npm install -g yarn
-yarn create react-app mystore-app --template typescript
+yarn create vite mystore-app --template react-ts
 ```  
   </TabItem>
   <TabItem value="next">

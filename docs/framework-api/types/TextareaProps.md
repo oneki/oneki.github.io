@@ -13,9 +13,21 @@ sidebar_label: TextareaProps
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **name** | string |  |
-| id | string \| number |  |
+| email | boolean |  |
+| emailMessage | string |  |
+| id | string |  |
+| integer | boolean |  |
+| integerMessage | string |  |
+| max | number |  |
+| maxLength | number |  |
+| maxLengthMessage | string |  |
+| maxMessage | string |  |
+| min | number |  |
+| minLength | number |  |
+| minLengthMessage | string |  |
+| minMessage | string |  |
 | regex | string \| RegExp |  |
 | regexMessage | string |  |
 | required | boolean |  |
 | requiredMessage | string |  |
-| validators |  |  |
+| validators | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[Validator](/framework-api/types/Validator.md)\> |  |

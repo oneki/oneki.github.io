@@ -23,12 +23,15 @@ sidebar_label: NotificationService
 | **clearTopic** | clearTopic(topic: string): void |  |
 | **debug** | debug(payload: any): void |  |
 | **error** | error(payload: any): void |  |
-| **formatLevelNotification** | formatLevelNotification(level: NotificationLevel,notification: string \| NotificationContent): NotificationContent |  |
-| **formatNotification** | formatNotification(notificationContent: string \| NotificationContent,settings: AppSettings,notificationService: default): Notification |  |
+| **formatLevelNotification** | formatLevelNotification(level: NotificationLevel,payload: any): NotificationContent |  |
+| **formatNotification** | formatNotification(notificationContent: ReactNode \| NotificationContent,settings: AppSettings,notificationService: default): Notification |  |
+| **getNotification** | getNotification(notificationId: string \| number \| symbol): void \| Notification |  |
 | **info** | info(payload: any): void |  |
 | **init** | init(): void |  |
 | **onRouteChange** | onRouteChange(): void |  |
 | **remove** | remove(notificationId: string \| number \| symbol): void |  |
-| **send** | send(notificationContent: string \| NotificationContent): void |  |
+| **send** | send(notificationContent: ReactNode \| NotificationContent): void |  |
 | **success** | success(payload: any): void |  |
+| **touch** | touch(notificationId: string \| number \| symbol,permanent: boolean): void | This method is called whenever the auto-removal of the notification should be suspended |
+| **untouch** | untouch(notificationId: string \| number \| symbol): void | This method is called whenever the auto-removal of the notification should be reactivated |
 | **warning** | warning(payload: any): void |  |

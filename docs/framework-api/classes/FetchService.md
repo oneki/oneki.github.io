@@ -21,14 +21,14 @@ sidebar_label: FetchService
 | **callSaga** | callSaga(sagaName: string,args: ): void |  |
 | **cancelPull** | cancelPull(): void |  |
 | **delayLoading** | delayLoading(delay_ms: number): void |  |
-| **delete** | delete<R\>(url: string,options: FetchOptions<R, never\>): void |  |
-| **fetch** | fetch<R,T\>(url: string,method: FetchMethod,body: T,options: FetchOptions<R, T\>): void |  |
+| **delete** | delete<R\>(url: string,options: FetchOptions<R\>): void |  |
+| **fetch** | fetch<R\>(url: string,method: FetchMethod,body: unknown,options: FetchOptions<R\>): void |  |
 | **fetchError** | fetchError(e: any): void |  |
 | **fetchSuccess** | fetchSuccess(result: any): void |  |
-| **get** | get<R\>(url: string,options: FetchOptions<R, never\>): any |  |
-| **patch** | patch<R,T\>(url: string,body: T,options: FetchOptions<R, T\>): void |  |
-| **poll** | poll(url: string,fixedRateInMs: number,options: FetchOptions<any, never\>): any |  |
-| **pollFetch** | pollFetch(url: string,fixedRateInMs: number,options: FetchOptions<any, never\>): any |  |
-| **post** | post<R,T\>(url: string,body: T,options: FetchOptions<R, T\>): void |  |
-| **put** | put<R,T\>(url: string,body: T,options: FetchOptions<R, T\>): void |  |
+| **get** | get<R\>(url: string,options: FetchOptions<R\>): any |  |
+| **patch** | patch<R\>(url: string,body: unknown,options: FetchOptions<R\>): void |  |
+| **poll** | poll(url: string,fixedRateInMs: number,options: FetchOptions<any\>): any |  |
+| **pollFetch** | pollFetch(url: string,fixedRateInMs: number,options: FetchOptions<any\>): any |  |
+| **post** | post<R\>(url: string,body: unknown,options: FetchOptions<R\>): void |  |
+| **put** | put<R\>(url: string,body: unknown,options: FetchOptions<R\>): void |  |
 | **setLoading** | setLoading(loading: boolean,fetching: boolean): void |  |

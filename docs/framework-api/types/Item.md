@@ -14,11 +14,14 @@ sidebar_label: Item
 | --------- | ---- | ----------- |
 | **loadingStatus** | [LoadingItemStatus](/framework-api/types/LoadingItemStatus.md) |  |
 | **uid** | string |  |
+| activable | boolean |  |
 | active | boolean |  |
 | data | T |  |
 | disabled | boolean |  |
+| highlightable | boolean |  |
 | highlighted | boolean |  |
 | id | string \| number |  |
+| selectable | boolean |  |
 | selected | boolean |  |
 | text | string |  |
 | visible | boolean |  |

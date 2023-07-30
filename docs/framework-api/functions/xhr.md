@@ -5,7 +5,7 @@ sidebar_label: xhr
 ---
 
 ```tsx
-xhr(url: string,method: string,body: AnonymousObject<any>,options: FetchOptions<any, any>): Promise<Response>
+xhr(url: string,method: string,body: unknown,options: FetchOptions<any>): Promise<Response>
 ```
 <br/>
 
@@ -19,8 +19,8 @@ xhr(url: string,method: string,body: AnonymousObject<any>,options: FetchOptions<
 | --------- | ---- | ----------- |
 | **method** | string |  |
 | **url** | string |  |
-| body | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
-| options | [FetchOptions](/framework-api/interfaces/FetchOptions.md)<any, any\> |  |
+| body | unknown |  |
+| options | [FetchOptions](/framework-api/interfaces/FetchOptions.md)<any\> |  |
 
 
 ### Return

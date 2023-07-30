@@ -14,18 +14,21 @@ sidebar_label: FormContext
 | --------- | ---- | ----------- |
 | **add** | add(fieldArrayName: string,initialValue: ): void |  |
 | **addField** | addField(field: Field): void |  |
+| **addValidator** | addValidator(fieldName: string,validatorName: string,validator: Validator): void |  |
 | **callSaga** | callSaga(sagaName: string,args: ): void |  |
+| **clearError** | clearError(fieldName: string,validatorName: string,compile: boolean): void |  |
 | **clearValidation** | clearValidation(fieldName: string,validatorName: string,code: ValidationCode,compile: boolean): void |  |
+| **clearWarning** | clearWarning(fieldName: string,validatorName: string,compile: boolean): void |  |
 | **compileValidations** | compileValidations(fieldNames: string \| ,force: boolean): void |  |
 | **config** | [FormConfig](/framework-api/types/FormConfig.md) |  |
 | **constructor** | new FormService() |  |
 | **decorators** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[FormDecorator](/framework-api/types/FormDecorator.md)\> |  |
 | **delayLoading** | delayLoading(delay_ms: number): void |  |
-| **disable** | disable(fieldName: string): void |  |
+| **disable** | disable(fieldName: string,match: boolean): void |  |
 | **disableValidator** | disableValidator(fieldName: string,validatorName: string): void |  |
-| **enable** | enable(fieldName: string): void |  |
+| **enable** | enable(fieldName: string,match: boolean): void |  |
 | **enableValidator** | enableValidator(fieldName: string,validatorName: string): void |  |
-| **field** | field(name: string,validators: AnonymousObject<Validator\>,options: FieldOptions): FieldProps | this method is an helper to quickly register a field from a component. It will return  
+| **field** | field(name: string,validators: AnonymousObject<Validator\>,options: FieldOptions<any\>): FieldProps | this method is an helper to quickly register a field from a component. It will return  
   - name  
   - value  
   - onChange  
@@ -33,16 +36,19 @@ sidebar_label: FormContext
   - onBlur |
 | **fields** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[Field](/framework-api/interfaces/Field.md)\> |  |
 | **getContainerFieldValidation** | getContainerFieldValidation(validations: AnonymousObject<default\>,fields: AnonymousObject<Field\>,prefix: string,touchedOnly: boolean): default |  |
+| **getContext** | getContext(key: string,defaultValue: any): any |  |
 | **getValidation** |  |  |
 | **getValue** | getValue(fieldName: string,defaultValue: any): any |  |
 | **hasValidation** | hasValidation(fieldName: string,validatorName: string,code: ValidationCode,message: string): boolean |  |
-| **hide** | hide(fieldName: string): void |  |
+| **hide** | hide(fieldName: string,match: boolean): void |  |
 | **initDecorator** | initDecorator(name: string,options: FormMetadata): FormDecorator | Register a decorator. Unlike a field, a decorator has no value but can have metadata (like disabled / visible) |
-| **initField** | initField(name: string,validators: AnonymousObject<Validator\>,options: FieldOptions): FieldProps | Register a field and return three listeners  
+| **initField** | initField(name: string,validators: AnonymousObject<Validator\>,options: FieldOptions<any\>): FieldProps | Register a field and return three listeners  
   - onChange  
   - onFocus  
   - onBlur |
 | **initializing** | boolean |  |
+| **insert** | insert(fieldArrayName: string,index: number,initialValue: ): void |  |
+| **isTouched** | isTouched(fieldName: string): boolean |  |
 | **listeners** |  |  |
 | **loadInitialValues** | loadInitialValues(fetcher: string \| ): void |  |
 | **metadataChange** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<\> |  |
@@ -58,9 +64,15 @@ sidebar_label: FormContext
 | **onValidationChange** | onValidationChange(id: string,listener: FormValidationListener,watchs: string \| ,once: boolean): void |  |
 | **onValueChange** | onValueChange(id: string,listener: FormValueListener<any\>,watchs: string \| ,once: boolean): void |  |
 | **pendingDispatch** |  |  |
+| **prevMetadata** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[FormMetadata](/framework-api/types/FormMetadata.md)\> |  |
+| **prevSubmitting** | boolean |  |
+| **prevValidations** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[default](/framework-api/classes/FieldValidation.md)\> |  |
+| **prevValues** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
 | **remove** | remove(fieldArrayName: string,index: number): void |  |
+| **removeValidator** | removeValidator(fieldName: string,validatorName: string): void |  |
 | **reset** | reset(): void |  |
 | **serializeValidationCode** | serializeValidationCode(code: ValidationCode): ValidationStatus |  |
+| **setContext** | setContext(key: undefined \| string,value: any): any |  |
 | **setError** | setError(fieldName: string,validatorName: string,message: string,match: boolean): boolean |  |
 | **setInitialValues** | setInitialValues(values: AnonymousObject<any\>): void |  |
 | **setLoading** | setLoading(loading: boolean,fetching: boolean): void |  |
@@ -74,12 +86,13 @@ sidebar_label: FormContext
 | **setValue** | setValue(fieldName: string,value: any): void |  |
 | **setValues** | setValues(values: AnonymousObject<any\>): void |  |
 | **setWarning** | setWarning(fieldName: string,validatorName: string,message: string,match: boolean): boolean |  |
-| **show** | show(fieldName: string): void |  |
+| **show** | show(fieldName: string,match: boolean): void |  |
 | **state** | [FormState](/framework-api/interfaces/FormState.md) |  |
 | **submit** | submit(): void |  |
 | **submittingChange** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<\> |  |
 | **touch** | touch(fieldName: string): void |  |
 | **touchAll** | touchAll(): void |  |
+| **triggered** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<boolean\> |  |
 | **validateAll** | validateAll(values: AnonymousObject<any\>): AnonymousObject<default\> |  |
 | **validateAsync** | validateAsync(fieldName: string,validatorName: string,validator: ValidatorAsyncFunction,value: any): void |  |
 | **validateSync** | validateSync(fieldName: string,validatorName: string,validator: ValidatorSyncFunction,value: any): void |  |

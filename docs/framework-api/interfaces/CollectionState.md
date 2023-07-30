@@ -20,6 +20,8 @@ sidebar_label: CollectionState
 | active |  |  |
 | adapter | [ItemAdapter](/framework-api/types/ItemAdapter.md)<T\> |  |
 | autoload | boolean |  |
+| brokerable | boolean |  |
+| brokered | boolean |  |
 | comparator | [QuerySortComparator](/framework-api/types/QuerySortComparator.md) |  |
 | comparators | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[QuerySortComparator](/framework-api/types/QuerySortComparator.md)\> |  |
 | dataSource | string \|  |  |
@@ -27,7 +29,7 @@ sidebar_label: CollectionState
 | error | [BasicError](/framework-api/interfaces/BasicError.md) |  |
 | fetching | boolean |  |
 | fetchOnce | boolean |  |
-| fetchOptions | [FetchOptions](/framework-api/interfaces/FetchOptions.md)<[CollectionFetcherResult](/framework-api/types/CollectionFetcherResult.md)<T\>, undefined \| [Query](/framework-api/interfaces/Query.md)\> |  |
+| fetchOptions | [FetchOptions](/framework-api/interfaces/FetchOptions.md)<[CollectionFetcherResult](/framework-api/types/CollectionFetcherResult.md)<T\>\> |  |
 | fields |  |  |
 | filter | [QueryFilter](/framework-api/interfaces/QueryFilter.md) \| [QueryFilterCriteria](/framework-api/interfaces/QueryFilterCriteria.md) \|  |  |
 | hasMore | boolean |  |
@@ -36,6 +38,7 @@ sidebar_label: CollectionState
 | limit | number |  |
 | loading | boolean |  |
 | method | [HttpMethod](/framework-api/enum/HttpMethod.md) |  |
+| mutateUrl | boolean |  |
 | offset | number |  |
 | params | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
 | queryEngine | [QueryEngine](/framework-api/types/QueryEngine.md)<T, I\> |  |

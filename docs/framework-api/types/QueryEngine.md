@@ -5,7 +5,7 @@ sidebar_label: QueryEngine
 ---
 
 ```tsx
-__type(items: ,query: LocalQuery,comparator: QuerySortComparator,comparators: AnonymousObject<QuerySortComparator>): 
+__type(items: ,query: LocalQuery,comparator: QuerySortComparator,comparators: AnonymousObject<QuerySortComparator>,searcher: QuerySearcher<T>): 
 ```
 <br/>
 
@@ -21,3 +21,4 @@ __type(items: ,query: LocalQuery,comparator: QuerySortComparator,comparators: An
 | **comparators** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[QuerySortComparator](/framework-api/types/QuerySortComparator.md)\> |  |
 | **items** |  |  |
 | **query** | [LocalQuery](/framework-api/types/LocalQuery.md) |  |
+| searcher | [QuerySearcher](/framework-api/types/QuerySearcher.md)<T\> |  |

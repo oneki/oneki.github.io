@@ -5,7 +5,7 @@ sidebar_label: asyncPatch
 ---
 
 ```tsx
-asyncPatch(url: string,body: AnonymousObject<any>,options: AnonymousObject<any>): Promise<any>
+asyncPatch(url: string,body: unknown,options: AnonymousObject<any>): Promise<any>
 ```
 <br/>
 
@@ -18,7 +18,7 @@ asyncPatch(url: string,body: AnonymousObject<any>,options: AnonymousObject<any>)
 | Parameters | Type | Description |
 | --------- | ---- | ----------- |
 | **url** | string |  |
-| body | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+| body | unknown |  |
 | options | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
 
 

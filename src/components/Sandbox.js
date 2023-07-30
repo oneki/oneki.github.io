@@ -2,6 +2,41 @@ import React from "react";
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 
+// const Sandbox = ({
+//   name,
+//   height = 500,
+//   modules,
+//   branch = "master",
+//   type = "examples",
+//   view = "editor",
+// }) => {
+//   let url = `https://codesandbox.io/embed/github/oneki/onekijs/tree/${branch}/${type}/${name}?codemirror=1&fontsize=14&theme=dark&view=${view}`;
+//   if (modules) {
+//     url += "&module=";
+//     modules.forEach((module, idx) => {
+//       if (idx > 0) url += ",";
+//       url += module;
+//     });
+//   }
+//   const title = "onekijs-" + name.split("/").join("-");
+
+//   return (
+//     <iframe
+//       src={url}
+//       style={{
+//         width: "100%",
+//         height: `${height}px`,
+//         border: 0,
+//         bordeRadius: "4px",
+//         overflow: "hidden",
+//       }}
+//       title={title}
+//       allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+//       sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+//     />
+//   );
+// };
+
 const Sandbox = ({
   name,
   height = 500,
@@ -10,7 +45,9 @@ const Sandbox = ({
   type = "examples",
   view = "editor",
 }) => {
-  let url = `https://codesandbox.io/embed/github/oneki/onekijs/tree/${branch}/${type}/${name}?codemirror=1&fontsize=14&theme=dark&view=${view}`;
+  const step = name.split('-')[0];
+  const iframeUrl = `https://oneki-gs-vite-${step}.surge.sh/`;
+  let url = `https://codesandbox.io/github/oneki/onekijs/tree/${branch}/${type}/${name}?codemirror=1&fontsize=14&theme=dark&view=${view}`;
   if (modules) {
     url += "&module=";
     modules.forEach((module, idx) => {
@@ -22,17 +59,17 @@ const Sandbox = ({
 
   return (
     <iframe
-      src={url}
+      src={iframeUrl}
       style={{
         width: "100%",
         height: `${height}px`,
-        border: 0,
+        border: '10px solid #EEE',
         bordeRadius: "4px",
         overflow: "hidden",
       }}
       title={title}
-      allow="geolocation; microphone; camera; midi; accelerometer; gyroscope; payment; encrypted-media; usb"
-      sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
     />
   );
 };

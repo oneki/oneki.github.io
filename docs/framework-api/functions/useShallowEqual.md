@@ -5,7 +5,7 @@ sidebar_label: useShallowEqual
 ---
 
 ```tsx
-useShallowEqual<T>(obj: T): T
+useShallowEqual<T>(obj: AnonymousObject<T>): AnonymousObject<T>
 ```
 <br/>
 
@@ -17,11 +17,11 @@ useShallowEqual<T>(obj: T): T
 
 | Parameters | Type | Description |
 | --------- | ---- | ----------- |
-| **obj** | T |  |
+| **obj** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<T\> |  |
 
 
 ### Return
 
 
 
-The return is of type <code>T</code>
+The return is of type <code>[AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<T\></code>

@@ -5,7 +5,7 @@ sidebar_label: useNotifications
 ---
 
 ```tsx
-useNotifications(topic: string): 
+useNotifications(topics: string | ): 
 ```
 <br/>
 
@@ -17,4 +17,4 @@ useNotifications(topic: string):
 
 | Parameters | Type | Description |
 | --------- | ---- | ----------- |
-| **topic** | string |  |
+| topics | string \|  |  |

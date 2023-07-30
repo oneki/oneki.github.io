@@ -12,10 +12,13 @@ sidebar_label: ItemAdaptee
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
+| activable | boolean |  |
 | active | boolean |  |
 | disabled | boolean |  |
+| highlightable | boolean |  |
 | highlighted | boolean |  |
 | id | string \| number |  |
+| selectable | boolean |  |
 | selected | boolean |  |
 | text | string |  |
 | visible | boolean |  |

@@ -4,6 +4,11 @@ title: FieldContainer
 sidebar_label: FieldContainer
 ---
 
+```tsx
+__type(): void
+```
+<br/>
+
 
 
 ### Properties
@@ -14,5 +19,6 @@ sidebar_label: FieldContainer
 | --------- | ---- | ----------- |
 | **allValidation** | [default](/framework-api/classes/ContainerValidation.md) |  |
 | **context** | [default](/framework-api/classes/FormService.md) |  |
+| **touchAllFields** |  |  |
 | **touchedValidation** | [default](/framework-api/classes/ContainerValidation.md) |  |
 | **value** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |

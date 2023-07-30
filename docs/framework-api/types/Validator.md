@@ -12,6 +12,4 @@ sidebar_label: Validator
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **async** | boolean |  |
-| **validator** | [ValidatorFunction](/framework-api/types/ValidatorFunction.md) |  |
 | **value** | any |  |

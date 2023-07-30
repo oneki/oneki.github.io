@@ -5,7 +5,7 @@ sidebar_label: asyncPut
 ---
 
 ```tsx
-asyncPut(url: string,body: AnonymousObject<any>,options: AnonymousObject<any>): Promise<any>
+asyncPut(url: string,body: unknown,options: AnonymousObject<any>): Promise<any>
 ```
 <br/>
 
@@ -18,7 +18,7 @@ asyncPut(url: string,body: AnonymousObject<any>,options: AnonymousObject<any>): 
 | Parameters | Type | Description |
 | --------- | ---- | ----------- |
 | **url** | string |  |
-| body | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+| body | unknown |  |
 | options | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
 
 

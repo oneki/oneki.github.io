@@ -5,7 +5,7 @@ sidebar_label: toArray
 ---
 
 ```tsx
-toArray<T>(a: T | ): 
+toArray<T>(a: undefined | T | ): 
 ```
 <br/>
 
@@ -17,4 +17,4 @@ toArray<T>(a: T | ):
 
 | Parameters | Type | Description |
 | --------- | ---- | ----------- |
-| **a** | T \|  |  |
+| **a** | undefined \| T \|  |  |

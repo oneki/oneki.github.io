@@ -5,7 +5,7 @@ sidebar_label: asyncHttp
 ---
 
 ```tsx
-asyncHttp(url: string,method: FetchMethod,body: AnonymousObject<any>,options: AnonymousObject<any>): Promise<any>
+asyncHttp(url: string,method: FetchMethod,body: unknown,options: AnonymousObject<any>): Promise<any>
 ```
 <br/>
 
@@ -19,7 +19,7 @@ asyncHttp(url: string,method: FetchMethod,body: AnonymousObject<any>,options: An
 | --------- | ---- | ----------- |
 | **method** | [FetchMethod](/framework-api/types/FetchMethod.md) |  |
 | **url** | string |  |
-| body | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+| body | unknown |  |
 | options | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
 
 

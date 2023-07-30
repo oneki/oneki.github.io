@@ -12,7 +12,7 @@ sidebar_label: FormMetadata
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| defaultValue | any |  |
+| defaultValue | T |  |
 | disabled | boolean |  |
 | touchOn | [TouchOnType](/framework-api/types/TouchOnType.md) |  |
 | visible | boolean |  |

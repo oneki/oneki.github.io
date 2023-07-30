@@ -18,7 +18,7 @@ sidebar_label: UseGetOptions
 | credentials | RequestCredentials | A string indicating whether credentials will be sent with the request always, never, or only when sent to a same-origin URL. Sets request's credentials. |
 | defaultValue | T |  |
 | delayLoading | number |  |
-| fetcher | [Fetcher](/framework-api/types/Fetcher.md)<T, any\> |  |
+| fetcher | [Fetcher](/framework-api/types/Fetcher.md)<T\> |  |
 | headers | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<string\> |  |
 | integrity | string | A cryptographic hash of the resource to be fetched by request. Sets request's integrity. |
 | keepalive | boolean | A boolean to set request's keepalive. |

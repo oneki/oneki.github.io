@@ -4,6 +4,11 @@ title: UseCollectionOptions
 sidebar_label: UseCollectionOptions
 ---
 
+```tsx
+__type(result: CollectionFetcherResult<T>): void | CollectionFetcherResult<T> | Promise<undefined | CollectionFetcherResult<T>>
+```
+<br/>
+
 
 
 ### Properties
@@ -17,6 +22,7 @@ sidebar_label: UseCollectionOptions
 | auth | boolean \| [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
 | autoload | boolean |  |
 | body | null \| BodyInit | A BodyInit object or null to set request's body. |
+| brokerable | boolean |  |
 | cache | RequestCache | A string indicating how the request will interact with the browser's cache to set request's cache. |
 | comparator | [QuerySortComparator](/framework-api/types/QuerySortComparator.md) |  |
 | comparators | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[QuerySortComparator](/framework-api/types/QuerySortComparator.md)\> |  |
@@ -42,8 +48,8 @@ sidebar_label: UseCollectionOptions
 | method | [HttpMethod](/framework-api/enum/HttpMethod.md) |  |
 | mode | RequestMode | A string to indicate whether the request will use CORS, or will be restricted to same-origin URLs. Sets request's mode. |
 | mutateUrl | boolean |  |
-| onError | [ErrorCallback](/framework-api/types/ErrorCallback.md)<[BasicError](/framework-api/interfaces/BasicError.md)\> |  |
-| onSuccess | [SuccessCallback](/framework-api/types/SuccessCallback.md)<[CollectionFetcherResult](/framework-api/types/CollectionFetcherResult.md)<T\>\> |  |
+| onFetchError | [ErrorCallback](/framework-api/types/ErrorCallback.md)<[BasicError](/framework-api/interfaces/BasicError.md)\> |  |
+| onFetchSuccess |  |  |
 | params | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<string\> |  |
 | query | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<string\> |  |
 | queryEngine | [QueryEngine](/framework-api/types/QueryEngine.md)<T, I\> |  |

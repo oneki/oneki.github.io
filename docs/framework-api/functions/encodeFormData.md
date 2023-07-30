@@ -5,7 +5,7 @@ sidebar_label: encodeFormData
 ---
 
 ```tsx
-encodeFormData(data: AnonymousObject<any>): string
+encodeFormData(data: unknown): string
 ```
 <br/>
 
@@ -17,7 +17,7 @@ encodeFormData(data: AnonymousObject<any>): string
 
 | Parameters | Type | Description |
 | --------- | ---- | ----------- |
-| **data** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+| **data** | unknown |  |
 
 
 ### Return

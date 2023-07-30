@@ -12,6 +12,8 @@ sidebar_label: FormState
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
+| **context** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+| **initialContext** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
 | **metadata** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[FormMetadata](/framework-api/types/FormMetadata.md)\> |  |
 | **validations** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[default](/framework-api/classes/FieldValidation.md)\> |  |
 | delayLoading | number |  |

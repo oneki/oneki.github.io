@@ -17,6 +17,4 @@ __type(value: any): Promise<ValidationResult>
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **async** | boolean |  |
-| **validator** | [ValidatorFunction](/framework-api/types/ValidatorFunction.md) |  |
 | **value** | any |  |

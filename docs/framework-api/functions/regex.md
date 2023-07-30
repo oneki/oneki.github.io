@@ -17,8 +17,8 @@ regex(regex: string | RegExp,message: string): Validator
 
 | Parameters | Type | Description |
 | --------- | ---- | ----------- |
-| **message** | string |  |
 | **regex** | string \| RegExp |  |
+| message | string |  |
 
 
 ### Return

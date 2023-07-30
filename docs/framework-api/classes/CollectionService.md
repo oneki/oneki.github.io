@@ -4,20 +4,29 @@ title: CollectionService
 sidebar_label: CollectionService
 ---
 
+```tsx
+__type(offsetInPixels: number,options: ): void
+```
+<br/>
+
 
 
 ### Properties
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
+| **align** | auto \| center \| end \| start |  |
+| **align** | auto \| center \| end \| start |  |
 | **state** | S |  |
+| scrollToIndex |  |  |
+| scrollToOffset |  |  |
 
 
 ### Methods
 
 | Methods | Signature | Description |
 | --------- | ---- | ----------- |
-| **adapt** | adapt(data: undefined \| T): I |  |
+| **adapt** | adapt(data: undefined \| null \| T): I |  |
 | **addActive** | addActive<B\>(by: B,target:  \| ):  |  |
 | **addDisabled** | addDisabled<B\>(by: B,target:  \| ):  |  |
 | **addFilter** | addFilter(filterOrCriteria: QueryFilterOrCriteria,parentFilterId: QueryFilterId): void |  |
@@ -55,9 +64,11 @@ sidebar_label: CollectionService
 | **getSortById** | getSortById(id: string): undefined \| QuerySortBy |  |
 | **init** | init(): void |  |
 | **initDb** | initDb(dataSource: undefined \| string \| ): void |  |
-| **load** | load(limit: number,offset: number): void |  |
+| **isFiltered** | isFiltered(): boolean |  |
+| **load** | load(limit: number,offset: number,replace: boolean): void |  |
+| **onSubscribe** | onSubscribe(initialData: undefined \| ,initialUrl: undefined \| string,initialQuery: Query): void |  |
 | **query** | query(query: Query): void |  |
-| **refresh** | refresh(query: Query): void |  |
+| **refresh** | refresh(query: Query,push: boolean,noCache: boolean): void |  |
 | **removeActive** | removeActive<B\>(by: B,target:  \| ):  |  |
 | **removeDisabled** | removeDisabled<B\>(by: B,target:  \| ):  |  |
 | **removeFilter** | removeFilter(filterId: QueryFilterId): void |  |
@@ -68,7 +79,7 @@ sidebar_label: CollectionService
 | **search** | search(search: Primitive): void |  |
 | **serializeQuery** | serializeQuery(query: Query): QuerySerializerResult |  |
 | **setActive** | setActive<B\>(by: B,target:  \| ):  |  |
-| **setData** | setData(data: ): void |  |
+| **setData** | setData(data: ,query: Query): void |  |
 | **setDisabled** | setDisabled<B\>(by: B,target:  \| ):  |  |
 | **setFields** | setFields(fields: ): void |  |
 | **setHighlighted** | setHighlighted<B\>(by: B,target:  \| ):  |  |
@@ -77,5 +88,6 @@ sidebar_label: CollectionService
 | **setParams** | setParams(params: AnonymousObject<any\>): void |  |
 | **setSelected** | setSelected<B\>(by: B,target:  \| ):  |  |
 | **setStatus** | setStatus(status: LoadingStatus): void |  |
+| **setUrl** | setUrl(url: string,query: Query): void |  |
 | **sort** | sort(dir: QuerySortDir): void |  |
 | **sortBy** | sortBy(sortBy: string \| QuerySortBy \| ): void |  |

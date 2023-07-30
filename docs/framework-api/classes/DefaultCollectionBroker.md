@@ -16,26 +16,36 @@ sidebar_label: DefaultCollectionBroker
 
 | Methods | Signature | Description |
 | --------- | ---- | ----------- |
-| **addFilter** | addFilter(filterOrCriteria: QueryFilterOrCriteria,parentFilterId: QueryFilterId): void |  |
-| **addFilterCriteria** | addFilterCriteria(field: string,operator: QueryFilterCriteriaOperator,value: null \| string \| number \| boolean \| ,not: boolean,id: string \| number \| symbol,parentFilterId: string \| number \| symbol): void |  |
-| **addSortBy** | addSortBy(sortBy: QuerySortBy,prepend: boolean): void |  |
-| **addSubscriber** | addSubscriber(subscriber: Collection<T, I, S\>): void |  |
-| **clearFields** | clearFields(): void |  |
-| **clearFilter** | clearFilter(): void |  |
-| **clearParam** | clearParam(key: string): void |  |
-| **clearParams** | clearParams(): void |  |
-| **clearSearch** | clearSearch(): void |  |
-| **clearSort** | clearSort(): void |  |
-| **clearSortBy** | clearSortBy(): void |  |
-| **filter** | filter(filter: QueryFilter \| QueryFilterCriteria \| ): void |  |
-| **getInitialQuery** | getInitialQuery(): Pick<CollectionOptions<T, I\>, initialFields \| initialFilter \| initialParams \| initialSearch \| initialSort \| initialSortBy\> |  |
-| **removeFilter** | removeFilter(id: QueryFilterId): void |  |
-| **removeSortBy** | removeSortBy(id: string): void |  |
-| **removeSubscriber** | removeSubscriber(subscriber: Collection<T, I, CollectionState<T, I\>\>): void |  |
-| **search** | search(search: Primitive): void |  |
-| **setData** | setData(data: ): void |  |
-| **setFields** | setFields(fields: ): void |  |
-| **setParam** | setParam(key: string,value: any): void |  |
-| **setParams** | setParams(params: AnonymousObject<any\>): void |  |
-| **sort** | sort(dir: QuerySortDir): void |  |
-| **sortBy** | sortBy(sortBy: string \| QuerySortBy \| ): void |  |
+| **addFilter** | addFilter(filterOrCriteria: QueryFilterOrCriteria,parentFilterId: QueryFilterId,subscriberId: string): void |  |
+| **addFilterCriteria** | addFilterCriteria(field: string,operator: QueryFilterCriteriaOperator,value: null \| string \| number \| boolean \| ,not: boolean,id: string \| number \| symbol,parentFilterId: string \| number \| symbol,subscriberId: string): void |  |
+| **addSortBy** | addSortBy(sortBy: QuerySortBy,prepend: boolean,subscriberId: string): void |  |
+| **addSubscriber** | addSubscriber(subscriberId: string,subscriber: C): void |  |
+| **clearFields** | clearFields(subscriberId: string): void |  |
+| **clearFilter** | clearFilter(subscriberId: string): void |  |
+| **clearParam** | clearParam(key: string,subscriberId: string): void |  |
+| **clearParams** | clearParams(subscriberId: string): void |  |
+| **clearSearch** | clearSearch(subscriberId: string): void |  |
+| **clearSort** | clearSort(subscriberId: string): void |  |
+| **clearSortBy** | clearSortBy(subscriberId: string): void |  |
+| **filter** | filter(filter: QueryFilter \| QueryFilterCriteria \| ,subscriberId: string): void |  |
+| **getData** | getData(subscriberId: string): undefined \|  |  |
+| **getFields** | getFields(subscriberId: string): undefined \|  |  |
+| **getFilter** | getFilter(subscriberId: string): undefined \| QueryFilter \| QueryFilterCriteria \|  |  |
+| **getInitialDataSource** | getInitialDataSource(subscriberId: string): undefined \| string \|  |  |
+| **getInitialQuery** | getInitialQuery(subscriberId: string): Query |  |
+| **getParams** | getParams(subscriberId: string): undefined \| AnonymousObject<any\> |  |
+| **getSearch** | getSearch(subscriberId: string): undefined \| Primitive |  |
+| **getSort** | getSort(subscriberId: string): undefined \| QuerySortDir |  |
+| **getSortBy** | getSortBy(subscriberId: string): undefined \| string \| QuerySortBy \|  |  |
+| **getUrl** | getUrl(subscriberId: string): undefined \| string |  |
+| **removeFilter** | removeFilter(id: QueryFilterId,subscriberId: string): void |  |
+| **removeSortBy** | removeSortBy(id: string,subscriberId: string): void |  |
+| **removeSubscriber** | removeSubscriber(id: string): void |  |
+| **search** | search(search: Primitive,subscriberId: string): void |  |
+| **setData** | setData(data: ,query: Query,subscriberId: string): void |  |
+| **setFields** | setFields(fields: ,subscriberId: string): void |  |
+| **setParam** | setParam(key: string,value: any,subscriberId: string): void |  |
+| **setParams** | setParams(params: AnonymousObject<any\>,subscriberId: string): void |  |
+| **setUrl** | setUrl(url: string,query: Query,subscriberId: string): void |  |
+| **sort** | sort(dir: QuerySortDir,subscriberId: string): void |  |
+| **sortBy** | sortBy(sortBy: string \| QuerySortBy \| ,subscriberId: string): void |  |

@@ -14,5 +14,5 @@ sidebar_label: CollectionFetcher
 | --------- | ---- | ----------- |
 | **method** | [FetchMethod](/framework-api/types/FetchMethod.md) |  |
 | **url** | string |  |
-| body | T |  |
-| options | [FetchOptions](/framework-api/interfaces/FetchOptions.md)<R, T\> |  |
+| body | unknown |  |
+| options | [FetchOptions](/framework-api/interfaces/FetchOptions.md)<R\> |  |

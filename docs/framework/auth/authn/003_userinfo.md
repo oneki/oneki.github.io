@@ -7,6 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NextSandbox from '@site/src/components/NextSandbox';
+import { ExampleDetails } from '@site/src/components/Detail';
 
 
 The `userinfo endpoint` is used to retrieve the security context of the logged-in user. The security context often contains attributes like name, firstname, email, roles, ...
@@ -51,3 +52,7 @@ userInfoEndpoint: (context) => '/api/whoami'
 // or
 userInfoEndpoint: 'token://id_token' //will not call the backend, but expects that the token is in the global state
 ```
+
+## Example
+
+<ExampleDetails title="Basic example" folder="cra-auth-form" file="src/settings.ts" />

@@ -15,6 +15,7 @@ sidebar_label: CollectionOptions
 | active |  |  |
 | adapter | [ItemAdapter](/framework-api/types/ItemAdapter.md)<T\> |  |
 | autoload | boolean |  |
+| brokerable | boolean |  |
 | comparator | [QuerySortComparator](/framework-api/types/QuerySortComparator.md) |  |
 | comparators | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[QuerySortComparator](/framework-api/types/QuerySortComparator.md)\> |  |
 | dataKey | string |  |

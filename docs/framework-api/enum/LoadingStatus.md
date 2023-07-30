@@ -17,6 +17,7 @@ sidebar_label: LoadingStatus
 | **Loaded** | loaded |  |
 | **Loading** | loading |  |
 | **NotInitialized** | not_initialized |  |
+| **NotReady** | not_ready |  |
 | **PartialFetching** | partial_fetching |  |
 | **PartialLoaded** | partial_loaded |  |
 | **PartialLoading** | partial_loading |  |
