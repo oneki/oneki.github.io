@@ -47,7 +47,7 @@ const Sandbox = ({
 }) => {
   const step = name.split('-')[0];
   const iframeUrl = `https://oneki-gs-vite-${step}.surge.sh/`;
-  let url = `https://codesandbox.io/github/oneki/onekijs/tree/${branch}/${type}/${name}?codemirror=1&fontsize=14&theme=dark&view=${view}`;
+  let url = `https://codesandbox.io/p/sandbox/github/oneki/onekijs/tree/${branch}/${type}/${name}?codemirror=1&fontsize=14&theme=dark&view=${view}`;
   if (modules) {
     url += "&module=";
     modules.forEach((module, idx) => {
@@ -57,20 +57,30 @@ const Sandbox = ({
   }
   const title = "onekijs-" + name.split("/").join("-");
 
+  const githubUrl = `https://github.com/oneki/onekijs/tree/${branch}/${type}/${name}`;
+
+  let divLinkStyle = {
+    textAlign: "center",
+  }
+  
   return (
-    <iframe
-      src={iframeUrl}
-      style={{
-        width: "100%",
-        height: `${height}px`,
-        border: '10px solid #EEE',
-        bordeRadius: "4px",
-        overflow: "hidden",
-      }}
-      title={title}
-      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-    />
+    <>
+      
+      <iframe
+        src={iframeUrl}
+        style={{
+          width: "100%",
+          height: `${height}px`,
+          border: '10px solid #EEE',
+          bordeRadius: "4px",
+          overflow: "hidden",
+        }}
+        title={title}
+        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+      />
+      <div style={divLinkStyle}><a href={url} target="_blank">Open in CodeSandbox</a> | <a href={githubUrl} target="_blank">View code on GitHub</a></div>
+    </>
   );
 };
 
