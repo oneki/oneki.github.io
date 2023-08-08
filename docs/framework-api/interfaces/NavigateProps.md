@@ -13,5 +13,6 @@ sidebar_label: NavigateProps
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **to** | [To](/framework-api/types/To.md) |  |
+| relative | RelativeRoutingType |  |
 | replace | boolean |  |
 | state | any |  |

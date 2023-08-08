@@ -5,25 +5,27 @@ sidebar_label: useFormWatcher
 ---
 
 ```tsx
-useFormWatcher<R,T>(form: default,watchs: string | ,listener: FormValueListener<T>): undefined | R
+useFormWatcher<T,R,K>(form: default<T>,watch: K,listener: FormValueListener<PathType<T, K>, K>): R
+useFormWatcher<T,R,K1,K2>(form: default<T>,watch: ,listener: FormValueListener<, K1 | K2>): R
+useFormWatcher<T,R,K1,K2,K3>(form: default<T>,watch: ,listener: FormValueListener<, K1 | K2 | K3>): R
+useFormWatcher<T,R,K1,K2,K3,K4>(form: default<T>,watch: ,listener: FormValueListener<, K1 | K2 | K3 | K4>): R
+useFormWatcher<T,R,K1,K2,K3,K4,K5>(form: default<T>,watch: ,listener: FormValueListener<, K1 | K2 | K3 | K4 | K5>): R
+useFormWatcher<T,R,K1,K2,K3,K4,K5,K6>(form: default<T>,watch: ,listener: FormValueListener<, K1 | K2 | K3 | K4 | K5 | K6>): R
+useFormWatcher<T,R,K1,K2,K3,K4,K5,K6,K7>(form: default<T>,watch: ,listener: FormValueListener<, K1 | K2 | K3 | K4 | K5 | K6 | K7>): R
+useFormWatcher<T,R,K1,K2,K3,K4,K5,K6,K7,K8>(form: default<T>,watch: ,listener: FormValueListener<, K1 | K2 | K3 | K4 | K5 | K6 | K7 | K8>): R
+useFormWatcher<T,R,K1,K2,K3,K4,K5,K6,K7,K8,K9>(form: default<T>,watch: ,listener: FormValueListener<, K1 | K2 | K3 | K4 | K5 | K6 | K7 | K8 | K9>): R
+useFormWatcher<T,R,K1,K2,K3,K4,K5,K6,K7,K8,K9,K10>(form: default<T>,watch: ,listener: FormValueListener<, K1 | K2 | K3 | K4 | K5 | K6 | K7 | K8 | K9 | K10>): R
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **form** | [default](/framework-api/classes/FormService.md) |  |
-| **listener** | [FormValueListener](/framework-api/types/FormValueListener.md)<T\> |  |
-| **watchs** | string \|  |  |
-
-
-### Return
-
-
-
-The return is of type <code>undefined | R</code>
+| **form** | [default](/framework-api/classes/FormService.md)<T\> |  |
+| **listener** | [FormValueListener](/framework-api/types/FormValueListener.md)<[PathType](/framework-api/types/PathType.md)<T, K\>, K\> |  |
+| **watch** | K |  |

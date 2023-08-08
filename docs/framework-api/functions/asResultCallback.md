@@ -11,19 +11,12 @@ asResultCallback<T>(callback: undefined | AppResultCallback<T>,router: Router,ap
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **appContext** | [default](/framework-api/classes/BasicAppContext.md) |  |
 | **callback** | undefined \| [AppResultCallback](/framework-api/types/AppResultCallback.md)<T\> |  |
 | **router** | [Router](/framework-api/interfaces/Router.md) |  |
-
-
-### Return
-
-
-
-The return is of type <code>[ResultCallback](/framework-api/types/ResultCallback.md)<T\> | undefined</code>

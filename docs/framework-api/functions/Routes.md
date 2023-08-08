@@ -12,16 +12,9 @@ Routes(__namedParameters: RoutesProps): React.ReactElement | null
 A container for a nested tree of <Route\> elements that renders the branch  
 that best matches the current location.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-
-
-### Return
-
-
-
-The return is of type <code>React.ReactElement | null</code>

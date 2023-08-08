@@ -5,22 +5,15 @@ sidebar_label: useTryHistory
 ---
 
 ```tsx
-useTryHistory(): undefined | 
+useTryHistory(): undefined | Location[]
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-
-
-### Return
-
-
-
-The return is of type <code>undefined | </code>

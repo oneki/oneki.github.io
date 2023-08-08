@@ -5,24 +5,17 @@ sidebar_label: omit
 ---
 
 ```tsx
-omit<T,S>(source: S,keys: ): T
+omit<T,S>(source: S,keys: []): T
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **keys** |  |  |
+| **keys** | [] |  |
 | **source** | S |  |
-
-
-### Return
-
-
-
-The return is of type <code>T</code>

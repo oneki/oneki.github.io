@@ -11,19 +11,12 @@ verify(token: string,jwKey: JsonWebKey,alg: AesKeyAlgorithm | EcKeyImportParams 
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **alg** | AesKeyAlgorithm \| EcKeyImportParams \| AlgorithmIdentifier \| HmacImportParams \| RsaHashedImportParams |  |
 | **jwKey** | JsonWebKey |  |
 | **token** | string |  |
-
-
-### Return
-
-
-
-The return is of type <code>Promise<boolean\></code>

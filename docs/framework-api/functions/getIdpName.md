@@ -5,23 +5,17 @@ sidebar_label: getIdpName
 ---
 
 ```tsx
-getIdpName(state: AnyState): string | undefined
+getIdpName(state: AnyState,identity: string): string | undefined
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **state** | [AnyState](/framework-api/interfaces/AnyState.md) |  |
-
-
-### Return
-
-
-
-The return is of type <code>string | undefined</code>
+| identity | string |  |

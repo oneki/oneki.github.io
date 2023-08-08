@@ -5,24 +5,17 @@ sidebar_label: generatePath
 ---
 
 ```tsx
-generatePath(path: string,params: Params<string>): string
+generatePath<Path>(originalPath: Path,params: ): string
 ```
 <br/>
 
 Returns a path with params interpolated.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **path** | string |  |
-| params | [Params](/framework-api/types/Params.md)<string\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>string</code>
+| **originalPath** | Path |  |
+| params |  |  |

@@ -11,17 +11,10 @@ hex2b64(h: string): string
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **h** | string |  |
-
-
-### Return
-
-
-
-The return is of type <code>string</code>

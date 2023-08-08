@@ -5,24 +5,18 @@ sidebar_label: useHref
 ---
 
 ```tsx
-useHref(to: To): string
+useHref(to: To,__namedParameters: ): string
 ```
 <br/>
 
 Returns the full href for the given "to" value. This is useful for building  
 custom links that are also accessible and preserve right-click behavior.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **to** | [To](/framework-api/types/To.md) |  |
-
-
-### Return
-
-
-
-The return is of type <code>string</code>
+| relative | RelativeRoutingType |  |

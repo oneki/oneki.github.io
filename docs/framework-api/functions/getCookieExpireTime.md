@@ -11,17 +11,10 @@ getCookieExpireTime(ttl: number): string
 
 convert a TTL (time to live) to an expire date
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | ttl | number | : time to live in seconds |
-
-
-### Return
-
-
-
-The return is of type <code>string</code>

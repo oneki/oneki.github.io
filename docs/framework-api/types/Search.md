@@ -4,7 +4,7 @@ title: Search
 sidebar_label: Search
 ---
 
-A URL search string, beginning with a ?.
+
 
 ### Properties
 

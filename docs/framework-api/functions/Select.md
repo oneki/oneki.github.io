@@ -5,24 +5,17 @@ sidebar_label: Select
 ---
 
 ```tsx
-Select(props: PropsWithChildren<SelectProps>,context: any): null | ReactElement<any, any>
+Select(props: PropsWithChildren<SelectProps>,context: any): ReactNode
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **props** | PropsWithChildren<[SelectProps](/framework-api/types/SelectProps.md)\> |  |
 | context | any |  |
-
-
-### Return
-
-
-
-The return is of type <code>null | ReactElement<any, any\></code>

@@ -12,18 +12,27 @@ import ReferenceCodeBlock from "@theme/ReferenceCodeBlock";
 //   )
 // }
 
-export const ExampleDetails = ({ title, folder, file, children }) => {
+const GenericDetails = ({ title, path, file, children }) => {
   return ( 
     <Details summary={<summary>{title}</summary>}>
       <div>
         {children}
 
-        <SandboxExampleButton name={folder} />
+        <SandboxExampleButton name={path} />
        
         <ReferenceCodeBlock language="tsx">
-        {`https://github.com/oneki/onekijs/blob/master/examples/${folder}/${file}\n`}
+        {`https://github.com/oneki/onekijs/blob/master/${path}/${file}\n`}
         </ReferenceCodeBlock>
       </div>
     </Details>
   )
 }
+
+export const ExampleDetails = ({ title, folder, file, children }) => {
+  return <GenericDetails title={title} path={`examples/${folder}`} file={file} children={children} />
+}
+
+export const GettingStartedDetails = ({ title, folder, file, children }) => {
+  return <GenericDetails title={title} path={`getting-started/${folder}`} file={file} children={children} />
+}
+

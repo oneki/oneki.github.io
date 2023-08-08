@@ -5,23 +5,16 @@ sidebar_label: formatFilter
 ---
 
 ```tsx
-formatFilter(filter: QueryFilter | QueryFilterCriteria | ): undefined | QueryFilter
+formatFilter(filter: QueryFilter | QueryFilterCriteria | QueryFilterOrCriteria[]): undefined | QueryFilter
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| filter | [QueryFilter](/framework-api/interfaces/QueryFilter.md) \| [QueryFilterCriteria](/framework-api/interfaces/QueryFilterCriteria.md) \|  |  |
-
-
-### Return
-
-
-
-The return is of type <code>undefined | [QueryFilter](/framework-api/interfaces/QueryFilter.md)</code>
+| filter | [QueryFilter](/framework-api/interfaces/QueryFilter.md) \| [QueryFilterCriteria](/framework-api/interfaces/QueryFilterCriteria.md) \| [QueryFilterOrCriteria](/framework-api/types/QueryFilterOrCriteria.md)[] |  |

@@ -8,25 +8,20 @@ sidebar_label: LocalRouter
 
 ### Properties
 
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
+
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **history** |  |  |
-| **i18n** | [I18n](/framework-api/interfaces/I18n.md) |  |
-| **listeners** |  |  |
-| **params** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
-| **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
-| route | string |  |
-
-
-### Methods
-
-| Methods | Signature | Description |
-| --------- | ---- | ----------- |
 | **back** | back(): void |  |
+| **constructor** | new LocalRouter() |  |
 | **deleteOrigin** | deleteOrigin(): void |  |
 | **forward** | forward(): void |  |
 | **getLinkComponent** | getLinkComponent(): Element |  |
 | **getOrigin** | getOrigin():  |  |
+| **hash** |  |  |
+| **history** | [Location](/framework-api/interfaces/Location.md)[] |  |
+| **href** |  |  |
+| **i18n** | [I18n](/framework-api/interfaces/I18n.md) |  |
 | **init** | init(settings: AppSettings): void |  |
 | **listen** | listen(callback: LocationChangeCallback): UnregisterCallback | callback(url) where url is:  
 {  
@@ -37,6 +32,11 @@ sidebar_label: LocalRouter
   hash: obj // example: {h:3, h2:null}  
   state: obj // example: {key1: 'value1'}  
 } |
+| **listeners** |  |  |
+| **location** |  |  |
+| **params** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+| **pathname** |  |  |
+| **previousLocation** |  |  |
 | **push** | push(urlOrLocation: string \| Location): void | url can be a string or a location.  
 If location, the format is the following  
 {  
@@ -47,5 +47,9 @@ If location, the format is the following
   hash: obj // example: {h:3, h2:null}  
   state: obj // example: {key1: 'value1'}  
 } |
+| **query** |  |  |
 | **replace** | replace(urlOrLocation: string \| Location): void |  |
 | **saveOrigin** | saveOrigin(force: boolean): void |  |
+| **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
+| **state** |  |  |
+| route | string |  |

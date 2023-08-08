@@ -5,23 +5,16 @@ sidebar_label: every
 ---
 
 ```tsx
-every(saga: AnyFunction<any>): AnyFunction<any>
+every(saga: AnyFunction): AnyFunction
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **saga** | [AnyFunction](/framework-api/types/AnyFunction.md)<any\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>[AnyFunction](/framework-api/types/AnyFunction.md)<any\></code>
+| **saga** | [AnyFunction](/framework-api/types/AnyFunction.md) |  |

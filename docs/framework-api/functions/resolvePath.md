@@ -11,18 +11,11 @@ resolvePath(to: To,fromPathname: string): Path
 
 Returns a resolved path object relative to the given pathname.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **to** | [To](/framework-api/types/To.md) |  |
 | fromPathname | string |  |
-
-
-### Return
-
-
-
-The return is of type <code>[Path](/framework-api/interfaces/Path.md)</code>

@@ -5,24 +5,17 @@ sidebar_label: mergeString
 ---
 
 ```tsx
-mergeString(separator: string,str: ): string
+mergeString(separator: string,str: undefined | null | string[]): string
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **separator** | string |  |
-| **str** |  |  |
-
-
-### Return
-
-
-
-The return is of type <code>string</code>
+| **str** | undefined \| null \| string[] |  |

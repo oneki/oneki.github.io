@@ -18,7 +18,7 @@ sidebar_label: Router
 | **getLinkComponent** | getLinkComponent(props: LinkProps,ref: null \| MutableRefObject<null \| HTMLAnchorElement\> \| ): Element |  |
 | **getOrigin** | getOrigin():  |  |
 | **hash** | undefined \| null \| [ParsedQuery](/framework-api/interfaces/ParsedQuery.md)<string\> |  |
-| **history** |  |  |
+| **history** | [Location](/framework-api/interfaces/Location.md)[] |  |
 | **href** | undefined \| null \| string |  |
 | **i18n** | [I18n](/framework-api/interfaces/I18n.md) |  |
 | **init** | init(settings: AppSettings): void |  |

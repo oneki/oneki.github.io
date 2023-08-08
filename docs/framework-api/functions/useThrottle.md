@@ -11,18 +11,11 @@ useThrottle<F>(fn: F,delayMs: number): F
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **delayMs** | number |  |
 | **fn** | F |  |
-
-
-### Return
-
-
-
-The return is of type <code>F</code>

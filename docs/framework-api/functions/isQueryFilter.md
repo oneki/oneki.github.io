@@ -5,16 +5,16 @@ sidebar_label: isQueryFilter
 ---
 
 ```tsx
-isQueryFilter(value: QueryFilterOrCriteria | ): 
+isQueryFilter(value: QueryFilterOrCriteria | QueryFilterOrCriteria[]): 
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **value** | [QueryFilterOrCriteria](/framework-api/types/QueryFilterOrCriteria.md) \|  |  |
+| **value** | [QueryFilterOrCriteria](/framework-api/types/QueryFilterOrCriteria.md) \| [QueryFilterOrCriteria](/framework-api/types/QueryFilterOrCriteria.md)[] |  |

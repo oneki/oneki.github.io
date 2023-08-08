@@ -12,18 +12,11 @@ removeItem(key: string,storage: null | string): void
 remove a key from the specified storage  
 if the storage is set to 'any', try all storage
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | key | string | : name of the key to get the value from |
 | storage | null \| string | : localStorage, sessionStorage, cookie, any (defaults to any) |
-
-
-### Return
-
-
-
-The return is of type <code>void</code>

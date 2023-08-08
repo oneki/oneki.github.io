@@ -10,7 +10,7 @@ sidebar_label: HttpMethod
 
 <font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Properties | Type | Description |
+| Properties | Value | Description |
 | --------- | ---- | ----------- |
 | **Delete** | DELETE |  |
 | **Get** | GET |  |

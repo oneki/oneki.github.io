@@ -17,8 +17,8 @@ __type(): void
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **name** | string |  |
+| **name** | [NestedKeyOf](/framework-api/types/NestedKeyOf.md)<T, 1\> |  |
 | **onBlur** |  |  |
 | **onChange** |  |  |
 | **onFocus** |  |  |
-| value | any |  |
+| value | T |  |

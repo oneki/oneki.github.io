@@ -5,22 +5,15 @@ sidebar_label: Route
 ---
 
 ```tsx
-Route(_props: PathRouteProps | LayoutRouteProps | IndexRouteProps): React.ReactElement | null
+Route(_props: RouteProps): React.ReactElement | null
 ```
 <br/>
 
 Declares an element that should be rendered at a certain URL path.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-
-
-### Return
-
-
-
-The return is of type <code>React.ReactElement | null</code>

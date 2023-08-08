@@ -12,8 +12,18 @@ sidebar_label: PathRouteProps
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **path** | string |  |
+| action | ActionFunction |  |
 | caseSensitive | boolean |  |
 | children | ReactNode |  |
+| Component | null \| ComponentType<\> |  |
 | element | ReactNode |  |
+| ErrorBoundary | null \| ComponentType<\> |  |
+| errorElement | ReactNode |  |
+| handle | any |  |
+| hasErrorBoundary | boolean |  |
+| id | string |  |
 | index | false |  |
+| lazy | LazyRouteFunction<NonIndexRouteObject\> |  |
+| loader | LoaderFunction |  |
+| path | string |  |
+| shouldRevalidate | ShouldRevalidateFunction |  |

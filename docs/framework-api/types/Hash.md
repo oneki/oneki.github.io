@@ -4,7 +4,7 @@ title: Hash
 sidebar_label: Hash
 ---
 
-A URL fragment identifier, beginning with a #.
+
 
 ### Properties
 

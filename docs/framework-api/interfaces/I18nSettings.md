@@ -12,6 +12,6 @@ sidebar_label: I18nSettings
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **locales** |  |  |
+| **locales** | [I18nLocalePath](/framework-api/interfaces/I18nLocalePath.md) \| [I18nLocaleDomain](/framework-api/interfaces/I18nLocaleDomain.md)[] |  |
 | **translationEndpoint** | string |  |
 | defaultLocale | string |  |

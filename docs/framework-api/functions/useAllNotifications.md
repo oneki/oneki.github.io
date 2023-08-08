@@ -5,22 +5,15 @@ sidebar_label: useAllNotifications
 ---
 
 ```tsx
-useAllNotifications(): AnonymousObject<>
+useAllNotifications(): AnonymousObject<Notification[]>
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-
-
-### Return
-
-
-
-The return is of type <code>[AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<\></code>

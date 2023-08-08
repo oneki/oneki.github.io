@@ -13,4 +13,5 @@ sidebar_label: Auth
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | basic | [BasicAuth](/framework-api/interfaces/BasicAuth.md) |  |
+| securityContext | any |  |
 | token | [Token](/framework-api/types/Token.md) |  |

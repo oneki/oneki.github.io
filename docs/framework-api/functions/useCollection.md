@@ -5,24 +5,17 @@ sidebar_label: useCollection
 ---
 
 ```tsx
-useCollection<T>(dataSource: undefined | string | CollectionProxy<T, Item<T>, CollectionState<T, Item<T>>, Collection<T, Item<T>, CollectionState<T, Item<T>>>> | ,options: UseCollectionOptions<T, Item<T>>): CollectionProxy<T, Item<T>, CollectionState<T, Item<T>>, Collection<T, Item<T>, CollectionState<T, Item<T>>>>
+useCollection<T>(dataSource: undefined | string | CollectionProxy<T> | T[],options: UseCollectionOptions<T, Item<T>>): CollectionProxy<T>
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **dataSource** | undefined \| string \| [CollectionProxy](/framework-api/types/CollectionProxy.md)<T, [Item](/framework-api/types/Item.md)<T\>, [CollectionState](/framework-api/interfaces/CollectionState.md)<T, [Item](/framework-api/types/Item.md)<T\>\>, [Collection](/framework-api/types/Collection.md)<T, [Item](/framework-api/types/Item.md)<T\>, [CollectionState](/framework-api/interfaces/CollectionState.md)<T, [Item](/framework-api/types/Item.md)<T\>\>\>\> \|  |  |
+| **dataSource** | undefined \| string \| [CollectionProxy](/framework-api/types/CollectionProxy.md)<T\> \| T[] |  |
 | options | [UseCollectionOptions](/framework-api/interfaces/UseCollectionOptions.md)<T, [Item](/framework-api/types/Item.md)<T\>\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>[CollectionProxy](/framework-api/types/CollectionProxy.md)<T, [Item](/framework-api/types/Item.md)<T\>, [CollectionState](/framework-api/interfaces/CollectionState.md)<T, [Item](/framework-api/types/Item.md)<T\>\>, [Collection](/framework-api/types/Collection.md)<T, [Item](/framework-api/types/Item.md)<T\>, [CollectionState](/framework-api/interfaces/CollectionState.md)<T, [Item](/framework-api/types/Item.md)<T\>\>\>\></code>

@@ -5,25 +5,18 @@ sidebar_label: throttle
 ---
 
 ```tsx
-throttle(saga: AnyFunction<any>,delay: string | number,defaultDelay: number): AnyFunction<any>
+throttle(saga: AnyFunction,delay: string | number,defaultDelay: number): AnyFunction
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **saga** | [AnyFunction](/framework-api/types/AnyFunction.md)<any\> |  |
+| **saga** | [AnyFunction](/framework-api/types/AnyFunction.md) |  |
 | defaultDelay | number |  |
 | delay | string \| number |  |
-
-
-### Return
-
-
-
-The return is of type <code>[AnyFunction](/framework-api/types/AnyFunction.md)<any\></code>

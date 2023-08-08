@@ -5,24 +5,17 @@ sidebar_label: withLayout
 ---
 
 ```tsx
-withLayout(Page: ElementType<any>,Layout: ElementType<any>): ElementType<any>
+withLayout(Page: ElementType,Layout: ElementType): ElementType<any>
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **Page** | ElementType<any\> |  |
-| Layout | ElementType<any\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>ElementType<any\></code>
+| **Page** | ElementType |  |
+| Layout | ElementType |  |

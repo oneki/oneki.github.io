@@ -11,18 +11,11 @@ removeCookie(name: string,path: string): void
 
 Remove a browser cookie (created on the browser side)
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | name | string | : name of the cookie |
 | path | string | : scope of the cookie |
-
-
-### Return
-
-
-
-The return is of type <code>void</code>

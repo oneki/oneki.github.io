@@ -13,7 +13,7 @@ sidebar_label: RouterProps
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **location** | string \| Partial<Location\> |  |
-| **navigator** | [Navigator](/framework-api/types/Navigator.md) |  |
+| **navigator** | [Navigator](/framework-api/interfaces/Navigator.md) |  |
 | basename | string |  |
 | children | ReactNode |  |
 | navigationType | [Action](/framework-api/enum/NavigationType.md) |  |

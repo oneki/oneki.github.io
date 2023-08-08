@@ -5,7 +5,7 @@ sidebar_label: shallowEqual
 ---
 
 ```tsx
-shallowEqual(objA: null | AnonymousObject<any>,objB: null | AnonymousObject<any>): boolean
+shallowEqual(objA: any,objB: any): boolean
 ```
 <br/>
 
@@ -18,18 +18,11 @@ Performs equality by iterating through keys on an object and returning false
 when any key has values which are not strictly equal between the arguments.  
 Returns true when the values of all keys are strictly equal.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **objA** | null \| [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
-| **objB** | null \| [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>boolean</code>
+| **objA** | any |  |
+| **objB** | any |  |

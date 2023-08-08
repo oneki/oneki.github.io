@@ -14,5 +14,6 @@ sidebar_label: MemoryRouterProps
 | --------- | ---- | ----------- |
 | basename | string |  |
 | children | ReactNode |  |
-| initialEntries |  |  |
+| future | FutureConfig |  |
+| initialEntries | InitialEntry[] |  |
 | initialIndex | number |  |

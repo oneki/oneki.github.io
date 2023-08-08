@@ -22,6 +22,7 @@ sidebar_label: FormConfig
 | mdLabelWidth | [FormLabelWidth](/framework-api/types/FormLabelWidth.md) |  |
 | onError | [FormErrorCallback](/framework-api/types/FormErrorCallback.md) |  |
 | onWarning | [FormWarningCallback](/framework-api/types/FormWarningCallback.md) |  |
+| reconfigure | boolean |  |
 | smLabelWidth | [FormLabelWidth](/framework-api/types/FormLabelWidth.md) |  |
 | touchOn | [TouchOnType](/framework-api/types/TouchOnType.md) |  |
 | xlLabelWidth | [FormLabelWidth](/framework-api/types/FormLabelWidth.md) |  |

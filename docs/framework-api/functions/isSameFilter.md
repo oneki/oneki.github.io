@@ -11,18 +11,11 @@ isSameFilter(f1: QueryFilterOrCriteria,f2: QueryFilterOrCriteria): boolean
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | f1 | [QueryFilterOrCriteria](/framework-api/types/QueryFilterOrCriteria.md) |  |
 | f2 | [QueryFilterOrCriteria](/framework-api/types/QueryFilterOrCriteria.md) |  |
-
-
-### Return
-
-
-
-The return is of type <code>boolean</code>

@@ -27,13 +27,14 @@ __type(location: Location,settings: AppSettings): string | undefined
 | **i18n** |  |  |
 | **idp** |  |  |
 | **localeFromLocation** |  |  |
-| **locales** |  |  |
+| **locales** | never[] |  |
 | **login** | string |  |
 | **login-error** |  |  |
 | **loginCallback** | string |  |
 | **logout** | string |  |
 | **logout-error** |  |  |
 | **logoutCallback** | string |  |
+| **max** | number |  |
 | **max** | number |  |
 | **max** | number |  |
 | **max** | number |  |
@@ -46,5 +47,7 @@ __type(location: Location,settings: AppSettings): string | undefined
 | **ttl** | number |  |
 | **ttl** | number |  |
 | **ttl** | number |  |
+| **ttl** | number |  |
 | **type** | string |  |
 | **url** | string |  |
+| **warning** |  |  |

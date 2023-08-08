@@ -11,16 +11,9 @@ useRouter(): Router
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-
-
-### Return
-
-
-
-The return is of type <code>[Router](/framework-api/interfaces/Router.md)</code>

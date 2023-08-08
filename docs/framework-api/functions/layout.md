@@ -5,25 +5,18 @@ sidebar_label: layout
 ---
 
 ```tsx
-layout(Layout: ElementType<any>,ParentLayout: ElementType<any>): ElementType<any>
+layout(Layout: ElementType,ParentLayout: ElementType): ElementType<any>
 ```
 <br/>
 
 Inspired by this excellent article:  
 https://adamwathan.me/2019/10/17/persistent-layout-patterns-in-nextjs/
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **Layout** | ElementType<any\> |  |
-| ParentLayout | ElementType<any\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>ElementType<any\></code>
+| **Layout** | ElementType |  |
+| ParentLayout | ElementType |  |

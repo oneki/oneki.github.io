@@ -11,18 +11,11 @@ onStorageChange(key: string,listener: ): void
 
 Listen to a change in the localstorage
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | key | string | : key of the local storage entry |
 | listener |  | : a function receiving the old value an the new value |
-
-
-### Return
-
-
-
-The return is of type <code>void</code>

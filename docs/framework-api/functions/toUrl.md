@@ -11,18 +11,11 @@ toUrl(location: Location,options: ): string
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **location** | [Location](/framework-api/interfaces/Location.md) |  |
 | options |  |  |
-
-
-### Return
-
-
-
-The return is of type <code>string</code>

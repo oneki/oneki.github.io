@@ -5,16 +5,16 @@ sidebar_label: isCollection
 ---
 
 ```tsx
-isCollection<T,I,S>(data: string | Collection<T, I, S> | ): 
+isCollection<T,I,S>(data: string | Collection<T, I, S> | T[]): 
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| data | string \| [Collection](/framework-api/types/Collection.md)<T, I, S\> \|  |  |
+| data | string \| [Collection](/framework-api/types/Collection.md)<T, I, S\> \| T[] |  |

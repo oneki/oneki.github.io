@@ -5,7 +5,7 @@ sidebar_label: AnyFunction
 ---
 
 ```tsx
-__type(args: ): T
+__type(args: any[]): T
 ```
 <br/>
 
@@ -17,4 +17,4 @@ __type(args: ): T
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **args** |  |  |
+| **args** | any[] |  |

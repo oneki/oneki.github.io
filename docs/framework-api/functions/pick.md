@@ -5,24 +5,17 @@ sidebar_label: pick
 ---
 
 ```tsx
-pick<T>(source: T,keys: ): T
+pick<T>(source: T,keys: []): T
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **keys** |  |  |
+| **keys** | [] |  |
 | **source** | T |  |
-
-
-### Return
-
-
-
-The return is of type <code>T</code>

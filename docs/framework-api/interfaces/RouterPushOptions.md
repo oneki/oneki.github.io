@@ -23,4 +23,5 @@ sidebar_label: RouterPushOptions
 | replace | boolean |  |
 | scroll | boolean |  |
 | shallow | boolean |  |
+| state | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
 | strict | boolean |  |

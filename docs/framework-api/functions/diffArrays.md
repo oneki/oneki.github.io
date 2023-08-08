@@ -5,23 +5,23 @@ sidebar_label: diffArrays
 ---
 
 ```tsx
-diffArrays(arr1: ,arr2: ): 
+diffArrays(arr1: any[],arr2: any[]): 
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **added** |  |  |
-| **added** |  |  |
-| **arr1** |  |  |
-| **arr2** |  |  |
-| **removed** |  |  |
-| **removed** |  |  |
-| **same** |  |  |
-| **same** |  |  |
+| **added** | any[] |  |
+| **added** | any[] |  |
+| **arr1** | any[] |  |
+| **arr2** | any[] |  |
+| **removed** | any[] |  |
+| **removed** | any[] |  |
+| **same** | any[] |  |
+| **same** | any[] |  |

@@ -11,17 +11,10 @@ parseHashToken(hash: AnonymousObject<any>): AnonymousObject<any>
 
 Parse the token from the location hash
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | hash | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> | : the location hash (anything after the # in the URL) |
-
-
-### Return
-
-
-
-The return is of type <code>[AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\></code>

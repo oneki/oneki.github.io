@@ -7,17 +7,17 @@ sidebar_label: useSecurityContext
 ```tsx
 useSecurityContext<T>(): 
 useSecurityContext<T>(selector: string): 
-useSecurityContext<T>(selector: string,defaultValue: undefined): 
-useSecurityContext<T>(selector: string,defaultValue: null): 
-useSecurityContext<T>(selector: string,defaultValue: T): 
+useSecurityContext<T>(selector: undefined | string,defaultValue: undefined,identity: string): 
+useSecurityContext<T>(selector: undefined | string,defaultValue: null,identity: string): 
+useSecurityContext<T>(selector: undefined | string,defaultValue: T,identity: string): 
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |

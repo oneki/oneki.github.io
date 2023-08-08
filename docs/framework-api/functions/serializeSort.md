@@ -11,17 +11,10 @@ serializeSort(sort: undefined | QuerySortDir): string | void
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **sort** | undefined \| [QuerySortDir](/framework-api/types/QuerySortDir.md) |  |
-
-
-### Return
-
-
-
-The return is of type <code>string | void</code>

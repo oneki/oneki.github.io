@@ -11,17 +11,10 @@ useShallowEqual<T>(obj: AnonymousObject<T>): AnonymousObject<T>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **obj** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<T\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>[AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<T\></code>

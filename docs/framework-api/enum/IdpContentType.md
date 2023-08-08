@@ -10,7 +10,7 @@ sidebar_label: IdpContentType
 
 <font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Properties | Type | Description |
+| Properties | Value | Description |
 | --------- | ---- | ----------- |
 | **Json** | application/json |  |
 | **UrlEncoded** | application/x-www-form-urlencoded |  |

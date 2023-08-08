@@ -5,7 +5,7 @@ sidebar_label: AppStore
 ---
 
 ```tsx
-__type(namespace: string,saga: Saga<>,name: string): void
+__type(namespace: string,saga: Saga<any[]>,name: string): void
 ```
 <br/>
 

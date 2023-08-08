@@ -18,6 +18,7 @@ sidebar_label: ValidatorsType
 | id | string |  |
 | integer | boolean |  |
 | integerMessage | string |  |
+| isUndefined |  |  |
 | max | number |  |
 | maxLength | number |  |
 | maxLengthMessage | string |  |

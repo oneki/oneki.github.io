@@ -18,6 +18,7 @@ sidebar_label: TextareaProps
 | id | string |  |
 | integer | boolean |  |
 | integerMessage | string |  |
+| isUndefined |  |  |
 | max | number |  |
 | maxLength | number |  |
 | maxLengthMessage | string |  |

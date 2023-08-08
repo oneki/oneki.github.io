@@ -12,5 +12,7 @@ sidebar_label: NavigateOptions
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
+| preventScrollReset | boolean |  |
+| relative | RelativeRoutingType |  |
 | replace | boolean |  |
 | state | any |  |

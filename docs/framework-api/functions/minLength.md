@@ -5,24 +5,17 @@ sidebar_label: minLength
 ---
 
 ```tsx
-minLength(minLength: number,message: string): Validator
+minLength(minLength: number,message: string): LengthValidator
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **minLength** | number |  |
 | message | string |  |
-
-
-### Return
-
-
-
-The return is of type <code>[Validator](/framework-api/types/Validator.md)</code>

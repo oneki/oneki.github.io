@@ -11,18 +11,11 @@ useAppService<S,T>(ctor: Class<T>,initialState: S): T
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **ctor** | [Class](/framework-api/types/Class.md)<T\> |  |
 | **initialState** | S |  |
-
-
-### Return
-
-
-
-The return is of type <code>T</code>

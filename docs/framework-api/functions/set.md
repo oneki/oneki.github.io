@@ -5,26 +5,19 @@ sidebar_label: set
 ---
 
 ```tsx
-set<T>(content: any,property: string | number,value: any,force: boolean): T
+set<T,K>(content: undefined | T,property: K,value: PathType<T, K>,force: boolean): T
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **content** | any |  |
-| **property** | string \| number |  |
-| **value** | any |  |
+| **content** | undefined \| T |  |
+| **property** | K |  |
+| **value** | [PathType](/framework-api/types/PathType.md)<T, K\> |  |
 | force | boolean |  |
-
-
-### Return
-
-
-
-The return is of type <code>T</code>

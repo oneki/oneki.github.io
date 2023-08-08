@@ -88,7 +88,7 @@ export const SandboxExampleButton = ({ name }) => {
   return (
     <div style={{ textAlign: "right" }}>
       <a
-        href={`https://codesandbox.io/s/github/oneki/onekijs/tree/master/examples/${name}`}
+        href={`https://codesandbox.io/p/sandbox/github/oneki/onekijs/tree/master/${name}`}
         target="_blank"
         style={{
           display: "inline-flex",

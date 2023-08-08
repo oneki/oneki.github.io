@@ -10,7 +10,7 @@ sidebar_label: NotificationLevel
 
 <font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Properties | Type | Description |
+| Properties | Value | Description |
 | --------- | ---- | ----------- |
 | **Debug** | debug |  |
 | **Error** | error |  |

@@ -11,18 +11,11 @@ isSameQuery(q1: Query,q2: Query): boolean
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **q1** | [Query](/framework-api/interfaces/Query.md) |  |
 | **q2** | [Query](/framework-api/interfaces/Query.md) |  |
-
-
-### Return
-
-
-
-The return is of type <code>boolean</code>

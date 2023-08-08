@@ -11,21 +11,14 @@ buildJsx(str: string,ctx: AnonymousObject<any>,wrapperReactElement: null | Eleme
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **ctx** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
 | **i18nService** | [default](/framework-api/classes/I18nService.md) |  |
 | **locale** | string |  |
 | **str** | string |  |
 | **wrapperReactElement** | null \| Element |  |
-
-
-### Return
-
-
-
-The return is of type <code>string | FunctionComponentElement<any\></code>

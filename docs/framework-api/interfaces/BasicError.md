@@ -16,5 +16,5 @@ sidebar_label: BasicError
 | **message** | string |  |
 | **name** | string |  |
 | **payload** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
-| cause | Error |  |
+| cause | unknown |  |
 | stack | string |  |

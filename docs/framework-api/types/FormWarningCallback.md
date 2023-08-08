@@ -5,7 +5,7 @@ sidebar_label: FormWarningCallback
 ---
 
 ```tsx
-__type(fields: ,values: AnonymousObject): void
+__type(fields: Field[],values: AnonymousObject): void
 ```
 <br/>
 
@@ -17,5 +17,5 @@ __type(fields: ,values: AnonymousObject): void
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **fields** |  |  |
+| **fields** | [Field](/framework-api/interfaces/Field.md)[] |  |
 | values | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md) |  |

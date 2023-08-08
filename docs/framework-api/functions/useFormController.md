@@ -5,24 +5,17 @@ sidebar_label: useFormController
 ---
 
 ```tsx
-useFormController(initialValues: any,formOptions: FormOptions): default
+useFormController<T>(initialValues: Partial<T>,formOptions: FormOptions): default<T>
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | formOptions | [FormOptions](/framework-api/interfaces/FormOptions.md) |  |
-| initialValues | any |  |
-
-
-### Return
-
-
-
-The return is of type <code>[default](/framework-api/classes/FormService.md)</code>
+| initialValues | Partial<T\> |  |

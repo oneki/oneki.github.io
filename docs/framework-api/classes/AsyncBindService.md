@@ -8,18 +8,15 @@ sidebar_label: AsyncBindService
 
 ### Properties
 
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
+
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **state** | [AsyncBindState](/framework-api/interfaces/AsyncBindState.md) |  |
-
-
-### Methods
-
-| Methods | Signature | Description |
-| --------- | ---- | ----------- |
-| **callSaga** | callSaga(sagaName: string,args: ): void |  |
+| **callSaga** | callSaga(sagaName: string,args: any[]): void |  |
+| **constructor** | new AsyncBindService<T\>() |  |
 | **error** | error(error: Error): void |  |
-| **execute** | execute(asyncMethod: AnyFunction<T\>,dependencies: ): void |  |
-| **forkAsyncBind** | forkAsyncBind(asyncMethod: AnyFunction<T\>,dependencies: ): void |  |
+| **execute** | execute(asyncMethod: AnyFunction<T\>,dependencies: any[]): void |  |
+| **forkAsyncBind** | forkAsyncBind(asyncMethod: AnyFunction<T\>,dependencies: any[]): void |  |
 | **setLoading** | setLoading(isLoading: boolean): void |  |
+| **state** | [AsyncBindState](/framework-api/interfaces/AsyncBindState.md) |  |
 | **success** | success(result: T): void |  |

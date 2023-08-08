@@ -13,5 +13,6 @@ sidebar_label: LogoutOptions
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | callback | boolean |  |
-| onError | [AppErrorCallback](/framework-api/types/AppErrorCallback.md)<[default](/framework-api/classes/DefaultBasicError.md)\> |  |
-| onSuccess | [AppSuccessCallback](/framework-api/types/AppSuccessCallback.md)<any\> |  |
+| identity | string |  |
+| onError | [AppErrorCallback](/framework-api/types/AppErrorCallback.md) |  |
+| onSuccess | [AppSuccessCallback](/framework-api/types/AppSuccessCallback.md) |  |

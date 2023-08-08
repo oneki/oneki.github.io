@@ -8,17 +8,12 @@ sidebar_label: FieldValidation
 
 ### Properties
 
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
+
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **code** | [ValidationCode](/framework-api/enum/ValidationCode.md) |  |
-| **message** | string |  |
-| **status** | [ValidationStatus](/framework-api/enum/ValidationStatus.md) |  |
-
-
-### Methods
-
-| Methods | Signature | Description |
-| --------- | ---- | ----------- |
+| **constructor** | new FieldValidation(message: string,status: ValidationStatus,code: ValidationCode) |  |
 | **equals** | equals(otherValidation: default): boolean |  |
 | **isError** | isError(): boolean |  |
 | **isLoading** | isLoading(): boolean |  |
@@ -28,3 +23,5 @@ sidebar_label: FieldValidation
 | **isOK** | isOK(): boolean |  |
 | **isValidated** | isValidated(): boolean |  |
 | **isWarning** | isWarning(): boolean |  |
+| **message** | string |  |
+| **status** | [ValidationStatus](/framework-api/enum/ValidationStatus.md) |  |

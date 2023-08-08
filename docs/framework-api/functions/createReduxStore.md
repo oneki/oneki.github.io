@@ -5,24 +5,17 @@ sidebar_label: createReduxStore
 ---
 
 ```tsx
-createReduxStore(initialState: AnonymousObject<any>,middlewares: ): AppStore<any, AnyAction>
+createReduxStore(initialState: AnonymousObject<any>,middlewares: Middleware<any, any, any>[]): AppStore<any, AnyAction>
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | initialState | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
-| middlewares |  |  |
-
-
-### Return
-
-
-
-The return is of type <code>[AppStore](/framework-api/interfaces/AppStore.md)<any, AnyAction\></code>
+| middlewares | Middleware<any, any, any\>[] |  |

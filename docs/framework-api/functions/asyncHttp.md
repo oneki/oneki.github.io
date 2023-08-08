@@ -11,20 +11,13 @@ asyncHttp(url: string,method: FetchMethod,body: unknown,options: AnonymousObject
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **method** | [FetchMethod](/framework-api/types/FetchMethod.md) |  |
 | **url** | string |  |
 | body | unknown |  |
 | options | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>Promise<any\></code>

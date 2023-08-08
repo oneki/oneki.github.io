@@ -5,23 +5,16 @@ sidebar_label: serializeSortBy
 ---
 
 ```tsx
-serializeSortBy(sortBy: undefined | ): string | void
+serializeSortBy(sortBy: undefined | QuerySortBy[]): string | void
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **sortBy** | undefined \|  |  |
-
-
-### Return
-
-
-
-The return is of type <code>string | void</code>
+| **sortBy** | undefined \| [QuerySortBy](/framework-api/types/QuerySortBy.md)[] |  |

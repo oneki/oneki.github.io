@@ -8,19 +8,14 @@ sidebar_label: ContainerValidation
 
 ### Properties
 
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
+
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **code** | [ValidationCode](/framework-api/enum/ValidationCode.md) |  |
-| **fields** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<string\> |  |
-| **message** | string |  |
-| **status** | [ValidationStatus](/framework-api/enum/ValidationStatus.md) |  |
-
-
-### Methods
-
-| Methods | Signature | Description |
-| --------- | ---- | ----------- |
+| **constructor** | new ContainerValidation(message: string,status: ValidationStatus,code: ValidationCode,fields: AnonymousObject<string\>) |  |
 | **equals** | equals(otherValidation: default): boolean |  |
+| **fields** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<string\> |  |
 | **isError** | isError(): boolean |  |
 | **isLoading** | isLoading(): boolean |  |
 | **isNotLoading** | isNotLoading(): boolean |  |
@@ -29,3 +24,5 @@ sidebar_label: ContainerValidation
 | **isOK** | isOK(): boolean |  |
 | **isValidated** | isValidated(): boolean |  |
 | **isWarning** | isWarning(): boolean |  |
+| **message** | string |  |
+| **status** | [ValidationStatus](/framework-api/enum/ValidationStatus.md) |  |

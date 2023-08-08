@@ -13,13 +13,15 @@ Handles the click behavior for router `<Link>` components. This is useful if
 you need to create custom `<Link>` components with the same click behavior we  
 use in our exported `<Link>`.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **to** | [To](/framework-api/types/To.md) |  |
+| preventScrollReset | boolean |  |
+| relative | RelativeRoutingType |  |
 | replace | boolean |  |
 | state | any |  |
 | target | HTMLAttributeAnchorTarget |  |

@@ -5,24 +5,17 @@ sidebar_label: isSameFilterCriteriaValue
 ---
 
 ```tsx
-isSameFilterCriteriaValue(v1: QueryFilterCriteriaValue | ,v2: QueryFilterCriteriaValue | ): boolean
+isSameFilterCriteriaValue(v1: QueryFilterCriteriaValue | QueryFilterCriteriaValue[],v2: QueryFilterCriteriaValue | QueryFilterCriteriaValue[]): boolean
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **v1** | [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md) \|  |  |
-| **v2** | [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md) \|  |  |
-
-
-### Return
-
-
-
-The return is of type <code>boolean</code>
+| **v1** | [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md) \| [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md)[] |  |
+| **v2** | [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md) \| [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md)[] |  |

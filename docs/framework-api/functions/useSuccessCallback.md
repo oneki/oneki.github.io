@@ -11,18 +11,11 @@ useSuccessCallback<T>(callback: AppSuccessCallback<T>,defaultCallback: AppSucces
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | callback | [AppSuccessCallback](/framework-api/types/AppSuccessCallback.md)<T\> |  |
 | defaultCallback | [AppSuccessCallback](/framework-api/types/AppSuccessCallback.md)<T\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>[SuccessCallback](/framework-api/types/SuccessCallback.md)<T\> | undefined</code>

@@ -14,4 +14,5 @@ sidebar_label: BrowserRouterProps
 | --------- | ---- | ----------- |
 | basename | string |  |
 | children | ReactNode |  |
+| future | FutureConfig |  |
 | window | Window |  |

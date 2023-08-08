@@ -5,24 +5,17 @@ sidebar_label: FadeSwitch
 ---
 
 ```tsx
-FadeSwitch(props: PropsWithChildren<FadeRoutesProps>,context: any): null | ReactElement<any, any>
+FadeSwitch(props: PropsWithChildren<FadeRoutesProps>,context: any): ReactNode
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **props** | PropsWithChildren<FadeRoutesProps\> |  |
 | context | any |  |
-
-
-### Return
-
-
-
-The return is of type <code>null | ReactElement<any, any\></code>

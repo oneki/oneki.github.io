@@ -15,11 +15,11 @@ The **useLogin** hooks instanciates a login service
 const [error, loading, submit] = useLogin(idpName, options);
 ```
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | idpName | string | **idpName** is used to retrieve the configuration identified by the key ***idp/:idpName*** in <code>src/settings.ts</code>. |
 | options | [LoginOptions](/framework-api/interfaces/LoginOptions.md) |  |

@@ -5,16 +5,16 @@ sidebar_label: toArray
 ---
 
 ```tsx
-toArray<T>(a: undefined | T | ): 
+toArray<T>(a: undefined | T | T[]): T[]
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **a** | undefined \| T \|  |  |
+| **a** | undefined \| T \| T[] |  |

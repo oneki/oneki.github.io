@@ -11,18 +11,11 @@ defaultComparator(a: any,b: any): 0 | 1 | -1
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **a** | any |  |
 | **b** | any |  |
-
-
-### Return
-
-
-
-The return is of type <code>0 | 1 | -1</code>

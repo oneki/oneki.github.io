@@ -12,7 +12,7 @@ sidebar_label: QueryFilterOrCriteria
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **value** | [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md) \|  |  |
+| **value** | [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md) \| [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md)[] |  |
 | field | string |  |
 | id | [QueryFilterId](/framework-api/types/QueryFilterId.md) |  |
 | not | boolean |  |

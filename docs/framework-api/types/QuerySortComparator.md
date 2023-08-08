@@ -5,7 +5,7 @@ sidebar_label: QuerySortComparator
 ---
 
 ```tsx
-__type<T>(a: T | null | undefined,b: T | null | undefined): number
+__type(a: T | null | undefined,b: T | null | undefined): number
 ```
 <br/>
 

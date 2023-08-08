@@ -11,18 +11,11 @@ useErrorCallback<T>(callback: AppErrorCallback<T>,defaultCallback: AppErrorCallb
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | callback | [AppErrorCallback](/framework-api/types/AppErrorCallback.md)<T\> |  |
 | defaultCallback | [AppErrorCallback](/framework-api/types/AppErrorCallback.md)<T\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>[ErrorCallback](/framework-api/types/ErrorCallback.md)<T\> | undefined</code>

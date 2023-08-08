@@ -8,13 +8,10 @@ sidebar_label: DefaultService
 
 ### Properties
 
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
+
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
+| **callSaga** | callSaga(sagaName: string,args: any[]): void |  |
+| **constructor** | new DefaultService<S\>() |  |
 | **state** | S |  |
-
-
-### Methods
-
-| Methods | Signature | Description |
-| --------- | ---- | ----------- |
-| **callSaga** | callSaga(sagaName: string,args: ): void |  |

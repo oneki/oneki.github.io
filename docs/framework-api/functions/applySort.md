@@ -5,18 +5,18 @@ sidebar_label: applySort
 ---
 
 ```tsx
-applySort<T,I>(items: ,dir: QuerySortDir,comparator: QuerySortComparator): 
+applySort<T,I>(items: I[],dir: QuerySortDir,comparator: QuerySortComparator<T>): I[]
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **comparator** | [QuerySortComparator](/framework-api/types/QuerySortComparator.md) |  |
+| **comparator** | [QuerySortComparator](/framework-api/types/QuerySortComparator.md)<T\> |  |
 | **dir** | [QuerySortDir](/framework-api/types/QuerySortDir.md) |  |
-| **items** |  |  |
+| **items** | I[] |  |

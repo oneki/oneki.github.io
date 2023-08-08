@@ -5,23 +5,17 @@ sidebar_label: formatSortBy
 ---
 
 ```tsx
-formatSortBy(sortBy: string | QuerySortBy | ): undefined | 
+formatSortBy(sortBy: undefined | string | QuerySortBy | QuerySortBy[],currentSortBy: string | QuerySortBy | QuerySortBy[]): QuerySortBy[]
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| sortBy | string \| [QuerySortBy](/framework-api/types/QuerySortBy.md) \|  |  |
-
-
-### Return
-
-
-
-The return is of type <code>undefined | </code>
+| **sortBy** | undefined \| string \| [QuerySortBy](/framework-api/types/QuerySortBy.md) \| [QuerySortBy](/framework-api/types/QuerySortBy.md)[] |  |
+| currentSortBy | string \| [QuerySortBy](/framework-api/types/QuerySortBy.md) \| [QuerySortBy](/framework-api/types/QuerySortBy.md)[] |  |

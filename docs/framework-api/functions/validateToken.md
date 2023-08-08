@@ -11,20 +11,13 @@ validateToken(token: string,jwksEndpoint: string | ,idp: Idp,context: AppContext
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **context** | [AppContext](/framework-api/interfaces/AppContext.md) |  |
 | **idp** | [Idp](/framework-api/interfaces/Idp.md) |  |
 | **jwksEndpoint** | string \|  |  |
 | **token** | string |  |
-
-
-### Return
-
-
-
-The return is of type <code>Promise<boolean\></code>

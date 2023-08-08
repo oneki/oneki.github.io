@@ -11,17 +11,10 @@ useFetchOptions<T>(options: AppFetchOptions<T>): FetchOptions<T>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **options** | [AppFetchOptions](/framework-api/interfaces/AppFetchOptions.md)<T\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>[FetchOptions](/framework-api/interfaces/FetchOptions.md)<T\></code>

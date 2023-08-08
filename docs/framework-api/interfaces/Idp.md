@@ -35,6 +35,7 @@ __type(idp: Idp,context: AppContext): string
 | cookieTTL | number |  |
 | externalLoginEndpoint | string \|  |  |
 | externalLogoutEndpoint | string \|  |  |
+| identity | string |  |
 | jwksEndpoint | string \|  |  |
 | loginCallbackRoute | string |  |
 | loginContentType | [IdpContentType](/framework-api/enum/IdpContentType.md) |  |
@@ -43,6 +44,7 @@ __type(idp: Idp,context: AppContext): string
 | logoutCallbackRoute | string |  |
 | logoutEndpoint | string \|  |  |
 | logoutMethod | [IdpMethod](/framework-api/enum/IdpMethod.md) |  |
+| logoutRoute | string |  |
 | nonce | boolean |  |
 | passwordKey | string |  |
 | persist | localStorage \| sessionStorage \| memory \| cookie |  |

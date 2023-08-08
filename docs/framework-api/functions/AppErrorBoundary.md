@@ -5,24 +5,17 @@ sidebar_label: AppErrorBoundary
 ---
 
 ```tsx
-AppErrorBoundary(props: PropsWithChildren<AppErrorBoundaryProps>,context: any): null | ReactElement<any, any>
+AppErrorBoundary(props: PropsWithChildren<AppErrorBoundaryProps>,context: any): ReactNode
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **props** | PropsWithChildren<AppErrorBoundaryProps\> |  |
 | context | any |  |
-
-
-### Return
-
-
-
-The return is of type <code>null | ReactElement<any, any\></code>

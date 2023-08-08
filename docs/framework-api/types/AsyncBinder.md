@@ -5,7 +5,7 @@ sidebar_label: AsyncBinder
 ---
 
 ```tsx
-__type(args: ): Promise<T>
+__type(args: any[]): Promise<T>
 ```
 <br/>
 
@@ -17,4 +17,4 @@ __type(args: ): Promise<T>
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **args** |  |  |
+| **args** | any[] |  |

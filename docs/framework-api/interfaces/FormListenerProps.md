@@ -13,5 +13,6 @@ sidebar_label: FormListenerProps
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **id** | string |  |
-| **listener** | [FormValueListener](/framework-api/types/FormValueListener.md)<any\> \| [FormValidationListener](/framework-api/types/FormValidationListener.md) \| [FormSubmitListener](/framework-api/types/FormSubmitListener.md) \| [FormMetadataListener](/framework-api/types/FormMetadataListener.md) |  |
+| **listener** | [FormValidationListener](/framework-api/types/FormValidationListener.md) \| [FormSubmitListener](/framework-api/types/FormSubmitListener.md) \| [FormMetadataListener](/framework-api/types/FormMetadataListener.md) \| [FormValueListener](/framework-api/types/FormValueListener.md)<any, string\> |  |
+| **watchs** | string[] |  |
 | once | boolean |  |

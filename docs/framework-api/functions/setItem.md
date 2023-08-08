@@ -11,11 +11,11 @@ setItem(key: string,value: string,storage: undefined | null | string,crypt: bool
 
 Add a key/value in the specified storage
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | crypt | boolean | : encrypt the value (only if cookie). Defaults to true |
 | key | string | : key of the item |
@@ -23,10 +23,3 @@ Add a key/value in the specified storage
 | storage | undefined \| null \| string | : localStorage, sessionStorage or cookie |
 | ttl | number | : time to live of the cookie (in seconds). If null, the cookie is removed when the browser is closed |
 | value | string | : value of the item |
-
-
-### Return
-
-
-
-The return is of type <code>Promise<void\></code>

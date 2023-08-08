@@ -4,6 +4,11 @@ title: FieldOptions
 sidebar_label: FieldOptions
 ---
 
+```tsx
+__type(value: any): boolean
+```
+<br/>
+
 
 
 ### Properties
@@ -14,5 +19,8 @@ sidebar_label: FieldOptions
 | --------- | ---- | ----------- |
 | defaultValue | T |  |
 | disabled | boolean |  |
+| editable | boolean |  |
+| isUndefined |  |  |
+| protected | boolean |  |
 | touchOn | [TouchOnType](/framework-api/types/TouchOnType.md) |  |
 | visible | boolean |  |

@@ -11,16 +11,9 @@ createPath(__namedParameters: Partial<Path>): string
 
 Creates a string URL path from the given pathname, search, and hash components.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-
-
-### Return
-
-
-
-The return is of type <code>string</code>

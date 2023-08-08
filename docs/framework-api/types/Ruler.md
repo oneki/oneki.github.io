@@ -5,7 +5,7 @@ sidebar_label: Ruler
 ---
 
 ```tsx
-__type(args: ): void
+__type(args: any[]): void
 ```
 <br/>
 
@@ -17,4 +17,4 @@ __type(args: ): void
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **args** |  |  |
+| **args** | any[] |  |

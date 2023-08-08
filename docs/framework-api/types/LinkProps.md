@@ -28,4 +28,5 @@ __type(location: Location): boolean
 | replace | boolean |  |
 | scroll | boolean |  |
 | shallow | boolean |  |
+| state | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
 | strict | boolean |  |

@@ -4,6 +4,11 @@ title: FormFieldProps
 sidebar_label: FormFieldProps
 ---
 
+```tsx
+__type(value: any): boolean
+```
+<br/>
+
 
 
 ### Properties
@@ -18,6 +23,7 @@ sidebar_label: FormFieldProps
 | id | string |  |
 | integer | boolean |  |
 | integerMessage | string |  |
+| isUndefined |  |  |
 | max | number |  |
 | maxLength | number |  |
 | maxLengthMessage | string |  |

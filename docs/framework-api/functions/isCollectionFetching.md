@@ -5,23 +5,16 @@ sidebar_label: isCollectionFetching
 ---
 
 ```tsx
-isCollectionFetching<T,I>(collection: Collection<T, I, CollectionState<T, I>>): boolean
+isCollectionFetching<T,I>(collection: Collection<T, I>): boolean
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **collection** | [Collection](/framework-api/types/Collection.md)<T, I, [CollectionState](/framework-api/interfaces/CollectionState.md)<T, I\>\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>boolean</code>
+| **collection** | [Collection](/framework-api/types/Collection.md)<T, I\> |  |

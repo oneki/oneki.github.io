@@ -5,24 +5,17 @@ sidebar_label: Form
 ---
 
 ```tsx
-Form(props: PropsWithChildren<FormProps>,context: any): null | ReactElement<any, any>
+Form(props: PropsWithChildren<FormProps>,context: any): ReactNode
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **props** | PropsWithChildren<[FormProps](/framework-api/types/FormProps.md)\> |  |
 | context | any |  |
-
-
-### Return
-
-
-
-The return is of type <code>null | ReactElement<any, any\></code>

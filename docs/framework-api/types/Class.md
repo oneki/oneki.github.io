@@ -4,6 +4,11 @@ title: Class
 sidebar_label: Class
 ---
 
+```tsx
+new Class(args: any[])
+```
+<br/>
+
 
 
 ### Properties

@@ -12,6 +12,8 @@ sidebar_label: QuerySortByMultiFields
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **fields** |  |  |
+| **fields** | string \|  |  |
+| **name** | string[] |  |
+| comparator | string |  |
 | dir | [QuerySortDir](/framework-api/types/QuerySortDir.md) |  |
 | id | string |  |

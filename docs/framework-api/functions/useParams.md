@@ -12,16 +12,9 @@ useParams<ParamsOrKey>(): Readonly<>
 Returns an object of key/value pairs of the dynamic params from the current  
 URL that were matched by the route path.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-
-
-### Return
-
-
-
-The return is of type <code>Readonly<\></code>

@@ -5,16 +5,16 @@ sidebar_label: fromPayload
 ---
 
 ```tsx
-fromPayload(payload: AnonymousObject<any>): 
+fromPayload(payload: AnonymousObject<any>): any[]
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **payload** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |

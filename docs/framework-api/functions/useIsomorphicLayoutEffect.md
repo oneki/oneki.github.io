@@ -11,18 +11,11 @@ useIsomorphicLayoutEffect(effect: EffectCallback,deps: DependencyList): void
 
 Accepts a function that contains imperative, possibly effectful code.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | deps | DependencyList | If present, effect will only activate if the values in the list change. |
 | effect | EffectCallback | Imperative function that can return a cleanup function |
-
-
-### Return
-
-
-
-The return is of type <code>void</code>

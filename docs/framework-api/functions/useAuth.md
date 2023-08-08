@@ -5,22 +5,16 @@ sidebar_label: useAuth
 ---
 
 ```tsx
-useAuth(): undefined | Auth
+useAuth(identity: string): undefined | Auth
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-
-
-### Return
-
-
-
-The return is of type <code>undefined | [Auth](/framework-api/interfaces/Auth.md)</code>
+| identity | string |  |

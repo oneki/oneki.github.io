@@ -5,25 +5,18 @@ sidebar_label: applyOperator
 ---
 
 ```tsx
-applyOperator(operator: QueryFilterCriteriaOperator,left: any,right: QueryFilterCriteriaValue | ): boolean
+applyOperator(operator: QueryFilterCriteriaOperator,left: any,right: QueryFilterCriteriaValue | QueryFilterCriteriaValue[]): boolean
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **left** | any |  |
 | **operator** | [QueryFilterCriteriaOperator](/framework-api/types/QueryFilterCriteriaOperator.md) |  |
-| right | [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md) \|  |  |
-
-
-### Return
-
-
-
-The return is of type <code>boolean</code>
+| right | [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md) \| [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md)[] |  |

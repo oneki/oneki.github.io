@@ -11,17 +11,10 @@ flattenTranslations(translations: AnonymousObject<AnonymousObject<string>>): Ano
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **translations** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<string\>\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>[AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<string\></code>

@@ -5,23 +5,16 @@ sidebar_label: renderMatches
 ---
 
 ```tsx
-renderMatches(matches: null | ): React.ReactElement | null
+renderMatches(matches: null | RouteMatch<string, RouteObject>[]): React.ReactElement | null
 ```
 <br/>
 
 Renders the result of `matchRoutes()` into a React element.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **matches** | null \|  |  |
-
-
-### Return
-
-
-
-The return is of type <code>React.ReactElement | null</code>
+| **matches** | null \| [RouteMatch](/framework-api/interfaces/RouteMatch.md)<string, [RouteObject](/framework-api/types/RouteObject.md)\>[] |  |

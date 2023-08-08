@@ -14,5 +14,8 @@ sidebar_label: FormDecoratorOptions
 | --------- | ---- | ----------- |
 | defaultValue | T |  |
 | disabled | boolean |  |
+| editable | boolean |  |
+| isUndefined |  |  |
+| protected | boolean |  |
 | touchOn | [TouchOnType](/framework-api/types/TouchOnType.md) |  |
 | visible | boolean |  |

@@ -5,7 +5,7 @@ sidebar_label: NavLinkProps
 ---
 
 ```tsx
-__type(props: ): CSSProperties
+__type(props: ): undefined | CSSProperties
 ```
 <br/>
 
@@ -20,20 +20,27 @@ __type(props: ): CSSProperties
 | **isActive** | boolean |  |
 | **isActive** | boolean |  |
 | **isActive** | boolean |  |
+| **isPending** | boolean |  |
+| **isPending** | boolean |  |
+| **isPending** | boolean |  |
 | **to** | [To](/framework-api/types/To.md) |  |
 | about | string |  |
 | accessKey | string |  |
 | aria-activedescendant | string | Identifies the currently active element when DOM focus is on a composite widget, textbox, group, or application. |
 | aria-atomic | Booleanish | Indicates whether assistive technologies will present all, or only parts of, the changed region based on the change notifications defined by the aria-relevant attribute. |
 | aria-autocomplete | inline \| both \| none \| list | Indicates whether inputting text could trigger display of one or more predictions of the user's intended value for an input and specifies how predictions would be<br/>presented if they are made. |
-| aria-busy | Booleanish | Indicates an element is being modified and that assistive technologies MAY want to wait until the modifications are complete before exposing them to the user. |
-| aria-checked | boolean \| mixed \| false \| true | Indicates the current "checked" state of checkboxes, radio buttons, and other widgets. |
+| aria-braillelabel | string | Defines a string value that labels the current element, which is intended to be converted into Braille. |
+| aria-brailleroledescription | string | Defines a human-readable, author-localized abbreviated description for the role of an element, which is intended to be converted into Braille. |
+| aria-busy | Booleanish |  |
+| aria-checked | boolean \| false \| mixed \| true | Indicates the current "checked" state of checkboxes, radio buttons, and other widgets. |
 | aria-colcount | number | Defines the total number of columns in a table, grid, or treegrid. |
 | aria-colindex | number | Defines an element's column index or position with respect to the total number of columns within a table, grid, or treegrid. |
+| aria-colindextext | string | Defines a human readable text alternative of aria-colindex. |
 | aria-colspan | number | Defines the number of columns spanned by a cell or gridcell within a table, grid, or treegrid. |
 | aria-controls | string | Identifies the element (or elements) whose contents or presence are controlled by the current element. |
-| aria-current | boolean \| location \| time \| false \| page \| true \| step \| date | Indicates the element that represents the current item within a container or set of related elements. |
+| aria-current | boolean \| false \| time \| location \| page \| true \| step \| date | Indicates the element that represents the current item within a container or set of related elements. |
 | aria-describedby | string | Identifies the element (or elements) that describes the object. |
+| aria-description | string | Defines a string value that describes or annotates the current element. |
 | aria-details | string | Identifies the element that provides a detailed, extended description for the object. |
 | aria-disabled | Booleanish | Indicates that the element is perceivable but disabled, so it is not editable or otherwise operable. |
 | aria-dropeffect | link \| none \| copy \| move \| execute \| popup | Indicates what functions can be performed when a dragged object is released on the drop target. |
@@ -41,7 +48,7 @@ __type(props: ): CSSProperties
 | aria-expanded | Booleanish | Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed. |
 | aria-flowto | string | Identifies the next element (or elements) in an alternate reading order of content which, at the user's discretion,<br/>allows assistive technology to override the general default of reading in document source order. |
 | aria-grabbed | Booleanish | Indicates an element's "grabbed" state in a drag-and-drop operation. |
-| aria-haspopup | boolean \| grid \| dialog \| menu \| false \| listbox \| true \| tree | Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element. |
+| aria-haspopup | boolean \| false \| grid \| dialog \| menu \| listbox \| true \| tree | Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element. |
 | aria-hidden | Booleanish | Indicates whether the element is exposed to an accessibility API. |
 | aria-invalid | boolean \| false \| true \| grammar \| spelling | Indicates the entered value does not conform to the format expected by the application. |
 | aria-keyshortcuts | string | Indicates keyboard shortcuts that an author has implemented to activate or give focus to an element. |
@@ -56,13 +63,14 @@ __type(props: ): CSSProperties
 | aria-owns | string | Identifies an element (or elements) in order to define a visual, functional, or contextual parent/child relationship<br/>between DOM elements where the DOM hierarchy cannot be used to represent the relationship. |
 | aria-placeholder | string | Defines a short hint (a word or short phrase) intended to aid the user with data entry when the control has no value.<br/>A hint could be a sample value or a brief description of the expected format. |
 | aria-posinset | number | Defines an element's number or position in the current set of listitems or treeitems. Not required if all elements in the set are present in the DOM. |
-| aria-pressed | boolean \| mixed \| false \| true | Indicates the current "pressed" state of toggle buttons. |
+| aria-pressed | boolean \| false \| mixed \| true | Indicates the current "pressed" state of toggle buttons. |
 | aria-readonly | Booleanish | Indicates that the element is not editable, but is otherwise operable. |
 | aria-relevant | all \| text \| additions \| additions removals \| additions text \| removals \| removals additions \| removals text \| text additions \| text removals | Indicates what notifications the user agent will trigger when the accessibility tree within a live region is modified. |
 | aria-required | Booleanish | Indicates that user input is required on the element before a form may be submitted. |
 | aria-roledescription | string | Defines a human-readable, author-localized description for the role of an element. |
 | aria-rowcount | number | Defines the total number of rows in a table, grid, or treegrid. |
 | aria-rowindex | number | Defines an element's row index or position with respect to the total number of rows within a table, grid, or treegrid. |
+| aria-rowindextext | string | Defines a human readable text alternative of aria-rowindex. |
 | aria-rowspan | number | Defines the number of rows spanned by a cell or gridcell within a table, grid, or treegrid. |
 | aria-selected | Booleanish | Indicates the current "selected" state of various widgets. |
 | aria-setsize | number | Defines the number of items in the current set of listitems or treeitems. Not required if all elements in the set are present in the DOM. |
@@ -73,11 +81,13 @@ __type(props: ): CSSProperties
 | aria-valuetext | string | Defines the human readable text alternative of aria-valuenow for a range widget. |
 | autoCapitalize | string |  |
 | autoCorrect | string |  |
+| autoFocus | boolean |  |
 | autoSave | string |  |
 | caseSensitive | boolean |  |
 | children | ReactNode \|  |  |
 | className | string \|  |  |
 | color | string |  |
+| content | string |  |
 | contentEditable | inherit \| Booleanish |  |
 | contextMenu | string |  |
 | dangerouslySetInnerHTML |  |  |
@@ -101,6 +111,7 @@ __type(props: ): CSSProperties
 | itemType | string |  |
 | lang | string |  |
 | media | string |  |
+| nonce | string |  |
 | onAbort | ReactEventHandler<HTMLAnchorElement\> |  |
 | onAbortCapture | ReactEventHandler<HTMLAnchorElement\> |  |
 | onAnimationEnd | AnimationEventHandler<HTMLAnchorElement\> |  |
@@ -229,6 +240,8 @@ __type(props: ): CSSProperties
 | onRateChangeCapture | ReactEventHandler<HTMLAnchorElement\> |  |
 | onReset | FormEventHandler<HTMLAnchorElement\> |  |
 | onResetCapture | FormEventHandler<HTMLAnchorElement\> |  |
+| onResize | ReactEventHandler<HTMLAnchorElement\> |  |
+| onResizeCapture | ReactEventHandler<HTMLAnchorElement\> |  |
 | onScroll | UIEventHandler<HTMLAnchorElement\> |  |
 | onScrollCapture | UIEventHandler<HTMLAnchorElement\> |  |
 | onSeeked | ReactEventHandler<HTMLAnchorElement\> |  |
@@ -264,14 +277,17 @@ __type(props: ): CSSProperties
 | ping | string |  |
 | placeholder | string |  |
 | prefix | string |  |
+| preventScrollReset | boolean |  |
 | property | string |  |
 | radioGroup | string |  |
 | referrerPolicy | HTMLAttributeReferrerPolicy |  |
 | rel | string |  |
+| relative | RelativeRoutingType |  |
 | reloadDocument | boolean |  |
 | replace | boolean |  |
 | resource | string |  |
 | results | number |  |
+| rev | string |  |
 | role | AriaRole |  |
 | security | string |  |
 | slot | string |  |

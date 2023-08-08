@@ -5,23 +5,16 @@ sidebar_label: NavLink
 ---
 
 ```tsx
-NavLink(props: NavLinkPropsRefAttributes<HTMLAnchorElement>): null | ReactElement<any, string | JSXElementConstructor<any>>
+NavLink(props: NavLinkPropsRefAttributes<HTMLAnchorElement>): ReactNode
 ```
 <br/>
 
-**NOTE**: Exotic components are not callable.
+A <Link\> wrapper that knows if it's "active" or not.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **props** | [NavLinkProps](/framework-api/interfaces/NavLinkProps.md)RefAttributes<HTMLAnchorElement\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>null | ReactElement<any, string | JSXElementConstructor<any\>\></code>

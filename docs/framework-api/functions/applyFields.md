@@ -5,17 +5,17 @@ sidebar_label: applyFields
 ---
 
 ```tsx
-applyFields<T,I>(items: ,fields: ): 
+applyFields<T,I>(items: I[],fields: string[]): I[]
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **items** |  |  |
-| fields |  |  |
+| **items** | I[] |  |
+| fields | string[] |  |

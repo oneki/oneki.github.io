@@ -14,16 +14,9 @@ to note that using your own history object is highly discouraged and may add
 two versions of the history library to your bundles unless you use the same  
 version of the history library that React Router uses internally.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-
-
-### Return
-
-
-
-The return is of type <code>JSX.Element</code>

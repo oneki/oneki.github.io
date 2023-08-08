@@ -11,17 +11,10 @@ getQueryFilterCriteriaValue(value: string): QueryFilterCriteriaValue
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **value** | string |  |
-
-
-### Return
-
-
-
-The return is of type <code>[QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md)</code>

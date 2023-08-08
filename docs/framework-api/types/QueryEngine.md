@@ -5,7 +5,7 @@ sidebar_label: QueryEngine
 ---
 
 ```tsx
-__type(items: ,query: LocalQuery,comparator: QuerySortComparator,comparators: AnonymousObject<QuerySortComparator>,searcher: QuerySearcher<T>): 
+__type(items: I[],query: LocalQuery,comparator: QuerySortComparator<T>,comparators: AnonymousObject<QuerySortComparator<T>>,searcher: QuerySearcher<T>): I[]
 ```
 <br/>
 
@@ -17,8 +17,8 @@ __type(items: ,query: LocalQuery,comparator: QuerySortComparator,comparators: An
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **comparator** | [QuerySortComparator](/framework-api/types/QuerySortComparator.md) |  |
-| **comparators** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[QuerySortComparator](/framework-api/types/QuerySortComparator.md)\> |  |
-| **items** |  |  |
+| **comparator** | [QuerySortComparator](/framework-api/types/QuerySortComparator.md)<T\> |  |
+| **comparators** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[QuerySortComparator](/framework-api/types/QuerySortComparator.md)<T\>\> |  |
+| **items** | I[] |  |
 | **query** | [LocalQuery](/framework-api/types/LocalQuery.md) |  |
 | searcher | [QuerySearcher](/framework-api/types/QuerySearcher.md)<T\> |  |

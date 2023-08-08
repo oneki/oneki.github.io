@@ -18,11 +18,12 @@ sidebar_label: AppFetchOptions
 | credentials | RequestCredentials | A string indicating whether credentials will be sent with the request always, never, or only when sent to a same-origin URL. Sets request's credentials. |
 | delayLoading | number |  |
 | fetcher | [Fetcher](/framework-api/types/Fetcher.md)<T\> |  |
-| headers | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<string\> |  |
+| headers | HeadersInit | A Headers object, an object literal, or an array of two-item arrays to set request's headers. |
+| identity | string |  |
 | integrity | string | A cryptographic hash of the resource to be fetched by request. Sets request's integrity. |
 | keepalive | boolean | A boolean to set request's keepalive. |
 | mode | RequestMode | A string to indicate whether the request will use CORS, or will be restricted to same-origin URLs. Sets request's mode. |
-| onError | [AppErrorCallback](/framework-api/types/AppErrorCallback.md)<[default](/framework-api/classes/DefaultBasicError.md)\> |  |
+| onError | [AppErrorCallback](/framework-api/types/AppErrorCallback.md) |  |
 | onSuccess | [AppSuccessCallback](/framework-api/types/AppSuccessCallback.md)<T\> |  |
 | params | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<string\> |  |
 | query | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<string\> |  |

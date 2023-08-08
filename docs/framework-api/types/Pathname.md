@@ -4,7 +4,7 @@ title: Pathname
 sidebar_label: Pathname
 ---
 
-A URL pathname, beginning with a /.
+
 
 ### Properties
 

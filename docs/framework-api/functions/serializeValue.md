@@ -5,23 +5,16 @@ sidebar_label: serializeValue
 ---
 
 ```tsx
-serializeValue(value: QueryFilterCriteriaValue | ): string
+serializeValue(value: QueryFilterCriteriaValue | QueryFilterCriteriaValue[]): string
 ```
 <br/>
 
 
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **value** | [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md) \|  |  |
-
-
-### Return
-
-
-
-The return is of type <code>string</code>
+| **value** | [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md) \| [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md)[] |  |

@@ -15,3 +15,4 @@ sidebar_label: HistoryRouterProps
 | **history** | History |  |
 | basename | string |  |
 | children | ReactNode |  |
+| future | FutureConfig |  |

@@ -9,21 +9,14 @@ useMatch<ParamKey,Path>(pattern: Path | PathPattern<Path>): PathMatch<ParamKey> 
 ```
 <br/>
 
-Returns true if the URL for the given "to" value matches the current URL.  
+Returns a PathMatch object if the given pattern matches the current URL.  
 This is useful for components that need to know "active" state, e.g.  
 <NavLink\>.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **pattern** | Path \| PathPattern<Path\> |  |
-
-
-### Return
-
-
-
-The return is of type <code>[PathMatch](/framework-api/interfaces/PathMatch.md)<ParamKey\> | null</code>

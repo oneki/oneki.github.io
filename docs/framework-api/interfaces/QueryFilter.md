@@ -12,6 +12,6 @@ sidebar_label: QueryFilter
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
-| **criterias** |  |  |
+| **criterias** | [QueryFilterOrCriteria](/framework-api/types/QueryFilterOrCriteria.md)[] |  |
 | id | [QueryFilterId](/framework-api/types/QueryFilterId.md) |  |
 | operator | and \| or |  |

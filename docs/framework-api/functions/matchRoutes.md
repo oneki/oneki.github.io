@@ -5,25 +5,18 @@ sidebar_label: matchRoutes
 ---
 
 ```tsx
-matchRoutes(routes: ,locationArg: string | Partial<Location>,basename: string):  | null
+matchRoutes<RouteObjectType>(routes: RouteObjectType[],locationArg: string | Partial<Location>,basename: string): AgnosticRouteMatch<string, RouteObjectType>[] | null
 ```
 <br/>
 
 Matches the given routes to a location and returns the match data.
 
-### Parameters
+### Properties
 
-<font size="2"><i>(Mandatory parameters are in bold)</i></font>
+<font size="2"><i>(Mandatory properties are in bold)</i></font>
 
-| Parameters | Type | Description |
+| Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **locationArg** | string \| Partial<Location\> |  |
-| **routes** |  |  |
+| **routes** | RouteObjectType[] |  |
 | basename | string |  |
-
-
-### Return
-
-
-
-The return is of type <code> | null</code>
