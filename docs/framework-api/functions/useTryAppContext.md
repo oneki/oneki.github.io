@@ -1,11 +1,11 @@
 ---
-id: UseAppContext
-title: UseAppContext
-sidebar_label: UseAppContext
+id: useTryAppContext
+title: useTryAppContext
+sidebar_label: useTryAppContext
 ---
 
 ```tsx
-UseAppContext(): null | AppContext
+useTryAppContext(): null | AppContext
 ```
 <br/>
 
