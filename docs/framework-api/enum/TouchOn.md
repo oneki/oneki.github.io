@@ -4,6 +4,9 @@ title: TouchOn
 sidebar_label: TouchOn
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -17,3 +20,5 @@ sidebar_label: TouchOn
 | **Focus** | focus |  |
 | **Load** | load |  |
 | **Submit** | submit |  |
+
+

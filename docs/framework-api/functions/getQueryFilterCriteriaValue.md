@@ -4,6 +4,9 @@ title: getQueryFilterCriteriaValue
 sidebar_label: getQueryFilterCriteriaValue
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 getQueryFilterCriteriaValue(value: string): QueryFilterCriteriaValue
 ```
@@ -18,3 +21,5 @@ getQueryFilterCriteriaValue(value: string): QueryFilterCriteriaValue
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **value** | string |  |
+
+

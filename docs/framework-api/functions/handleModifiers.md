@@ -4,6 +4,9 @@ title: handleModifiers
 sidebar_label: handleModifiers
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 handleModifiers(input: string,value: any,locale: string,i18nService: default): any
 ```
@@ -21,3 +24,5 @@ handleModifiers(input: string,value: any,locale: string,i18nService: default): a
 | **input** | string |  |
 | **locale** | string |  |
 | **value** | any |  |
+
+

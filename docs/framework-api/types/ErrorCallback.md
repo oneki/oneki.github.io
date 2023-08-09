@@ -4,6 +4,9 @@ title: ErrorCallback
 sidebar_label: ErrorCallback
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,3 +16,5 @@ sidebar_label: ErrorCallback
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **result** | T |  |
+
+

@@ -4,6 +4,9 @@ title: To
 sidebar_label: To
 ---
 
+import Details from "@theme/Details"
+
+
 Describes a location that is the destination of some navigation, either via  
 `history.push` or `history.replace`. May be either a URL or the pieces of a  
 URL path.
@@ -17,3 +20,5 @@ URL path.
 | hash | string | A URL fragment identifier, beginning with a #. |
 | pathname | string | A URL pathname, beginning with a /. |
 | search | string | A URL search string, beginning with a ?. |
+
+

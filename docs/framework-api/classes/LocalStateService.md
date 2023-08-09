@@ -4,6 +4,9 @@ title: LocalStateService
 sidebar_label: LocalStateService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -17,3 +20,5 @@ sidebar_label: LocalStateService
 | **context** | [default](/framework-api/classes/BasicAppContext.md) |  |
 | **setState** | setState(key: string,value: unknown): void |  |
 | **state** | S |  |
+
+

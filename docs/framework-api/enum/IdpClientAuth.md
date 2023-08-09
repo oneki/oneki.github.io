@@ -4,6 +4,9 @@ title: IdpClientAuth
 sidebar_label: IdpClientAuth
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -14,3 +17,5 @@ sidebar_label: IdpClientAuth
 | --------- | ---- | ----------- |
 | **Basic** | basic |  |
 | **Body** | body |  |
+
+

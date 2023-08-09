@@ -4,6 +4,9 @@ title: useOutletContext
 sidebar_label: useOutletContext
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useOutletContext<Context>(): Context
 ```
@@ -14,7 +17,5 @@ hierarchy.
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

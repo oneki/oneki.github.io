@@ -4,6 +4,9 @@ title: matchPath
 sidebar_label: matchPath
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 matchPath<ParamKey,Path>(pattern: Path | PathPattern<Path>,pathname: string): PathMatch<ParamKey> | null
 ```
@@ -20,3 +23,5 @@ the match.
 | --------- | ---- | ----------- |
 | **pathname** | string |  |
 | **pattern** | Path \| PathPattern<Path\> |  |
+
+

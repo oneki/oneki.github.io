@@ -4,6 +4,9 @@ title: useMatch
 sidebar_label: useMatch
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useMatch<ParamKey,Path>(pattern: Path | PathPattern<Path>): PathMatch<ParamKey> | null
 ```
@@ -20,3 +23,5 @@ This is useful for components that need to know "active" state, e.g.
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **pattern** | Path \| PathPattern<Path\> |  |
+
+

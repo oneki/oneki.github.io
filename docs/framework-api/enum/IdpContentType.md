@@ -4,6 +4,9 @@ title: IdpContentType
 sidebar_label: IdpContentType
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -15,3 +18,5 @@ sidebar_label: IdpContentType
 | **Json** | application/json |  |
 | **UrlEncoded** | application/x-www-form-urlencoded |  |
 | **Xml** | application/xml |  |
+
+

@@ -4,6 +4,9 @@ title: useLazyRef
 sidebar_label: useLazyRef
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useLazyRef<T>(initialValue: T | ): MutableRefObject<T>
 ```
@@ -18,3 +21,5 @@ useLazyRef<T>(initialValue: T | ): MutableRefObject<T>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **initialValue** | T \|  |  |
+
+

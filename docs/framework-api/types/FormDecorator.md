@@ -4,6 +4,9 @@ title: FormDecorator
 sidebar_label: FormDecorator
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,3 +16,5 @@ sidebar_label: FormDecorator
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **name** | string |  |
+
+

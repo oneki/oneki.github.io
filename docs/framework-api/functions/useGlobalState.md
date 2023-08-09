@@ -4,6 +4,9 @@ title: useGlobalState
 sidebar_label: useGlobalState
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useGlobalState<T>(key: string): 
 useGlobalState<T>(key: string,defaultValue: undefined): 
@@ -21,3 +24,5 @@ useGlobalState<T>(key: string,defaultValue: T):
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **key** | string |  |
+
+

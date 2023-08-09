@@ -4,6 +4,9 @@ title: useSecurePatch
 sidebar_label: useSecurePatch
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useSecurePatch<T>(url: string,options: AppFetchOptions<T>): 
 ```
@@ -18,4 +21,13 @@ useSecurePatch<T>(url: string,options: AppFetchOptions<T>):
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **url** | string |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | options | [AppFetchOptions](/framework-api/interfaces/AppFetchOptions.md)<T\> |  |
+
+
+</div></Details>

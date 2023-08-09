@@ -4,6 +4,9 @@ title: withLayout
 sidebar_label: withLayout
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 withLayout(Page: ElementType,Layout: ElementType): ElementType<any>
 ```
@@ -18,4 +21,13 @@ withLayout(Page: ElementType,Layout: ElementType): ElementType<any>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **Page** | ElementType |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | Layout | ElementType |  |
+
+
+</div></Details>

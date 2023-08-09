@@ -4,6 +4,9 @@ title: del
 sidebar_label: del
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 del(content: any,property: string | number): any
 ```
@@ -19,3 +22,5 @@ del(content: any,property: string | number): any
 | --------- | ---- | ----------- |
 | **content** | any |  |
 | **property** | string \| number |  |
+
+

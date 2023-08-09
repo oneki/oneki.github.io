@@ -4,6 +4,9 @@ title: Notification
 sidebar_label: Notification
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(): void
 ```
@@ -24,4 +27,13 @@ __type(): void
 | **remove** |  |  |
 | **timestamp** | number |  |
 | **topic** | string |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | ttl | number |  |
+
+
+</div></Details>

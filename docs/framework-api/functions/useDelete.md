@@ -4,6 +4,9 @@ title: useDelete
 sidebar_label: useDelete
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useDelete(url: string,options: AppFetchOptions<any>): 
 ```
@@ -18,4 +21,13 @@ useDelete(url: string,options: AppFetchOptions<any>):
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **url** | string |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | options | [AppFetchOptions](/framework-api/interfaces/AppFetchOptions.md)<any\> |  |
+
+
+</div></Details>

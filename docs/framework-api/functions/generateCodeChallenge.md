@@ -4,6 +4,9 @@ title: generateCodeChallenge
 sidebar_label: generateCodeChallenge
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 generateCodeChallenge(codeVerifier: string): Promise<string>
 ```
@@ -18,3 +21,5 @@ generateCodeChallenge(codeVerifier: string): Promise<string>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **codeVerifier** | string |  |
+
+

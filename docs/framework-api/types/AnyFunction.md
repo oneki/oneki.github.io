@@ -4,6 +4,9 @@ title: AnyFunction
 sidebar_label: AnyFunction
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(args: any[]): T
 ```
@@ -18,3 +21,5 @@ __type(args: any[]): T
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **args** | any[] |  |
+
+

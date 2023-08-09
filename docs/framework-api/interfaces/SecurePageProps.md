@@ -4,6 +4,9 @@ title: SecurePageProps
 sidebar_label: SecurePageProps
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -14,3 +17,5 @@ sidebar_label: SecurePageProps
 | --------- | ---- | ----------- |
 | **auth** | [Auth](/framework-api/interfaces/Auth.md) |  |
 | **securityContext** | T |  |
+
+

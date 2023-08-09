@@ -4,6 +4,9 @@ title: LocationChangeCallback
 sidebar_label: LocationChangeCallback
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(location: Location,context: ): void
 ```
@@ -23,3 +26,5 @@ __type(location: Location,context: ): void
 | **location** | [Location](/framework-api/interfaces/Location.md) |  |
 | **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
 | **settings** | AppSettings |  |
+
+

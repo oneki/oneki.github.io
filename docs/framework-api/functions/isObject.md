@@ -4,6 +4,9 @@ title: isObject
 sidebar_label: isObject
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isObject(item: any): boolean
 ```
@@ -18,3 +21,5 @@ isObject(item: any): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **item** | any |  |
+
+

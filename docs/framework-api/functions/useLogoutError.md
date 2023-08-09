@@ -4,6 +4,9 @@ title: useLogoutError
 sidebar_label: useLogoutError
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useLogoutError(): undefined | Notification
 ```
@@ -13,7 +16,5 @@ useLogoutError(): undefined | Notification
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

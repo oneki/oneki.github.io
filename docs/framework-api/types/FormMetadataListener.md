@@ -4,6 +4,9 @@ title: FormMetadataListener
 sidebar_label: FormMetadataListener
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(metadata: FormMetadata,previousMetadata: FormMetadata | undefined,watch: string): any
 ```
@@ -20,3 +23,5 @@ __type(metadata: FormMetadata,previousMetadata: FormMetadata | undefined,watch: 
 | **metadata** | [FormMetadata](/framework-api/types/FormMetadata.md) |  |
 | **previousMetadata** | [FormMetadata](/framework-api/types/FormMetadata.md) \| undefined |  |
 | **watch** | string |  |
+
+

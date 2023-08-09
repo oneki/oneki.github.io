@@ -4,6 +4,9 @@ title: LocalService
 sidebar_label: LocalService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -14,3 +17,5 @@ sidebar_label: LocalService
 | --------- | ---- | ----------- |
 | **context** | [AppContext](/framework-api/interfaces/AppContext.md) |  |
 | **state** | S |  |
+
+

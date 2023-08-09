@@ -4,6 +4,9 @@ title: secure
 sidebar_label: secure
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 secure(Component: ElementType,validator: ,options: ): FCC<Omit<any, ref>>
 ```
@@ -18,9 +21,18 @@ secure(Component: ElementType,validator: ,options: ): FCC<Omit<any, ref>>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **Component** | ElementType |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | ErrorComponent | ElementType |  |
 | ErrorComponent | ElementType |  |
 | identity | string |  |
 | identity | string |  |
 | options |  |  |
 | validator |  |  |
+
+
+</div></Details>

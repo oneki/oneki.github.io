@@ -4,6 +4,9 @@ title: useNavigationType
 sidebar_label: useNavigationType
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useNavigationType(): NavigationType
 ```
@@ -14,7 +17,5 @@ the current location, either by a pop, push, or replace on the history stack.
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

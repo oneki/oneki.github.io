@@ -4,6 +4,9 @@ title: CollectionBy
 sidebar_label: CollectionBy
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -16,3 +19,5 @@ sidebar_label: CollectionBy
 | **item** | I |  |
 | **uid** | string |  |
 | **value** | T |  |
+
+

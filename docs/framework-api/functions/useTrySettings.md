@@ -4,6 +4,9 @@ title: useTrySettings
 sidebar_label: useTrySettings
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useTrySettings(): undefined | AppSettings
 ```
@@ -13,7 +16,5 @@ useTrySettings(): undefined | AppSettings
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

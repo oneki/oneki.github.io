@@ -4,6 +4,9 @@ title: asReducer
 sidebar_label: asReducer
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 asReducer(reducer: AnyFunction<void>): AnyFunction<void>
 ```
@@ -18,3 +21,5 @@ asReducer(reducer: AnyFunction<void>): AnyFunction<void>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **reducer** | [AnyFunction](/framework-api/types/AnyFunction.md)<void\> |  |
+
+

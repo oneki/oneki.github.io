@@ -4,6 +4,9 @@ title: ReactRouter
 sidebar_label: ReactRouter
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -54,5 +57,14 @@ If object, the format is the following
 | **state** |  |  |
 | **sync** | sync(location: Location,navigate: NavigateFunction,i18n: I18n,settings: AppSettings): void |  |
 | listeners | [LocationChangeCallback](/framework-api/types/LocationChangeCallback.md)[] | **Defaults to:** [] |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | navigate | [NavigateFunction](/framework-api/interfaces/NavigateFunction.md) |  |
 | route | string |  |
+
+
+</div></Details>

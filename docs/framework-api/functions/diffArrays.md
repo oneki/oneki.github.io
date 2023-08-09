@@ -4,6 +4,9 @@ title: diffArrays
 sidebar_label: diffArrays
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 diffArrays(arr1: any[],arr2: any[]): 
 ```
@@ -25,3 +28,5 @@ diffArrays(arr1: any[],arr2: any[]):
 | **removed** | any[] |  |
 | **same** | any[] |  |
 | **same** | any[] |  |
+
+

@@ -4,6 +4,9 @@ title: DefaultGlobalService
 sidebar_label: DefaultGlobalService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -16,3 +19,5 @@ sidebar_label: DefaultGlobalService
 | **constructor** | new DefaultGlobalService<S\>() |  |
 | **context** | [AppContext](/framework-api/interfaces/AppContext.md) |  |
 | **state** | S |  |
+
+

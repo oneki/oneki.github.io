@@ -4,6 +4,9 @@ title: isFunctionOrPromise
 sidebar_label: isFunctionOrPromise
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isFunctionOrPromise(value: any): boolean
 ```
@@ -18,3 +21,5 @@ isFunctionOrPromise(value: any): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **value** | any |  |
+
+

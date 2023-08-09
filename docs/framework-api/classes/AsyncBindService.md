@@ -4,6 +4,9 @@ title: AsyncBindService
 sidebar_label: AsyncBindService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -20,3 +23,5 @@ sidebar_label: AsyncBindService
 | **setLoading** | setLoading(isLoading: boolean): void |  |
 | **state** | [AsyncBindState](/framework-api/interfaces/AsyncBindState.md) |  |
 | **success** | success(result: T): void |  |
+
+

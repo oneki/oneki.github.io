@@ -4,6 +4,9 @@ title: isAsyncOrPromise
 sidebar_label: isAsyncOrPromise
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isAsyncOrPromise(value: any): boolean
 ```
@@ -18,3 +21,5 @@ isAsyncOrPromise(value: any): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **value** | any |  |
+
+

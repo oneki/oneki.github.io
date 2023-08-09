@@ -4,6 +4,9 @@ title: IdpSettings
 sidebar_label: IdpSettings
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(idp: Idp,context: AppContext): string
 ```
@@ -13,7 +16,9 @@ __type(idp: Idp,context: AppContext): string
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
@@ -60,3 +65,6 @@ __type(idp: Idp,context: AppContext): string
 | userinfoEndpoint | string \|  |  |
 | usernameKey | string |  |
 | validate | boolean |  |
+
+
+</div></Details>

@@ -4,6 +4,9 @@ title: useLocalReducer
 sidebar_label: useLocalReducer
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useLocalReducer<S,T>(service: T,initialState: S): 
 ```
@@ -19,3 +22,5 @@ useLocalReducer<S,T>(service: T,initialState: S):
 | --------- | ---- | ----------- |
 | **initialState** | S |  |
 | **service** | T |  |
+
+

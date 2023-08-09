@@ -4,6 +4,9 @@ title: FetchService
 sidebar_label: FetchService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -28,4 +31,13 @@ sidebar_label: FetchService
 | **put** | put<R\>(url: string,body: unknown,options: FetchOptions<R\>): void |  |
 | **setLoading** | setLoading(loading: boolean,fetching: boolean): void |  |
 | **state** | S |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | pullTask | Task<any\> |  |
+
+
+</div></Details>

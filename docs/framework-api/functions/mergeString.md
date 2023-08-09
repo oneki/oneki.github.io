@@ -4,6 +4,9 @@ title: mergeString
 sidebar_label: mergeString
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 mergeString(separator: string,str: undefined | null | string[]): string
 ```
@@ -19,3 +22,5 @@ mergeString(separator: string,str: undefined | null | string[]): string
 | --------- | ---- | ----------- |
 | **separator** | string |  |
 | **str** | undefined \| null \| string[] |  |
+
+

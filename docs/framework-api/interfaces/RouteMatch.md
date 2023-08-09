@@ -4,6 +4,9 @@ title: RouteMatch
 sidebar_label: RouteMatch
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -16,3 +19,5 @@ sidebar_label: RouteMatch
 | pathname | string | The portion of the URL pathname that was matched. |
 | pathnameBase | string | The portion of the URL pathname that was matched before child routes. |
 | route | RouteObjectType | The route object that was used to match. |
+
+

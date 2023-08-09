@@ -4,6 +4,9 @@ title: Select
 sidebar_label: Select
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 Select(props: PropsWithChildren<SelectProps>,context: any): ReactNode
 ```
@@ -18,4 +21,13 @@ Select(props: PropsWithChildren<SelectProps>,context: any): ReactNode
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **props** | PropsWithChildren<[SelectProps](/framework-api/types/SelectProps.md)\> |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | context | any |  |
+
+
+</div></Details>

@@ -4,6 +4,9 @@ title: isQueryFilterString
 sidebar_label: isQueryFilterString
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isQueryFilterString(filter: string): boolean
 ```
@@ -18,3 +21,5 @@ isQueryFilterString(filter: string): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **filter** | string |  |
+
+

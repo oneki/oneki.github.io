@@ -4,6 +4,9 @@ title: LocalRouter
 sidebar_label: LocalRouter
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -52,4 +55,13 @@ If location, the format is the following
 | **saveOrigin** | saveOrigin(force: boolean): void |  |
 | **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
 | **state** |  |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | route | string |  |
+
+
+</div></Details>

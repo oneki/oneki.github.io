@@ -4,6 +4,9 @@ title: Saga
 sidebar_label: Saga
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(args: Args): Iterator<any>
 ```
@@ -18,3 +21,5 @@ __type(args: Args): Iterator<any>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **args** | Args |  |
+
+

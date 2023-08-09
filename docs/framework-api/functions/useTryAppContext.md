@@ -4,6 +4,9 @@ title: useTryAppContext
 sidebar_label: useTryAppContext
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useTryAppContext(): null | AppContext
 ```
@@ -13,7 +16,5 @@ useTryAppContext(): null | AppContext
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

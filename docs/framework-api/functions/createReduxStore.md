@@ -4,6 +4,9 @@ title: createReduxStore
 sidebar_label: createReduxStore
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 createReduxStore(initialState: AnonymousObject<any>,middlewares: Middleware<any, any, any>[]): AppStore<any, AnyAction>
 ```
@@ -13,9 +16,14 @@ createReduxStore(initialState: AnonymousObject<any>,middlewares: Middleware<any,
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | initialState | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
 | middlewares | Middleware<any, any, any\>[] |  |
+
+
+</div></Details>

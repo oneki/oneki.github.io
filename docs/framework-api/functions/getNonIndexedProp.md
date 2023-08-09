@@ -4,6 +4,9 @@ title: getNonIndexedProp
 sidebar_label: getNonIndexedProp
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 getNonIndexedProp(prop: string): undefined | string
 ```
@@ -18,3 +21,5 @@ getNonIndexedProp(prop: string): undefined | string
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **prop** | string |  |
+
+

@@ -4,6 +4,9 @@ title: isLocaleDomain
 sidebar_label: isLocaleDomain
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isLocaleDomain(settings: AppSettings): boolean
 ```
@@ -18,3 +21,5 @@ isLocaleDomain(settings: AppSettings): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
+
+

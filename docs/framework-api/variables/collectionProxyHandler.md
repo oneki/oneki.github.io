@@ -4,6 +4,9 @@ title: collectionProxyHandler
 sidebar_label: collectionProxyHandler
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type<T,I,S,C>(target: C,prop: string | number | symbol,receiver: C): any
 ```
@@ -18,3 +21,5 @@ __type<T,I,S,C>(target: C,prop: string | number | symbol,receiver: C): any
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **get** |  |  |
+
+

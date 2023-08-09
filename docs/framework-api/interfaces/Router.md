@@ -4,6 +4,9 @@ title: Router
 sidebar_label: Router
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -33,4 +36,13 @@ sidebar_label: Router
 | **saveOrigin** | saveOrigin(force: boolean): void |  |
 | **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
 | **state** | undefined \| null \| [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | route | string |  |
+
+
+</div></Details>

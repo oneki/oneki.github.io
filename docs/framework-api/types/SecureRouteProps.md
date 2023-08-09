@@ -4,6 +4,9 @@ title: SecureRouteProps
 sidebar_label: SecureRouteProps
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,3 +16,5 @@ sidebar_label: SecureRouteProps
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **component** | ElementType |  |
+
+

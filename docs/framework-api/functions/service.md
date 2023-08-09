@@ -4,6 +4,9 @@ title: service
 sidebar_label: service
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 service(target: any): any
 ```
@@ -18,3 +21,5 @@ service(target: any): any
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **target** | any |  |
+
+

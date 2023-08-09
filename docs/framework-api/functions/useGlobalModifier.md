@@ -4,6 +4,9 @@ title: useGlobalModifier
 sidebar_label: useGlobalModifier
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useGlobalModifier(): GlobalModifierFunction
 ```
@@ -13,7 +16,5 @@ useGlobalModifier(): GlobalModifierFunction
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

@@ -4,6 +4,9 @@ title: SuccessCallback
 sidebar_label: SuccessCallback
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,3 +16,5 @@ sidebar_label: SuccessCallback
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **result** | T |  |
+
+

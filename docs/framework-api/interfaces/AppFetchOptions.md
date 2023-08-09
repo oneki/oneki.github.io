@@ -4,11 +4,16 @@ title: AppFetchOptions
 sidebar_label: AppFetchOptions
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
@@ -32,3 +37,6 @@ sidebar_label: AppFetchOptions
 | referrerPolicy | ReferrerPolicy | A referrer policy to set request's referrerPolicy. |
 | signal | null \| AbortSignal | An AbortSignal to set request's signal. |
 | window | null | Can only be null. Used to disassociate request from any Window. |
+
+
+</div></Details>

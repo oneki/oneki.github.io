@@ -4,6 +4,9 @@ title: isSameQuery
 sidebar_label: isSameQuery
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isSameQuery(q1: Query,q2: Query): boolean
 ```
@@ -19,3 +22,5 @@ isSameQuery(q1: Query,q2: Query): boolean
 | --------- | ---- | ----------- |
 | **q1** | [Query](/framework-api/interfaces/Query.md) |  |
 | **q2** | [Query](/framework-api/interfaces/Query.md) |  |
+
+

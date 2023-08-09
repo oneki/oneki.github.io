@@ -4,6 +4,9 @@ title: AuthService
 sidebar_label: AuthService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -27,3 +30,5 @@ trigger the refreshing of the token if applicable |
 | **setSecurityContext** | setSecurityContext(securityContext: null \| AnonymousObject<any\>,identity: string): void | Save the security context in the redux store |
 | **setToken** | setToken(token: null \| string \| AnonymousObject<any\>,identity: string): void | Save the token in the redux store |
 | **state** | [AnyState](/framework-api/interfaces/AnyState.md) |  |
+
+

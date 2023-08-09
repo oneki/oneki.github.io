@@ -4,6 +4,9 @@ title: useLinkClickHandler
 sidebar_label: useLinkClickHandler
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useLinkClickHandler<E>(to: To,__namedParameters: ): 
 ```
@@ -20,8 +23,17 @@ use in our exported `<Link>`.
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **to** | [To](/framework-api/types/To.md) |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | preventScrollReset | boolean |  |
 | relative | RelativeRoutingType |  |
 | replace | boolean |  |
 | state | any |  |
 | target | HTMLAttributeAnchorTarget |  |
+
+
+</div></Details>

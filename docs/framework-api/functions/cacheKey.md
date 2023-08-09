@@ -4,6 +4,9 @@ title: cacheKey
 sidebar_label: cacheKey
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 cacheKey(key: string): string
 ```
@@ -18,3 +21,5 @@ cacheKey(key: string): string
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **key** | string |  |
+
+

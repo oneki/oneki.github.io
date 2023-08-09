@@ -4,6 +4,9 @@ title: CollectionState
 sidebar_label: CollectionState
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -17,6 +20,12 @@ sidebar_label: CollectionState
 | **local** | boolean |  |
 | **router** | [Router](/framework-api/interfaces/Router.md) |  |
 | **totalKey** | string |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | active | string[] |  |
 | adapter | [ItemAdapter](/framework-api/types/ItemAdapter.md)<T\> |  |
 | autoload | boolean |  |
@@ -54,3 +63,6 @@ sidebar_label: CollectionState
 | throttle | number |  |
 | total | number |  |
 | url | string |  |
+
+
+</div></Details>

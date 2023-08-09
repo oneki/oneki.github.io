@@ -4,6 +4,9 @@ title: useLocalState
 sidebar_label: useLocalState
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useLocalState<T>(initialState: T): 
 ```
@@ -18,3 +21,5 @@ useLocalState<T>(initialState: T):
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **initialState** | T |  |
+
+

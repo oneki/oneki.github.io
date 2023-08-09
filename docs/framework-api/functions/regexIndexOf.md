@@ -4,6 +4,9 @@ title: regexIndexOf
 sidebar_label: regexIndexOf
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 regexIndexOf(str: string,regex: RegExp,startpos: number): number
 ```
@@ -19,4 +22,13 @@ regexIndexOf(str: string,regex: RegExp,startpos: number): number
 | --------- | ---- | ----------- |
 | **regex** | RegExp |  |
 | **str** | string |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | startpos | number |  |
+
+
+</div></Details>

@@ -4,6 +4,9 @@ title: isLocalePath
 sidebar_label: isLocalePath
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isLocalePath(settings: AppSettings): boolean
 ```
@@ -18,3 +21,5 @@ isLocalePath(settings: AppSettings): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
+
+

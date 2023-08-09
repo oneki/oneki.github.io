@@ -4,6 +4,9 @@ title: serializeFields
 sidebar_label: serializeFields
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 serializeFields(fields: undefined | string[]): string | void
 ```
@@ -18,3 +21,5 @@ serializeFields(fields: undefined | string[]): string | void
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **fields** | undefined \| string[] |  |
+
+

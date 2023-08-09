@@ -4,6 +4,9 @@ title: AppResultCallback
 sidebar_label: AppResultCallback
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(result: T,context: AppContext): void
 ```
@@ -19,3 +22,5 @@ __type(result: T,context: AppContext): void
 | --------- | ---- | ----------- |
 | **context** | [AppContext](/framework-api/interfaces/AppContext.md) |  |
 | **result** | T |  |
+
+

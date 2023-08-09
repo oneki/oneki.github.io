@@ -4,6 +4,9 @@ title: hex2b64
 sidebar_label: hex2b64
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 hex2b64(h: string): string
 ```
@@ -18,3 +21,5 @@ hex2b64(h: string): string
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **h** | string |  |
+
+

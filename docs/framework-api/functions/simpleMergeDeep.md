@@ -4,6 +4,9 @@ title: simpleMergeDeep
 sidebar_label: simpleMergeDeep
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 simpleMergeDeep(target: any,source: any): any
 ```
@@ -19,3 +22,5 @@ simpleMergeDeep(target: any,source: any): any
 | --------- | ---- | ----------- |
 | **source** | any |  |
 | **target** | any |  |
+
+

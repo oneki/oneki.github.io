@@ -4,6 +4,9 @@ title: AsyncBinder
 sidebar_label: AsyncBinder
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(args: any[]): Promise<T>
 ```
@@ -18,3 +21,5 @@ __type(args: any[]): Promise<T>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **args** | any[] |  |
+
+

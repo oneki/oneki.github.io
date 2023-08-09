@@ -4,6 +4,9 @@ title: handler
 sidebar_label: handler
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type<S,T>(target: T,prop: string | number | symbol,receiver: T): any
 ```
@@ -18,3 +21,5 @@ __type<S,T>(target: T,prop: string | number | symbol,receiver: T): any
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **get** |  |  |
+
+

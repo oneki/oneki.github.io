@@ -4,6 +4,9 @@ title: SubmitButton
 sidebar_label: SubmitButton
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 SubmitButton(props: PropsWithChildren<SubmitButtonProps>,context: any): ReactNode
 ```
@@ -18,4 +21,13 @@ SubmitButton(props: PropsWithChildren<SubmitButtonProps>,context: any): ReactNod
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **props** | PropsWithChildren<[SubmitButtonProps](/framework-api/types/SubmitButtonProps.md)\> |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | context | any |  |
+
+
+</div></Details>

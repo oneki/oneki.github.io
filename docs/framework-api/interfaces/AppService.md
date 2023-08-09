@@ -4,6 +4,9 @@ title: AppService
 sidebar_label: AppService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -14,3 +17,5 @@ sidebar_label: AppService
 | --------- | ---- | ----------- |
 | **context** | [AppContext](/framework-api/interfaces/AppContext.md) |  |
 | **state** | S |  |
+
+

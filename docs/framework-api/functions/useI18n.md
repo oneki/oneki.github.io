@@ -4,6 +4,9 @@ title: useI18n
 sidebar_label: useI18n
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useI18n(): I18n
 ```
@@ -13,7 +16,5 @@ useI18n(): I18n
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

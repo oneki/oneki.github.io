@@ -4,6 +4,9 @@ title: ValidatorAsyncFunction
 sidebar_label: ValidatorAsyncFunction
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(value: any): Promise<ValidationResult>
 ```
@@ -18,3 +21,5 @@ __type(value: any): Promise<ValidationResult>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **value** | any |  |
+
+

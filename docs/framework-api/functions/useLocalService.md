@@ -4,6 +4,9 @@ title: useLocalService
 sidebar_label: useLocalService
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useLocalService<S,T>(ctor: Class<T>,initialState: S | ): 
 ```
@@ -19,3 +22,5 @@ useLocalService<S,T>(ctor: Class<T>,initialState: S | ):
 | --------- | ---- | ----------- |
 | **ctor** | [Class](/framework-api/types/Class.md)<T\> |  |
 | **initialState** | S \|  |  |
+
+

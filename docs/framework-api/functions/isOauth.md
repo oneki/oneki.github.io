@@ -4,6 +4,9 @@ title: isOauth
 sidebar_label: isOauth
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isOauth(idp: Idp): boolean
 ```
@@ -18,3 +21,5 @@ isOauth(idp: Idp): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **idp** | [Idp](/framework-api/interfaces/Idp.md) |  |
+
+

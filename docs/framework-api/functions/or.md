@@ -4,6 +4,9 @@ title: or
 sidebar_label: or
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 or(value: any,defaultValue: any): any
 ```
@@ -19,3 +22,5 @@ or(value: any,defaultValue: any): any
 | --------- | ---- | ----------- |
 | **defaultValue** | any |  |
 | **value** | any |  |
+
+

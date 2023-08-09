@@ -4,6 +4,9 @@ title: LinkProps
 sidebar_label: LinkProps
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(location: Location): boolean
 ```
@@ -18,6 +21,12 @@ __type(location: Location): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **href** | string \| [Location](/framework-api/interfaces/Location.md) |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | activeClassName | string |  |
 | activeStyle | React.CSSProperties |  |
 | Component | React.ForwardRefRenderFunction<HTMLAnchorElement, [LinkComponentProps](/framework-api/types/LinkComponentProps.md)\> |  |
@@ -30,3 +39,6 @@ __type(location: Location): boolean
 | shallow | boolean |  |
 | state | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
 | strict | boolean |  |
+
+
+</div></Details>

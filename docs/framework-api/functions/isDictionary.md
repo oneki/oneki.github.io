@@ -4,6 +4,9 @@ title: isDictionary
 sidebar_label: isDictionary
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isDictionary(object: unknown): 
 ```
@@ -18,3 +21,5 @@ isDictionary(object: unknown):
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **object** | unknown |  |
+
+

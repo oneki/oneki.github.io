@@ -4,6 +4,9 @@ title: formatAsyncResponse
 sidebar_label: formatAsyncResponse
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 formatAsyncResponse(response: Response): Promise<any>
 ```
@@ -18,3 +21,5 @@ formatAsyncResponse(response: Response): Promise<any>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **response** | Response |  |
+
+

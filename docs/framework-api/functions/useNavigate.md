@@ -4,6 +4,9 @@ title: useNavigate
 sidebar_label: useNavigate
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useNavigate(): NavigateFunction
 ```
@@ -14,7 +17,5 @@ may also be used by other elements to change the location.
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

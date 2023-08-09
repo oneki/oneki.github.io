@@ -4,6 +4,9 @@ title: TextareaProps
 sidebar_label: TextareaProps
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,6 +16,12 @@ sidebar_label: TextareaProps
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **name** | string |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | email | boolean |  |
 | emailMessage | string |  |
 | id | string |  |
@@ -32,3 +41,6 @@ sidebar_label: TextareaProps
 | required | boolean |  |
 | requiredMessage | string |  |
 | validators | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[Validator](/framework-api/types/Validator.md)\> |  |
+
+
+</div></Details>

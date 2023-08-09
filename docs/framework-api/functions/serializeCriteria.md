@@ -4,6 +4,9 @@ title: serializeCriteria
 sidebar_label: serializeCriteria
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 serializeCriteria(criteria: QueryFilterCriteria): string
 ```
@@ -18,3 +21,5 @@ serializeCriteria(criteria: QueryFilterCriteria): string
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **criteria** | [QueryFilterCriteria](/framework-api/interfaces/QueryFilterCriteria.md) |  |
+
+

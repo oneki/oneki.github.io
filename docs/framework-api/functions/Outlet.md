@@ -4,6 +4,9 @@ title: Outlet
 sidebar_label: Outlet
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 Outlet(props: OutletProps): React.ReactElement | null
 ```
@@ -18,3 +21,5 @@ Renders the child route's element, if there is one.
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **props** | [OutletProps](/framework-api/interfaces/OutletProps.md) |  |
+
+

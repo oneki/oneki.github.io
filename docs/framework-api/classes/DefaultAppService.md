@@ -4,6 +4,9 @@ title: DefaultAppService
 sidebar_label: DefaultAppService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -16,3 +19,5 @@ sidebar_label: DefaultAppService
 | **constructor** | new DefaultAppService<S\>() |  |
 | **context** | [AppContext](/framework-api/interfaces/AppContext.md) |  |
 | **state** | S |  |
+
+

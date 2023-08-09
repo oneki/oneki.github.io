@@ -4,6 +4,9 @@ title: Idp
 sidebar_label: Idp
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(idp: Idp,context: AppContext): string
 ```
@@ -22,6 +25,12 @@ __type(idp: Idp,context: AppContext): string
 | **oauth2** | boolean |  |
 | **oidc** | boolean |  |
 | **type** | [IdpType](/framework-api/enum/IdpType.md) |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | authorizeEndpoint | string \|  |  |
 | callback | token \| securityContext \|  |  |
 | clientAuth | [IdpClientAuth](/framework-api/enum/IdpClientAuth.md) |  |
@@ -60,3 +69,6 @@ __type(idp: Idp,context: AppContext): string
 | userinfoEndpoint | string \|  |  |
 | usernameKey | string |  |
 | validate | boolean |  |
+
+
+</div></Details>

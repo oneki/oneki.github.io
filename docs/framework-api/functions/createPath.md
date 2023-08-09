@@ -4,6 +4,9 @@ title: createPath
 sidebar_label: createPath
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 createPath(__namedParameters: Partial<Path>): string
 ```
@@ -13,7 +16,5 @@ Creates a string URL path from the given pathname, search, and hash components.
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

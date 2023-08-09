@@ -4,6 +4,9 @@ title: useThrottle
 sidebar_label: useThrottle
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useThrottle<F>(fn: F,delayMs: number): F
 ```
@@ -19,3 +22,5 @@ useThrottle<F>(fn: F,delayMs: number): F
 | --------- | ---- | ----------- |
 | **delayMs** | number |  |
 | **fn** | F |  |
+
+

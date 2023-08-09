@@ -4,6 +4,9 @@ title: flattenTranslations
 sidebar_label: flattenTranslations
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 flattenTranslations(translations: AnonymousObject<AnonymousObject<string>>): AnonymousObject<string>
 ```
@@ -18,3 +21,5 @@ flattenTranslations(translations: AnonymousObject<AnonymousObject<string>>): Ano
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **translations** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<string\>\> |  |
+
+

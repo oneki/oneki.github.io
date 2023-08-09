@@ -4,6 +4,9 @@ title: indexedLocales
 sidebar_label: indexedLocales
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 indexedLocales(settings: AppSettings): any
 ```
@@ -18,3 +21,5 @@ indexedLocales(settings: AppSettings): any
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
+
+

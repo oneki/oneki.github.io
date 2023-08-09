@@ -4,6 +4,9 @@ title: useParams
 sidebar_label: useParams
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useParams<ParamsOrKey>(): Readonly<>
 ```
@@ -14,7 +17,5 @@ URL that were matched by the route path.
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

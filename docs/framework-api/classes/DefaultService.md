@@ -4,6 +4,9 @@ title: DefaultService
 sidebar_label: DefaultService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -15,3 +18,5 @@ sidebar_label: DefaultService
 | **callSaga** | callSaga(sagaName: string,args: any[]): void |  |
 | **constructor** | new DefaultService<S\>() |  |
 | **state** | S |  |
+
+

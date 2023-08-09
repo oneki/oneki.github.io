@@ -4,6 +4,9 @@ title: matchRoutes
 sidebar_label: matchRoutes
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 matchRoutes<RouteObjectType>(routes: RouteObjectType[],locationArg: string | Partial<Location>,basename: string): AgnosticRouteMatch<string, RouteObjectType>[] | null
 ```
@@ -19,4 +22,13 @@ Matches the given routes to a location and returns the match data.
 | --------- | ---- | ----------- |
 | **locationArg** | string \| Partial<Location\> |  |
 | **routes** | RouteObjectType[] |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | basename | string |  |
+
+
+</div></Details>

@@ -4,6 +4,9 @@ title: extractTag
 sidebar_label: extractTag
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 extractTag(str: string,startPos: number):  | 
 ```
@@ -19,3 +22,5 @@ extractTag(str: string,startPos: number):  |
 | --------- | ---- | ----------- |
 | **startPos** | number |  |
 | **str** | string |  |
+
+

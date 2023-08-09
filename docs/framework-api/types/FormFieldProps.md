@@ -4,6 +4,9 @@ title: FormFieldProps
 sidebar_label: FormFieldProps
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(value: any): boolean
 ```
@@ -18,6 +21,12 @@ __type(value: any): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **name** | string |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | email | boolean |  |
 | emailMessage | string |  |
 | id | string |  |
@@ -37,3 +46,6 @@ __type(value: any): boolean
 | required | boolean |  |
 | requiredMessage | string |  |
 | validators | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[Validator](/framework-api/types/Validator.md)\> |  |
+
+
+</div></Details>

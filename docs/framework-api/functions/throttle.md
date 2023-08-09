@@ -4,6 +4,9 @@ title: throttle
 sidebar_label: throttle
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 throttle(saga: AnyFunction,delay: string | number,defaultDelay: number): AnyFunction
 ```
@@ -18,5 +21,14 @@ throttle(saga: AnyFunction,delay: string | number,defaultDelay: number): AnyFunc
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **saga** | [AnyFunction](/framework-api/types/AnyFunction.md) |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | defaultDelay | number |  |
 | delay | string \| number |  |
+
+
+</div></Details>

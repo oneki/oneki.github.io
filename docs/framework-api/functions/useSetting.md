@@ -4,6 +4,9 @@ title: useSetting
 sidebar_label: useSetting
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useSetting<T>(selector: string): T | undefined
 useSetting<T>(selector: string,defaultValue: undefined): T | undefined
@@ -21,3 +24,5 @@ useSetting<T>(selector: string,defaultValue: T): T
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **selector** | string |  |
+
+

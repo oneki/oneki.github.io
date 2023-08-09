@@ -4,6 +4,9 @@ title: useEventListener
 sidebar_label: useEventListener
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useEventListener<K>(eventName: K,handler: ,capture: boolean): void
 ```
@@ -19,4 +22,13 @@ useEventListener<K>(eventName: K,handler: ,capture: boolean): void
 | --------- | ---- | ----------- |
 | **eventName** | K |  |
 | **handler** |  |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | capture | boolean |  |
+
+
+</div></Details>

@@ -4,6 +4,9 @@ title: isGetterOrSetter
 sidebar_label: isGetterOrSetter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isGetterOrSetter(obj: any,property: string): boolean
 ```
@@ -19,3 +22,5 @@ isGetterOrSetter(obj: any,property: string): boolean
 | --------- | ---- | ----------- |
 | **obj** | any |  |
 | **property** | string |  |
+
+

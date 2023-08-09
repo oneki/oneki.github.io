@@ -4,6 +4,9 @@ title: HTTPError
 sidebar_label: HTTPError
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(err: Error,stackTraces: CallSite[]): any
 ```
@@ -25,6 +28,15 @@ __type(err: Error,stackTraces: CallSite[]): any
 | **of** | of(error: unknown): BasicError |  |
 | **payload** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
 | **stackTraceLimit** | number |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | cause | unknown |  |
 | prepareStackTrace |  |  |
 | stack | string |  |
+
+
+</div></Details>

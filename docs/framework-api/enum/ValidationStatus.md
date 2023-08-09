@@ -4,6 +4,9 @@ title: ValidationStatus
 sidebar_label: ValidationStatus
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -17,3 +20,5 @@ sidebar_label: ValidationStatus
 | **None** |  |  |
 | **Ok** | OK |  |
 | **Warning** | Warning |  |
+
+

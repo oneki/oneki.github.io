@@ -4,6 +4,9 @@ title: isItemFetching
 sidebar_label: isItemFetching
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isItemFetching<T,I>(item: I): boolean
 ```
@@ -13,8 +16,13 @@ isItemFetching<T,I>(item: I): boolean
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | item | I |  |
+
+
+</div></Details>

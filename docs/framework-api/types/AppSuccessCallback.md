@@ -4,6 +4,9 @@ title: AppSuccessCallback
 sidebar_label: AppSuccessCallback
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -14,3 +17,5 @@ sidebar_label: AppSuccessCallback
 | --------- | ---- | ----------- |
 | **context** | [AppContext](/framework-api/interfaces/AppContext.md) |  |
 | **result** | T |  |
+
+

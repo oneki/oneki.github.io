@@ -4,6 +4,9 @@ title: isQuerySortByMultiFields
 sidebar_label: isQuerySortByMultiFields
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isQuerySortByMultiFields(value: QuerySortBy): 
 ```
@@ -18,3 +21,5 @@ isQuerySortByMultiFields(value: QuerySortBy):
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **value** | [QuerySortBy](/framework-api/types/QuerySortBy.md) |  |
+
+

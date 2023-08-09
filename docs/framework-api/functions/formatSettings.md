@@ -4,6 +4,9 @@ title: formatSettings
 sidebar_label: formatSettings
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 formatSettings(settings: AppSettings): AppSettings
 ```
@@ -18,3 +21,5 @@ formatSettings(settings: AppSettings): AppSettings
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
+
+

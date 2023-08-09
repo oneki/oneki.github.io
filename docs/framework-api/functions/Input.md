@@ -4,6 +4,9 @@ title: Input
 sidebar_label: Input
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 Input(props: PropsWithChildren<InputProps>,context: any): ReactNode
 ```
@@ -18,4 +21,13 @@ Input(props: PropsWithChildren<InputProps>,context: any): ReactNode
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **props** | PropsWithChildren<[InputProps](/framework-api/types/InputProps.md)\> |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | context | any |  |
+
+
+</div></Details>

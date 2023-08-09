@@ -4,6 +4,9 @@ title: useSettings
 sidebar_label: useSettings
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useSettings(): AppSettings
 ```
@@ -13,7 +16,5 @@ useSettings(): AppSettings
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

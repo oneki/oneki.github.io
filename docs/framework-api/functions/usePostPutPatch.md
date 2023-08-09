@@ -4,6 +4,9 @@ title: usePostPutPatch
 sidebar_label: usePostPutPatch
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 usePostPutPatch<T>(url: string,method: FetchMethod,options: AppFetchOptions<T>): 
 ```
@@ -19,4 +22,13 @@ usePostPutPatch<T>(url: string,method: FetchMethod,options: AppFetchOptions<T>):
 | --------- | ---- | ----------- |
 | **method** | [FetchMethod](/framework-api/types/FetchMethod.md) |  |
 | **url** | string |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | options | [AppFetchOptions](/framework-api/interfaces/AppFetchOptions.md)<T\> |  |
+
+
+</div></Details>

@@ -4,6 +4,9 @@ title: useGlobalSelector
 sidebar_label: useGlobalSelector
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useGlobalSelector<T>(selector: GlobalSelectorFunction): T | undefined
 useGlobalSelector<T>(selector: GlobalSelectorFunction,defaultValue: undefined): T | undefined
@@ -21,3 +24,5 @@ useGlobalSelector<T>(selector: GlobalSelectorFunction,defaultValue: T): T
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **selector** | [GlobalSelectorFunction](/framework-api/types/GlobalSelectorFunction.md) |  |
+
+

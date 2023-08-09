@@ -4,6 +4,9 @@ title: isPromise
 sidebar_label: isPromise
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isPromise(value: any): boolean
 ```
@@ -18,3 +21,5 @@ isPromise(value: any): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **value** | any |  |
+
+

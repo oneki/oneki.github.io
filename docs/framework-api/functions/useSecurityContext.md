@@ -4,6 +4,9 @@ title: useSecurityContext
 sidebar_label: useSecurityContext
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useSecurityContext<T>(): 
 useSecurityContext<T>(selector: string): 
@@ -17,7 +20,5 @@ useSecurityContext<T>(selector: undefined | string,defaultValue: T,identity: str
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

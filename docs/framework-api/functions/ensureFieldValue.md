@@ -4,6 +4,9 @@ title: ensureFieldValue
 sidebar_label: ensureFieldValue
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 ensureFieldValue<T,K>(object: T,field: K,value: ): T
 ```
@@ -19,4 +22,13 @@ ensureFieldValue<T,K>(object: T,field: K,value: ): T
 | --------- | ---- | ----------- |
 | **field** | K |  |
 | **object** | T |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | value |  |  |
+
+
+</div></Details>

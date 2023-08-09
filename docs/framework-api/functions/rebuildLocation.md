@@ -4,6 +4,9 @@ title: rebuildLocation
 sidebar_label: rebuildLocation
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 rebuildLocation(location: Location): void
 ```
@@ -18,3 +21,5 @@ rebuildLocation(location: Location): void
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **location** | [Location](/framework-api/interfaces/Location.md) |  |
+
+

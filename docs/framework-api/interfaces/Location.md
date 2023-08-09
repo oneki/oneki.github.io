@@ -4,6 +4,9 @@ title: Location
 sidebar_label: Location
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,6 +16,12 @@ sidebar_label: Location
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **pathname** | string |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | baseurl | string |  |
 | hash | [ParsedQuery](/framework-api/interfaces/ParsedQuery.md)<string\> |  |
 | host | string |  |
@@ -26,3 +35,6 @@ sidebar_label: Location
 | query | [ParsedQuery](/framework-api/interfaces/ParsedQuery.md)<string\> |  |
 | relativeurl | string |  |
 | state | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+
+
+</div></Details>

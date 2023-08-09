@@ -4,6 +4,9 @@ title: GlobalService
 sidebar_label: GlobalService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -14,3 +17,5 @@ sidebar_label: GlobalService
 | --------- | ---- | ----------- |
 | **context** | [AppContext](/framework-api/interfaces/AppContext.md) |  |
 | **state** | S |  |
+
+

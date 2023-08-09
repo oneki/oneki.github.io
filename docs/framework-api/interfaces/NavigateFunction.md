@@ -4,6 +4,9 @@ title: NavigateFunction
 sidebar_label: NavigateFunction
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 NavigateFunction(to: To,options: NavigateOptions): void
 NavigateFunction(delta: number): void
@@ -19,4 +22,13 @@ The interface for the navigate() function returned from useNavigate().
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **to** | [To](/framework-api/types/To.md) |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | options | [NavigateOptions](/framework-api/interfaces/NavigateOptions.md) |  |
+
+
+</div></Details>

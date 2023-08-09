@@ -4,6 +4,9 @@ title: parsePath
 sidebar_label: parsePath
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 parsePath(path: string): Partial<Path>
 ```
@@ -18,3 +21,5 @@ Parses a string URL path into its separate pathname, search, and hash components
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **path** | string |  |
+
+

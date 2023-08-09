@@ -4,6 +4,9 @@ title: isLocaleSimple
 sidebar_label: isLocaleSimple
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isLocaleSimple(settings: AppSettings): boolean
 ```
@@ -18,3 +21,5 @@ isLocaleSimple(settings: AppSettings): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
+
+

@@ -4,6 +4,9 @@ title: IndexRouteProps
 sidebar_label: IndexRouteProps
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,6 +16,12 @@ sidebar_label: IndexRouteProps
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **index** | true |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | action | ActionFunction |  |
 | caseSensitive | boolean |  |
 | children | undefined |  |
@@ -27,3 +36,6 @@ sidebar_label: IndexRouteProps
 | loader | LoaderFunction |  |
 | path | string |  |
 | shouldRevalidate | ShouldRevalidateFunction |  |
+
+
+</div></Details>

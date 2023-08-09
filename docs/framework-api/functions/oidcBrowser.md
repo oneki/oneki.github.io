@@ -4,6 +4,9 @@ title: oidcBrowser
 sidebar_label: oidcBrowser
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 oidcBrowser(idpConfig: IdpSettings): Idp
 ```
@@ -18,3 +21,5 @@ oidcBrowser(idpConfig: IdpSettings): Idp
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **idpConfig** | [IdpSettings](/framework-api/interfaces/IdpSettings.md) |  |
+
+

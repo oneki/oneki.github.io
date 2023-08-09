@@ -4,6 +4,9 @@ title: Item
 sidebar_label: Item
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -14,6 +17,12 @@ sidebar_label: Item
 | --------- | ---- | ----------- |
 | **loadingStatus** | [LoadingItemStatus](/framework-api/types/LoadingItemStatus.md) |  |
 | **uid** | string |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | activable | boolean |  |
 | active | boolean |  |
 | data | T |  |
@@ -25,3 +34,6 @@ sidebar_label: Item
 | selected | boolean |  |
 | text | string |  |
 | visible | boolean |  |
+
+
+</div></Details>

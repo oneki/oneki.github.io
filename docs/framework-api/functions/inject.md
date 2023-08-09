@@ -4,6 +4,9 @@ title: inject
 sidebar_label: inject
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 inject<S,T>(ctor: Class<T>): T
 ```
@@ -18,3 +21,5 @@ inject<S,T>(ctor: Class<T>): T
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **ctor** | [Class](/framework-api/types/Class.md)<T\> |  |
+
+

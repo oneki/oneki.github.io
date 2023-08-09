@@ -4,6 +4,9 @@ title: trimEnd
 sidebar_label: trimEnd
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 trimEnd(string: string,charToRemove: string): string
 ```
@@ -19,3 +22,5 @@ trimEnd(string: string,charToRemove: string): string
 | --------- | ---- | ----------- |
 | **charToRemove** | string |  |
 | **string** | string |  |
+
+

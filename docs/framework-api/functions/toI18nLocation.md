@@ -4,6 +4,9 @@ title: toI18nLocation
 sidebar_label: toI18nLocation
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 toI18nLocation(location: string | Location,settings: AppSettings,i18n: I18n,locale: undefined | string | false): Location
 ```
@@ -21,3 +24,5 @@ toI18nLocation(location: string | Location,settings: AppSettings,i18n: I18n,loca
 | **locale** | undefined \| string \| false |  |
 | **location** | string \| [Location](/framework-api/interfaces/Location.md) |  |
 | **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
+
+

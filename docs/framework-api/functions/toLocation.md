@@ -4,6 +4,9 @@ title: toLocation
 sidebar_label: toLocation
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 toLocation(url: string,settings: AppSettings): Location
 ```
@@ -19,3 +22,5 @@ toLocation(url: string,settings: AppSettings): Location
 | --------- | ---- | ----------- |
 | **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
 | **url** | string |  |
+
+

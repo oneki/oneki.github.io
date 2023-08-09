@@ -4,6 +4,9 @@ title: append
 sidebar_label: append
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 append<T>(content: T,property: string | number,value: any): T
 ```
@@ -20,3 +23,5 @@ append<T>(content: T,property: string | number,value: any): T
 | **content** | T |  |
 | **property** | string \| number |  |
 | **value** | any |  |
+
+

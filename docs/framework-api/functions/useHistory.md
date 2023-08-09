@@ -4,6 +4,9 @@ title: useHistory
 sidebar_label: useHistory
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useHistory(): Location[]
 ```
@@ -13,7 +16,5 @@ useHistory(): Location[]
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

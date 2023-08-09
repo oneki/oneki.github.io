@@ -4,6 +4,9 @@ title: I18nService
 sidebar_label: I18nService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -26,3 +29,5 @@ sidebar_label: I18nService
 | **setLocale** | setLocale(locale: string): void |  |
 | **setTranslations** | setTranslations(translations: AnonymousObject<any\>,locale: string): void |  |
 | **state** | [AnyState](/framework-api/interfaces/AnyState.md) |  |
+
+

@@ -4,6 +4,9 @@ title: serializeParams
 sidebar_label: serializeParams
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 serializeParams(params: undefined | AnonymousObject<any>): void | AnonymousObject<string>
 ```
@@ -18,3 +21,5 @@ serializeParams(params: undefined | AnonymousObject<any>): void | AnonymousObjec
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **params** | undefined \| [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+
+

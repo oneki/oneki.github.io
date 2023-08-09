@@ -4,6 +4,9 @@ title: minLength
 sidebar_label: minLength
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 minLength(minLength: number,message: string): LengthValidator
 ```
@@ -18,4 +21,13 @@ minLength(minLength: number,message: string): LengthValidator
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **minLength** | number |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | message | string |  |
+
+
+</div></Details>

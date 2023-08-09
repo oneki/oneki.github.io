@@ -4,6 +4,9 @@ title: toArray
 sidebar_label: toArray
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 toArray<T>(a: undefined | T | T[]): T[]
 ```
@@ -18,3 +21,5 @@ toArray<T>(a: undefined | T | T[]): T[]
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **a** | undefined \| T \| T[] |  |
+
+

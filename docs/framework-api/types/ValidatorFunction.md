@@ -4,6 +4,9 @@ title: ValidatorFunction
 sidebar_label: ValidatorFunction
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,3 +16,5 @@ sidebar_label: ValidatorFunction
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **value** | any |  |
+
+

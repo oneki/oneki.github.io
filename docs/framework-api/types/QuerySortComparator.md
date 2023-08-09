@@ -4,6 +4,9 @@ title: QuerySortComparator
 sidebar_label: QuerySortComparator
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(a: T | null | undefined,b: T | null | undefined): number
 ```
@@ -19,3 +22,5 @@ __type(a: T | null | undefined,b: T | null | undefined): number
 | --------- | ---- | ----------- |
 | **a** | T \| null \| undefined |  |
 | **b** | T \| null \| undefined |  |
+
+

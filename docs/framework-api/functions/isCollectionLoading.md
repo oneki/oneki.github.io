@@ -4,6 +4,9 @@ title: isCollectionLoading
 sidebar_label: isCollectionLoading
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isCollectionLoading<T,I>(collection: Collection<T, I>): boolean
 ```
@@ -18,3 +21,5 @@ isCollectionLoading<T,I>(collection: Collection<T, I>): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **collection** | [Collection](/framework-api/types/Collection.md)<T, I\> |  |
+
+

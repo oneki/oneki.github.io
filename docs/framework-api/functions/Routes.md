@@ -4,6 +4,9 @@ title: Routes
 sidebar_label: Routes
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 Routes(__namedParameters: RoutesProps): React.ReactElement | null
 ```
@@ -14,7 +17,5 @@ that best matches the current location.
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

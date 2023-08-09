@@ -4,6 +4,9 @@ title: toKebabCase
 sidebar_label: toKebabCase
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 toKebabCase(str: undefined): undefined
 toKebabCase(str: null): null
@@ -20,3 +23,5 @@ toKebabCase(str: string): string
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **str** | undefined |  |
+
+

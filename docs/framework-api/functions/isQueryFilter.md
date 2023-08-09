@@ -4,6 +4,9 @@ title: isQueryFilter
 sidebar_label: isQueryFilter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isQueryFilter(value: QueryFilterOrCriteria | QueryFilterOrCriteria[]): 
 ```
@@ -18,3 +21,5 @@ isQueryFilter(value: QueryFilterOrCriteria | QueryFilterOrCriteria[]):
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **value** | [QueryFilterOrCriteria](/framework-api/types/QueryFilterOrCriteria.md) \| [QueryFilterOrCriteria](/framework-api/types/QueryFilterOrCriteria.md)[] |  |
+
+

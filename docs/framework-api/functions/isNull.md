@@ -4,6 +4,9 @@ title: isNull
 sidebar_label: isNull
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isNull(value: any): boolean
 ```
@@ -18,3 +21,5 @@ isNull(value: any): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **value** | any |  |
+
+

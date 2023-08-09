@@ -4,6 +4,9 @@ title: defaultValidation
 sidebar_label: defaultValidation
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -25,3 +28,5 @@ sidebar_label: defaultValidation
 | **isWarning** | isWarning(): boolean |  |
 | **message** | string |  |
 | **status** | [ValidationStatus](/framework-api/enum/ValidationStatus.md) |  |
+
+

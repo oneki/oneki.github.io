@@ -4,6 +4,9 @@ title: useCollectionService
 sidebar_label: useCollectionService
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useCollectionService<T,I,S,C>(ctor: Class<C>,initialState: S): 
 ```
@@ -19,3 +22,5 @@ useCollectionService<T,I,S,C>(ctor: Class<C>,initialState: S):
 | --------- | ---- | ----------- |
 | **ctor** | [Class](/framework-api/types/Class.md)<C\> |  |
 | **initialState** | S |  |
+
+

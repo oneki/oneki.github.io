@@ -4,6 +4,9 @@ title: fromPayload
 sidebar_label: fromPayload
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 fromPayload(payload: AnonymousObject<any>): any[]
 ```
@@ -18,3 +21,5 @@ fromPayload(payload: AnonymousObject<any>): any[]
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **payload** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+
+

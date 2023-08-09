@@ -4,6 +4,9 @@ title: QueryEngine
 sidebar_label: QueryEngine
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(items: I[],query: LocalQuery,comparator: QuerySortComparator<T>,comparators: AnonymousObject<QuerySortComparator<T>>,searcher: QuerySearcher<T>): I[]
 ```
@@ -21,4 +24,13 @@ __type(items: I[],query: LocalQuery,comparator: QuerySortComparator<T>,comparato
 | **comparators** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[QuerySortComparator](/framework-api/types/QuerySortComparator.md)<T\>\> |  |
 | **items** | I[] |  |
 | **query** | [LocalQuery](/framework-api/types/LocalQuery.md) |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | searcher | [QuerySearcher](/framework-api/types/QuerySearcher.md)<T\> |  |
+
+
+</div></Details>

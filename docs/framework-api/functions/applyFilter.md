@@ -4,6 +4,9 @@ title: applyFilter
 sidebar_label: applyFilter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 applyFilter<T,I>(item: I,filter: QueryFilter): boolean
 ```
@@ -18,4 +21,13 @@ applyFilter<T,I>(item: I,filter: QueryFilter): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **item** | I |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | filter | [QueryFilter](/framework-api/interfaces/QueryFilter.md) |  |
+
+
+</div></Details>

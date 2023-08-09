@@ -4,6 +4,9 @@ title: shouldResetData
 sidebar_label: shouldResetData
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 shouldResetData(query: Query,nextQuery: Query): boolean
 ```
@@ -19,3 +22,5 @@ shouldResetData(query: Query,nextQuery: Query): boolean
 | --------- | ---- | ----------- |
 | **nextQuery** | [Query](/framework-api/interfaces/Query.md) |  |
 | **query** | [Query](/framework-api/interfaces/Query.md) |  |
+
+

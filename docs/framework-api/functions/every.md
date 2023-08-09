@@ -4,6 +4,9 @@ title: every
 sidebar_label: every
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 every(saga: AnyFunction): AnyFunction
 ```
@@ -18,3 +21,5 @@ every(saga: AnyFunction): AnyFunction
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **saga** | [AnyFunction](/framework-api/types/AnyFunction.md) |  |
+
+

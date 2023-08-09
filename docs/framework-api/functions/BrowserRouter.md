@@ -4,6 +4,9 @@ title: BrowserRouter
 sidebar_label: BrowserRouter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 BrowserRouter(__namedParameters: BrowserRouterProps): JSX.Element
 ```
@@ -13,7 +16,5 @@ A `<Router>` for use in web browsers. Provides the cleanest URLs.
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

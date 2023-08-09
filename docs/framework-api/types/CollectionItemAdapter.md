@@ -4,6 +4,9 @@ title: CollectionItemAdapter
 sidebar_label: CollectionItemAdapter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(data: T | undefined,currentItems: AnonymousObject<I>): I
 ```
@@ -19,3 +22,5 @@ __type(data: T | undefined,currentItems: AnonymousObject<I>): I
 | --------- | ---- | ----------- |
 | **currentItems** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<I\> |  |
 | **data** | T \| undefined |  |
+
+

@@ -4,6 +4,9 @@ title: isTrue
 sidebar_label: isTrue
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isTrue(value: any): boolean
 ```
@@ -18,3 +21,5 @@ isTrue(value: any): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **value** | any |  |
+
+

@@ -4,6 +4,9 @@ title: AppContext
 sidebar_label: AppContext
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -16,3 +19,5 @@ sidebar_label: AppContext
 | **router** | [Router](/framework-api/interfaces/Router.md) |  |
 | **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
 | **store** | [AppStore](/framework-api/interfaces/AppStore.md)<any, AnyAction\> |  |
+
+

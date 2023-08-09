@@ -4,6 +4,9 @@ title: external
 sidebar_label: external
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 external(idpConfig: IdpSettings): Idp
 ```
@@ -18,3 +21,5 @@ external(idpConfig: IdpSettings): Idp
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **idpConfig** | [IdpSettings](/framework-api/interfaces/IdpSettings.md) |  |
+
+

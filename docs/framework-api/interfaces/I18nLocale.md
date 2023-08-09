@@ -4,6 +4,9 @@ title: I18nLocale
 sidebar_label: I18nLocale
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,3 +16,5 @@ sidebar_label: I18nLocale
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **locale** | string |  |
+
+

@@ -4,6 +4,9 @@ title: pick
 sidebar_label: pick
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 pick<T>(source: T,keys: []): T
 ```
@@ -19,3 +22,5 @@ pick<T>(source: T,keys: []): T
 | --------- | ---- | ----------- |
 | **keys** | [] |  |
 | **source** | T |  |
+
+

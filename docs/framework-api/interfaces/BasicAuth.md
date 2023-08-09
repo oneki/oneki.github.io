@@ -4,6 +4,9 @@ title: BasicAuth
 sidebar_label: BasicAuth
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -14,3 +17,5 @@ sidebar_label: BasicAuth
 | --------- | ---- | ----------- |
 | **password** | string |  |
 | **user** | string |  |
+
+

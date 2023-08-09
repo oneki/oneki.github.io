@@ -4,6 +4,9 @@ title: FormSubmitListener
 sidebar_label: FormSubmitListener
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(submitting: boolean,previousSubmitting: boolean | undefined): any
 ```
@@ -19,3 +22,5 @@ __type(submitting: boolean,previousSubmitting: boolean | undefined): any
 | --------- | ---- | ----------- |
 | **previousSubmitting** | boolean \| undefined |  |
 | **submitting** | boolean |  |
+
+

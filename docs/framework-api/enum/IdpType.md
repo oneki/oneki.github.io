@@ -4,6 +4,9 @@ title: IdpType
 sidebar_label: IdpType
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -18,3 +21,5 @@ sidebar_label: IdpType
 | **Oauth2Server** | oauth2_server |  |
 | **OidcBrowser** | oidc_browser |  |
 | **OidcServer** | oidc_server |  |
+
+

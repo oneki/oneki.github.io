@@ -4,6 +4,9 @@ title: extractState
 sidebar_label: extractState
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 extractState(query: AnonymousObject<any>): string | null
 ```
@@ -18,3 +21,5 @@ extractState(query: AnonymousObject<any>): string | null
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **query** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+
+

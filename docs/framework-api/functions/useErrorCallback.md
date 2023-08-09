@@ -4,6 +4,9 @@ title: useErrorCallback
 sidebar_label: useErrorCallback
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useErrorCallback<T>(callback: AppErrorCallback<T>,defaultCallback: AppErrorCallback<T>): ErrorCallback<T> | undefined
 ```
@@ -13,9 +16,14 @@ useErrorCallback<T>(callback: AppErrorCallback<T>,defaultCallback: AppErrorCallb
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | callback | [AppErrorCallback](/framework-api/types/AppErrorCallback.md)<T\> |  |
 | defaultCallback | [AppErrorCallback](/framework-api/types/AppErrorCallback.md)<T\> |  |
+
+
+</div></Details>

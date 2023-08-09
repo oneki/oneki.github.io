@@ -4,6 +4,9 @@ title: extractWatchProps
 sidebar_label: extractWatchProps
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 extractWatchProps(watch: string): 
 ```
@@ -18,3 +21,5 @@ extractWatchProps(watch: string):
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **watch** | string |  |
+
+

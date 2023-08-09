@@ -4,6 +4,9 @@ title: LoadingStatus
 sidebar_label: LoadingStatus
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -21,3 +24,5 @@ sidebar_label: LoadingStatus
 | **PartialFetching** | partial_fetching |  |
 | **PartialLoaded** | partial_loaded |  |
 | **PartialLoading** | partial_loading |  |
+
+

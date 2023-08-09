@@ -4,6 +4,9 @@ title: serializeFilter
 sidebar_label: serializeFilter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 serializeFilter(filter: undefined | QueryFilter): string | void
 ```
@@ -18,3 +21,5 @@ serializeFilter(filter: undefined | QueryFilter): string | void
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **filter** | undefined \| [QueryFilter](/framework-api/interfaces/QueryFilter.md) |  |
+
+

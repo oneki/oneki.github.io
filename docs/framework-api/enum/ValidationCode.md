@@ -4,6 +4,9 @@ title: ValidationCode
 sidebar_label: ValidationCode
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -17,3 +20,5 @@ sidebar_label: ValidationCode
 | **None** | 4 |  |
 | **Ok** | 3 |  |
 | **Warning** | 2 |  |
+
+

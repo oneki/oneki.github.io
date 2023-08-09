@@ -4,6 +4,9 @@ title: defaultComparator
 sidebar_label: defaultComparator
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 defaultComparator(a: any,b: any): 0 | 1 | -1
 ```
@@ -19,3 +22,5 @@ defaultComparator(a: any,b: any): 0 | 1 | -1
 | --------- | ---- | ----------- |
 | **a** | any |  |
 | **b** | any |  |
+
+

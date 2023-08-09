@@ -4,6 +4,9 @@ title: Navigate
 sidebar_label: Navigate
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 Navigate(__namedParameters: NavigateProps): null
 ```
@@ -17,7 +20,5 @@ able to use hooks. In functional components, we recommend you use the
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

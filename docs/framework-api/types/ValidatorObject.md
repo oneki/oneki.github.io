@@ -4,6 +4,9 @@ title: ValidatorObject
 sidebar_label: ValidatorObject
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -14,5 +17,14 @@ sidebar_label: ValidatorObject
 | --------- | ---- | ----------- |
 | **length** | number |  |
 | **validator** | [ValidatorFunction](/framework-api/types/ValidatorFunction.md) |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | async | boolean |  |
 | disabled | boolean |  |
+
+
+</div></Details>

@@ -4,6 +4,9 @@ title: Navigator
 sidebar_label: Navigator
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(delta: number): void
 ```
@@ -27,4 +30,13 @@ and/or location were to be read directly from the history instance.
 | **go** |  |  |
 | **push** | push(to: To,state: any,opts: NavigateOptions): void |  |
 | **replace** | replace(to: To,state: any,opts: NavigateOptions): void |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | encodeLocation |  |  |
+
+
+</div></Details>

@@ -4,6 +4,9 @@ title: omit
 sidebar_label: omit
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 omit<T,S>(source: S,keys: []): T
 ```
@@ -19,3 +22,5 @@ omit<T,S>(source: S,keys: []): T
 | --------- | ---- | ----------- |
 | **keys** | [] |  |
 | **source** | S |  |
+
+

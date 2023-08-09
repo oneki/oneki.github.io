@@ -4,6 +4,9 @@ title: serializeSort
 sidebar_label: serializeSort
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 serializeSort(sort: undefined | QuerySortDir): string | void
 ```
@@ -18,3 +21,5 @@ serializeSort(sort: undefined | QuerySortDir): string | void
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **sort** | undefined \| [QuerySortDir](/framework-api/types/QuerySortDir.md) |  |
+
+

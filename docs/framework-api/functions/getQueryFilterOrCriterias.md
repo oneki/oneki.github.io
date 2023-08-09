@@ -4,6 +4,9 @@ title: getQueryFilterOrCriterias
 sidebar_label: getQueryFilterOrCriterias
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 getQueryFilterOrCriterias(filterOrCriterias: string): QueryFilterOrCriteria[]
 ```
@@ -18,3 +21,5 @@ getQueryFilterOrCriterias(filterOrCriterias: string): QueryFilterOrCriteria[]
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **filterOrCriterias** | string |  |
+
+

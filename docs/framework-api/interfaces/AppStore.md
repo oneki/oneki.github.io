@@ -4,6 +4,9 @@ title: AppStore
 sidebar_label: AppStore
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(namespace: string,saga: Saga<any[]>,name: string): void
 ```
@@ -47,3 +50,5 @@ the listener is called. It is, however, guaranteed that all subscribers
 registered before the `dispatch()` started will be called with the latest  
 state by the time it exits. |
 | dispatch | Dispatch<A\> | Dispatches an action. It is the only way to trigger a state change.<br/><br/>The <code>reducer</code> function, used to create the store, will be called with the<br/>current state tree and the given <code>action</code>. Its return value will be<br/>considered the **next** state of the tree, and the change listeners will<br/>be notified.<br/><br/>The base implementation only supports plain object actions. If you want<br/>to dispatch a Promise, an Observable, a thunk, or something else, you<br/>need to wrap your store creating function into the corresponding<br/>middleware. For example, see the documentation for the <code>redux-thunk</code><br/>package. Even the middleware will eventually dispatch plain object<br/>actions using this method. |
+
+

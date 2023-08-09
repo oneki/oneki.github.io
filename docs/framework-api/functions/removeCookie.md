@@ -4,6 +4,9 @@ title: removeCookie
 sidebar_label: removeCookie
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 removeCookie(name: string,path: string): void
 ```
@@ -18,4 +21,13 @@ Remove a browser cookie (created on the browser side)
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | name | string | : name of the cookie |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | path | string | : scope of the cookie |
+
+
+</div></Details>

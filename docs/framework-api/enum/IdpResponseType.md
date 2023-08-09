@@ -4,6 +4,9 @@ title: IdpResponseType
 sidebar_label: IdpResponseType
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,3 +16,5 @@ sidebar_label: IdpResponseType
 | Properties | Value | Description |
 | --------- | ---- | ----------- |
 | **Code** | code |  |
+
+

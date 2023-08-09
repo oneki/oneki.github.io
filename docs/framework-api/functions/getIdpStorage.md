@@ -4,6 +4,9 @@ title: getIdpStorage
 sidebar_label: getIdpStorage
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 getIdpStorage(idp: Idp): Storage
 ```
@@ -18,3 +21,5 @@ getIdpStorage(idp: Idp): Storage
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **idp** | [Idp](/framework-api/interfaces/Idp.md) |  |
+
+

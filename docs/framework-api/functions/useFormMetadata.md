@@ -4,6 +4,9 @@ title: useFormMetadata
 sidebar_label: useFormMetadata
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useFormMetadata(fieldName: string): FormMetadata
 ```
@@ -18,3 +21,5 @@ useFormMetadata(fieldName: string): FormMetadata
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **fieldName** | string |  |
+
+

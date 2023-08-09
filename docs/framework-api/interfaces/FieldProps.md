@@ -4,6 +4,9 @@ title: FieldProps
 sidebar_label: FieldProps
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(): void
 ```
@@ -21,4 +24,13 @@ __type(): void
 | **onBlur** |  |  |
 | **onChange** |  |  |
 | **onFocus** |  |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | value | T |  |
+
+
+</div></Details>

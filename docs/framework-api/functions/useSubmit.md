@@ -4,6 +4,9 @@ title: useSubmit
 sidebar_label: useSubmit
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useSubmit(): 
 ```
@@ -27,3 +30,5 @@ useSubmit():
 | **submit** |  |  |
 | **submitting** | boolean |  |
 | **submitting** | boolean |  |
+
+

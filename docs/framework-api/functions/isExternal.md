@@ -4,6 +4,9 @@ title: isExternal
 sidebar_label: isExternal
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isExternal(idp: Idp): boolean
 ```
@@ -18,3 +21,5 @@ isExternal(idp: Idp): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **idp** | [Idp](/framework-api/interfaces/Idp.md) |  |
+
+

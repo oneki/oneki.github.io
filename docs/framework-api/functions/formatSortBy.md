@@ -4,6 +4,9 @@ title: formatSortBy
 sidebar_label: formatSortBy
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 formatSortBy(sortBy: undefined | string | QuerySortBy | QuerySortBy[],currentSortBy: string | QuerySortBy | QuerySortBy[]): QuerySortBy[]
 ```
@@ -18,4 +21,13 @@ formatSortBy(sortBy: undefined | string | QuerySortBy | QuerySortBy[],currentSor
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **sortBy** | undefined \| string \| [QuerySortBy](/framework-api/types/QuerySortBy.md) \| [QuerySortBy](/framework-api/types/QuerySortBy.md)[] |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | currentSortBy | string \| [QuerySortBy](/framework-api/types/QuerySortBy.md) \| [QuerySortBy](/framework-api/types/QuerySortBy.md)[] |  |
+
+
+</div></Details>

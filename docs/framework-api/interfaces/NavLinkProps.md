@@ -4,6 +4,9 @@ title: NavLinkProps
 sidebar_label: NavLinkProps
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(props: ): undefined | CSSProperties
 ```
@@ -24,6 +27,12 @@ __type(props: ): undefined | CSSProperties
 | **isPending** | boolean |  |
 | **isPending** | boolean |  |
 | **to** | [To](/framework-api/types/To.md) |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | about | string |  |
 | accessKey | string |  |
 | aria-activedescendant | string | Identifies the currently active element when DOM focus is on a composite widget, textbox, group, or application. |
@@ -304,3 +313,6 @@ __type(props: ): undefined | CSSProperties
 | typeof | string |  |
 | unselectable | on \| off |  |
 | vocab | string |  |
+
+
+</div></Details>

@@ -4,6 +4,9 @@ title: useTryRouter
 sidebar_label: useTryRouter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useTryRouter(): undefined | Router
 ```
@@ -13,7 +16,5 @@ useTryRouter(): undefined | Router
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

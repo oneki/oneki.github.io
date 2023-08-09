@@ -4,6 +4,9 @@ title: NotificationService
 sidebar_label: NotificationService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -32,3 +35,5 @@ sidebar_label: NotificationService
 | **touch** | touch(notificationId: string \| number \| symbol,permanent: boolean): void | This method is called whenever the auto-removal of the notification should be suspended |
 | **untouch** | untouch(notificationId: string \| number \| symbol): void | This method is called whenever the auto-removal of the notification should be reactivated |
 | **warning** | warning(payload: any): void |  |
+
+

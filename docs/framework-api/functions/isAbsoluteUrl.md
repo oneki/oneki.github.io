@@ -4,6 +4,9 @@ title: isAbsoluteUrl
 sidebar_label: isAbsoluteUrl
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isAbsoluteUrl(url: string): boolean
 ```
@@ -18,3 +21,5 @@ isAbsoluteUrl(url: string): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **url** | string |  |
+
+

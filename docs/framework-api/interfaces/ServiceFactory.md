@@ -4,6 +4,9 @@ title: ServiceFactory
 sidebar_label: ServiceFactory
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type<S,T>(ctor: Class<T>,context: AppContext,initialState: S): T
 ```
@@ -18,3 +21,5 @@ __type<S,T>(ctor: Class<T>,context: AppContext,initialState: S): T
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **createService** |  |  |
+
+

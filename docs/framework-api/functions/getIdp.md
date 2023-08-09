@@ -4,6 +4,9 @@ title: getIdp
 sidebar_label: getIdp
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 getIdp(settings: AppSettings,name: string): Idp
 ```
@@ -18,4 +21,13 @@ getIdp(settings: AppSettings,name: string): Idp
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | name | string |  |
+
+
+</div></Details>

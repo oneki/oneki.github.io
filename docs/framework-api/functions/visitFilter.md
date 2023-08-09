@@ -4,6 +4,9 @@ title: visitFilter
 sidebar_label: visitFilter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 visitFilter(filter: QueryFilter,visitor: ): boolean | void
 ```
@@ -19,3 +22,5 @@ visitFilter(filter: QueryFilter,visitor: ): boolean | void
 | --------- | ---- | ----------- |
 | **filter** | [QueryFilter](/framework-api/interfaces/QueryFilter.md) |  |
 | **visitor** |  |  |
+
+

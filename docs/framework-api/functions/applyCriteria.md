@@ -4,6 +4,9 @@ title: applyCriteria
 sidebar_label: applyCriteria
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 applyCriteria<T,I>(item: I,criteria: QueryFilterCriteria): boolean
 ```
@@ -19,3 +22,5 @@ applyCriteria<T,I>(item: I,criteria: QueryFilterCriteria): boolean
 | --------- | ---- | ----------- |
 | **criteria** | [QueryFilterCriteria](/framework-api/interfaces/QueryFilterCriteria.md) |  |
 | **item** | I |  |
+
+

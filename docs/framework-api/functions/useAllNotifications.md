@@ -4,6 +4,9 @@ title: useAllNotifications
 sidebar_label: useAllNotifications
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useAllNotifications(): AnonymousObject<Notification[]>
 ```
@@ -13,7 +16,5 @@ useAllNotifications(): AnonymousObject<Notification[]>
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

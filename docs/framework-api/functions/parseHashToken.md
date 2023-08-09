@@ -4,6 +4,9 @@ title: parseHashToken
 sidebar_label: parseHashToken
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 parseHashToken(hash: AnonymousObject<any>): AnonymousObject<any>
 ```
@@ -18,3 +21,5 @@ Parse the token from the location hash
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | hash | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> | : the location hash (anything after the # in the URL) |
+
+

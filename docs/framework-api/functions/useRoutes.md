@@ -4,6 +4,9 @@ title: useRoutes
 sidebar_label: useRoutes
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useRoutes(routes: RouteObject[],locationArg: string | Partial<Location>): React.ReactElement | null
 ```
@@ -21,4 +24,13 @@ element.
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **routes** | [RouteObject](/framework-api/types/RouteObject.md)[] |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | locationArg | string \| Partial<Location\> |  |
+
+
+</div></Details>

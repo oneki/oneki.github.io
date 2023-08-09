@@ -4,6 +4,9 @@ title: Path
 sidebar_label: Path
 ---
 
+import Details from "@theme/Details"
+
+
 The pathname, search, and hash values of a URL.
 
 ### Properties
@@ -15,3 +18,5 @@ The pathname, search, and hash values of a URL.
 | hash | string | A URL fragment identifier, beginning with a #. |
 | pathname | string | A URL pathname, beginning with a /. |
 | search | string | A URL search string, beginning with a ?. |
+
+

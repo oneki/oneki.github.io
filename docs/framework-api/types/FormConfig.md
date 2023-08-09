@@ -4,6 +4,9 @@ title: FormConfig
 sidebar_label: FormConfig
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -14,6 +17,12 @@ sidebar_label: FormConfig
 | --------- | ---- | ----------- |
 | **controller** | [FormService](/framework-api/classes/FormService.md) |  |
 | **onSubmit** | [FormSubmitCallback](/framework-api/types/FormSubmitCallback.md) |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | fieldSize | xsmall \| small \| medium \| large \| xlarge |  |
 | labelWidth | [FormLabelWidth](/framework-api/types/FormLabelWidth.md) |  |
 | layout | [FormLayout](/framework-api/types/FormLayout.md) |  |
@@ -27,3 +36,6 @@ sidebar_label: FormConfig
 | touchOn | [TouchOnType](/framework-api/types/TouchOnType.md) |  |
 | xlLabelWidth | [FormLabelWidth](/framework-api/types/FormLabelWidth.md) |  |
 | xsLabelWidth | [FormLabelWidth](/framework-api/types/FormLabelWidth.md) |  |
+
+
+</div></Details>

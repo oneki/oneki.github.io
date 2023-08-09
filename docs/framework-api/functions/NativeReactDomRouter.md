@@ -4,6 +4,9 @@ title: NativeReactDomRouter
 sidebar_label: NativeReactDomRouter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 NativeReactDomRouter(__namedParameters: RouterProps): React.ReactElement | null
 ```
@@ -17,7 +20,5 @@ in web browsers or a <StaticRouter\> for server rendering.
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

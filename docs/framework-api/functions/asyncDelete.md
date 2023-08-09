@@ -4,6 +4,9 @@ title: asyncDelete
 sidebar_label: asyncDelete
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 asyncDelete(url: string,options: AnonymousObject<any>): Promise<any>
 ```
@@ -18,4 +21,13 @@ asyncDelete(url: string,options: AnonymousObject<any>): Promise<any>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **url** | string |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | options | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+
+
+</div></Details>

@@ -4,6 +4,9 @@ title: parseQueryFilter
 sidebar_label: parseQueryFilter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 parseQueryFilter(filter: string): QueryFilter
 ```
@@ -18,3 +21,5 @@ parseQueryFilter(filter: string): QueryFilter
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **filter** | string |  |
+
+

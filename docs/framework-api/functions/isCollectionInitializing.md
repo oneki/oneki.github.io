@@ -4,6 +4,9 @@ title: isCollectionInitializing
 sidebar_label: isCollectionInitializing
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isCollectionInitializing<T,I>(collection: Collection<T, I>): boolean
 ```
@@ -18,3 +21,5 @@ isCollectionInitializing<T,I>(collection: Collection<T, I>): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **collection** | [Collection](/framework-api/types/Collection.md)<T, I\> |  |
+
+

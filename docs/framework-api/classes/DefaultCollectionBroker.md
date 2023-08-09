@@ -4,6 +4,9 @@ title: DefaultCollectionBroker
 sidebar_label: DefaultCollectionBroker
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -46,3 +49,5 @@ sidebar_label: DefaultCollectionBroker
 | **setUrl** | setUrl(url: string,query: Query,subscriberId: string): void |  |
 | **sort** | sort(dir: QuerySortDir,subscriberId: string): void |  |
 | **sortBy** | sortBy(sortBy: string \| QuerySortBy \| QuerySortBy[],subscriberId: string): void |  |
+
+

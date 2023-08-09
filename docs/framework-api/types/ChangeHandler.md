@@ -4,6 +4,9 @@ title: ChangeHandler
 sidebar_label: ChangeHandler
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(value: T): void
 ```
@@ -18,3 +21,5 @@ __type(value: T): void
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **value** | T |  |
+
+

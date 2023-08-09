@@ -4,6 +4,9 @@ title: ensureType
 sidebar_label: ensureType
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 ensureType(value: any,type: string | string[]): void
 ```
@@ -19,3 +22,5 @@ ensureType(value: any,type: string | string[]): void
 | --------- | ---- | ----------- |
 | **type** | string \| string[] |  |
 | **value** | any |  |
+
+

@@ -4,6 +4,9 @@ title: FormContext
 sidebar_label: FormContext
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -100,3 +103,5 @@ sidebar_label: FormContext
 | **validateSync** | validateSync(fieldName: NestedKeyOf<T\>,validatorName: string,validator: ValidatorSyncFunction,value: any): void |  |
 | **validationChange** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[FormListenerProps](/framework-api/interfaces/FormListenerProps.md)[]\> |  |
 | **valueChange** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[FormListenerProps](/framework-api/interfaces/FormListenerProps.md)[]\> |  |
+
+

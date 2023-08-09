@@ -4,6 +4,9 @@ title: useTrySetting
 sidebar_label: useTrySetting
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useTrySetting<T>(selector: string): T | undefined
 useTrySetting<T>(selector: string,defaultValue: undefined): T | undefined
@@ -21,3 +24,5 @@ useTrySetting<T>(selector: string,defaultValue: T): T
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **selector** | string |  |
+
+

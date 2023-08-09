@@ -4,6 +4,9 @@ title: I18nLocaleDomain
 sidebar_label: I18nLocaleDomain
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -14,3 +17,5 @@ sidebar_label: I18nLocaleDomain
 | --------- | ---- | ----------- |
 | **domain** | string |  |
 | **locale** | string |  |
+
+

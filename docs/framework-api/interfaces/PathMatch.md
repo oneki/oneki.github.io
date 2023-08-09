@@ -4,6 +4,9 @@ title: PathMatch
 sidebar_label: PathMatch
 ---
 
+import Details from "@theme/Details"
+
+
 A PathMatch contains info about how a PathPattern matched on a URL pathname.
 
 ### Properties
@@ -16,3 +19,5 @@ A PathMatch contains info about how a PathPattern matched on a URL pathname.
 | pathname | string | The portion of the URL pathname that was matched. |
 | pathnameBase | string | The portion of the URL pathname that was matched before child routes. |
 | pattern | PathPattern<string\> | The pattern that was used to match. |
+
+

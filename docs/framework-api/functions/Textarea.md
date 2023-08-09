@@ -4,6 +4,9 @@ title: Textarea
 sidebar_label: Textarea
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 Textarea(props: PropsWithChildren<TextareaProps>,context: any): ReactNode
 ```
@@ -18,4 +21,13 @@ Textarea(props: PropsWithChildren<TextareaProps>,context: any): ReactNode
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **props** | PropsWithChildren<[TextareaProps](/framework-api/types/TextareaProps.md)\> |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | context | any |  |
+
+
+</div></Details>

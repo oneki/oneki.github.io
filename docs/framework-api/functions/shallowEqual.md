@@ -4,6 +4,9 @@ title: shallowEqual
 sidebar_label: shallowEqual
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 shallowEqual(objA: any,objB: any): boolean
 ```
@@ -26,3 +29,5 @@ Returns true when the values of all keys are strictly equal.
 | --------- | ---- | ----------- |
 | **objA** | any |  |
 | **objB** | any |  |
+
+

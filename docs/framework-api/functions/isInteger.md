@@ -4,6 +4,9 @@ title: isInteger
 sidebar_label: isInteger
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isInteger(str: string): boolean
 ```
@@ -18,3 +21,5 @@ isInteger(str: string): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **str** | string |  |
+
+

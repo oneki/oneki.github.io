@@ -4,6 +4,9 @@ title: serializeOffset
 sidebar_label: serializeOffset
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 serializeOffset(offset: undefined | number): string | void
 ```
@@ -18,3 +21,5 @@ serializeOffset(offset: undefined | number): string | void
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **offset** | undefined \| number |  |
+
+

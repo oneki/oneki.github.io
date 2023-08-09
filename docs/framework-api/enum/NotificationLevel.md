@@ -4,6 +4,9 @@ title: NotificationLevel
 sidebar_label: NotificationLevel
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -17,3 +20,5 @@ sidebar_label: NotificationLevel
 | **Info** | info |  |
 | **Success** | success |  |
 | **Warning** | warning |  |
+
+

@@ -4,6 +4,9 @@ title: reducer
 sidebar_label: reducer
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 reducer(target: any,propertyKey: string): any
 ```
@@ -19,3 +22,5 @@ reducer(target: any,propertyKey: string): any
 | --------- | ---- | ----------- |
 | **propertyKey** | string |  |
 | **target** | any |  |
+
+

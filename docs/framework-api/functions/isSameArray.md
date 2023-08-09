@@ -4,6 +4,9 @@ title: isSameArray
 sidebar_label: isSameArray
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isSameArray(a1: undefined | any[],a2: undefined | any[]): boolean
 ```
@@ -19,3 +22,5 @@ isSameArray(a1: undefined | any[],a2: undefined | any[]): boolean
 | --------- | ---- | ----------- |
 | **a1** | undefined \| any[] |  |
 | **a2** | undefined \| any[] |  |
+
+

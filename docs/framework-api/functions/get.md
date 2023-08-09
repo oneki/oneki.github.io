@@ -4,6 +4,9 @@ title: get
 sidebar_label: get
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 get<T>(content: T,property: undefined,defaultValue: T): T
 get<T,K>(content: undefined | null | T,property: K,defaultValue: Exclude<PathType<T, K>, undefined | null>): Exclude<PathType<T, K>, undefined | null>
@@ -22,5 +25,14 @@ get<T,K>(content: null | T,property: K,defaultValue: null | PathType<T, K>): Pat
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **content** | T |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | defaultValue | T |  |
 | property | undefined |  |
+
+
+</div></Details>

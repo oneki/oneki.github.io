@@ -4,6 +4,9 @@ title: IdpMethod
 sidebar_label: IdpMethod
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -14,3 +17,5 @@ sidebar_label: IdpMethod
 | --------- | ---- | ----------- |
 | **Get** | GET |  |
 | **Post** | POST |  |
+
+

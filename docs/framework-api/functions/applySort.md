@@ -4,6 +4,9 @@ title: applySort
 sidebar_label: applySort
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 applySort<T,I>(items: I[],dir: QuerySortDir,comparator: QuerySortComparator<T>): I[]
 ```
@@ -20,3 +23,5 @@ applySort<T,I>(items: I[],dir: QuerySortDir,comparator: QuerySortComparator<T>):
 | **comparator** | [QuerySortComparator](/framework-api/types/QuerySortComparator.md)<T\> |  |
 | **dir** | [QuerySortDir](/framework-api/types/QuerySortDir.md) |  |
 | **items** | I[] |  |
+
+

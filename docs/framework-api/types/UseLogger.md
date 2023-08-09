@@ -4,6 +4,9 @@ title: UseLogger
 sidebar_label: UseLogger
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(): Logger
 ```
@@ -13,7 +16,5 @@ __type(): Logger
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

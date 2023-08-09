@@ -4,6 +4,9 @@ title: useShallowEqual
 sidebar_label: useShallowEqual
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useShallowEqual<T>(obj: AnonymousObject<T>): AnonymousObject<T>
 ```
@@ -18,3 +21,5 @@ useShallowEqual<T>(obj: AnonymousObject<T>): AnonymousObject<T>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **obj** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<T\> |  |
+
+

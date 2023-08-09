@@ -4,6 +4,9 @@ title: clone
 sidebar_label: clone
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 clone(item: any): any
 ```
@@ -18,3 +21,5 @@ clone(item: any): any
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **item** | any |  |
+
+

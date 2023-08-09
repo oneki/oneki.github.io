@@ -4,6 +4,9 @@ title: Class
 sidebar_label: Class
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 new Class(args: any[])
 ```
@@ -13,7 +16,5 @@ new Class(args: any[])
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

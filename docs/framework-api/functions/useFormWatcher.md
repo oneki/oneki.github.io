@@ -4,6 +4,9 @@ title: useFormWatcher
 sidebar_label: useFormWatcher
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useFormWatcher<T,R,K>(form: default<T>,watch: K,listener: FormValueListener<PathType<T, K>, K>): R
 useFormWatcher<T,R,K1,K2>(form: default<T>,watch: ,listener: FormValueListener<, K1 | K2>): R
@@ -29,3 +32,5 @@ useFormWatcher<T,R,K1,K2,K3,K4,K5,K6,K7,K8,K9,K10>(form: default<T>,watch: ,list
 | **form** | [default](/framework-api/classes/FormService.md)<T\> |  |
 | **listener** | [FormValueListener](/framework-api/types/FormValueListener.md)<[PathType](/framework-api/types/PathType.md)<T, K\>, K\> |  |
 | **watch** | K |  |
+
+

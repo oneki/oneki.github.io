@@ -4,6 +4,9 @@ title: wrap
 sidebar_label: wrap
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 wrap(string: string,wrapChar: string): string
 ```
@@ -19,3 +22,5 @@ wrap(string: string,wrapChar: string): string
 | --------- | ---- | ----------- |
 | **string** | string |  |
 | **wrapChar** | string |  |
+
+

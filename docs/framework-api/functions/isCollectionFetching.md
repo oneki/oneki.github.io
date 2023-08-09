@@ -4,6 +4,9 @@ title: isCollectionFetching
 sidebar_label: isCollectionFetching
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isCollectionFetching<T,I>(collection: Collection<T, I>): boolean
 ```
@@ -18,3 +21,5 @@ isCollectionFetching<T,I>(collection: Collection<T, I>): boolean
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **collection** | [Collection](/framework-api/types/Collection.md)<T, I\> |  |
+
+

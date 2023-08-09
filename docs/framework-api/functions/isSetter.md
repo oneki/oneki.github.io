@@ -4,6 +4,9 @@ title: isSetter
 sidebar_label: isSetter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isSetter(obj: any,property: string): boolean
 ```
@@ -19,3 +22,5 @@ isSetter(obj: any,property: string): boolean
 | --------- | ---- | ----------- |
 | **obj** | any |  |
 | **property** | string |  |
+
+

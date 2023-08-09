@@ -4,6 +4,9 @@ title: isGetter
 sidebar_label: isGetter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isGetter(obj: any,property: string): boolean
 ```
@@ -19,3 +22,5 @@ isGetter(obj: any,property: string): boolean
 | --------- | ---- | ----------- |
 | **obj** | any |  |
 | **property** | string |  |
+
+

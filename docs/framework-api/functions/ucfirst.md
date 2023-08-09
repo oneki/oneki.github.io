@@ -4,6 +4,9 @@ title: ucfirst
 sidebar_label: ucfirst
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 ucfirst(str: string): string
 ucfirst(str: undefined): undefined
@@ -20,3 +23,5 @@ ucfirst(str: null): null
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **str** | string |  |
+
+

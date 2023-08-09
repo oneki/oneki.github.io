@@ -4,6 +4,9 @@ title: FadeSwitch
 sidebar_label: FadeSwitch
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 FadeSwitch(props: PropsWithChildren<FadeRoutesProps>,context: any): ReactNode
 ```
@@ -18,4 +21,13 @@ FadeSwitch(props: PropsWithChildren<FadeRoutesProps>,context: any): ReactNode
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **props** | PropsWithChildren<FadeRoutesProps\> |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | context | any |  |
+
+
+</div></Details>

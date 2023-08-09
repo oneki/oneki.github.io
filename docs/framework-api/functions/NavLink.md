@@ -4,6 +4,9 @@ title: NavLink
 sidebar_label: NavLink
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 NavLink(props: NavLinkPropsRefAttributes<HTMLAnchorElement>): ReactNode
 ```
@@ -18,3 +21,5 @@ A <Link\> wrapper that knows if it's "active" or not.
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **props** | [NavLinkProps](/framework-api/interfaces/NavLinkProps.md)RefAttributes<HTMLAnchorElement\> |  |
+
+

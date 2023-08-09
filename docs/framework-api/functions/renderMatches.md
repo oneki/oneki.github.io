@@ -4,6 +4,9 @@ title: renderMatches
 sidebar_label: renderMatches
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 renderMatches(matches: null | RouteMatch<string, RouteObject>[]): React.ReactElement | null
 ```
@@ -18,3 +21,5 @@ Renders the result of `matchRoutes()` into a React element.
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **matches** | null \| [RouteMatch](/framework-api/interfaces/RouteMatch.md)<string, [RouteObject](/framework-api/types/RouteObject.md)\>[] |  |
+
+

@@ -4,6 +4,9 @@ title: delayLoading
 sidebar_label: delayLoading
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 delayLoading(delay_ms: number,reducer: ): void
 ```
@@ -19,3 +22,5 @@ delayLoading(delay_ms: number,reducer: ): void
 | --------- | ---- | ----------- |
 | **delay_ms** | number |  |
 | **reducer** |  |  |
+
+

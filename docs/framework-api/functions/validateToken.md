@@ -4,6 +4,9 @@ title: validateToken
 sidebar_label: validateToken
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 validateToken(token: string,jwksEndpoint: string | ,idp: Idp,context: AppContext): Promise<boolean>
 ```
@@ -21,3 +24,5 @@ validateToken(token: string,jwksEndpoint: string | ,idp: Idp,context: AppContext
 | **idp** | [Idp](/framework-api/interfaces/Idp.md) |  |
 | **jwksEndpoint** | string \|  |  |
 | **token** | string |  |
+
+

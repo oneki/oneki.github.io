@@ -4,6 +4,9 @@ title: ItemAdapter
 sidebar_label: ItemAdapter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(data: T): ItemAdaptee
 ```
@@ -18,3 +21,5 @@ __type(data: T): ItemAdaptee
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **data** | T |  |
+
+

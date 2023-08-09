@@ -4,6 +4,9 @@ title: onStorageChange
 sidebar_label: onStorageChange
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 onStorageChange(key: string,listener: ): void
 ```
@@ -19,3 +22,5 @@ Listen to a change in the localstorage
 | --------- | ---- | ----------- |
 | key | string | : key of the local storage entry |
 | listener |  | : a function receiving the old value an the new value |
+
+

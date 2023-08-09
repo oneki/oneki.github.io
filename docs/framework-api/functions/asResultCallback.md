@@ -4,6 +4,9 @@ title: asResultCallback
 sidebar_label: asResultCallback
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 asResultCallback<T>(callback: undefined | AppResultCallback<T>,router: Router,appContext: default): ResultCallback<T> | undefined
 ```
@@ -20,3 +23,5 @@ asResultCallback<T>(callback: undefined | AppResultCallback<T>,router: Router,ap
 | **appContext** | [default](/framework-api/classes/BasicAppContext.md) |  |
 | **callback** | undefined \| [AppResultCallback](/framework-api/types/AppResultCallback.md)<T\> |  |
 | **router** | [Router](/framework-api/interfaces/Router.md) |  |
+
+

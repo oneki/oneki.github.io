@@ -4,6 +4,9 @@ title: Service
 sidebar_label: Service
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,3 +16,5 @@ sidebar_label: Service
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **state** | S |  |
+
+

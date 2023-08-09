@@ -4,6 +4,9 @@ title: serializeLimit
 sidebar_label: serializeLimit
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 serializeLimit(limit: undefined | number): string | void
 ```
@@ -18,3 +21,5 @@ serializeLimit(limit: undefined | number): string | void
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **limit** | undefined \| number |  |
+
+

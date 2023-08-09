@@ -4,6 +4,9 @@ title: useQuery
 sidebar_label: useQuery
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useQuery(): ParsedQuery<string>
 ```
@@ -13,7 +16,5 @@ useQuery(): ParsedQuery<string>
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

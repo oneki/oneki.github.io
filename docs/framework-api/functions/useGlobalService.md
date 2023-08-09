@@ -4,6 +4,9 @@ title: useGlobalService
 sidebar_label: useGlobalService
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useGlobalService<T>(ctor: Class<T>): T
 ```
@@ -18,3 +21,5 @@ useGlobalService<T>(ctor: Class<T>): T
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **ctor** | [Class](/framework-api/types/Class.md)<T\> |  |
+
+

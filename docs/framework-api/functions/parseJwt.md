@@ -4,6 +4,9 @@ title: parseJwt
 sidebar_label: parseJwt
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 parseJwt(token: string,section: string): any
 ```
@@ -18,4 +21,13 @@ parseJwt(token: string,section: string): any
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **token** | string |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | section | string |  |
+
+
+</div></Details>

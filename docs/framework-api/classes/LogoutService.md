@@ -4,6 +4,9 @@ title: LogoutService
 sidebar_label: LogoutService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -23,3 +26,5 @@ sidebar_label: LogoutService
 | **setLoading** | setLoading(loading: boolean): void | Inform the user if there is a loading task |
 | **state** | [LogoutState](/framework-api/interfaces/LogoutState.md) |  |
 | **successLogout** | successLogout(onError: ErrorCallback,onSuccess: SuccessCallback,identity: string): void |  |
+
+

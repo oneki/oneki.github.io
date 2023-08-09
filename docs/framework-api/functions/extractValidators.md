@@ -4,6 +4,9 @@ title: extractValidators
 sidebar_label: extractValidators
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 extractValidators(props: AnonymousObject<any>): 
 ```
@@ -18,3 +21,5 @@ extractValidators(props: AnonymousObject<any>):
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **props** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+
+

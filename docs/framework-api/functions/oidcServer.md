@@ -4,6 +4,9 @@ title: oidcServer
 sidebar_label: oidcServer
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 oidcServer(idpConfig: IdpSettings): Idp
 ```
@@ -18,3 +21,5 @@ oidcServer(idpConfig: IdpSettings): Idp
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **idpConfig** | [IdpSettings](/framework-api/interfaces/IdpSettings.md) |  |
+
+

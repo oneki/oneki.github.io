@@ -4,6 +4,9 @@ title: useObjectProxy
 sidebar_label: useObjectProxy
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useObjectProxy<R>(object: AnonymousObject<any> | default<AnyState>,options: useObjectProxyOptions): R
 ```
@@ -19,3 +22,5 @@ useObjectProxy<R>(object: AnonymousObject<any> | default<AnyState>,options: useO
 | --------- | ---- | ----------- |
 | **object** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> \| [default](/framework-api/classes/DefaultService.md)<[AnyState](/framework-api/interfaces/AnyState.md)\> |  |
 | **options** | useObjectProxyOptions |  |
+
+

@@ -4,6 +4,9 @@ title: latest
 sidebar_label: latest
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 latest(saga: AnyFunction): AnyFunction
 ```
@@ -18,3 +21,5 @@ latest(saga: AnyFunction): AnyFunction
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **saga** | [AnyFunction](/framework-api/types/AnyFunction.md) |  |
+
+

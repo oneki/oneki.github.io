@@ -4,6 +4,9 @@ title: deepFreeze
 sidebar_label: deepFreeze
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 deepFreeze(object: AnonymousObject<any>): Readonly<AnonymousObject>
 ```
@@ -18,3 +21,5 @@ deepFreeze(object: AnonymousObject<any>): Readonly<AnonymousObject>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **object** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+
+

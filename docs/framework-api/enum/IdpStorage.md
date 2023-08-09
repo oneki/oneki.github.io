@@ -4,6 +4,9 @@ title: IdpStorage
 sidebar_label: IdpStorage
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -16,3 +19,5 @@ sidebar_label: IdpStorage
 | **LocalStorage** | localStorage |  |
 | **Memory** | memory |  |
 | **SessionStorage** | sessionStorage |  |
+
+

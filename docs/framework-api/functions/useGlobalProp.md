@@ -4,6 +4,9 @@ title: useGlobalProp
 sidebar_label: useGlobalProp
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useGlobalProp<T>(prop: string): T | undefined
 useGlobalProp<T>(prop: string,defaultValue: undefined): T | undefined
@@ -21,3 +24,5 @@ useGlobalProp<T>(prop: string,defaultValue: T): T
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **prop** | string |  |
+
+

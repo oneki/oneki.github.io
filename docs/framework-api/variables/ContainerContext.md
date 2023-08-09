@@ -4,6 +4,9 @@ title: ContainerContext
 sidebar_label: ContainerContext
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -16,3 +19,5 @@ sidebar_label: ContainerContext
 | **constructor** | new Container() |  |
 | **createService** | createService<S,T\>(ctor: Class<T\>,context: default,initialState: S): T |  |
 | **getServiceClass** | getServiceClass<S,T\>(ctor: Class<T\>): Class<T\> |  |
+
+

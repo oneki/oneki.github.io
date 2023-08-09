@@ -4,6 +4,9 @@ title: AppErrorBoundary
 sidebar_label: AppErrorBoundary
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 AppErrorBoundary(props: PropsWithChildren<AppErrorBoundaryProps>,context: any): ReactNode
 ```
@@ -18,4 +21,13 @@ AppErrorBoundary(props: PropsWithChildren<AppErrorBoundaryProps>,context: any): 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **props** | PropsWithChildren<AppErrorBoundaryProps\> |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | context | any |  |
+
+
+</div></Details>

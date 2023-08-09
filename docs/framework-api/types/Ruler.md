@@ -4,6 +4,9 @@ title: Ruler
 sidebar_label: Ruler
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(args: any[]): void
 ```
@@ -18,3 +21,5 @@ __type(args: any[]): void
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **args** | any[] |  |
+
+

@@ -4,6 +4,9 @@ title: useNotificationService
 sidebar_label: useNotificationService
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useNotificationService(): default
 ```
@@ -13,7 +16,5 @@ useNotificationService(): default
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

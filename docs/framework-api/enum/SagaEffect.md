@@ -4,6 +4,9 @@ title: SagaEffect
 sidebar_label: SagaEffect
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -18,3 +21,5 @@ sidebar_label: SagaEffect
 | **Leading** | leading |  |
 | **Serial** | serial |  |
 | **Throttle** | throttle |  |
+
+

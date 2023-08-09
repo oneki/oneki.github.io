@@ -4,6 +4,9 @@ title: DefaultLocalService
 sidebar_label: DefaultLocalService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -16,3 +19,5 @@ sidebar_label: DefaultLocalService
 | **constructor** | new DefaultLocalService<S\>() |  |
 | **context** | [default](/framework-api/classes/BasicAppContext.md) |  |
 | **state** | S |  |
+
+

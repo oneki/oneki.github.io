@@ -4,6 +4,9 @@ title: urlSerializer
 sidebar_label: urlSerializer
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 urlSerializer(query: Query): QuerySerializerResult
 ```
@@ -18,3 +21,5 @@ urlSerializer(query: Query): QuerySerializerResult
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **query** | [Query](/framework-api/interfaces/Query.md) |  |
+
+

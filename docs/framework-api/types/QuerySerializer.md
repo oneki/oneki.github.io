@@ -4,6 +4,9 @@ title: QuerySerializer
 sidebar_label: QuerySerializer
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(query: Query): QuerySerializerResult
 ```
@@ -18,3 +21,5 @@ __type(query: Query): QuerySerializerResult
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **query** | [Query](/framework-api/interfaces/Query.md) |  |
+
+

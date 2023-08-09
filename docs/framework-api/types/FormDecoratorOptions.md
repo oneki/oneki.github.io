@@ -4,11 +4,16 @@ title: FormDecoratorOptions
 sidebar_label: FormDecoratorOptions
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
@@ -19,3 +24,6 @@ sidebar_label: FormDecoratorOptions
 | protected | boolean |  |
 | touchOn | [TouchOnType](/framework-api/types/TouchOnType.md) |  |
 | visible | boolean |  |
+
+
+</div></Details>

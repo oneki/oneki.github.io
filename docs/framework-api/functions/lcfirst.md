@@ -4,6 +4,9 @@ title: lcfirst
 sidebar_label: lcfirst
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 lcfirst(str: string): string
 lcfirst(str: undefined): undefined
@@ -20,3 +23,5 @@ lcfirst(str: null): null
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **str** | string |  |
+
+

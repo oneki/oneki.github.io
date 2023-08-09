@@ -4,6 +4,9 @@ title: toPayload
 sidebar_label: toPayload
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 toPayload(args: any): AnonymousObject<any>
 ```
@@ -18,3 +21,5 @@ toPayload(args: any): AnonymousObject<any>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **args** | any |  |
+
+

@@ -4,6 +4,9 @@ title: LoginService
 sidebar_label: LoginService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -27,3 +30,5 @@ external login |
 | **setLoading** | setLoading(loading: boolean): void | Inform the user if there is a loading task |
 | **state** | [LoginState](/framework-api/interfaces/LoginState.md) |  |
 | **successLogin** | successLogin(token: string \| AnonymousObject<any\>,securityContext: AnonymousObject<any\>,idpName: string,onError: ErrorCallback,onSuccess: SuccessCallback): void | Save the token and the security context |
+
+

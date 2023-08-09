@@ -4,6 +4,9 @@ title: Token
 sidebar_label: Token
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -15,6 +18,15 @@ sidebar_label: Token
 | **access_token** | string |  |
 | **expires_in** | string |  |
 | **token_type** | string |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | expires_at | string |  |
 | id_token | string |  |
 | refresh_token | string |  |
+
+
+</div></Details>

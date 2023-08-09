@@ -4,6 +4,9 @@ title: getCookieExpireTime
 sidebar_label: getCookieExpireTime
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 getCookieExpireTime(ttl: number): string
 ```
@@ -18,3 +21,5 @@ convert a TTL (time to live) to an expire date
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | ttl | number | : time to live in seconds |
+
+

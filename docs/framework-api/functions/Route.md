@@ -4,6 +4,9 @@ title: Route
 sidebar_label: Route
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 Route(_props: RouteProps): React.ReactElement | null
 ```
@@ -13,7 +16,5 @@ Declares an element that should be rendered at a certain URL path.
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

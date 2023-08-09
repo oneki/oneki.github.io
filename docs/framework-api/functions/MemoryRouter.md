@@ -4,6 +4,9 @@ title: MemoryRouter
 sidebar_label: MemoryRouter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 MemoryRouter(__namedParameters: MemoryRouterProps): React.ReactElement
 ```
@@ -13,7 +16,5 @@ A <Router\> that stores all entries in memory.
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

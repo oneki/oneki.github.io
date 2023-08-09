@@ -4,6 +4,9 @@ title: GlobalModifierFunction
 sidebar_label: GlobalModifierFunction
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(key: string,value: unknown): void
 ```
@@ -19,3 +22,5 @@ __type(key: string,value: unknown): void
 | --------- | ---- | ----------- |
 | **key** | string |  |
 | **value** | unknown |  |
+
+

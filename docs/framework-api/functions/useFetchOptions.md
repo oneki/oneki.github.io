@@ -4,6 +4,9 @@ title: useFetchOptions
 sidebar_label: useFetchOptions
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useFetchOptions<T>(options: AppFetchOptions<T>): FetchOptions<T>
 ```
@@ -18,3 +21,5 @@ useFetchOptions<T>(options: AppFetchOptions<T>): FetchOptions<T>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **options** | [AppFetchOptions](/framework-api/interfaces/AppFetchOptions.md)<T\> |  |
+
+

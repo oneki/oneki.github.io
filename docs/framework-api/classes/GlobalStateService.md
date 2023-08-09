@@ -4,6 +4,9 @@ title: GlobalStateService
 sidebar_label: GlobalStateService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -17,3 +20,5 @@ sidebar_label: GlobalStateService
 | **context** | [AppContext](/framework-api/interfaces/AppContext.md) |  |
 | **setState** | setState(key: string,value: any): void |  |
 | **state** | [AnyState](/framework-api/interfaces/AnyState.md) |  |
+
+

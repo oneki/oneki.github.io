@@ -4,6 +4,9 @@ title: useService
 sidebar_label: useService
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useService<S,T>(ctor: Class<T>,initialState: S | ): 
 ```
@@ -19,3 +22,5 @@ useService<S,T>(ctor: Class<T>,initialState: S | ):
 | --------- | ---- | ----------- |
 | **ctor** | [Class](/framework-api/types/Class.md)<T\> |  |
 | **initialState** | S \|  |  |
+
+

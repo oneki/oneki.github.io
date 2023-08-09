@@ -4,6 +4,9 @@ title: generateFilterId
 sidebar_label: generateFilterId
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 generateFilterId(): number
 ```
@@ -13,7 +16,5 @@ generateFilterId(): number
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

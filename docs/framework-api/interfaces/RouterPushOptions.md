@@ -4,6 +4,9 @@ title: RouterPushOptions
 sidebar_label: RouterPushOptions
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,6 +16,12 @@ sidebar_label: RouterPushOptions
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **href** | string \| [Location](/framework-api/interfaces/Location.md) |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | activeClassName | string |  |
 | activeStyle | React.CSSProperties |  |
 | Component | React.ForwardRefRenderFunction<HTMLAnchorElement, [LinkComponentProps](/framework-api/types/LinkComponentProps.md)\> |  |
@@ -25,3 +34,6 @@ sidebar_label: RouterPushOptions
 | shallow | boolean |  |
 | state | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
 | strict | boolean |  |
+
+
+</div></Details>

@@ -4,6 +4,9 @@ title: CollectionService
 sidebar_label: CollectionService
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(offsetInPixels: number,options: ): void
 ```
@@ -98,5 +101,14 @@ __type(offsetInPixels: number,options: ): void
 | **stopFollow** | stopFollow(): void |  |
 | **total** |  |  |
 | **url** |  |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | scrollToIndex |  |  |
 | scrollToOffset |  |  |
+
+
+</div></Details>

@@ -4,6 +4,9 @@ title: ValidatorSyncFunction
 sidebar_label: ValidatorSyncFunction
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(value: any): ValidationResult
 ```
@@ -18,3 +21,5 @@ __type(value: any): ValidationResult
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **value** | any |  |
+
+

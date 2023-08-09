@@ -4,6 +4,9 @@ title: defaultSerializer
 sidebar_label: defaultSerializer
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 defaultSerializer(query: Query): QuerySerializerResult
 ```
@@ -18,3 +21,5 @@ defaultSerializer(query: Query): QuerySerializerResult
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **query** | [Query](/framework-api/interfaces/Query.md) |  |
+
+

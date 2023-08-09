@@ -4,6 +4,9 @@ title: leading
 sidebar_label: leading
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 leading(saga: AnyFunction): AnyFunction
 ```
@@ -18,3 +21,5 @@ leading(saga: AnyFunction): AnyFunction
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **saga** | [AnyFunction](/framework-api/types/AnyFunction.md) |  |
+
+

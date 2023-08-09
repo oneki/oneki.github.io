@@ -4,6 +4,9 @@ title: useReduxService
 sidebar_label: useReduxService
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useReduxService<T>(ctor: Class<T>): T
 ```
@@ -18,3 +21,5 @@ useReduxService<T>(ctor: Class<T>): T
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **ctor** | [Class](/framework-api/types/Class.md)<T\> |  |
+
+

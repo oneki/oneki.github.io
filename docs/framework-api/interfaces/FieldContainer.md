@@ -4,6 +4,9 @@ title: FieldContainer
 sidebar_label: FieldContainer
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(): void
 ```
@@ -22,3 +25,5 @@ __type(): void
 | **touchAllFields** |  |  |
 | **touchedValidation** | [default](/framework-api/classes/ContainerValidation.md) |  |
 | **value** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+
+

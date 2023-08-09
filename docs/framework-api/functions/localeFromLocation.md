@@ -4,6 +4,9 @@ title: localeFromLocation
 sidebar_label: localeFromLocation
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 localeFromLocation(location: Location,settings: AppSettings): undefined | string
 ```
@@ -19,3 +22,5 @@ localeFromLocation(location: Location,settings: AppSettings): undefined | string
 | --------- | ---- | ----------- |
 | **location** | [Location](/framework-api/interfaces/Location.md) |  |
 | **settings** | [AppSettings](/framework-api/interfaces/AppSettings.md) |  |
+
+

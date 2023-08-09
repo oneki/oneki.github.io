@@ -4,6 +4,9 @@ title: buildJsx
 sidebar_label: buildJsx
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 buildJsx(str: string,ctx: AnonymousObject<any>,wrapperReactElement: null | Element,i18nService: default,locale: string): string | FunctionComponentElement<any>
 ```
@@ -22,3 +25,5 @@ buildJsx(str: string,ctx: AnonymousObject<any>,wrapperReactElement: null | Eleme
 | **locale** | string |  |
 | **str** | string |  |
 | **wrapperReactElement** | null \| Element |  |
+
+

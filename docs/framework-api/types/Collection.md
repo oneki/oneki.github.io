@@ -4,6 +4,9 @@ title: Collection
 sidebar_label: Collection
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(offsetInPixels: number,options: ): void
 ```
@@ -61,8 +64,17 @@ __type(offsetInPixels: number,options: ): void
 | **status** | [CollectionStatus](/framework-api/types/CollectionStatus.md) |  |
 | **stopAutoRefresh** | stopAutoRefresh(): void |  |
 | **stopFollow** | stopFollow(): void |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | data | T[] |  |
 | dataSource | T[] \| string |  |
 | scrollToIndex |  |  |
 | scrollToOffset |  |  |
 | total | number |  |
+
+
+</div></Details>

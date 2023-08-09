@@ -4,6 +4,9 @@ title: isSameSortBy
 sidebar_label: isSameSortBy
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 isSameSortBy(s1: QuerySortBy | QuerySortBy[],s2: QuerySortBy | QuerySortBy[]): boolean
 ```
@@ -13,9 +16,14 @@ isSameSortBy(s1: QuerySortBy | QuerySortBy[],s2: QuerySortBy | QuerySortBy[]): b
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | s1 | [QuerySortBy](/framework-api/types/QuerySortBy.md) \| [QuerySortBy](/framework-api/types/QuerySortBy.md)[] |  |
 | s2 | [QuerySortBy](/framework-api/types/QuerySortBy.md) \| [QuerySortBy](/framework-api/types/QuerySortBy.md)[] |  |
+
+
+</div></Details>

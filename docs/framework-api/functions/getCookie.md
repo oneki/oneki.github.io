@@ -4,6 +4,9 @@ title: getCookie
 sidebar_label: getCookie
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 getCookie(name: string,secure: boolean): Promise<any>
 ```
@@ -19,4 +22,13 @@ check https://stackoverflow.com/questions/10730362/get-cookie-by-name
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | name | string | : name of the cookie |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | secure | boolean | : decrypt the cookie |
+
+
+</div></Details>

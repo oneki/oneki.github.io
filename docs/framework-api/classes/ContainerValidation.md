@@ -4,6 +4,9 @@ title: ContainerValidation
 sidebar_label: ContainerValidation
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -26,3 +29,5 @@ sidebar_label: ContainerValidation
 | **isWarning** | isWarning(): boolean |  |
 | **message** | string |  |
 | **status** | [ValidationStatus](/framework-api/enum/ValidationStatus.md) |  |
+
+

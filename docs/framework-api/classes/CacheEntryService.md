@@ -4,6 +4,9 @@ title: CacheEntryService
 sidebar_label: CacheEntryService
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -22,3 +25,5 @@ Several metadata are atttached to the object (expireAt, loading, fetching) |
 | **setError** | setError(key: string,error: BasicError): void |  |
 | **setLoading** | setLoading(key: string,loading: boolean,fetching: boolean): void |  |
 | **state** | [AnyState](/framework-api/interfaces/AnyState.md) |  |
+
+

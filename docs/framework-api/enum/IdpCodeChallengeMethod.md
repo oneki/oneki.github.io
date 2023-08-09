@@ -4,6 +4,9 @@ title: IdpCodeChallengeMethod
 sidebar_label: IdpCodeChallengeMethod
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,3 +16,5 @@ sidebar_label: IdpCodeChallengeMethod
 | Properties | Value | Description |
 | --------- | ---- | ----------- |
 | **S256** | S256 |  |
+
+

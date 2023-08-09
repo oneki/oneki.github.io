@@ -4,6 +4,9 @@ title: applyMixins
 sidebar_label: applyMixins
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 applyMixins(derivedCtor: any,constructors: any[]): void
 ```
@@ -19,3 +22,5 @@ applyMixins(derivedCtor: any,constructors: any[]): void
 | --------- | ---- | ----------- |
 | **constructors** | any[] |  |
 | **derivedCtor** | any |  |
+
+

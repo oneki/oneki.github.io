@@ -4,6 +4,9 @@ title: AppErrorCallback
 sidebar_label: AppErrorCallback
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -14,3 +17,5 @@ sidebar_label: AppErrorCallback
 | --------- | ---- | ----------- |
 | **context** | [AppContext](/framework-api/interfaces/AppContext.md) |  |
 | **result** | T |  |
+
+

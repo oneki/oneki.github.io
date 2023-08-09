@@ -4,6 +4,9 @@ title: CollectionBroker
 sidebar_label: CollectionBroker
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -37,3 +40,5 @@ sidebar_label: CollectionBroker
 | **setUrl** | setUrl(url: string,query: Query,subscriberId: string): void |  |
 | **sort** | sort(dir: QuerySortDir,subscriberId: string): void |  |
 | **sortBy** | sortBy(sortBy: string \| QuerySortBy \| QuerySortBy[],subscriberId: string): void |  |
+
+

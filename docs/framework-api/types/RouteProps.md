@@ -4,6 +4,9 @@ title: RouteProps
 sidebar_label: RouteProps
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,6 +16,12 @@ sidebar_label: RouteProps
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **index** | true |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | action | ActionFunction |  |
 | caseSensitive | boolean |  |
 | children | undefined |  |
@@ -27,3 +36,6 @@ sidebar_label: RouteProps
 | loader | LoaderFunction |  |
 | path | string |  |
 | shouldRevalidate | ShouldRevalidateFunction |  |
+
+
+</div></Details>

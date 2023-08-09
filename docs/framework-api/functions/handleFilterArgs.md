@@ -4,6 +4,9 @@ title: handleFilterArgs
 sidebar_label: handleFilterArgs
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 handleFilterArgs(filter: string,result: any[]): void
 ```
@@ -19,3 +22,5 @@ handleFilterArgs(filter: string,result: any[]): void
 | --------- | ---- | ----------- |
 | **filter** | string |  |
 | **result** | any[] |  |
+
+

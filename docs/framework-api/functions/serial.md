@@ -4,6 +4,9 @@ title: serial
 sidebar_label: serial
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 serial(saga: AnyFunction): AnyFunction
 ```
@@ -18,3 +21,5 @@ serial(saga: AnyFunction): AnyFunction
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **saga** | [AnyFunction](/framework-api/types/AnyFunction.md) |  |
+
+

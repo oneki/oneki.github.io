@@ -4,11 +4,12 @@ title: SERVICE_TYPE_ID
 sidebar_label: SERVICE_TYPE_ID
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

@@ -4,6 +4,9 @@ title: encodeFormData
 sidebar_label: encodeFormData
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 encodeFormData(data: unknown): string
 ```
@@ -18,3 +21,5 @@ encodeFormData(data: unknown): string
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **data** | unknown |  |
+
+

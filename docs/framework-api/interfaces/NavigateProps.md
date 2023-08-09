@@ -4,6 +4,9 @@ title: NavigateProps
 sidebar_label: NavigateProps
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,6 +16,15 @@ sidebar_label: NavigateProps
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **to** | [To](/framework-api/types/To.md) |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | relative | RelativeRoutingType |  |
 | replace | boolean |  |
 | state | any |  |
+
+
+</div></Details>

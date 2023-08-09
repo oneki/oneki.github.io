@@ -4,6 +4,9 @@ title: FormSubmitCallback
 sidebar_label: FormSubmitCallback
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(values: AnonymousObject): void
 ```
@@ -18,3 +21,5 @@ __type(values: AnonymousObject): void
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **values** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md) |  |
+
+

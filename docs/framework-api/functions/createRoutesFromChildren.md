@@ -4,6 +4,9 @@ title: createRoutesFromChildren
 sidebar_label: createRoutesFromChildren
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 createRoutesFromChildren(children: ReactNode,parentPath: number[]): RouteObject[]
 ```
@@ -20,4 +23,13 @@ either a `<Route>` element or an array of them. Used internally by
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **children** | ReactNode |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | parentPath | number[] |  |
+
+
+</div></Details>

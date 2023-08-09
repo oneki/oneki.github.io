@@ -4,6 +4,9 @@ title: asyncHttp
 sidebar_label: asyncHttp
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 asyncHttp(url: string,method: FetchMethod,body: unknown,options: AnonymousObject<any>): Promise<any>
 ```
@@ -19,5 +22,14 @@ asyncHttp(url: string,method: FetchMethod,body: unknown,options: AnonymousObject
 | --------- | ---- | ----------- |
 | **method** | [FetchMethod](/framework-api/types/FetchMethod.md) |  |
 | **url** | string |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | body | unknown |  |
 | options | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+
+
+</div></Details>

@@ -4,6 +4,9 @@ title: ResultCallback
 sidebar_label: ResultCallback
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(result: T): void
 ```
@@ -18,3 +21,5 @@ __type(result: T): void
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **result** | T |  |
+
+

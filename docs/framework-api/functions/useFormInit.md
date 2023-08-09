@@ -4,6 +4,9 @@ title: useFormInit
 sidebar_label: useFormInit
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useFormInit<T,R>(form: default<T>,listener: FormValueListener<T>): R
 ```
@@ -19,3 +22,5 @@ useFormInit<T,R>(form: default<T>,listener: FormValueListener<T>): R
 | --------- | ---- | ----------- |
 | **form** | [default](/framework-api/classes/FormService.md)<T\> |  |
 | **listener** | [FormValueListener](/framework-api/types/FormValueListener.md)<T\> |  |
+
+

@@ -4,6 +4,9 @@ title: HttpMethod
 sidebar_label: HttpMethod
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -17,3 +20,5 @@ sidebar_label: HttpMethod
 | **Patch** | PATCH |  |
 | **Post** | POST |  |
 | **Put** | PUT |  |
+
+

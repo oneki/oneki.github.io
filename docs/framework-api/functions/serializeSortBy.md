@@ -4,6 +4,9 @@ title: serializeSortBy
 sidebar_label: serializeSortBy
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 serializeSortBy(sortBy: undefined | QuerySortBy[]): string | void
 ```
@@ -18,3 +21,5 @@ serializeSortBy(sortBy: undefined | QuerySortBy[]): string | void
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **sortBy** | undefined \| [QuerySortBy](/framework-api/types/QuerySortBy.md)[] |  |
+
+

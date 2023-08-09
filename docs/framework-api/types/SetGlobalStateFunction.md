@@ -4,6 +4,9 @@ title: SetGlobalStateFunction
 sidebar_label: SetGlobalStateFunction
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(value: T | null): void
 ```
@@ -13,8 +16,13 @@ __type(value: T | null): void
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | value | T \| null |  |
+
+
+</div></Details>

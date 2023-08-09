@@ -4,11 +4,12 @@ title: Params
 sidebar_label: Params
 ---
 
+import Details from "@theme/Details"
+
+
 The parameters that were parsed from the URL path.
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

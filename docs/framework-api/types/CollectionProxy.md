@@ -4,6 +4,9 @@ title: CollectionProxy
 sidebar_label: CollectionProxy
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,3 +16,5 @@ sidebar_label: CollectionProxy
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **asService** | asService(): C |  |
+
+

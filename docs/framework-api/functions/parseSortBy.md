@@ -4,6 +4,9 @@ title: parseSortBy
 sidebar_label: parseSortBy
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 parseSortBy(sortBy: string): QuerySortBy[]
 ```
@@ -18,3 +21,5 @@ parseSortBy(sortBy: string): QuerySortBy[]
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **sortBy** | string |  |
+
+

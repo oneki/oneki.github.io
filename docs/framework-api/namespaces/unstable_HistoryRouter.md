@@ -4,6 +4,9 @@ title: unstable_HistoryRouter
 sidebar_label: unstable_HistoryRouter
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,3 +16,5 @@ sidebar_label: unstable_HistoryRouter
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **displayName** | string |  |
+
+

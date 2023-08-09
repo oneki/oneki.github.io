@@ -4,6 +4,9 @@ title: UnregisterCallback
 sidebar_label: UnregisterCallback
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(): void
 ```
@@ -13,7 +16,5 @@ __type(): void
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

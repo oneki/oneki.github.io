@@ -4,6 +4,9 @@ title: RouterContext
 sidebar_label: RouterContext
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -15,3 +18,5 @@ sidebar_label: RouterContext
 | **location** | [Location](/framework-api/interfaces/Location.md) |  |
 | **match** |  |  |
 | **params** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+
+

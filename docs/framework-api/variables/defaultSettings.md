@@ -4,6 +4,9 @@ title: defaultSettings
 sidebar_label: defaultSettings
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(location: Location,settings: AppSettings): string | undefined
 ```
@@ -51,3 +54,5 @@ __type(location: Location,settings: AppSettings): string | undefined
 | **type** | string |  |
 | **url** | string |  |
 | **warning** |  |  |
+
+

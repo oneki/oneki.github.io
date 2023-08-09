@@ -4,6 +4,9 @@ title: applyOperator
 sidebar_label: applyOperator
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 applyOperator(operator: QueryFilterCriteriaOperator,left: any,right: QueryFilterCriteriaValue | QueryFilterCriteriaValue[]): boolean
 ```
@@ -19,4 +22,13 @@ applyOperator(operator: QueryFilterCriteriaOperator,left: any,right: QueryFilter
 | --------- | ---- | ----------- |
 | **left** | any |  |
 | **operator** | [QueryFilterCriteriaOperator](/framework-api/types/QueryFilterCriteriaOperator.md) |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | right | [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md) \| [QueryFilterCriteriaValue](/framework-api/types/QueryFilterCriteriaValue.md)[] |  |
+
+
+</div></Details>

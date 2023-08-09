@@ -4,6 +4,9 @@ title: IdpPubKeyAlgorithm
 sidebar_label: IdpPubKeyAlgorithm
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -13,3 +16,5 @@ sidebar_label: IdpPubKeyAlgorithm
 | Properties | Value | Description |
 | --------- | ---- | ----------- |
 | **RS256** | RS256 |  |
+
+

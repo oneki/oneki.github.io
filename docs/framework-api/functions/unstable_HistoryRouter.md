@@ -4,6 +4,9 @@ title: unstable_HistoryRouter
 sidebar_label: unstable_HistoryRouter
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 unstable_HistoryRouter(__namedParameters: HistoryRouterProps): JSX.Element
 ```
@@ -16,7 +19,5 @@ version of the history library that React Router uses internally.
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

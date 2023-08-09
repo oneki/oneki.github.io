@@ -4,6 +4,9 @@ title: max
 sidebar_label: max
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 max(max: number,message: string): Validator
 ```
@@ -18,4 +21,13 @@ max(max: number,message: string): Validator
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **max** | number |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | message | string |  |
+
+
+</div></Details>

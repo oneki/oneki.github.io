@@ -4,6 +4,9 @@ title: FieldOptions
 sidebar_label: FieldOptions
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(value: any): boolean
 ```
@@ -13,7 +16,9 @@ __type(value: any): boolean
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
 
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
@@ -24,3 +29,6 @@ __type(value: any): boolean
 | protected | boolean |  |
 | touchOn | [TouchOnType](/framework-api/types/TouchOnType.md) |  |
 | visible | boolean |  |
+
+
+</div></Details>

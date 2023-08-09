@@ -4,6 +4,9 @@ title: toUrl
 sidebar_label: toUrl
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 toUrl(location: Location,options: ): string
 ```
@@ -18,4 +21,13 @@ toUrl(location: Location,options: ): string
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **location** | [Location](/framework-api/interfaces/Location.md) |  |
+
+
+<Details summary={<summary><b>Additional properties for advanced use cases</b></summary>}><div>
+
+| Properties | Type | Description |
+| --------- | ---- | ----------- |
 | options |  |  |
+
+
+</div></Details>

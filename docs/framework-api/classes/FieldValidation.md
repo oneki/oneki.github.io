@@ -4,6 +4,9 @@ title: FieldValidation
 sidebar_label: FieldValidation
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
@@ -25,3 +28,5 @@ sidebar_label: FieldValidation
 | **isWarning** | isWarning(): boolean |  |
 | **message** | string |  |
 | **status** | [ValidationStatus](/framework-api/enum/ValidationStatus.md) |  |
+
+

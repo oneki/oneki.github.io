@@ -4,11 +4,12 @@ title: LOADING
 sidebar_label: LOADING
 ---
 
+import Details from "@theme/Details"
+
+
 
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |

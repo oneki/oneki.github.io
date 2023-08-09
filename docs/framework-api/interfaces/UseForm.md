@@ -4,6 +4,9 @@ title: UseForm
 sidebar_label: UseForm
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(e: SyntheticEvent<Element, Event>): void
 ```
@@ -39,3 +42,5 @@ __type(e: SyntheticEvent<Element, Event>): void
 | **submitting** | boolean |  |
 | **validations** | [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<[default](/framework-api/classes/FieldValidation.md)\> |  |
 | **values** | any |  |
+
+

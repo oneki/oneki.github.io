@@ -4,6 +4,9 @@ title: parseQuery
 sidebar_label: parseQuery
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 parseQuery(query: URLSearchParams | AnonymousObject<any>): Query
 ```
@@ -18,3 +21,5 @@ parseQuery(query: URLSearchParams | AnonymousObject<any>): Query
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **query** | URLSearchParams \| [AnonymousObject](/framework-api/interfaces/AnonymousObject.md)<any\> |  |
+
+

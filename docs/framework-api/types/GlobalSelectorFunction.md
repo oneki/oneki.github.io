@@ -4,6 +4,9 @@ title: GlobalSelectorFunction
 sidebar_label: GlobalSelectorFunction
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 __type(state: unknown): unknown
 ```
@@ -18,3 +21,5 @@ __type(state: unknown): unknown
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **state** | unknown |  |
+
+

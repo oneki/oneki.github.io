@@ -4,6 +4,9 @@ title: serializeSearch
 sidebar_label: serializeSearch
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 serializeSearch(search: undefined | Primitive): string | void
 ```
@@ -18,3 +21,5 @@ serializeSearch(search: undefined | Primitive): string | void
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **search** | undefined \| [Primitive](/framework-api/types/Primitive.md) |  |
+
+

@@ -4,6 +4,9 @@ title: sleep
 sidebar_label: sleep
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 sleep(ms: number): Promise<unknown>
 ```
@@ -18,3 +21,5 @@ sleep(ms: number): Promise<unknown>
 | Properties | Type | Description |
 | --------- | ---- | ----------- |
 | **ms** | number |  |
+
+

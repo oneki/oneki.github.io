@@ -4,6 +4,9 @@ title: useInRouterContext
 sidebar_label: useInRouterContext
 ---
 
+import Details from "@theme/Details"
+
+
 ```tsx
 useInRouterContext(): boolean
 ```
@@ -13,7 +16,5 @@ Returns true if this component is a descendant of a <Router\>.
 
 ### Properties
 
-<font size="2"><i>(Mandatory properties are in bold)</i></font>
+This element is often used without passing props
 
-| Properties | Type | Description |
-| --------- | ---- | ----------- |
