@@ -8,6 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { ExampleSnippet } from '@site/src/components/GithubSnippet';
 
 ```javascript
 const settings: AppSettings = useSettings();
@@ -37,19 +38,4 @@ No input.
 
 ### Minimal example
 
-<Tabs>
-  <TabItem value="cra">
-  <Sandbox
-    name="cra-app-settings"
-    height="600"
-    modules={['/src/Main.tsx', '/src/settings.ts', '/src/index.tsx']}
-  />
-  </TabItem>
-  <TabItem value="next">
-  <Sandbox
-    name="next-app-settings"
-    height="600"
-    modules={['/src/pages/index.tsx', '/src/settings.ts', '/src/pages/_app.tsx']}
-  />  
-  </TabItem>
-</Tabs>
+<ExampleSnippet path="settings/UseSettingsPage.tsx" />
