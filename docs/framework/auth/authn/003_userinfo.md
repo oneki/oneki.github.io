@@ -8,6 +8,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NextSandbox from '@site/src/components/NextSandbox';
 import { ExampleDetails } from '@site/src/components/Detail';
+import { ExampleSnippet, ExampleMultipleSnippet } from '@site/src/components/GithubSnippet';
+import Details from "@theme/Details"
 
 
 The `userinfo endpoint` is used to retrieve the security context of the logged-in user. The security context often contains attributes like name, firstname, email, roles, ...
@@ -55,4 +57,14 @@ userInfoEndpoint: 'token://id_token' //will not call the backend, but expects th
 
 ## Example
 
-<ExampleDetails title="Basic example" folder="cra-auth-form" file="src/settings.ts" />
+<Details summary={<summary>Settings</summary>}>
+
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'Settings', path: 'settings.ts' },
+    ]}
+    preview={{
+      path: 'auth'
+    }}
+  />
+</Details>

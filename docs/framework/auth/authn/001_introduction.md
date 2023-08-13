@@ -7,6 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NextSandbox from '@site/src/components/NextSandbox';
+import { ExampleSnippet, ExampleMultipleSnippet } from '@site/src/components/GithubSnippet';
+import Details from "@theme/Details"
 
 The goal of the authentication library is to provide the same service / methods for any type of authentication. Everything specific to a type of authentication is configured in **[src/settings.ts](../../configuration/introduction)**
 
@@ -95,10 +97,10 @@ The context contains the following attributes:
 
 ```javascript
 const context = {
-  idp // the configuration of the active IDP from settings.js
+  idp // the configuration of the active IDP from settings.ts
   router
   store // the Redux store
-  settings // the full settings.js
+  settings // the full settings.ts
   i18n // to know which locale is active
 }
 ```
@@ -123,3 +125,17 @@ The callback returns optionally a token and/or a securityContext:
   - **sessionStorage** (if persist = "sessionStorage")
   - **localStorage** (if persist = "localStorage")
 - The **securityContext** is stored in the global state with the key **auth.securityContext**
+
+
+# Example
+
+<Details summary={<summary>Example of settings.ts</summary>}>
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'Settings', path: 'settings.ts' },
+    ]}
+    preview={{
+      path: 'auth'
+    }}
+  />
+</Details>

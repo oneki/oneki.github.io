@@ -8,6 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { ExampleSnippet, ExampleMultipleSnippet } from '@site/src/components/GithubSnippet';
+import Details from "@theme/Details"
 
 **Form based authentication** means that the login page presents a form, so that the user can specifiy a username and password.
 
@@ -114,25 +116,29 @@ _Mandatory parameters are marked with a \*_
 | **logoutMethod**     | string                                               | if **logoutEndpoint** is a URL, the HTTP method used to call the logout URL<br/><br/>**Defaults to**: GET                                                                                                                                                                                                                |
 | **callback**         | [callback](../../../api/interfaces/IdpSettings#callback) | a callback function to parse the `AJAX POST` response.<br/><br/>The fonction returns optionally a token and/or a securityContext<br/>if callback is null, **Oneki.js** assumes that the session is done via a cookie and the security context is retrieved via the **userinfoEndpoint** defined above)<br/><br/>**Defaults to**: null |
 
-## Example
+:::tip
+Oneki.js provides out of the box two callback functions ready to be used. These functions can be referenced via their alias
 
-:::info
-The example below uses the `useForm` hook. This hook expects a function `(data) => void` called when the user clicks on the "Submit" button.
+| Alias | Description
+| ----- | -----------
+| **idp.<idpId\>.callback = 'token'** | Use this value if the response contains the token. This function: <ul><li>persists the token based on the value idp.<idpId\>.persist</li><li>validates the JWT token if idp.<idpId\>.validate = true</li><li>refreshes the token if the response contains a refresh_token</li></ul>
+| **idp.<idpId\>.callback = 'securityContext'** | Use this value if the response contains a JSON that represents the user profile.<br/>Instead of calling the userinfoEndpoint to retrieve the profile, this function persists directly the response in the global state
+
 :::
 
-<Tabs>
-  <TabItem value="cra">
-  <Sandbox
-    name="cra-auth-form"
-    height="1000"
-    modules={['/src/pages/login.tsx']}
+
+## Example
+
+<Details summary={<summary>Basic form login</summary>}>
+
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'Login', path: 'auth/login/FormLoginPage.tsx' },
+      { label: 'Settings', path: 'settings.ts' },
+    ]}
+    preview={{
+      path: 'auth'
+    }}
   />
-  </TabItem>
-  <TabItem value="next">
-  <Sandbox
-    name="next-auth-form"
-    height="1000"
-    modules={['/src/pages/index.tsx', '/src/settings.ts', '/src/pages/_app.tsx']}
-  />  
-  </TabItem>
-</Tabs>
+</Details>
+

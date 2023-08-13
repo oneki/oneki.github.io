@@ -6,10 +6,12 @@ sidebar_label: OIDC (server side)
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { ExampleSnippet, ExampleMultipleSnippet } from '@site/src/components/GithubSnippet';
+import Details from "@theme/Details"
 
-> **Oneki.js** supports the Open ID Connect (OIDC) authorization code flow where the authorization code is exchanged for an access token via a server. This is the most common and secure way to retrieve the access token 
+> **Oneki.js** supports the Open ID Connect (OIDC) authorization code flow where the authorization code is exchanged for an access token via a server. This is the most common and secure way to retrieve an access token 
 
-In ***settings.js***, when the "idp type" is **"oidc_server"**, ***Oneki.js*** implements the following scenario:
+In ***settings.ts***, when the "idp type" is **"oidc_server"**, ***Oneki.js*** implements the following scenario:
 
 ```plantuml
 @startuml
@@ -72,6 +74,86 @@ To authenticate against an OpenID Connect Identity Provider (OIDC IDP), you have
 * **logout callback**: this route is called by the OIDC IDP after a successfull logout
 
 The code is the same for a NextJS App or a Create React App
+
+# Examples
+
+<Details summary={<summary>Login with Google</summary>}>
+  This example describes how to redirect the user to Google so he can enter his username and password. This step is performed by <code>GoogleLoginPage.tsx</code> (<code>/auth/login/google</code>)
+
+  ```
+  Redirects to: https://accounts.google.com/o/oauth2/v2/auth?scope=openid%20email%20profile
+    &client_id=519201240542-gk79ts8svme25ve4sfuoksjvdupv7fhe.apps.googleusercontent.com&response_type=code
+    &redirect_uri=https://oneki-examples.surge.sh/auth/login/google/callback
+    &state=b3f4f525792470ca73732b4f4681809ed769e3429d782298037c63dfec92cfda
+    &code_challenge=mt2n-8AucWai57be_wj6L0iScRrZoXO3t9EevEYLvw0
+    &code_challenge_method=S256
+  ```
+
+  Once the user is authenticated, Google redirects the user to the page handled by <code>LoginCallbackPage.tsx</code> (<code>/auth/login/google/callback</code>) and provides an authorization code as a query parameter.
+
+  ```
+  Redirects to: https://oneki-examples.surge.sh/auth/login/google/callback?authuser=0
+    &state=363be2fcb87af1f01cc45d6d7df0e73f0986b1ef3c4d77e5e635e2d452301957
+    &code=4%2F0Adeu5BUgbCt1aswdkBfCC0WxoKk8Fj8TaJwPdD5DAwHOcuxAfTwPY_kimKgBTgwL0yRldA
+    &scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile
+    &prompt=none
+  ```
+  
+  <code>LoginCallbackPage.tsx</code> exchanges the authorization code to an JWT access token by calling a backend API
+
+  ```
+  POST /api/oauth2/google/token
+  Host: https://onekijs-example-backend.vercel.app 
+  Content-Type: application/x-www-form-urlencoded
+  Content-Length: 451
+
+  grant_type=authorization_code&
+  client_id=519201240542-gk79ts8svme25ve4sfuoksjvdupv7fhe.apps.googleusercontent.com&
+  redirect_uri=https%3A%2F%2Foneki-examples.surge.sh%2Fauth%2Flogin%2Fgoogle%2Fcallback&
+  code=4%2F0Adeu5BUgbCt1aswdkBfCC0WxoKk8Fj8TaJwPdD5DAwHOcuxAfTwPY_kimKgBTgwL0yRldA&
+  scope=openid%20email%20profile&code_verifier=vfPr9~ZNJ1msSAaMdC-xvymeXoAYJ.6QWRTw~.0-79UXRE11kOqfcegLLXzmpJ6-GO1RtVCD91_GdyvGgmiSWw9LnhX7__PtjHfwE2Kjasit0se_~h0Om-hpiwzgoL
+  ```
+
+  The response contains the access and id tokens
+
+  ```json
+  {
+    "access_token": "ya29.a0AfB_byA6ryWtal5OpY....mDLi_QZeBBQ8-anlgA0165",
+    "expires_in": 3597,
+    "scope": "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid",
+    "token_type": "Bearer",
+    "id_token": "eyJhbGciOiJSUzI1NiIsImt....wlZltc2dpTuSMvnvFgGURbgUTWg"
+ }
+  ```
+
+  The JWT token is stored in the local storage because <code>settings.ts</code> contains the following configuration: <b>idp.google.persist: 'localStorage'</b> (Defaults to: stored only in the global state)
+
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'GoogleLoginPage.tsx', path: 'auth/login/GoogleLoginPage.tsx' },
+      { label: 'LoginCallbackPage.tsx', path: 'auth/login/google/LoginCallbackPage.tsx' },
+      { label: 'settings.ts', path: 'settings.ts' },
+      { label: 'Backend API', path: 'https://github.com/brunofranki/onekijs-example-backend/blob/master/app/utils/token.ts'},
+    ]}
+    preview={{
+      path: 'auth'
+    }}
+  />
+</Details>
+
+<Details summary={<summary>Logout (external logout with callback)</summary>}>
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'Logout', path: 'auth/LogoutPage.tsx' },
+      { label: 'Logout Callback', path: 'auth/logout/CallbackPage.tsx' },
+      { label: 'Settings', path: 'settings.ts' },
+    ]}
+    preview={{
+      path: 'auth'
+    }}
+  />
+</Details>
+
 
 <Tabs
   defaultValue="login"
