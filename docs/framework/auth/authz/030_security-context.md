@@ -7,6 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { ExampleSnippet, ExampleMultipleSnippet } from '@site/src/components/GithubSnippet';
+import Details from "@theme/Details"
 
 The security context represents the profile of the logged in user.<br/>It's usually retrieved from the backend during the authentication (via `useLoginService`) or by calling an API like `/whoami` (via `useSecurityContext`)
 
@@ -31,7 +33,27 @@ The security context is stored in the global state of Redux with the key `auth.s
 
 ```javascript
 const [securityContext, loading] = useSecurityContext<T>(selector, defaultValue);
+
+// Examples:
+// const [securityContext, loading] = useSecurityContext();
+// const [email, loading] = useSecurityContext("email");
+// const [picture, loading] = useSecurityContext("picture", "default_avatar.jpg");
 ```
+
+<br/>
+
+# Example
+
+<Details summary={<summary>Displaying the security context</summary>}>
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'Login', path: 'auth/SecurePage.tsx' },
+    ]}
+    preview={{
+      path: 'auth'
+    }}
+  />
+</Details>
 
 ### Parameters
 #### Inputs
@@ -49,36 +71,8 @@ Mandatory parameters are marked with a \*
 | **securityContext** | any | Return the whole `security context` or a specific entry based on the value of **selector**
 | **loading**\* | boolean | loading is true if the application is currently fetching the security context from the backend
 
-##### Snippets
 
-```javascript
-const [securityContext, loading] = useSecurityContext();
-const [email, loading] = useSecurityContext("email");
-const [picture, loading] = useSecurityContext("picture", "default_avatar.jpg");
-```
-
-## Example
-
-This example displays the logged-in user's username
-
-<Tabs>
-  <TabItem value="cra">
-  <Sandbox
-    name="cra-auth-form"
-    height="600"
-    modules={['/src/modules/core/layouts/AppLayout.tsx', '/src/pages/restricted.tsx', '/src/pages/admin.tsx', '/src/pages/login.tsx']}
-  />
-  </TabItem>
-  <TabItem value="next">
-  <Sandbox
-    name="next-auth-form"
-    height="600"
-    modules={['/src/pages/index.tsx', '/src/settings.ts', '/src/pages/_app.tsx']}
-  />  
-  </TabItem>
-</Tabs>
-
-## Advanced
+# Advanced
 
 Here is the logic to retrieve the `security context`:
 

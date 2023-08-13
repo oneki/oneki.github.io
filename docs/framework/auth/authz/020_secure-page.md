@@ -7,6 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { ExampleSnippet, ExampleMultipleSnippet } from '@site/src/components/GithubSnippet';
+import Details from "@theme/Details"
 
 **Oneki.js** provides an ***[HOC](https://reactjs.org/docs/higher-order-components.html)*** to secure any component:
 
@@ -16,7 +18,46 @@ const SecureComponent = secure(Component, validator, options);
 If the user is not yet logged in, this HOC redirects him to the login page<br/>
 If the connected user doesn't have the right to display the page, it displays an error
 
-### Parameters
+# Example
+
+<Details summary={<summary>Page accessible only to authenticated users</summary>}>
+  The <code>secure HOC</code> is generally used to secure a page.<br/>
+  The example below shows how to secure a page so that only authenticated users can view it.
+
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'Login', path: 'auth/SecurePage.tsx' },
+    ]}
+    preview={{
+      path: 'auth'
+    }}
+  />
+</Details>
+
+<Details summary={<summary>Page accessible only to admin users</summary>}>
+  The example below shows how the <code>secure HOC</code> can verify it the authenticated user has the required role
+
+  The profile of the user returned by the server looks like this:
+
+  ```json
+  {
+    "username": "John",
+    "roles": ["admin"]
+  }
+  ```
+
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'Login', path: 'auth/UltraSecurePage.tsx' },
+      { label: 'Backend API', path: 'https://github.com/brunofranki/onekijs-example-backend/blob/master/app/api/auth/login/route.ts'},
+    ]}
+    preview={{
+      path: 'auth'
+    }}
+  />
+</Details>
+
+# Parameters
 #### Inputs
 Mandatory parameters are marked with a \*
 
@@ -32,30 +73,3 @@ Mandatory parameters are marked with a \*
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
 | **SecureComponent**\* | React Component | The component secured
-
-## Example
-This example shows two protected pages and one public page
-
-| Page | Description |
-| ---- | ----------- |
-| index | This page is accessible to anyone |
-| restricted | This page is accessible to any logged-in users |
-| admin | This page is only accessible to logged-in users with the role **admin** |
-
-<Tabs>
-  <TabItem value="cra">
-  <Sandbox
-    name="cra-auth-form"
-    height="600"
-    modules={['/src/modules/core/layouts/AppLayout.tsx', '/src/pages/restricted.tsx', '/src/pages/admin.tsx', '/src/pages/login.tsx']}
-  />
-  </TabItem>
-  <TabItem value="next">
-  <Sandbox
-    name="next-auth-form"
-    height="600"
-    modules={['/src/pages/index.tsx', '/src/settings.ts', '/src/pages/_app.tsx']}
-  />  
-  </TabItem>
-</Tabs>
-

@@ -12,10 +12,44 @@ import { ExampleSnippet, ExampleMultipleSnippet } from '@site/src/components/Git
 import Details from "@theme/Details"
 
 
-The `userinfo endpoint` is used to retrieve the security context of the logged-in user. The security context often contains attributes like name, firstname, email, roles, ...
+The `userinfo endpoint` is used to retrieve the security context of the logged-in user.
+
+:::info
+**Oneki.js** doesn't expect a specific format for the security context. You can put in what you want. The content of the security context is usually made of profile attributes like email, name, firstname, roles, ... 
+:::
+
+<Details summary={<summary>Example of a security context</summary>}>
+
+```javascript
+{
+  sub: "de1ff3d2-0710-4f7a-9dd1-4aadb7d94b57",
+  email: "john.doe@example.com",
+  given_name: "John",
+  family_name: "Doe",
+  picture: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+  roles: ['admin', 'user']
+}
+```
+
+</Details>
 
 :::tip
-This endpoint is the only configuration parameter that is common for all types of authentication
+The `userinfo endpoint` is the only configuration parameter that is common for all types of authentication
+
+Excerpt from `settings.ts`
+
+```ts
+{
+  ...
+  idp: {
+    default: {
+      type: "form",
+      userinfoEndpoint: 'https://backend.com/api/whoami',
+    }
+  }
+}
+
+```
 :::
 
 

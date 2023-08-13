@@ -24,7 +24,6 @@ module.exports = {
     "Framework": [
       "framework/introduction",
       "framework/application/app",
-      "framework/layout/layout",
       {
         type: "category",
         label: "Configuration",
@@ -46,12 +45,12 @@ module.exports = {
       },
       {
         type: "category",
-        label: "AuthN / AuthZ",
+        label: "Security",
         items: [
           "framework/auth/introduction",
           {
             type: "category",
-            label: "AuthZ",
+            label: "Authentication",
             items: [
               "framework/auth/authz/secure-page",
               "framework/auth/authz/security-context",
@@ -59,7 +58,7 @@ module.exports = {
           },
           {
             type: "category",
-            label: "AuthN",
+            label: "Authorization",
             items: [
               "framework/auth/authn/introduction",
               "framework/auth/authn/userinfo",
