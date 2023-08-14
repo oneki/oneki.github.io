@@ -8,7 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
-import { ExampleSnippet } from '@site/src/components/GithubSnippet';
+import { ExampleSnippet, ExampleMultipleSnippet } from '@site/src/components/GithubSnippet';
+import Details from "@theme/Details"
 
 ```javascript
 const setting: T = useSetting<T>(key: string);
@@ -16,11 +17,21 @@ const setting: T = useSetting<T>(key: string);
 
 **_useSetting_** returns a specific entry from Settings idenfified by **key**
 
-:::info
-The setting object is frozen and can't be updated.
-:::
+# Example
 
-### useSettings Parameters
+<Details summary={<summary>Get a property of settings.ts</summary>}>
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'Use Setting', path: 'settings/UseSettingPage.tsx' },
+      { label: 'settings.ts', path: 'settings.ts' },
+    ]}
+    preview={{
+      path: 'settings/use-setting'
+    }}
+  />
+</Details>
+
+# Documentation
 
 #### Inputs
 
@@ -34,8 +45,4 @@ The setting object is frozen and can't be updated.
 | -------- | ---- | ---------------------------------------------------- |
 | **setting**  | T    | a specific entry from Settings idenfified by **key** |
 
-## Examples
 
-### Minimal example
-
-<ExampleSnippet path="settings/UseSettingPage.tsx" />
