@@ -6,6 +6,8 @@ sidebar_label: Introduction
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
+import { ExampleSnippet, ExampleMultipleSnippet } from '@site/src/components/GithubSnippet';
+import Details from "@theme/Details"
 
 > One of the main features of **Oneki.js** is a powerful state management library based on these popular libraries
 - Redux (global state) or useReducer (local state)
@@ -28,50 +30,29 @@ When the application starts, **Oneki.js** automatically creates a Redux store (o
 
 > ***Note***: For advanced use cases involving asynchronous flows, **Oneki.js** provides also a hook to create a **globalService**.<br/>This part is more complex and described in [another section of the documentation](../service/global-service)
 
-### Basic Example
 
-<Tabs>
-  <TabItem value="cra">
+<Details summary={<summary>Simple example of useGlobalState</summary>}>
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'Use Global State', path: 'state-management/UseGlobalStatePage.tsx' },
+    ]}
+    preview={{
+      path: 'state-management/use-global-state'
+    }}
+  />
+</Details>
 
-```javascript
-import { useGlobalState } from "onekijs";
-import React from "react";
+<Details summary={<summary>Simple example of useGlobalProp</summary>}>
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'Use Global State', path: 'state-management/UseGlobalPropPage.tsx' },
+    ]}
+    preview={{
+      path: 'state-management/use-global-prop'
+    }}
+  />
+</Details>
 
-let uid = 0;
-export default () => {
-  const [foo, setFoo] = useGlobalState("foo");
-
-  return (
-    <div>
-      <button onClick={() => setFoo(`foo-${++uid})`)}>Update</button>
-      {foo && <div>Value in global state: {foo}</div>}
-    </div>
-  );
-};
-```
-
-  </TabItem>
-  <TabItem value="next">
-
-```javascript
-import { useGlobalState } from "onekijs-next";
-import React from "react";
-
-let uid = 0;
-export default () => {
-  const [foo, setFoo] = useGlobalState("foo");
-
-  return (
-    <div>
-      <button onClick={() => setFoo(`foo-${++uid})`)}>Update</button>
-      {foo && <div>Value in global state: {foo}</div>}
-    </div>
-  );
-};
-```
-
-  </TabItem>
-</Tabs>
 
 ## Local state
 If a single component needs to react to specific data, it's not necessary to store the data in a global state. For this type of data, a local state is sufficient.  
@@ -89,111 +70,28 @@ You can instanciate a **[Local service](./local-state#local-service)** multiple 
 E.g: the above scenario is exactly what the **useGet** hook does and you can reuse it in multiple components.
 
 ### Basic Example
+
+
+
+<Details summary={<summary>Simple example of useLocalService</summary>}>
+
 This very basic example is for demonstration only as a simple **useState** would be normally enough.
 
-<Tabs>
-  <TabItem value="cra">
-
-```javascript
-import { useLocalService } from "onekijs";
-import React from "react";
-import { myLocalService } from "./MyLocalService";
-
-let uid = 0;
-export default () => {
-  // instanciate a local service
-  const [state, service] = useLocalService(myLocalService);
-
-  return (
-    <div>
-      <button onClick={() => service.updateFoo(`foo-${++uid})`)}>Update</button>
-      {foo && <div>Value in global state: {foo}</div>}
-    </div>
-  );
-};
-```
-
-<p/>
-
-The **myLocalService** looks like this:
-
 :::info
 
 You don't need to understand how to build services yet. This **[page](../service/introduction)** explains how to build services
 
 :::
 
-```typescript
-import { AnyState, DefaultLocalService, reducer, service } from 'onekijs';
-import { Settings } from './settings';
-
-export interface MyLocalState extends AnyState {
-  foo: string;
-}
-
-@service
-export class MyLocalService extends DefaultLocalService<MyLocalState> {
-  
-  @reducer
-  setFoo(value: string): void {
-    this.state.foo = value;
-  }
-
-}
-```
-
-  </TabItem>
-  <TabItem value="next">
-
-```typescript
-import { useLocalService } from "onekijs-next";
-import React from "react";
-import { myLocalService } from "./MyLocalService";
-
-let uid = 0;
-export default () => {
-  // instanciate a local service
-  const [state, service] = useLocalService(myLocalService);
-
-  return (
-    <div>
-      <button onClick={() => service.updateFoo(`foo-${++uid})`)}>Update</button>
-      {foo && <div>Value in global state: {foo}</div>}
-    </div>
-  );
-};
-```
-
-<p/>
-
-The **myLocalService** looks like this:
-
-:::info
-
-You don't need to understand how to build services yet. This **[page](../service/introduction)** explains how to build services
-
-:::
-
-```javascript
-import { AnyState, DefaultLocalService, reducer, service } from 'onekijs-next';
-import { Settings } from './settings';
-
-export interface MyLocalState extends AnyState {
-  foo: string;
-}
-
-@service
-export class MyLocalService extends DefaultLocalService<MyLocalState> {
-  
-  @reducer
-  setFoo(value: string): void {
-    this.state.foo = value;
-  }
-
-}
-```
-
-  </TabItem>
-</Tabs>
+<ExampleMultipleSnippet 
+    values={[
+      { label: 'Use Global State', path: 'state-management/UseLocalServicePage.tsx' },
+      { label: 'My Local Service', path: 'state-management/@service/MyLocalService.ts' },
+    ]}
+    preview={{
+      path: 'state-management/use-local-service'
+    }}
+  />
+</Details>
 
 
