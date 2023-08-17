@@ -69,10 +69,6 @@ An example of scenario is retrieving data via an AJAX GET request. The scenario 
 You can instanciate a **[Local service](./local-state#local-service)** multiple times in multiple components to reuse the same logic.<br/>
 E.g: the above scenario is exactly what the **useGet** hook does and you can reuse it in multiple components.
 
-### Basic Example
-
-
-
 <Details summary={<summary>Simple example of useLocalService</summary>}>
 
 This very basic example is for demonstration only as a simple **useState** would be normally enough.

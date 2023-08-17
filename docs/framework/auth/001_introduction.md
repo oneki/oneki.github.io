@@ -8,6 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
 import Sandbox from '@site/src/components/Sandbox';
+import { ExampleSnippet, ExampleMultipleSnippet } from '@site/src/components/GithubSnippet';
+import Details from "@theme/Details"
 
 **_Oneki.js_** provides an authentication / authorization library to implement the following use cases:
 
@@ -214,20 +216,18 @@ The security context is described in detail on **[this page](./authz/security-co
 | **logout callback** | When the logout is peformed by an external party (e.g., an OIDC Identity Provider), this service handles the callback         |
 
 ## Example
-
-<Tabs>
-  <TabItem value="cra">
-  <Sandbox
-    name="cra-auth-form"
-    height="600"
-    modules={['/src/modules/core/layouts/AppLayout.tsx', '/src/pages/restricted.tsx', '/src/pages/admin.tsx', '/src/pages/login.tsx']}
+<Details summary={<summary>Login with Google</summary>}>
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'Login', path: 'auth/login/google/IndexPage.tsx' },
+      { label: 'Login callback', path: 'auth/login/google/LoginCallbackPage.tsx' },
+      { label: 'Logout', path: 'auth/logout/IndexPage.tsx' },
+      { label: 'Logout Callback', path: 'auth/logout/CallbackPage.tsx' },      
+      { label: 'settings.ts', path: 'settings.ts' },
+      { label: 'Backend API', path: 'https://github.com/brunofranki/onekijs-example-backend/blob/master/app/utils/token.ts'},
+    ]}
+    preview={{
+      path: 'auth'
+    }}
   />
-  </TabItem>
-  <TabItem value="next">
-  <Sandbox
-    name="next-auth-form"
-    height="600"
-    modules={['/src/pages/index.tsx', '/src/settings.ts', '/src/pages/_app.tsx']}
-  />  
-  </TabItem>
-</Tabs>
+</Details>

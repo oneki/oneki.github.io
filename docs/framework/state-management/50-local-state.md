@@ -7,6 +7,8 @@ sidebar_label: Local state
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
+import { ExampleSnippet, ExampleMultipleSnippet } from '@site/src/components/GithubSnippet';
+import Details from "@theme/Details"
 
 If a single component needs to react to specific data, it's not necessary to store the data in a global state. For this type of data, a local state is sufficient.  
 For a simple use case, it's often sufficient to use the standard **useState** from React and we recommend it.
@@ -49,7 +51,30 @@ Be sure to read the documentation of [Redux](https://redux.js.org/) and [Redux S
 
 > See the **[service section](../service/introduction)** to have an in-depth explanation of a service.
 
-### Parameters
+### Example
+
+<Details summary={<summary>Simple example of useLocalService</summary>}>
+
+This very basic example is for demonstration only as a simple **useState** would be normally enough.
+
+:::info
+
+You don't need to understand how to build services yet. This **[page](../service/introduction)** explains how to build services
+
+:::
+
+<ExampleMultipleSnippet 
+    values={[
+      { label: 'Use Global State', path: 'state-management/UseLocalServicePage.tsx' },
+      { label: 'My Local Service', path: 'state-management/@service/MyLocalService.ts' },
+    ]}
+    preview={{
+      path: 'state-management/use-local-service'
+    }}
+  />
+</Details>
+
+### Interface
 
 #### Inputs
 
@@ -65,114 +90,7 @@ Be sure to read the documentation of [Redux](https://redux.js.org/) and [Redux S
 | **state** | Object | The immutable state managed by the service (can be upated only by the service)
 | **service** | Class | The service to manage the state
 
-### Example
 
-This very basic example is for demonstration only as a simple **useState** would be normally enough.
-
-<Tabs>
-  <TabItem value="cra">
-
-```javascript
-import { useLocalService } from "onekijs";
-import React from "react";
-import { myLocalService } from "./MyLocalService";
-
-let uid = 0;
-export default () => {
-  // instanciate a local service
-  const [state, service] = useLocalService(myLocalService);
-
-  return (
-    <div>
-      <button onClick={() => service.updateFoo(`foo-${++uid})`)}>Update</button>
-      {foo && <div>Value in global state: {foo}</div>}
-    </div>
-  );
-};
-```
-
-<p/>
-
-The **myLocalService** looks like this:
-
-:::info
-
-You don't need to understand how to build services yet. This **[page](../service/introduction)** explains how to build services
-
-:::
-
-```typescript
-import { AnyState, DefaultLocalService, reducer, service } from 'onekijs';
-import { Settings } from './settings';
-
-export interface MyLocalState extends AnyState {
-  foo: string;
-}
-
-@service
-export class MyLocalService extends DefaultLocalService<MyLocalState> {
-  
-  @reducer
-  setFoo(value: string): void {
-    this.state.foo = value;
-  }
-
-}
-```
-
-  </TabItem>
-  <TabItem value="next">
-
-```typescript
-import { useLocalService } from "onekijs-next";
-import React from "react";
-import { myLocalService } from "./MyLocalService";
-
-let uid = 0;
-export default () => {
-  // instanciate a local service
-  const [state, service] = useLocalService(myLocalService);
-
-  return (
-    <div>
-      <button onClick={() => service.updateFoo(`foo-${++uid})`)}>Update</button>
-      {foo && <div>Value in global state: {foo}</div>}
-    </div>
-  );
-};
-```
-
-<p/>
-
-The **myLocalService** looks like this:
-
-:::info
-
-You don't need to understand how to build services yet. This **[page](../service/introduction)** explains how to build services
-
-:::
-
-```javascript
-import { AnyState, DefaultLocalService, reducer, service } from 'onekijs-next';
-import { Settings } from './settings';
-
-export interface MyLocalState extends AnyState {
-  foo: string;
-}
-
-@service
-export class MyLocalService extends DefaultLocalService<MyLocalState> {
-  
-  @reducer
-  setFoo(value: string): void {
-    this.state.foo = value;
-  }
-
-}
-```
-
-  </TabItem>
-</Tabs>
 
 
 

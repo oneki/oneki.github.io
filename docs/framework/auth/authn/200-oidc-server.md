@@ -130,7 +130,7 @@ The code is the same for a NextJS App or a Create React App
 
   <ExampleMultipleSnippet 
     values={[
-      { label: 'GoogleLoginPage.tsx', path: 'auth/login/GoogleLoginPage.tsx' },
+      { label: 'GoogleLoginPage.tsx', path: 'auth/login/google/IndexPage.tsx' },
       { label: 'LoginCallbackPage.tsx', path: 'auth/login/google/LoginCallbackPage.tsx' },
       { label: 'settings.ts', path: 'settings.ts' },
       { label: 'Backend API', path: 'https://github.com/brunofranki/onekijs-example-backend/blob/master/app/utils/token.ts'},
@@ -144,7 +144,7 @@ The code is the same for a NextJS App or a Create React App
 <Details summary={<summary>Logout (external logout with callback)</summary>}>
   <ExampleMultipleSnippet 
     values={[
-      { label: 'Logout', path: 'auth/LogoutPage.tsx' },
+      { label: 'Logout', path: 'auth/logout/IndexPage.tsx' },
       { label: 'Logout Callback', path: 'auth/logout/CallbackPage.tsx' },
       { label: 'Settings', path: 'settings.ts' },
     ]}

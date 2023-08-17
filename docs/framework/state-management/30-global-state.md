@@ -7,6 +7,8 @@ sidebar_label: Global state
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@site/src/components/DocTabs';
 import TabItem from '@theme/TabItem';
+import { ExampleSnippet, ExampleMultipleSnippet } from '@site/src/components/GithubSnippet';
+import Details from "@theme/Details"
 
 If several components react on the same data, it is good to use a global state to store it. The most popular library to manage this kind of state is **Redux**
 
@@ -24,8 +26,20 @@ When the application starts, **Oneki.js** automatically creates a Redux store (o
 ```typescript
 const [state, setState] = useGlobalState<T>(key: string, defaultValue?: T);
 ```
+### Example
 
-### Parameters
+<Details summary={<summary>Simple example of useGlobalState</summary>}>
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'Use Global State', path: 'state-management/UseGlobalStatePage.tsx' },
+    ]}
+    preview={{
+      path: 'state-management/use-global-state'
+    }}
+  />
+</Details>
+
+### Interface
 
 #### Inputs
 
@@ -33,6 +47,9 @@ const [state, setState] = useGlobalState<T>(key: string, defaultValue?: T);
 | -------- | ------ | ---------------------------------------------- |
 | **key**  | string | The identifier of a property in the global state. |
 | **defaultValue**  | T | The value returned if the entry referenced by the key doesn't exist in the state |
+
+<Details summary={<summary>Values supported for the <b>key</b> parameter</summary>}>
+
 
 :::info
 The key identifies an entry in the global state. if the global state is the following
@@ -59,6 +76,8 @@ then these keys are valid:
 
 :::
 
+</Details>
+
 #### Outputs
 
 | Variable    | Type | Description                                          |
@@ -66,46 +85,6 @@ then these keys are valid:
 | **prop** | T    | The result is the value of the property in the global state identified by the key |
 | **setProp** | [SetGlobalStateFunction<T\>](../../api/types/SetGlobalStateFunction)   | A function to update the value in the global state identified by the key |
 
-### Example
-
-<Tabs>
-  <TabItem value="cra">
-
-```tsx
-import { useGlobalState } from 'onekijs';
-import React from 'react';
-
-const Example: FC = () => {
-    const [foo, setFoo] = useGlobalState<string>('foo', 'defaultFooValue');
-    return (
-        <div>
-            <p>value: {foo}</p>
-            <div><button onClick={() => setFoo('newValue')}>Update foo</button></div>
-        </div>
-    )
-}
-```
-
-  </TabItem>
-  <TabItem value="next">
-
-```tsx
-import { useGlobalState } from 'onekijs-next';
-import React from 'react';
-
-const Example: FC = () => {
-    const [foo, setFoo] = useGlobalState<string>('foo', 'defaultFooValue');
-    return (
-        <div>
-            <p>value: {foo}</p>
-            <div><button onClick={() => setFoo('newValue')}>Update foo</button></div>
-        </div>
-    )
-}
-``` 
-
-  </TabItem>
-</Tabs>
 
 ## useGlobalProp
 
@@ -119,7 +98,20 @@ const Example: FC = () => {
 const prop = useGlobalProp<T>(key: string, defaultValue?: T);
 ```
 
-### Parameters
+### Example
+
+<Details summary={<summary>Simple example of useGlobalProp</summary>}>
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'Use Global State', path: 'state-management/UseGlobalPropPage.tsx' },
+    ]}
+    preview={{
+      path: 'state-management/use-global-prop'
+    }}
+  />
+</Details>
+
+### Interface
 
 #### Inputs
 
@@ -127,6 +119,8 @@ const prop = useGlobalProp<T>(key: string, defaultValue?: T);
 | -------- | ------ | ---------------------------------------------- |
 | **key**  | string | The identifier of a property in the global state. |
 | **defaultValue**  | T | The value returned if the property referenced by the key doesn't exist in the state |
+
+<Details summary={<summary>Values supported for the <b>key</b> parameter</summary>}>
 
 :::info
 The key identifies an entry in the global state. if the global state is the following
@@ -153,11 +147,7 @@ then these keys are valid:
 
 :::
 
-### Example
-
-```tsx reference
-https://github.com/oneki/onekijs/blob/master/getting-started/cra/step03-global-state/src/pages/cart.tsx
-```
+</Details>
 
 #### Outputs
 

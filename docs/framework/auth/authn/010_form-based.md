@@ -18,7 +18,7 @@ import Details from "@theme/Details"
 - submit the username / password to the backend server
 - manage the response returned by the backend server
 
-## Architecture
+# Architecture
 
 The following scenario is the standard flow when a non logged-in user wants to display a page reserved only for the logged-in user. This means that this page is secured via the **[secure HOC](../authz/secure-page)**<br/>
 This flow can be customized via `src/settings.ts`
@@ -70,7 +70,22 @@ else auth successful
 In the above scenario, the **/login page** uses the `useLogin` hook to generate a submit function. This function executes the `AJAX POST` request that sends the credentials to the backend system.
 :::
 
-## Configuration
+# Example
+
+<Details summary={<summary>Basic form login</summary>}>
+
+  <ExampleMultipleSnippet 
+    values={[
+      { label: 'Login', path: 'auth/login/form/IndexPage.tsx' },
+      { label: 'Settings', path: 'settings.ts' },
+    ]}
+    preview={{
+      path: 'auth'
+    }}
+  />
+</Details>
+
+# Configuration
 
 the `useLogin` and `useLogout` hooks are configured via several parameters in `src/settings.ts` (**[see configuration](./introduction#configuration)**)
 
@@ -127,18 +142,5 @@ Oneki.js provides out of the box two callback functions ready to be used. These 
 :::
 
 
-## Example
 
-<Details summary={<summary>Basic form login</summary>}>
-
-  <ExampleMultipleSnippet 
-    values={[
-      { label: 'Login', path: 'auth/login/FormLoginPage.tsx' },
-      { label: 'Settings', path: 'settings.ts' },
-    ]}
-    preview={{
-      path: 'auth'
-    }}
-  />
-</Details>
 
