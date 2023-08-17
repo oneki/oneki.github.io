@@ -81,7 +81,7 @@ export const ExamplePreview = ({
 }) => {
   let url = path;
   if (!path.startsWith('http')) {
-    url = `https://oneki-examples.surge.sh/${path}`;
+    url = `https://examples.oneki.net/${path}`;
   }
   return (
       <iframe

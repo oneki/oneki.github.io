@@ -83,7 +83,7 @@ The code is the same for a NextJS App or a Create React App
   ```
   Redirects to: https://accounts.google.com/o/oauth2/v2/auth?scope=openid%20email%20profile
     &client_id=519201240542-gk79ts8svme25ve4sfuoksjvdupv7fhe.apps.googleusercontent.com&response_type=code
-    &redirect_uri=https://oneki-examples.surge.sh/auth/login/google/callback
+    &redirect_uri=https://examples.oneki.net/auth/login/google/callback
     &state=b3f4f525792470ca73732b4f4681809ed769e3429d782298037c63dfec92cfda
     &code_challenge=mt2n-8AucWai57be_wj6L0iScRrZoXO3t9EevEYLvw0
     &code_challenge_method=S256
@@ -92,7 +92,7 @@ The code is the same for a NextJS App or a Create React App
   Once the user is authenticated, Google redirects the user to the page handled by <code>LoginCallbackPage.tsx</code> (<code>/auth/login/google/callback</code>) and provides an authorization code as a query parameter.
 
   ```
-  Redirects to: https://oneki-examples.surge.sh/auth/login/google/callback?authuser=0
+  Redirects to: https://examples.oneki.net/auth/login/google/callback?authuser=0
     &state=363be2fcb87af1f01cc45d6d7df0e73f0986b1ef3c4d77e5e635e2d452301957
     &code=4%2F0Adeu5BUgbCt1aswdkBfCC0WxoKk8Fj8TaJwPdD5DAwHOcuxAfTwPY_kimKgBTgwL0yRldA
     &scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile
@@ -103,13 +103,13 @@ The code is the same for a NextJS App or a Create React App
 
   ```
   POST /api/oauth2/google/token
-  Host: https://onekijs-example-backend.vercel.app 
+  Host: https://examples.oneki.net 
   Content-Type: application/x-www-form-urlencoded
   Content-Length: 451
 
   grant_type=authorization_code&
   client_id=519201240542-gk79ts8svme25ve4sfuoksjvdupv7fhe.apps.googleusercontent.com&
-  redirect_uri=https%3A%2F%2Foneki-examples.surge.sh%2Fauth%2Flogin%2Fgoogle%2Fcallback&
+  redirect_uri=https%3A%2F%2Fexamples.oneki.net%2Fauth%2Flogin%2Fgoogle%2Fcallback&
   code=4%2F0Adeu5BUgbCt1aswdkBfCC0WxoKk8Fj8TaJwPdD5DAwHOcuxAfTwPY_kimKgBTgwL0yRldA&
   scope=openid%20email%20profile&code_verifier=vfPr9~ZNJ1msSAaMdC-xvymeXoAYJ.6QWRTw~.0-79UXRE11kOqfcegLLXzmpJ6-GO1RtVCD91_GdyvGgmiSWw9LnhX7__PtjHfwE2Kjasit0se_~h0Om-hpiwzgoL
   ```
